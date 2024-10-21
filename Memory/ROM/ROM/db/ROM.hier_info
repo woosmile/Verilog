@@ -1,0 +1,25 @@
+|ROM
+clk => rom_data[0]~reg0.CLK
+clk => rom_data[0]~en.CLK
+clk => rom_data[1]~reg0.CLK
+clk => rom_data[1]~en.CLK
+clk => rom_data[2]~reg0.CLK
+clk => rom_data[2]~en.CLK
+clk => rom_data[3]~reg0.CLK
+clk => rom_data[3]~en.CLK
+clk => rom_data[4]~reg0.CLK
+clk => rom_data[4]~en.CLK
+clk => rom_data[5]~reg0.CLK
+clk => rom_data[5]~en.CLK
+clk => rom_data[6]~reg0.CLK
+clk => rom_data[6]~en.CLK
+clk => rom_data[7]~reg0.CLK
+clk => rom_data[7]~en.CLK
+cs => always0.IN0
+rd => always0.IN1
+addr[0] => rom.RADDR
+addr[1] => rom.RADDR1
+addr[2] => rom.RADDR2
+addr[3] => rom.RADDR3
+
+

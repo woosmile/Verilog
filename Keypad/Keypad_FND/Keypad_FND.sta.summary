@@ -1,0 +1,41 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'clk'
+Slack : -5.240
+TNS   : -290.750
+
+Type  : Setup 'FND:u0|digit[0]'
+Slack : -5.235
+TNS   : -30.623
+
+Type  : Setup 'Keypad:u1|clk_div'
+Slack : -1.042
+TNS   : -2.090
+
+Type  : Hold 'clk'
+Slack : -1.697
+TNS   : -4.950
+
+Type  : Hold 'Keypad:u1|clk_div'
+Slack : 1.244
+TNS   : 0.000
+
+Type  : Hold 'FND:u0|digit[0]'
+Slack : 1.368
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -1.583
+TNS   : -162.379
+
+Type  : Minimum Pulse Width 'Keypad:u1|clk_div'
+Slack : -1.318
+TNS   : -10.544
+
+Type  : Minimum Pulse Width 'FND:u0|digit[0]'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------

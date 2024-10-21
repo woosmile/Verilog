@@ -1,0 +1,7 @@
+
+State Machine - |FSM_Moore|current_state
+Name current_state.st3 current_state.st2 current_state.st1 current_state.00 
+current_state.00 0 0 0 0 
+current_state.st1 0 0 1 1 
+current_state.st2 0 1 0 1 
+current_state.st3 1 0 0 1 

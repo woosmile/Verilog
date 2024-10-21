@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="ROM2">
+		<CBX_INST_ENTRY INSTANCE_NAME="|ROM2|lpm_rom:u0|altrom:srom|altsyncram:rom_block" CBX_FILE_NAME="altsyncram_otv.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

@@ -1,0 +1,9 @@
+module tb_RAM1;
+ reg clk,wr,rd;
+ reg [3:0]a;
+ reg [3:0]d_in;
+ wire [3:0]q;
+ 
+ RAM1 u0(.clk(clk),.wr(wr),.rd(rd),.a(addr),.data_in(d_in),.q(q));
+ 
+ 

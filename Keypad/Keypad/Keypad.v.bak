@@ -1,0 +1,65 @@
+module Keypad(clk,reset,portA,portB,col,row,data);
+
+input clk,reset;
+input [3:0]row;
+
+output [1:0]portA,portB;
+output [2:0]col;
+output [7:0]data;
+
+reg [27:0]clk_cnt;
+reg clk_div;
+
+reg [1:0]state;
+
+parameter idle = 0;
+parameter col_1 = 1;
+parameter col_2 = 2;
+parameter col_3 = 3;
+
+assign stop = row[0] | row[1] | row[2] | row[3];
+
+always@(posedge clk, negedge reset) begin
+	if(!reset) begin
+		portA <= 2'b10;
+		portB <= 2'b10;
+	end
+	else begin
+		portA <= 2'b01;
+		portB <= 2'b00;
+	end
+end
+
+always@(posedge clk, negedge reset) begin
+	if(!reset) begin
+		clk_cnt <= 0;
+		clk_div <= 0;
+	end
+	else begin
+		if(clk_cnt >= 5399) begin
+			clk_cnt <= 0;
+			clk_div <= 1;
+		end
+		else begin
+			clk_cnt <= clk_cnt + 1;
+			clk_div <= 0;
+		end
+	end
+end
+
+always@(posedge clk_div, negedge reset) begin
+	if(!reset) state <= idle;
+	else begin
+		if(!stop) begin
+			case(state)
+				idle : state <= col_1;
+				col_1 : state <= col_2;
+				col_2 : state <= col_3;
+				col_3 : state <= idle;
+				default : state <= idle;
+			endcase
+		end
+	end
+end
+
+always@(posedge clk_div, negedge reset)

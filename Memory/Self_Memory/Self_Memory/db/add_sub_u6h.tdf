@@ -1,0 +1,156 @@
+--lpm_add_sub CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48 DEVICE_FAMILY="Cyclone" LPM_PIPELINE=1 LPM_REPRESENTATION="SIGNED" LPM_WIDTH=14 aclr add_sub cin clken(vcc) clock dataa datab result
+--VERSION_BEGIN 11.0SP1 cbx_cycloneii 2011:07:03:21:07:09:SJ cbx_lpm_add_sub 2011:07:03:21:07:09:SJ cbx_mgl 2011:07:03:21:10:12:SJ cbx_stratix 2011:07:03:21:07:09:SJ cbx_stratixii 2011:07:03:21:07:09:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2011 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+
+FUNCTION cyclone_lcell (aclr, aload, cin, clk, dataa, datab, datac, datad, ena, inverta, regcascin, sclr, sload)
+WITH ( cin0_used, cin1_used, cin_used, lut_mask, operation_mode, output_mode, power_up, register_cascade_mode, sum_lutc_input, synch_mode, x_on_violation)
+RETURNS ( combout, cout, regout);
+
+--synthesis_resources = lut 15 
+SUBDESIGN add_sub_u6h
+( 
+	aclr	:	input;
+	add_sub	:	input;
+	cin	:	input;
+	clken	:	input;
+	clock	:	input;
+	dataa[13..0]	:	input;
+	datab[13..0]	:	input;
+	result[13..0]	:	output;
+) 
+VARIABLE 
+	add_sub_cella0 : cyclone_lcell
+		WITH (
+			cin_used = "true",
+			lut_mask = "96E8",
+			operation_mode = "arithmetic",
+			sum_lutc_input = "cin"
+		);
+	add_sub_cella1 : cyclone_lcell
+		WITH (
+			cin_used = "true",
+			lut_mask = "96E8",
+			operation_mode = "arithmetic",
+			sum_lutc_input = "cin"
+		);
+	add_sub_cella2 : cyclone_lcell
+		WITH (
+			cin_used = "true",
+			lut_mask = "96E8",
+			operation_mode = "arithmetic",
+			sum_lutc_input = "cin"
+		);
+	add_sub_cella3 : cyclone_lcell
+		WITH (
+			cin_used = "true",
+			lut_mask = "96E8",
+			operation_mode = "arithmetic",
+			sum_lutc_input = "cin"
+		);
+	add_sub_cella4 : cyclone_lcell
+		WITH (
+			cin_used = "true",
+			lut_mask = "96E8",
+			operation_mode = "arithmetic",
+			sum_lutc_input = "cin"
+		);
+	add_sub_cella5 : cyclone_lcell
+		WITH (
+			cin_used = "true",
+			lut_mask = "96E8",
+			operation_mode = "arithmetic",
+			sum_lutc_input = "cin"
+		);
+	add_sub_cella6 : cyclone_lcell
+		WITH (
+			cin_used = "true",
+			lut_mask = "96E8",
+			operation_mode = "arithmetic",
+			sum_lutc_input = "cin"
+		);
+	add_sub_cella7 : cyclone_lcell
+		WITH (
+			cin_used = "true",
+			lut_mask = "96E8",
+			operation_mode = "arithmetic",
+			sum_lutc_input = "cin"
+		);
+	add_sub_cella8 : cyclone_lcell
+		WITH (
+			cin_used = "true",
+			lut_mask = "96E8",
+			operation_mode = "arithmetic",
+			sum_lutc_input = "cin"
+		);
+	add_sub_cella9 : cyclone_lcell
+		WITH (
+			cin_used = "true",
+			lut_mask = "96E8",
+			operation_mode = "arithmetic",
+			sum_lutc_input = "cin"
+		);
+	add_sub_cella10 : cyclone_lcell
+		WITH (
+			cin_used = "true",
+			lut_mask = "96E8",
+			operation_mode = "arithmetic",
+			sum_lutc_input = "cin"
+		);
+	add_sub_cella11 : cyclone_lcell
+		WITH (
+			cin_used = "true",
+			lut_mask = "96E8",
+			operation_mode = "arithmetic",
+			sum_lutc_input = "cin"
+		);
+	add_sub_cella12 : cyclone_lcell
+		WITH (
+			cin_used = "true",
+			lut_mask = "96E8",
+			operation_mode = "arithmetic",
+			sum_lutc_input = "cin"
+		);
+	add_sub_cella13 : cyclone_lcell
+		WITH (
+			cin_used = "true",
+			lut_mask = "9696",
+			operation_mode = "normal",
+			sum_lutc_input = "cin"
+		);
+	strx_lcell1 : cyclone_lcell
+		WITH (
+			cin_used = "false",
+			lut_mask = "00CC",
+			operation_mode = "arithmetic"
+		);
+	const_node_clken	: NODE;
+
+BEGIN 
+	add_sub_cella[13..0].aclr = aclr;
+	add_sub_cella[13..0].cin = ( add_sub_cella[12..0].cout, strx_lcell1.cout);
+	add_sub_cella[13..0].clk = clock;
+	add_sub_cella[13..0].dataa = datab[];
+	add_sub_cella[13..0].datab = dataa[];
+	add_sub_cella[13..0].inverta = (! add_sub);
+	strx_lcell1.dataa = B"0";
+	strx_lcell1.datab = cin;
+	strx_lcell1.inverta = (! add_sub);
+	const_node_clken = clken;
+	result[] = add_sub_cella[13..0].regout;
+END;
+--VALID FILE

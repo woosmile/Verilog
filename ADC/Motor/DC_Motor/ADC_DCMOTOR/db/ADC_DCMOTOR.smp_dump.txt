@@ -1,0 +1,8 @@
+
+State Machine - |ADC_DCMOTOR|adc_1:u0|c_state
+Name c_state.s_oe_sig c_state.s_wait c_state.s_start c_state.s_idle c_state.s_capture 
+c_state.s_idle 0 0 0 0 0 
+c_state.s_start 0 0 1 1 0 
+c_state.s_wait 0 1 0 1 0 
+c_state.s_oe_sig 1 0 0 1 0 
+c_state.s_capture 0 0 0 1 1 

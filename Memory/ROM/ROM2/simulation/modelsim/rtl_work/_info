@@ -1,0 +1,39 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\user\Desktop\ROM2\simulation\modelsim
+vROM2
+I_@e[]0Ydh0YXlDEX9f<lz2
+ViC0B7iWG6Wh_dWijC6f3J2
+Z1 dC:\Users\user\Desktop\ROM2\simulation\modelsim
+w1461031268
+8C:/Users/user/Desktop/ROM2/ROM2.v
+FC:/Users/user/Desktop/ROM2/ROM2.v
+L0 19
+Z2 OV;L;6.6d;45
+r1
+31
+Z3 o-vlog01compat -work work -O0
+n@r@o@m2
+!s100 K_IH5IcF;PO3K;RPj4j?U2
+!s85 0
+!s101 -O0
+Z4 !s92 -vlog01compat -work work +incdir+C:/Users/user/Desktop/ROM2 -O0
+vtb_ROM2
+!s100 X9_L6@ME>eoQHl6bA_n`Y1
+IM0A=OGk_2UJiSkWV0TiL`0
+V?R?_@1@zXkQHFmOfZfX`C3
+R1
+w1461031269
+8C:/Users/user/Desktop/ROM2/tb_ROM2.v
+FC:/Users/user/Desktop/ROM2/tb_ROM2.v
+L0 32
+R2
+r1
+!s85 0
+31
+!s101 -O0
+R3
+R4
+ntb_@r@o@m2

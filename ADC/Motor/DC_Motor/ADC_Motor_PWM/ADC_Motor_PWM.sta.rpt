@@ -1,0 +1,950 @@
+TimeQuest Timing Analyzer report for ADC_Motor_PWM
+Tue Jul 05 10:35:20 2016
+Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk'
+ 12. Setup: 'adc_1:u0|c_state.s_start'
+ 13. Setup: 'adc_1:u0|c_state.s_capture'
+ 14. Hold: 'adc_1:u0|c_state.s_capture'
+ 15. Hold: 'clk'
+ 16. Hold: 'adc_1:u0|c_state.s_start'
+ 17. Minimum Pulse Width: 'clk'
+ 18. Minimum Pulse Width: 'adc_1:u0|c_state.s_capture'
+ 19. Minimum Pulse Width: 'adc_1:u0|c_state.s_start'
+ 20. Setup Times
+ 21. Hold Times
+ 22. Clock to Output Times
+ 23. Minimum Clock to Output Times
+ 24. Propagation Delay
+ 25. Minimum Propagation Delay
+ 26. Setup Transfers
+ 27. Hold Transfers
+ 28. Report TCCS
+ 29. Report RSKM
+ 30. Unconstrained Paths
+ 31. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                    ;
++--------------------+-----------------------------------------------------------------+
+; Quartus II Version ; Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; ADC_Motor_PWM                                                   ;
+; Device Family      ; Cyclone                                                         ;
+; Device Name        ; EP1C6Q240C8                                                     ;
+; Timing Models      ; Final                                                           ;
+; Delay Model        ; Slow Model                                                      ;
+; Rise/Fall Delays   ; Unavailable                                                     ;
++--------------------+-----------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                 ;
++----------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------+
+; Clock Name                 ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                        ;
++----------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------+
+; adc_1:u0|c_state.s_capture ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { adc_1:u0|c_state.s_capture } ;
+; adc_1:u0|c_state.s_start   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { adc_1:u0|c_state.s_start }   ;
+; clk                        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                        ;
++----------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------+
+
+
++--------------------------------------------------+
+; Fmax Summary                                     ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 129.03 MHz ; 129.03 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------------------------+
+; Setup Summary                                       ;
++----------------------------+--------+---------------+
+; Clock                      ; Slack  ; End Point TNS ;
++----------------------------+--------+---------------+
+; clk                        ; -6.750 ; -404.439      ;
+; adc_1:u0|c_state.s_start   ; -4.766 ; -4.766        ;
+; adc_1:u0|c_state.s_capture ; 0.304  ; 0.000         ;
++----------------------------+--------+---------------+
+
+
++-----------------------------------------------------+
+; Hold Summary                                        ;
++----------------------------+--------+---------------+
+; Clock                      ; Slack  ; End Point TNS ;
++----------------------------+--------+---------------+
+; adc_1:u0|c_state.s_capture ; -5.155 ; -9.233        ;
+; clk                        ; -1.380 ; -10.761       ;
+; adc_1:u0|c_state.s_start   ; 0.279  ; 0.000         ;
++----------------------------+--------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++-----------------------------------------------------+
+; Minimum Pulse Width Summary                         ;
++----------------------------+--------+---------------+
+; Clock                      ; Slack  ; End Point TNS ;
++----------------------------+--------+---------------+
+; clk                        ; -1.583 ; -265.183      ;
+; adc_1:u0|c_state.s_capture ; 0.500  ; 0.000         ;
+; adc_1:u0|c_state.s_start   ; 0.500  ; 0.000         ;
++----------------------------+--------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                              ;
++--------+---------------------+----------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node           ; To Node              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------+----------------------+--------------+-------------+--------------+------------+------------+
+; -6.750 ; Motor_PWM:u2|cnt[6] ; Motor_PWM:u2|cnt[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.713      ;
+; -6.750 ; Motor_PWM:u2|cnt[6] ; Motor_PWM:u2|cnt[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.713      ;
+; -6.750 ; Motor_PWM:u2|cnt[6] ; Motor_PWM:u2|cnt[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.713      ;
+; -6.750 ; Motor_PWM:u2|cnt[6] ; Motor_PWM:u2|cnt[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.713      ;
+; -6.750 ; Motor_PWM:u2|cnt[6] ; Motor_PWM:u2|cnt[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.713      ;
+; -6.750 ; Motor_PWM:u2|cnt[6] ; Motor_PWM:u2|cnt[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.713      ;
+; -6.750 ; Motor_PWM:u2|cnt[6] ; Motor_PWM:u2|cnt[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.713      ;
+; -6.750 ; Motor_PWM:u2|cnt[6] ; Motor_PWM:u2|cnt[16] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.713      ;
+; -6.750 ; Motor_PWM:u2|cnt[6] ; Motor_PWM:u2|cnt[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.713      ;
+; -6.750 ; Motor_PWM:u2|cnt[6] ; Motor_PWM:u2|cnt[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.713      ;
+; -6.728 ; Motor_PWM:u2|cnt[6] ; Motor_PWM:u2|cnt[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.691      ;
+; -6.728 ; Motor_PWM:u2|cnt[6] ; Motor_PWM:u2|cnt[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.691      ;
+; -6.728 ; Motor_PWM:u2|cnt[6] ; Motor_PWM:u2|cnt[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.691      ;
+; -6.728 ; Motor_PWM:u2|cnt[6] ; Motor_PWM:u2|cnt[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.691      ;
+; -6.728 ; Motor_PWM:u2|cnt[6] ; Motor_PWM:u2|cnt[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.691      ;
+; -6.728 ; Motor_PWM:u2|cnt[6] ; Motor_PWM:u2|cnt[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.691      ;
+; -6.725 ; Motor_PWM:u2|cnt[6] ; Motor_PWM:u2|cnt[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.688      ;
+; -6.725 ; Motor_PWM:u2|cnt[6] ; Motor_PWM:u2|cnt[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.688      ;
+; -6.725 ; Motor_PWM:u2|cnt[6] ; Motor_PWM:u2|cnt[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.688      ;
+; -6.725 ; Motor_PWM:u2|cnt[6] ; Motor_PWM:u2|cnt[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.688      ;
+; -6.725 ; Motor_PWM:u2|cnt[6] ; Motor_PWM:u2|cnt[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.688      ;
+; -6.725 ; Motor_PWM:u2|cnt[6] ; Motor_PWM:u2|cnt[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.688      ;
+; -6.725 ; Motor_PWM:u2|cnt[6] ; Motor_PWM:u2|cnt[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.688      ;
+; -6.725 ; Motor_PWM:u2|cnt[6] ; Motor_PWM:u2|cnt[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.688      ;
+; -6.725 ; Motor_PWM:u2|cnt[6] ; Motor_PWM:u2|cnt[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.688      ;
+; -6.725 ; Motor_PWM:u2|cnt[6] ; Motor_PWM:u2|cnt[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.688      ;
+; -6.596 ; Motor_PWM:u2|cnt[3] ; Motor_PWM:u2|cnt[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.559      ;
+; -6.596 ; Motor_PWM:u2|cnt[3] ; Motor_PWM:u2|cnt[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.559      ;
+; -6.596 ; Motor_PWM:u2|cnt[3] ; Motor_PWM:u2|cnt[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.559      ;
+; -6.596 ; Motor_PWM:u2|cnt[3] ; Motor_PWM:u2|cnt[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.559      ;
+; -6.596 ; Motor_PWM:u2|cnt[3] ; Motor_PWM:u2|cnt[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.559      ;
+; -6.596 ; Motor_PWM:u2|cnt[3] ; Motor_PWM:u2|cnt[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.559      ;
+; -6.596 ; Motor_PWM:u2|cnt[3] ; Motor_PWM:u2|cnt[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.559      ;
+; -6.596 ; Motor_PWM:u2|cnt[3] ; Motor_PWM:u2|cnt[16] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.559      ;
+; -6.596 ; Motor_PWM:u2|cnt[3] ; Motor_PWM:u2|cnt[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.559      ;
+; -6.596 ; Motor_PWM:u2|cnt[3] ; Motor_PWM:u2|cnt[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.559      ;
+; -6.574 ; Motor_PWM:u2|cnt[3] ; Motor_PWM:u2|cnt[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.537      ;
+; -6.574 ; Motor_PWM:u2|cnt[3] ; Motor_PWM:u2|cnt[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.537      ;
+; -6.574 ; Motor_PWM:u2|cnt[3] ; Motor_PWM:u2|cnt[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.537      ;
+; -6.574 ; Motor_PWM:u2|cnt[3] ; Motor_PWM:u2|cnt[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.537      ;
+; -6.574 ; Motor_PWM:u2|cnt[3] ; Motor_PWM:u2|cnt[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.537      ;
+; -6.574 ; Motor_PWM:u2|cnt[3] ; Motor_PWM:u2|cnt[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.537      ;
+; -6.571 ; Motor_PWM:u2|cnt[3] ; Motor_PWM:u2|cnt[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.534      ;
+; -6.571 ; Motor_PWM:u2|cnt[3] ; Motor_PWM:u2|cnt[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.534      ;
+; -6.571 ; Motor_PWM:u2|cnt[3] ; Motor_PWM:u2|cnt[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.534      ;
+; -6.571 ; Motor_PWM:u2|cnt[3] ; Motor_PWM:u2|cnt[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.534      ;
+; -6.571 ; Motor_PWM:u2|cnt[3] ; Motor_PWM:u2|cnt[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.534      ;
+; -6.571 ; Motor_PWM:u2|cnt[3] ; Motor_PWM:u2|cnt[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.534      ;
+; -6.571 ; Motor_PWM:u2|cnt[3] ; Motor_PWM:u2|cnt[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.534      ;
+; -6.571 ; Motor_PWM:u2|cnt[3] ; Motor_PWM:u2|cnt[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.534      ;
+; -6.571 ; Motor_PWM:u2|cnt[3] ; Motor_PWM:u2|cnt[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.534      ;
+; -6.571 ; Motor_PWM:u2|cnt[3] ; Motor_PWM:u2|cnt[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.534      ;
+; -6.417 ; Motor_PWM:u2|cnt[1] ; Motor_PWM:u2|cnt[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.380      ;
+; -6.417 ; Motor_PWM:u2|cnt[1] ; Motor_PWM:u2|cnt[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.380      ;
+; -6.417 ; Motor_PWM:u2|cnt[1] ; Motor_PWM:u2|cnt[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.380      ;
+; -6.417 ; Motor_PWM:u2|cnt[1] ; Motor_PWM:u2|cnt[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.380      ;
+; -6.417 ; Motor_PWM:u2|cnt[1] ; Motor_PWM:u2|cnt[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.380      ;
+; -6.417 ; Motor_PWM:u2|cnt[1] ; Motor_PWM:u2|cnt[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.380      ;
+; -6.417 ; Motor_PWM:u2|cnt[1] ; Motor_PWM:u2|cnt[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.380      ;
+; -6.417 ; Motor_PWM:u2|cnt[1] ; Motor_PWM:u2|cnt[16] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.380      ;
+; -6.417 ; Motor_PWM:u2|cnt[1] ; Motor_PWM:u2|cnt[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.380      ;
+; -6.417 ; Motor_PWM:u2|cnt[1] ; Motor_PWM:u2|cnt[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.380      ;
+; -6.395 ; Motor_PWM:u2|cnt[1] ; Motor_PWM:u2|cnt[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.358      ;
+; -6.395 ; Motor_PWM:u2|cnt[1] ; Motor_PWM:u2|cnt[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.358      ;
+; -6.395 ; Motor_PWM:u2|cnt[1] ; Motor_PWM:u2|cnt[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.358      ;
+; -6.395 ; Motor_PWM:u2|cnt[1] ; Motor_PWM:u2|cnt[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.358      ;
+; -6.395 ; Motor_PWM:u2|cnt[1] ; Motor_PWM:u2|cnt[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.358      ;
+; -6.395 ; Motor_PWM:u2|cnt[1] ; Motor_PWM:u2|cnt[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.358      ;
+; -6.392 ; Motor_PWM:u2|cnt[1] ; Motor_PWM:u2|cnt[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.355      ;
+; -6.392 ; Motor_PWM:u2|cnt[1] ; Motor_PWM:u2|cnt[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.355      ;
+; -6.392 ; Motor_PWM:u2|cnt[1] ; Motor_PWM:u2|cnt[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.355      ;
+; -6.392 ; Motor_PWM:u2|cnt[1] ; Motor_PWM:u2|cnt[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.355      ;
+; -6.392 ; Motor_PWM:u2|cnt[1] ; Motor_PWM:u2|cnt[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.355      ;
+; -6.392 ; Motor_PWM:u2|cnt[1] ; Motor_PWM:u2|cnt[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.355      ;
+; -6.392 ; Motor_PWM:u2|cnt[1] ; Motor_PWM:u2|cnt[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.355      ;
+; -6.392 ; Motor_PWM:u2|cnt[1] ; Motor_PWM:u2|cnt[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.355      ;
+; -6.392 ; Motor_PWM:u2|cnt[1] ; Motor_PWM:u2|cnt[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.355      ;
+; -6.392 ; Motor_PWM:u2|cnt[1] ; Motor_PWM:u2|cnt[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.355      ;
+; -6.320 ; Motor_PWM:u2|cnt[5] ; Motor_PWM:u2|cnt[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.283      ;
+; -6.320 ; Motor_PWM:u2|cnt[5] ; Motor_PWM:u2|cnt[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.283      ;
+; -6.320 ; Motor_PWM:u2|cnt[5] ; Motor_PWM:u2|cnt[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.283      ;
+; -6.320 ; Motor_PWM:u2|cnt[5] ; Motor_PWM:u2|cnt[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.283      ;
+; -6.320 ; Motor_PWM:u2|cnt[5] ; Motor_PWM:u2|cnt[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.283      ;
+; -6.320 ; Motor_PWM:u2|cnt[5] ; Motor_PWM:u2|cnt[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.283      ;
+; -6.320 ; Motor_PWM:u2|cnt[5] ; Motor_PWM:u2|cnt[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.283      ;
+; -6.320 ; Motor_PWM:u2|cnt[5] ; Motor_PWM:u2|cnt[16] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.283      ;
+; -6.320 ; Motor_PWM:u2|cnt[5] ; Motor_PWM:u2|cnt[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.283      ;
+; -6.320 ; Motor_PWM:u2|cnt[5] ; Motor_PWM:u2|cnt[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.283      ;
+; -6.316 ; Motor_PWM:u2|cnt[0] ; Motor_PWM:u2|cnt[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.279      ;
+; -6.316 ; Motor_PWM:u2|cnt[0] ; Motor_PWM:u2|cnt[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.279      ;
+; -6.316 ; Motor_PWM:u2|cnt[0] ; Motor_PWM:u2|cnt[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.279      ;
+; -6.316 ; Motor_PWM:u2|cnt[0] ; Motor_PWM:u2|cnt[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.279      ;
+; -6.316 ; Motor_PWM:u2|cnt[0] ; Motor_PWM:u2|cnt[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.279      ;
+; -6.316 ; Motor_PWM:u2|cnt[0] ; Motor_PWM:u2|cnt[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.279      ;
+; -6.316 ; Motor_PWM:u2|cnt[0] ; Motor_PWM:u2|cnt[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.279      ;
+; -6.316 ; Motor_PWM:u2|cnt[0] ; Motor_PWM:u2|cnt[16] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.279      ;
+; -6.316 ; Motor_PWM:u2|cnt[0] ; Motor_PWM:u2|cnt[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.279      ;
+; -6.316 ; Motor_PWM:u2|cnt[0] ; Motor_PWM:u2|cnt[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.279      ;
+; -6.298 ; Motor_PWM:u2|cnt[5] ; Motor_PWM:u2|cnt[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.261      ;
+; -6.298 ; Motor_PWM:u2|cnt[5] ; Motor_PWM:u2|cnt[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.261      ;
++--------+---------------------+----------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'adc_1:u0|c_state.s_start'                                                                                                                      ;
++--------+----------------------------+-----------------+----------------------------+--------------------------+--------------+------------+------------+
+; Slack  ; From Node                  ; To Node         ; Launch Clock               ; Latch Clock              ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------+-----------------+----------------------------+--------------------------+--------------+------------+------------+
+; -4.766 ; adc_1:u0|adc_delay[6]      ; adc_1:u0|out_en ; clk                        ; adc_1:u0|c_state.s_start ; 1.000        ; -1.940     ; 2.634      ;
+; -4.582 ; adc_1:u0|adc_delay[7]      ; adc_1:u0|out_en ; clk                        ; adc_1:u0|c_state.s_start ; 1.000        ; -1.940     ; 2.450      ;
+; -4.578 ; adc_1:u0|c_state.s_oe_sig  ; adc_1:u0|out_en ; clk                        ; adc_1:u0|c_state.s_start ; 1.000        ; -1.957     ; 2.429      ;
+; -4.474 ; adc_1:u0|adc_delay[5]      ; adc_1:u0|out_en ; clk                        ; adc_1:u0|c_state.s_start ; 1.000        ; -1.940     ; 2.342      ;
+; -4.298 ; adc_1:u0|adc_delay[4]      ; adc_1:u0|out_en ; clk                        ; adc_1:u0|c_state.s_start ; 1.000        ; -1.940     ; 2.166      ;
+; -4.148 ; adc_1:u0|adc_delay[2]      ; adc_1:u0|out_en ; clk                        ; adc_1:u0|c_state.s_start ; 1.000        ; -1.940     ; 2.016      ;
+; -4.032 ; adc_1:u0|adc_delay[3]      ; adc_1:u0|out_en ; clk                        ; adc_1:u0|c_state.s_start ; 1.000        ; -1.940     ; 1.900      ;
+; -3.814 ; adc_1:u0|adc_delay[1]      ; adc_1:u0|out_en ; clk                        ; adc_1:u0|c_state.s_start ; 1.000        ; -1.940     ; 1.682      ;
+; -0.971 ; adc_1:u0|c_state.s_capture ; adc_1:u0|out_en ; adc_1:u0|c_state.s_capture ; adc_1:u0|c_state.s_start ; 0.500        ; 0.985      ; 1.488      ;
+; -0.471 ; adc_1:u0|c_state.s_capture ; adc_1:u0|out_en ; adc_1:u0|c_state.s_capture ; adc_1:u0|c_state.s_start ; 1.000        ; 0.985      ; 1.488      ;
++--------+----------------------------+-----------------+----------------------------+--------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'adc_1:u0|c_state.s_capture'                                                                                                                ;
++-------+--------------------------+----------------+--------------------------+----------------------------+--------------+------------+------------+
+; Slack ; From Node                ; To Node        ; Launch Clock             ; Latch Clock                ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------+----------------+--------------------------+----------------------------+--------------+------------+------------+
+; 0.304 ; adc_1:u0|adc_delay[1]    ; adc_1:u0|ale   ; clk                      ; adc_1:u0|c_state.s_capture ; 1.000        ; 4.223      ; 3.763      ;
+; 0.361 ; adc_1:u0|adc_delay[6]    ; adc_1:u0|start ; clk                      ; adc_1:u0|c_state.s_capture ; 1.000        ; 4.240      ; 3.749      ;
+; 0.415 ; adc_1:u0|adc_delay[6]    ; adc_1:u0|ale   ; clk                      ; adc_1:u0|c_state.s_capture ; 1.000        ; 4.223      ; 3.652      ;
+; 0.500 ; adc_1:u0|adc_delay[0]    ; adc_1:u0|ale   ; clk                      ; adc_1:u0|c_state.s_capture ; 1.000        ; 4.223      ; 3.567      ;
+; 0.545 ; adc_1:u0|adc_delay[7]    ; adc_1:u0|start ; clk                      ; adc_1:u0|c_state.s_capture ; 1.000        ; 4.240      ; 3.565      ;
+; 0.599 ; adc_1:u0|adc_delay[7]    ; adc_1:u0|ale   ; clk                      ; adc_1:u0|c_state.s_capture ; 1.000        ; 4.223      ; 3.468      ;
+; 0.653 ; adc_1:u0|adc_delay[5]    ; adc_1:u0|start ; clk                      ; adc_1:u0|c_state.s_capture ; 1.000        ; 4.240      ; 3.457      ;
+; 0.707 ; adc_1:u0|adc_delay[5]    ; adc_1:u0|ale   ; clk                      ; adc_1:u0|c_state.s_capture ; 1.000        ; 4.223      ; 3.360      ;
+; 0.829 ; adc_1:u0|adc_delay[4]    ; adc_1:u0|start ; clk                      ; adc_1:u0|c_state.s_capture ; 1.000        ; 4.240      ; 3.281      ;
+; 0.864 ; adc_1:u0|adc_delay[0]    ; adc_1:u0|start ; clk                      ; adc_1:u0|c_state.s_capture ; 1.000        ; 4.240      ; 3.246      ;
+; 0.883 ; adc_1:u0|adc_delay[4]    ; adc_1:u0|ale   ; clk                      ; adc_1:u0|c_state.s_capture ; 1.000        ; 4.223      ; 3.184      ;
+; 0.991 ; adc_1:u0|adc_delay[2]    ; adc_1:u0|start ; clk                      ; adc_1:u0|c_state.s_capture ; 1.000        ; 4.240      ; 3.119      ;
+; 1.190 ; adc_1:u0|adc_delay[1]    ; adc_1:u0|start ; clk                      ; adc_1:u0|c_state.s_capture ; 1.000        ; 4.240      ; 2.920      ;
+; 1.605 ; adc_1:u0|adc_delay[3]    ; adc_1:u0|start ; clk                      ; adc_1:u0|c_state.s_capture ; 1.000        ; 4.240      ; 2.505      ;
+; 1.994 ; adc_1:u0|adc_delay[3]    ; adc_1:u0|ale   ; clk                      ; adc_1:u0|c_state.s_capture ; 1.000        ; 4.223      ; 2.073      ;
+; 2.352 ; adc_1:u0|adc_delay[2]    ; adc_1:u0|ale   ; clk                      ; adc_1:u0|c_state.s_capture ; 1.000        ; 4.223      ; 1.715      ;
+; 3.448 ; adc_1:u0|c_state.s_start ; adc_1:u0|start ; adc_1:u0|c_state.s_start ; adc_1:u0|c_state.s_capture ; 0.500        ; 7.165      ; 3.311      ;
+; 3.948 ; adc_1:u0|c_state.s_start ; adc_1:u0|start ; adc_1:u0|c_state.s_start ; adc_1:u0|c_state.s_capture ; 1.000        ; 7.165      ; 3.311      ;
+; 4.499 ; adc_1:u0|c_state.s_start ; adc_1:u0|ale   ; adc_1:u0|c_state.s_start ; adc_1:u0|c_state.s_capture ; 0.500        ; 7.148      ; 2.217      ;
+; 4.999 ; adc_1:u0|c_state.s_start ; adc_1:u0|ale   ; adc_1:u0|c_state.s_start ; adc_1:u0|c_state.s_capture ; 1.000        ; 7.148      ; 2.217      ;
++-------+--------------------------+----------------+--------------------------+----------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'adc_1:u0|c_state.s_capture'                                                                                                                  ;
++--------+--------------------------+----------------+--------------------------+----------------------------+--------------+------------+------------+
+; Slack  ; From Node                ; To Node        ; Launch Clock             ; Latch Clock                ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------+----------------+--------------------------+----------------------------+--------------+------------+------------+
+; -5.155 ; adc_1:u0|c_state.s_start ; adc_1:u0|ale   ; adc_1:u0|c_state.s_start ; adc_1:u0|c_state.s_capture ; 0.000        ; 7.148      ; 2.217      ;
+; -4.655 ; adc_1:u0|c_state.s_start ; adc_1:u0|ale   ; adc_1:u0|c_state.s_start ; adc_1:u0|c_state.s_capture ; -0.500       ; 7.148      ; 2.217      ;
+; -4.078 ; adc_1:u0|c_state.s_start ; adc_1:u0|start ; adc_1:u0|c_state.s_start ; adc_1:u0|c_state.s_capture ; 0.000        ; 7.165      ; 3.311      ;
+; -3.578 ; adc_1:u0|c_state.s_start ; adc_1:u0|start ; adc_1:u0|c_state.s_start ; adc_1:u0|c_state.s_capture ; -0.500       ; 7.165      ; 3.311      ;
+; -2.508 ; adc_1:u0|adc_delay[2]    ; adc_1:u0|ale   ; clk                      ; adc_1:u0|c_state.s_capture ; 0.000        ; 4.223      ; 1.715      ;
+; -2.150 ; adc_1:u0|adc_delay[3]    ; adc_1:u0|ale   ; clk                      ; adc_1:u0|c_state.s_capture ; 0.000        ; 4.223      ; 2.073      ;
+; -1.735 ; adc_1:u0|adc_delay[3]    ; adc_1:u0|start ; clk                      ; adc_1:u0|c_state.s_capture ; 0.000        ; 4.240      ; 2.505      ;
+; -1.320 ; adc_1:u0|adc_delay[1]    ; adc_1:u0|start ; clk                      ; adc_1:u0|c_state.s_capture ; 0.000        ; 4.240      ; 2.920      ;
+; -1.121 ; adc_1:u0|adc_delay[2]    ; adc_1:u0|start ; clk                      ; adc_1:u0|c_state.s_capture ; 0.000        ; 4.240      ; 3.119      ;
+; -1.039 ; adc_1:u0|adc_delay[4]    ; adc_1:u0|ale   ; clk                      ; adc_1:u0|c_state.s_capture ; 0.000        ; 4.223      ; 3.184      ;
+; -0.994 ; adc_1:u0|adc_delay[0]    ; adc_1:u0|start ; clk                      ; adc_1:u0|c_state.s_capture ; 0.000        ; 4.240      ; 3.246      ;
+; -0.959 ; adc_1:u0|adc_delay[4]    ; adc_1:u0|start ; clk                      ; adc_1:u0|c_state.s_capture ; 0.000        ; 4.240      ; 3.281      ;
+; -0.863 ; adc_1:u0|adc_delay[5]    ; adc_1:u0|ale   ; clk                      ; adc_1:u0|c_state.s_capture ; 0.000        ; 4.223      ; 3.360      ;
+; -0.783 ; adc_1:u0|adc_delay[5]    ; adc_1:u0|start ; clk                      ; adc_1:u0|c_state.s_capture ; 0.000        ; 4.240      ; 3.457      ;
+; -0.755 ; adc_1:u0|adc_delay[7]    ; adc_1:u0|ale   ; clk                      ; adc_1:u0|c_state.s_capture ; 0.000        ; 4.223      ; 3.468      ;
+; -0.675 ; adc_1:u0|adc_delay[7]    ; adc_1:u0|start ; clk                      ; adc_1:u0|c_state.s_capture ; 0.000        ; 4.240      ; 3.565      ;
+; -0.656 ; adc_1:u0|adc_delay[0]    ; adc_1:u0|ale   ; clk                      ; adc_1:u0|c_state.s_capture ; 0.000        ; 4.223      ; 3.567      ;
+; -0.571 ; adc_1:u0|adc_delay[6]    ; adc_1:u0|ale   ; clk                      ; adc_1:u0|c_state.s_capture ; 0.000        ; 4.223      ; 3.652      ;
+; -0.491 ; adc_1:u0|adc_delay[6]    ; adc_1:u0|start ; clk                      ; adc_1:u0|c_state.s_capture ; 0.000        ; 4.240      ; 3.749      ;
+; -0.460 ; adc_1:u0|adc_delay[1]    ; adc_1:u0|ale   ; clk                      ; adc_1:u0|c_state.s_capture ; 0.000        ; 4.223      ; 3.763      ;
++--------+--------------------------+----------------+--------------------------+----------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                                            ;
++--------+-----------------------------+-----------------------------+----------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                   ; To Node                     ; Launch Clock               ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------+-----------------------------+----------------------------+-------------+--------------+------------+------------+
+; -1.380 ; adc_1:u0|c_state.s_start    ; adc_1:u0|c_state.s_start    ; adc_1:u0|c_state.s_start   ; clk         ; 0.000        ; 2.925      ; 1.784      ;
+; -1.114 ; adc_1:u0|c_state.s_start    ; adc_1:u0|c_state.s_idle     ; adc_1:u0|c_state.s_start   ; clk         ; 0.000        ; 2.942      ; 2.067      ;
+; -1.114 ; adc_1:u0|c_state.s_start    ; adc_1:u0|c_state.s_wait     ; adc_1:u0|c_state.s_start   ; clk         ; 0.000        ; 2.942      ; 2.067      ;
+; -0.880 ; adc_1:u0|c_state.s_start    ; adc_1:u0|c_state.s_start    ; adc_1:u0|c_state.s_start   ; clk         ; -0.500       ; 2.925      ; 1.784      ;
+; -0.840 ; adc_1:u0|c_state.s_capture  ; adc_1:u0|c_state.s_idle     ; adc_1:u0|c_state.s_capture ; clk         ; 0.000        ; 2.942      ; 2.341      ;
+; -0.667 ; adc_1:u0|c_state.s_capture  ; adc_1:u0|led[2]             ; adc_1:u0|c_state.s_capture ; clk         ; 0.000        ; 2.942      ; 2.514      ;
+; -0.667 ; adc_1:u0|c_state.s_capture  ; adc_1:u0|led[3]             ; adc_1:u0|c_state.s_capture ; clk         ; 0.000        ; 2.942      ; 2.514      ;
+; -0.667 ; adc_1:u0|c_state.s_capture  ; adc_1:u0|led[4]             ; adc_1:u0|c_state.s_capture ; clk         ; 0.000        ; 2.942      ; 2.514      ;
+; -0.667 ; adc_1:u0|c_state.s_capture  ; adc_1:u0|led[5]             ; adc_1:u0|c_state.s_capture ; clk         ; 0.000        ; 2.942      ; 2.514      ;
+; -0.667 ; adc_1:u0|c_state.s_capture  ; adc_1:u0|led[6]             ; adc_1:u0|c_state.s_capture ; clk         ; 0.000        ; 2.942      ; 2.514      ;
+; -0.614 ; adc_1:u0|c_state.s_start    ; adc_1:u0|c_state.s_idle     ; adc_1:u0|c_state.s_start   ; clk         ; -0.500       ; 2.942      ; 2.067      ;
+; -0.614 ; adc_1:u0|c_state.s_start    ; adc_1:u0|c_state.s_wait     ; adc_1:u0|c_state.s_start   ; clk         ; -0.500       ; 2.942      ; 2.067      ;
+; -0.398 ; adc_1:u0|c_state.s_start    ; adc_1:u0|adc_delay[4]       ; adc_1:u0|c_state.s_start   ; clk         ; 0.000        ; 2.925      ; 2.766      ;
+; -0.398 ; adc_1:u0|c_state.s_start    ; adc_1:u0|adc_delay[5]       ; adc_1:u0|c_state.s_start   ; clk         ; 0.000        ; 2.925      ; 2.766      ;
+; -0.398 ; adc_1:u0|c_state.s_start    ; adc_1:u0|adc_delay[6]       ; adc_1:u0|c_state.s_start   ; clk         ; 0.000        ; 2.925      ; 2.766      ;
+; -0.398 ; adc_1:u0|c_state.s_start    ; adc_1:u0|adc_delay[7]       ; adc_1:u0|c_state.s_start   ; clk         ; 0.000        ; 2.925      ; 2.766      ;
+; -0.398 ; adc_1:u0|c_state.s_start    ; adc_1:u0|adc_delay[3]       ; adc_1:u0|c_state.s_start   ; clk         ; 0.000        ; 2.925      ; 2.766      ;
+; -0.398 ; adc_1:u0|c_state.s_start    ; adc_1:u0|adc_delay[0]       ; adc_1:u0|c_state.s_start   ; clk         ; 0.000        ; 2.925      ; 2.766      ;
+; -0.398 ; adc_1:u0|c_state.s_start    ; adc_1:u0|adc_delay[1]       ; adc_1:u0|c_state.s_start   ; clk         ; 0.000        ; 2.925      ; 2.766      ;
+; -0.398 ; adc_1:u0|c_state.s_start    ; adc_1:u0|adc_delay[2]       ; adc_1:u0|c_state.s_start   ; clk         ; 0.000        ; 2.925      ; 2.766      ;
+; -0.340 ; adc_1:u0|c_state.s_capture  ; adc_1:u0|c_state.s_idle     ; adc_1:u0|c_state.s_capture ; clk         ; -0.500       ; 2.942      ; 2.341      ;
+; -0.212 ; adc_1:u0|c_state.s_capture  ; adc_1:u0|led[0]             ; adc_1:u0|c_state.s_capture ; clk         ; 0.000        ; 2.909      ; 2.936      ;
+; -0.211 ; adc_1:u0|c_state.s_capture  ; adc_1:u0|led[1]             ; adc_1:u0|c_state.s_capture ; clk         ; 0.000        ; 2.909      ; 2.937      ;
+; -0.211 ; adc_1:u0|c_state.s_capture  ; adc_1:u0|led[7]             ; adc_1:u0|c_state.s_capture ; clk         ; 0.000        ; 2.909      ; 2.937      ;
+; -0.167 ; adc_1:u0|c_state.s_capture  ; adc_1:u0|led[2]             ; adc_1:u0|c_state.s_capture ; clk         ; -0.500       ; 2.942      ; 2.514      ;
+; -0.167 ; adc_1:u0|c_state.s_capture  ; adc_1:u0|led[3]             ; adc_1:u0|c_state.s_capture ; clk         ; -0.500       ; 2.942      ; 2.514      ;
+; -0.167 ; adc_1:u0|c_state.s_capture  ; adc_1:u0|led[4]             ; adc_1:u0|c_state.s_capture ; clk         ; -0.500       ; 2.942      ; 2.514      ;
+; -0.167 ; adc_1:u0|c_state.s_capture  ; adc_1:u0|led[5]             ; adc_1:u0|c_state.s_capture ; clk         ; -0.500       ; 2.942      ; 2.514      ;
+; -0.167 ; adc_1:u0|c_state.s_capture  ; adc_1:u0|led[6]             ; adc_1:u0|c_state.s_capture ; clk         ; -0.500       ; 2.942      ; 2.514      ;
+; 0.102  ; adc_1:u0|c_state.s_start    ; adc_1:u0|adc_delay[4]       ; adc_1:u0|c_state.s_start   ; clk         ; -0.500       ; 2.925      ; 2.766      ;
+; 0.102  ; adc_1:u0|c_state.s_start    ; adc_1:u0|adc_delay[5]       ; adc_1:u0|c_state.s_start   ; clk         ; -0.500       ; 2.925      ; 2.766      ;
+; 0.102  ; adc_1:u0|c_state.s_start    ; adc_1:u0|adc_delay[6]       ; adc_1:u0|c_state.s_start   ; clk         ; -0.500       ; 2.925      ; 2.766      ;
+; 0.102  ; adc_1:u0|c_state.s_start    ; adc_1:u0|adc_delay[7]       ; adc_1:u0|c_state.s_start   ; clk         ; -0.500       ; 2.925      ; 2.766      ;
+; 0.102  ; adc_1:u0|c_state.s_start    ; adc_1:u0|adc_delay[3]       ; adc_1:u0|c_state.s_start   ; clk         ; -0.500       ; 2.925      ; 2.766      ;
+; 0.102  ; adc_1:u0|c_state.s_start    ; adc_1:u0|adc_delay[0]       ; adc_1:u0|c_state.s_start   ; clk         ; -0.500       ; 2.925      ; 2.766      ;
+; 0.102  ; adc_1:u0|c_state.s_start    ; adc_1:u0|adc_delay[1]       ; adc_1:u0|c_state.s_start   ; clk         ; -0.500       ; 2.925      ; 2.766      ;
+; 0.102  ; adc_1:u0|c_state.s_start    ; adc_1:u0|adc_delay[2]       ; adc_1:u0|c_state.s_start   ; clk         ; -0.500       ; 2.925      ; 2.766      ;
+; 0.288  ; adc_1:u0|c_state.s_capture  ; adc_1:u0|led[0]             ; adc_1:u0|c_state.s_capture ; clk         ; -0.500       ; 2.909      ; 2.936      ;
+; 0.289  ; adc_1:u0|c_state.s_capture  ; adc_1:u0|led[1]             ; adc_1:u0|c_state.s_capture ; clk         ; -0.500       ; 2.909      ; 2.937      ;
+; 0.289  ; adc_1:u0|c_state.s_capture  ; adc_1:u0|led[7]             ; adc_1:u0|c_state.s_capture ; clk         ; -0.500       ; 2.909      ; 2.937      ;
+; 1.045  ; adc_1:u0|c_state.s_wait     ; adc_1:u0|c_state.s_wait     ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.060      ;
+; 1.051  ; adc_1:u0|c_state.s_wait     ; adc_1:u0|c_state.s_oe_sig   ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.066      ;
+; 1.069  ; Motor_PWM:u2|cnt[31]        ; Motor_PWM:u2|cnt[31]        ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.084      ;
+; 1.223  ; adc_1:u0|adc_clk            ; adc_1:u0|adc_clk            ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.238      ;
+; 1.267  ; DSP_4bitFND:u1|digit[1]     ; DSP_4bitFND:u1|digit[1]     ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.282      ;
+; 1.321  ; adc_1:u0|adc_delay[4]       ; adc_1:u0|adc_delay[4]       ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.336      ;
+; 1.323  ; Motor_PWM:u2|cnt[10]        ; Motor_PWM:u2|cnt[10]        ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.338      ;
+; 1.323  ; Motor_PWM:u2|cnt[14]        ; Motor_PWM:u2|cnt[14]        ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.338      ;
+; 1.326  ; Motor_PWM:u2|cnt[21]        ; Motor_PWM:u2|cnt[21]        ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.341      ;
+; 1.326  ; Motor_PWM:u2|cnt[16]        ; Motor_PWM:u2|cnt[16]        ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.341      ;
+; 1.326  ; Motor_PWM:u2|cnt[11]        ; Motor_PWM:u2|cnt[11]        ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.341      ;
+; 1.326  ; Motor_PWM:u2|cnt[6]         ; Motor_PWM:u2|cnt[6]         ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.341      ;
+; 1.326  ; Motor_PWM:u2|cnt[1]         ; Motor_PWM:u2|cnt[1]         ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.341      ;
+; 1.326  ; adc_1:u0|clk_cnt[0]         ; adc_1:u0|clk_cnt[0]         ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.341      ;
+; 1.328  ; Motor_PWM:u2|cnt[24]        ; Motor_PWM:u2|cnt[24]        ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.343      ;
+; 1.328  ; Motor_PWM:u2|cnt[20]        ; Motor_PWM:u2|cnt[20]        ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.343      ;
+; 1.329  ; Motor_PWM:u2|cnt[19]        ; Motor_PWM:u2|cnt[19]        ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.344      ;
+; 1.329  ; Motor_PWM:u2|cnt[9]         ; Motor_PWM:u2|cnt[9]         ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.344      ;
+; 1.334  ; adc_1:u0|clk_cnt[4]         ; adc_1:u0|clk_cnt[4]         ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.349      ;
+; 1.335  ; Motor_PWM:u2|cnt[30]        ; Motor_PWM:u2|cnt[30]        ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.350      ;
+; 1.336  ; adc_1:u0|clk_cnt[3]         ; adc_1:u0|clk_cnt[3]         ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.351      ;
+; 1.337  ; adc_1:u0|adc_delay[5]       ; adc_1:u0|adc_delay[5]       ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.352      ;
+; 1.340  ; Motor_PWM:u2|cnt[4]         ; Motor_PWM:u2|cnt[4]         ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.355      ;
+; 1.342  ; Motor_PWM:u2|cnt[0]         ; Motor_PWM:u2|cnt[0]         ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.357      ;
+; 1.342  ; adc_1:u0|adc_delay[0]       ; adc_1:u0|adc_delay[0]       ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.357      ;
+; 1.345  ; Motor_PWM:u2|cnt[26]        ; Motor_PWM:u2|cnt[26]        ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.360      ;
+; 1.348  ; adc_1:u0|adc_delay[3]       ; adc_1:u0|adc_delay[3]       ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.363      ;
+; 1.352  ; Motor_PWM:u2|cnt[29]        ; Motor_PWM:u2|cnt[29]        ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.367      ;
+; 1.382  ; DSP_4bitFND:u1|digit[0]     ; DSP_4bitFND:u1|digit[0]     ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.397      ;
+; 1.383  ; DSP_4bitFND:u1|digit[0]     ; DSP_4bitFND:u1|digit[1]     ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.398      ;
+; 1.476  ; Motor_PWM:u2|cnt[17]        ; Motor_PWM:u2|cnt[17]        ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.491      ;
+; 1.476  ; Motor_PWM:u2|cnt[12]        ; Motor_PWM:u2|cnt[12]        ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.491      ;
+; 1.476  ; Motor_PWM:u2|cnt[7]         ; Motor_PWM:u2|cnt[7]         ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.491      ;
+; 1.476  ; Motor_PWM:u2|cnt[22]        ; Motor_PWM:u2|cnt[22]        ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.491      ;
+; 1.480  ; Motor_PWM:u2|cnt[18]        ; Motor_PWM:u2|cnt[18]        ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.495      ;
+; 1.480  ; Motor_PWM:u2|cnt[8]         ; Motor_PWM:u2|cnt[8]         ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.495      ;
+; 1.480  ; adc_1:u0|adc_delay[6]       ; adc_1:u0|adc_delay[6]       ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.495      ;
+; 1.480  ; adc_1:u0|adc_delay[7]       ; adc_1:u0|adc_delay[7]       ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.495      ;
+; 1.481  ; Motor_PWM:u2|cnt[23]        ; Motor_PWM:u2|cnt[23]        ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.496      ;
+; 1.481  ; Motor_PWM:u2|cnt[13]        ; Motor_PWM:u2|cnt[13]        ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.496      ;
+; 1.482  ; Motor_PWM:u2|cnt[25]        ; Motor_PWM:u2|cnt[25]        ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.497      ;
+; 1.482  ; Motor_PWM:u2|cnt[15]        ; Motor_PWM:u2|cnt[15]        ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.497      ;
+; 1.485  ; adc_1:u0|clk_cnt[7]         ; adc_1:u0|clk_cnt[7]         ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.500      ;
+; 1.486  ; Motor_PWM:u2|cnt[28]        ; Motor_PWM:u2|cnt[28]        ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.501      ;
+; 1.488  ; adc_1:u0|adc_delay[1]       ; adc_1:u0|adc_delay[1]       ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.503      ;
+; 1.488  ; adc_1:u0|adc_delay[2]       ; adc_1:u0|adc_delay[2]       ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.503      ;
+; 1.489  ; adc_1:u0|c_state.s_oe_sig   ; adc_1:u0|c_state.s_oe_sig   ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.504      ;
+; 1.491  ; Motor_PWM:u2|cnt[2]         ; Motor_PWM:u2|cnt[2]         ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.506      ;
+; 1.491  ; adc_1:u0|clk_cnt[2]         ; adc_1:u0|clk_cnt[2]         ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.506      ;
+; 1.492  ; Motor_PWM:u2|cnt[27]        ; Motor_PWM:u2|cnt[27]        ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.507      ;
+; 1.493  ; adc_1:u0|clk_cnt[6]         ; adc_1:u0|clk_cnt[6]         ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.508      ;
+; 1.494  ; adc_1:u0|clk_cnt[1]         ; adc_1:u0|clk_cnt[1]         ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.509      ;
+; 1.512  ; Motor_PWM:u2|cnt[5]         ; Motor_PWM:u2|cnt[5]         ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.527      ;
+; 1.871  ; DSP_4bitFND:u1|scan_cnt[0]  ; DSP_4bitFND:u1|scan_cnt[0]  ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.886      ;
+; 1.874  ; DSP_4bitFND:u1|scan_cnt[27] ; DSP_4bitFND:u1|scan_cnt[27] ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.889      ;
+; 1.921  ; Motor_PWM:u2|cnt[3]         ; Motor_PWM:u2|cnt[3]         ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.936      ;
+; 1.922  ; Motor_PWM:u2|cnt[14]        ; Motor_PWM:u2|cnt[15]        ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.937      ;
+; 1.925  ; Motor_PWM:u2|cnt[16]        ; Motor_PWM:u2|cnt[17]        ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.940      ;
+; 1.925  ; Motor_PWM:u2|cnt[11]        ; Motor_PWM:u2|cnt[12]        ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.940      ;
+; 1.925  ; Motor_PWM:u2|cnt[6]         ; Motor_PWM:u2|cnt[7]         ; clk                        ; clk         ; 0.000        ; 0.000      ; 1.940      ;
++--------+-----------------------------+-----------------------------+----------------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'adc_1:u0|c_state.s_start'                                                                                                                      ;
++-------+----------------------------+-----------------+----------------------------+--------------------------+--------------+------------+------------+
+; Slack ; From Node                  ; To Node         ; Launch Clock               ; Latch Clock              ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------+-----------------+----------------------------+--------------------------+--------------+------------+------------+
+; 0.279 ; adc_1:u0|c_state.s_capture ; adc_1:u0|out_en ; adc_1:u0|c_state.s_capture ; adc_1:u0|c_state.s_start ; 0.000        ; 0.985      ; 1.488      ;
+; 0.779 ; adc_1:u0|c_state.s_capture ; adc_1:u0|out_en ; adc_1:u0|c_state.s_capture ; adc_1:u0|c_state.s_start ; -0.500       ; 0.985      ; 1.488      ;
+; 3.622 ; adc_1:u0|adc_delay[1]      ; adc_1:u0|out_en ; clk                        ; adc_1:u0|c_state.s_start ; 0.000        ; -1.940     ; 1.682      ;
+; 3.840 ; adc_1:u0|adc_delay[3]      ; adc_1:u0|out_en ; clk                        ; adc_1:u0|c_state.s_start ; 0.000        ; -1.940     ; 1.900      ;
+; 3.956 ; adc_1:u0|adc_delay[2]      ; adc_1:u0|out_en ; clk                        ; adc_1:u0|c_state.s_start ; 0.000        ; -1.940     ; 2.016      ;
+; 4.106 ; adc_1:u0|adc_delay[4]      ; adc_1:u0|out_en ; clk                        ; adc_1:u0|c_state.s_start ; 0.000        ; -1.940     ; 2.166      ;
+; 4.282 ; adc_1:u0|adc_delay[5]      ; adc_1:u0|out_en ; clk                        ; adc_1:u0|c_state.s_start ; 0.000        ; -1.940     ; 2.342      ;
+; 4.386 ; adc_1:u0|c_state.s_oe_sig  ; adc_1:u0|out_en ; clk                        ; adc_1:u0|c_state.s_start ; 0.000        ; -1.957     ; 2.429      ;
+; 4.390 ; adc_1:u0|adc_delay[7]      ; adc_1:u0|out_en ; clk                        ; adc_1:u0|c_state.s_start ; 0.000        ; -1.940     ; 2.450      ;
+; 4.574 ; adc_1:u0|adc_delay[6]      ; adc_1:u0|out_en ; clk                        ; adc_1:u0|c_state.s_start ; 0.000        ; -1.940     ; 2.634      ;
++-------+----------------------------+-----------------+----------------------------+--------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'clk'                                                                                   ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                      ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+; -1.583 ; 1.000        ; 2.583          ; Port Rate        ; clk   ; Rise       ; clk                         ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|digit[0]     ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|digit[0]     ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|digit[1]     ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|digit[1]     ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|fnd_sel[0]   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|fnd_sel[0]   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|fnd_sel[1]   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|fnd_sel[1]   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|fnd_sel[2]   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|fnd_sel[2]   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|fnd_sel[3]   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|fnd_sel[3]   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[0]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[0]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[10] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[10] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[11] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[11] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[12] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[12] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[13] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[13] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[14] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[14] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[15] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[15] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[16] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[16] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[17] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[17] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[18] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[18] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[19] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[19] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[1]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[1]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[20] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[20] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[21] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[21] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[22] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[22] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[23] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[23] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[24] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[24] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[25] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[25] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[26] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[26] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[27] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[27] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[2]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[2]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[3]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[3]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[4]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[4]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[5]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[5]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[6]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[6]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[7]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[7]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[8]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[8]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[9]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[9]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|temp[0]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|temp[0]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|temp[1]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|temp[1]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|temp[2]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|temp[2]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|temp[3]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|temp[3]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Motor_PWM:u2|cnt[0]         ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Motor_PWM:u2|cnt[0]         ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Motor_PWM:u2|cnt[10]        ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Motor_PWM:u2|cnt[10]        ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Motor_PWM:u2|cnt[11]        ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Motor_PWM:u2|cnt[11]        ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Motor_PWM:u2|cnt[12]        ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Motor_PWM:u2|cnt[12]        ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Motor_PWM:u2|cnt[13]        ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Motor_PWM:u2|cnt[13]        ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Motor_PWM:u2|cnt[14]        ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Motor_PWM:u2|cnt[14]        ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Motor_PWM:u2|cnt[15]        ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Motor_PWM:u2|cnt[15]        ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Motor_PWM:u2|cnt[16]        ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Motor_PWM:u2|cnt[16]        ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Motor_PWM:u2|cnt[17]        ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Motor_PWM:u2|cnt[17]        ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Motor_PWM:u2|cnt[18]        ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Motor_PWM:u2|cnt[18]        ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Motor_PWM:u2|cnt[19]        ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Motor_PWM:u2|cnt[19]        ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Motor_PWM:u2|cnt[1]         ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'adc_1:u0|c_state.s_capture'                                                                                ;
++-------+--------------+----------------+------------------+----------------------------+------------+-----------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock                      ; Clock Edge ; Target                      ;
++-------+--------------+----------------+------------------+----------------------------+------------+-----------------------------+
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; adc_1:u0|c_state.s_capture ; Rise       ; adc_1:u0|ale                ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; adc_1:u0|c_state.s_capture ; Rise       ; adc_1:u0|ale                ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; adc_1:u0|c_state.s_capture ; Rise       ; adc_1:u0|start              ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; adc_1:u0|c_state.s_capture ; Rise       ; adc_1:u0|start              ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; adc_1:u0|c_state.s_capture ; Rise       ; u0|ale|datac                ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; adc_1:u0|c_state.s_capture ; Rise       ; u0|ale|datac                ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; adc_1:u0|c_state.s_capture ; Rise       ; u0|c_state.s_capture|regout ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; adc_1:u0|c_state.s_capture ; Rise       ; u0|c_state.s_capture|regout ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; adc_1:u0|c_state.s_capture ; Rise       ; u0|start|datac              ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; adc_1:u0|c_state.s_capture ; Rise       ; u0|start|datac              ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; adc_1:u0|c_state.s_capture ; Rise       ; u0|start~0|combout          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; adc_1:u0|c_state.s_capture ; Rise       ; u0|start~0|combout          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; adc_1:u0|c_state.s_capture ; Rise       ; u0|start~0|datac            ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; adc_1:u0|c_state.s_capture ; Rise       ; u0|start~0|datac            ;
++-------+--------------+----------------+------------------+----------------------------+------------+-----------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'adc_1:u0|c_state.s_start'                                                                              ;
++-------+--------------+----------------+------------------+--------------------------+------------+---------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock                    ; Clock Edge ; Target                    ;
++-------+--------------+----------------+------------------+--------------------------+------------+---------------------------+
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; adc_1:u0|c_state.s_start ; Rise       ; adc_1:u0|out_en           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; adc_1:u0|c_state.s_start ; Rise       ; adc_1:u0|out_en           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; adc_1:u0|c_state.s_start ; Rise       ; u0|c_state.s_start|regout ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; adc_1:u0|c_state.s_start ; Rise       ; u0|c_state.s_start|regout ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; adc_1:u0|c_state.s_start ; Rise       ; u0|out_en|datab           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; adc_1:u0|c_state.s_start ; Rise       ; u0|out_en|datab           ;
++-------+--------------+----------------+------------------+--------------------------+------------+---------------------------+
+
+
++--------------------------------------------------------------------------+
+; Setup Times                                                              ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; dip_sw[*]  ; clk        ; 49.326 ; 49.326 ; Rise       ; clk             ;
+;  dip_sw[0] ; clk        ; 49.326 ; 49.326 ; Rise       ; clk             ;
+;  dip_sw[1] ; clk        ; 49.189 ; 49.189 ; Rise       ; clk             ;
+;  dip_sw[2] ; clk        ; 48.960 ; 48.960 ; Rise       ; clk             ;
+;  dip_sw[3] ; clk        ; 48.311 ; 48.311 ; Rise       ; clk             ;
+;  dip_sw[4] ; clk        ; 48.668 ; 48.668 ; Rise       ; clk             ;
+;  dip_sw[5] ; clk        ; 48.829 ; 48.829 ; Rise       ; clk             ;
+;  dip_sw[6] ; clk        ; 48.375 ; 48.375 ; Rise       ; clk             ;
+;  dip_sw[7] ; clk        ; 47.750 ; 47.750 ; Rise       ; clk             ;
+; eoc        ; clk        ; 6.085  ; 6.085  ; Rise       ; clk             ;
+; result[*]  ; clk        ; 50.810 ; 50.810 ; Rise       ; clk             ;
+;  result[0] ; clk        ; 49.674 ; 49.674 ; Rise       ; clk             ;
+;  result[1] ; clk        ; 49.729 ; 49.729 ; Rise       ; clk             ;
+;  result[2] ; clk        ; 50.810 ; 50.810 ; Rise       ; clk             ;
+;  result[3] ; clk        ; 49.885 ; 49.885 ; Rise       ; clk             ;
+;  result[4] ; clk        ; 49.816 ; 49.816 ; Rise       ; clk             ;
+;  result[5] ; clk        ; 49.021 ; 49.021 ; Rise       ; clk             ;
+;  result[6] ; clk        ; 48.969 ; 48.969 ; Rise       ; clk             ;
+;  result[7] ; clk        ; 48.959 ; 48.959 ; Rise       ; clk             ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Hold Times                                                                 ;
++------------+------------+---------+---------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise    ; Fall    ; Clock Edge ; Clock Reference ;
++------------+------------+---------+---------+------------+-----------------+
+; dip_sw[*]  ; clk        ; -11.820 ; -11.820 ; Rise       ; clk             ;
+;  dip_sw[0] ; clk        ; -12.743 ; -12.743 ; Rise       ; clk             ;
+;  dip_sw[1] ; clk        ; -12.783 ; -12.783 ; Rise       ; clk             ;
+;  dip_sw[2] ; clk        ; -12.795 ; -12.795 ; Rise       ; clk             ;
+;  dip_sw[3] ; clk        ; -12.287 ; -12.287 ; Rise       ; clk             ;
+;  dip_sw[4] ; clk        ; -12.734 ; -12.734 ; Rise       ; clk             ;
+;  dip_sw[5] ; clk        ; -12.670 ; -12.670 ; Rise       ; clk             ;
+;  dip_sw[6] ; clk        ; -12.573 ; -12.573 ; Rise       ; clk             ;
+;  dip_sw[7] ; clk        ; -11.820 ; -11.820 ; Rise       ; clk             ;
+; eoc        ; clk        ; -5.810  ; -5.810  ; Rise       ; clk             ;
+; result[*]  ; clk        ; -5.850  ; -5.850  ; Rise       ; clk             ;
+;  result[0] ; clk        ; -6.429  ; -6.429  ; Rise       ; clk             ;
+;  result[1] ; clk        ; -6.163  ; -6.163  ; Rise       ; clk             ;
+;  result[2] ; clk        ; -6.884  ; -6.884  ; Rise       ; clk             ;
+;  result[3] ; clk        ; -6.537  ; -6.537  ; Rise       ; clk             ;
+;  result[4] ; clk        ; -6.844  ; -6.844  ; Rise       ; clk             ;
+;  result[5] ; clk        ; -6.180  ; -6.180  ; Rise       ; clk             ;
+;  result[6] ; clk        ; -6.207  ; -6.207  ; Rise       ; clk             ;
+;  result[7] ; clk        ; -5.850  ; -5.850  ; Rise       ; clk             ;
++------------+------------+---------+---------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                 ;
++--------------+----------------------------+--------+--------+------------+----------------------------+
+; Data Port    ; Clock Port                 ; Rise   ; Fall   ; Clock Edge ; Clock Reference            ;
++--------------+----------------------------+--------+--------+------------+----------------------------+
+; ale          ; adc_1:u0|c_state.s_capture ; 12.554 ; 12.554 ; Rise       ; adc_1:u0|c_state.s_capture ;
+; start        ; adc_1:u0|c_state.s_capture ; 12.071 ; 12.071 ; Rise       ; adc_1:u0|c_state.s_capture ;
+; out_en       ; adc_1:u0|c_state.s_start   ; 5.955  ; 5.955  ; Rise       ; adc_1:u0|c_state.s_start   ;
+; adc_clk      ; clk                        ; 7.804  ; 7.804  ; Rise       ; clk                        ;
+; fnd_data[*]  ; clk                        ; 9.972  ; 9.972  ; Rise       ; clk                        ;
+;  fnd_data[0] ; clk                        ; 9.972  ; 9.972  ; Rise       ; clk                        ;
+;  fnd_data[1] ; clk                        ; 9.644  ; 9.644  ; Rise       ; clk                        ;
+;  fnd_data[2] ; clk                        ; 9.647  ; 9.647  ; Rise       ; clk                        ;
+;  fnd_data[3] ; clk                        ; 9.651  ; 9.651  ; Rise       ; clk                        ;
+;  fnd_data[4] ; clk                        ; 9.654  ; 9.654  ; Rise       ; clk                        ;
+;  fnd_data[5] ; clk                        ; 9.645  ; 9.645  ; Rise       ; clk                        ;
+;  fnd_data[6] ; clk                        ; 9.970  ; 9.970  ; Rise       ; clk                        ;
+; fnd_sel[*]   ; clk                        ; 6.958  ; 6.958  ; Rise       ; clk                        ;
+;  fnd_sel[0]  ; clk                        ; 6.640  ; 6.640  ; Rise       ; clk                        ;
+;  fnd_sel[1]  ; clk                        ; 6.639  ; 6.639  ; Rise       ; clk                        ;
+;  fnd_sel[2]  ; clk                        ; 6.641  ; 6.641  ; Rise       ; clk                        ;
+;  fnd_sel[3]  ; clk                        ; 6.958  ; 6.958  ; Rise       ; clk                        ;
+; led[*]       ; clk                        ; 9.362  ; 9.362  ; Rise       ; clk                        ;
+;  led[0]      ; clk                        ; 8.566  ; 8.566  ; Rise       ; clk                        ;
+;  led[1]      ; clk                        ; 8.559  ; 8.559  ; Rise       ; clk                        ;
+;  led[2]      ; clk                        ; 9.019  ; 9.019  ; Rise       ; clk                        ;
+;  led[3]      ; clk                        ; 9.336  ; 9.336  ; Rise       ; clk                        ;
+;  led[4]      ; clk                        ; 9.043  ; 9.043  ; Rise       ; clk                        ;
+;  led[5]      ; clk                        ; 9.080  ; 9.080  ; Rise       ; clk                        ;
+;  led[6]      ; clk                        ; 9.362  ; 9.362  ; Rise       ; clk                        ;
+;  led[7]      ; clk                        ; 8.879  ; 8.879  ; Rise       ; clk                        ;
+; motor[*]     ; clk                        ; 18.175 ; 18.175 ; Rise       ; clk                        ;
+;  motor[1]    ; clk                        ; 18.175 ; 18.175 ; Rise       ; clk                        ;
++--------------+----------------------------+--------+--------+------------+----------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                         ;
++--------------+----------------------------+--------+--------+------------+----------------------------+
+; Data Port    ; Clock Port                 ; Rise   ; Fall   ; Clock Edge ; Clock Reference            ;
++--------------+----------------------------+--------+--------+------------+----------------------------+
+; ale          ; adc_1:u0|c_state.s_capture ; 12.554 ; 12.554 ; Rise       ; adc_1:u0|c_state.s_capture ;
+; start        ; adc_1:u0|c_state.s_capture ; 12.071 ; 12.071 ; Rise       ; adc_1:u0|c_state.s_capture ;
+; out_en       ; adc_1:u0|c_state.s_start   ; 5.955  ; 5.955  ; Rise       ; adc_1:u0|c_state.s_start   ;
+; adc_clk      ; clk                        ; 7.804  ; 7.804  ; Rise       ; clk                        ;
+; fnd_data[*]  ; clk                        ; 9.118  ; 9.118  ; Rise       ; clk                        ;
+;  fnd_data[0] ; clk                        ; 9.450  ; 9.450  ; Rise       ; clk                        ;
+;  fnd_data[1] ; clk                        ; 9.118  ; 9.118  ; Rise       ; clk                        ;
+;  fnd_data[2] ; clk                        ; 9.125  ; 9.125  ; Rise       ; clk                        ;
+;  fnd_data[3] ; clk                        ; 9.129  ; 9.129  ; Rise       ; clk                        ;
+;  fnd_data[4] ; clk                        ; 9.128  ; 9.128  ; Rise       ; clk                        ;
+;  fnd_data[5] ; clk                        ; 9.123  ; 9.123  ; Rise       ; clk                        ;
+;  fnd_data[6] ; clk                        ; 9.447  ; 9.447  ; Rise       ; clk                        ;
+; fnd_sel[*]   ; clk                        ; 6.639  ; 6.639  ; Rise       ; clk                        ;
+;  fnd_sel[0]  ; clk                        ; 6.640  ; 6.640  ; Rise       ; clk                        ;
+;  fnd_sel[1]  ; clk                        ; 6.639  ; 6.639  ; Rise       ; clk                        ;
+;  fnd_sel[2]  ; clk                        ; 6.641  ; 6.641  ; Rise       ; clk                        ;
+;  fnd_sel[3]  ; clk                        ; 6.958  ; 6.958  ; Rise       ; clk                        ;
+; led[*]       ; clk                        ; 8.559  ; 8.559  ; Rise       ; clk                        ;
+;  led[0]      ; clk                        ; 8.566  ; 8.566  ; Rise       ; clk                        ;
+;  led[1]      ; clk                        ; 8.559  ; 8.559  ; Rise       ; clk                        ;
+;  led[2]      ; clk                        ; 9.019  ; 9.019  ; Rise       ; clk                        ;
+;  led[3]      ; clk                        ; 9.336  ; 9.336  ; Rise       ; clk                        ;
+;  led[4]      ; clk                        ; 9.043  ; 9.043  ; Rise       ; clk                        ;
+;  led[5]      ; clk                        ; 9.080  ; 9.080  ; Rise       ; clk                        ;
+;  led[6]      ; clk                        ; 9.362  ; 9.362  ; Rise       ; clk                        ;
+;  led[7]      ; clk                        ; 8.879  ; 8.879  ; Rise       ; clk                        ;
+; motor[*]     ; clk                        ; 10.684 ; 10.684 ; Rise       ; clk                        ;
+;  motor[1]    ; clk                        ; 10.684 ; 10.684 ; Rise       ; clk                        ;
++--------------+----------------------------+--------+--------+------------+----------------------------+
+
+
++------------------------------------------------------+
+; Propagation Delay                                    ;
++------------+-------------+--------+----+----+--------+
+; Input Port ; Output Port ; RR     ; RF ; FR ; FF     ;
++------------+-------------+--------+----+----+--------+
+; dip_sw[0]  ; motor[1]    ; 30.105 ;    ;    ; 30.105 ;
+; dip_sw[0]  ; motor[2]    ; 14.472 ;    ;    ; 14.472 ;
+; dip_sw[1]  ; motor[1]    ; 29.895 ;    ;    ; 29.895 ;
+; dip_sw[1]  ; motor[2]    ; 14.406 ;    ;    ; 14.406 ;
+; dip_sw[2]  ; motor[1]    ; 29.664 ;    ;    ; 29.664 ;
+; dip_sw[2]  ; motor[2]    ; 14.104 ;    ;    ; 14.104 ;
+; dip_sw[3]  ; motor[1]    ; 28.495 ;    ;    ; 28.495 ;
+; dip_sw[3]  ; motor[2]    ; 13.760 ;    ;    ; 13.760 ;
+; dip_sw[4]  ; motor[1]    ; 28.340 ;    ;    ; 28.340 ;
+; dip_sw[4]  ; motor[2]    ; 13.738 ;    ;    ; 13.738 ;
+; dip_sw[5]  ; motor[1]    ; 27.748 ;    ;    ; 27.748 ;
+; dip_sw[5]  ; motor[2]    ; 13.689 ;    ;    ; 13.689 ;
+; dip_sw[6]  ; motor[1]    ; 26.557 ;    ;    ; 26.557 ;
+; dip_sw[6]  ; motor[2]    ; 13.590 ;    ;    ; 13.590 ;
+; dip_sw[7]  ; motor[1]    ; 25.932 ;    ;    ; 25.932 ;
+; dip_sw[7]  ; motor[2]    ; 12.824 ;    ;    ; 12.824 ;
+; reset      ; portc[0]    ; 13.727 ;    ;    ; 13.727 ;
+; result[0]  ; motor[1]    ; 30.451 ;    ;    ; 30.451 ;
+; result[0]  ; motor[2]    ; 15.129 ;    ;    ; 15.129 ;
+; result[1]  ; motor[1]    ; 30.437 ;    ;    ; 30.437 ;
+; result[1]  ; motor[2]    ; 15.062 ;    ;    ; 15.062 ;
+; result[2]  ; motor[1]    ; 31.516 ;    ;    ; 31.516 ;
+; result[2]  ; motor[2]    ; 16.335 ;    ;    ; 16.335 ;
+; result[3]  ; motor[1]    ; 30.076 ;    ;    ; 30.076 ;
+; result[3]  ; motor[2]    ; 15.293 ;    ;    ; 15.293 ;
+; result[4]  ; motor[1]    ; 29.488 ;    ;    ; 29.488 ;
+; result[4]  ; motor[2]    ; 15.308 ;    ;    ; 15.308 ;
+; result[5]  ; motor[1]    ; 27.935 ;    ;    ; 27.935 ;
+; result[5]  ; motor[2]    ; 14.836 ;    ;    ; 14.836 ;
+; result[6]  ; motor[1]    ; 27.151 ;    ;    ; 27.151 ;
+; result[6]  ; motor[2]    ; 14.755 ;    ;    ; 14.755 ;
+; result[7]  ; motor[1]    ; 27.141 ;    ;    ; 27.141 ;
+; result[7]  ; motor[2]    ; 14.415 ;    ;    ; 14.415 ;
++------------+-------------+--------+----+----+--------+
+
+
++------------------------------------------------------+
+; Minimum Propagation Delay                            ;
++------------+-------------+--------+----+----+--------+
+; Input Port ; Output Port ; RR     ; RF ; FR ; FF     ;
++------------+-------------+--------+----+----+--------+
+; dip_sw[0]  ; motor[1]    ; 18.740 ;    ;    ; 18.740 ;
+; dip_sw[0]  ; motor[2]    ; 14.468 ;    ;    ; 14.468 ;
+; dip_sw[1]  ; motor[1]    ; 18.599 ;    ;    ; 18.599 ;
+; dip_sw[1]  ; motor[2]    ; 14.400 ;    ;    ; 14.400 ;
+; dip_sw[2]  ; motor[1]    ; 18.368 ;    ;    ; 18.368 ;
+; dip_sw[2]  ; motor[2]    ; 14.094 ;    ;    ; 14.094 ;
+; dip_sw[3]  ; motor[1]    ; 17.717 ;    ;    ; 17.717 ;
+; dip_sw[3]  ; motor[2]    ; 13.748 ;    ;    ; 13.748 ;
+; dip_sw[4]  ; motor[1]    ; 18.086 ;    ;    ; 18.086 ;
+; dip_sw[4]  ; motor[2]    ; 13.738 ;    ;    ; 13.738 ;
+; dip_sw[5]  ; motor[1]    ; 18.072 ;    ;    ; 18.072 ;
+; dip_sw[5]  ; motor[2]    ; 13.674 ;    ;    ; 13.674 ;
+; dip_sw[6]  ; motor[1]    ; 17.120 ;    ;    ; 17.120 ;
+; dip_sw[6]  ; motor[2]    ; 13.577 ;    ;    ; 13.577 ;
+; dip_sw[7]  ; motor[1]    ; 16.730 ;    ;    ; 16.730 ;
+; dip_sw[7]  ; motor[2]    ; 12.824 ;    ;    ; 12.824 ;
+; reset      ; portc[0]    ; 13.727 ;    ;    ; 13.727 ;
+; result[0]  ; motor[1]    ; 19.086 ;    ;    ; 19.086 ;
+; result[0]  ; motor[2]    ; 15.123 ;    ;    ; 15.123 ;
+; result[1]  ; motor[1]    ; 19.141 ;    ;    ; 19.141 ;
+; result[1]  ; motor[2]    ; 15.054 ;    ;    ; 15.054 ;
+; result[2]  ; motor[1]    ; 20.220 ;    ;    ; 20.220 ;
+; result[2]  ; motor[2]    ; 16.327 ;    ;    ; 16.327 ;
+; result[3]  ; motor[1]    ; 19.293 ;    ;    ; 19.293 ;
+; result[3]  ; motor[2]    ; 15.283 ;    ;    ; 15.283 ;
+; result[4]  ; motor[1]    ; 19.234 ;    ;    ; 19.234 ;
+; result[4]  ; motor[2]    ; 15.308 ;    ;    ; 15.308 ;
+; result[5]  ; motor[1]    ; 18.266 ;    ;    ; 18.266 ;
+; result[5]  ; motor[2]    ; 14.819 ;    ;    ; 14.819 ;
+; result[6]  ; motor[1]    ; 17.709 ;    ;    ; 17.709 ;
+; result[6]  ; motor[2]    ; 14.740 ;    ;    ; 14.740 ;
+; result[7]  ; motor[1]    ; 17.944 ;    ;    ; 17.944 ;
+; result[7]  ; motor[2]    ; 14.415 ;    ;    ; 14.415 ;
++------------+-------------+--------+----+----+--------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                     ;
++----------------------------+----------------------------+----------+----------+----------+----------+
+; From Clock                 ; To Clock                   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------+----------------------------+----------+----------+----------+----------+
+; adc_1:u0|c_state.s_start   ; adc_1:u0|c_state.s_capture ; 2        ; 2        ; 0        ; 0        ;
+; clk                        ; adc_1:u0|c_state.s_capture ; 16       ; 0        ; 0        ; 0        ;
+; adc_1:u0|c_state.s_capture ; adc_1:u0|c_state.s_start   ; 1        ; 1        ; 0        ; 0        ;
+; clk                        ; adc_1:u0|c_state.s_start   ; 8        ; 0        ; 0        ; 0        ;
+; adc_1:u0|c_state.s_capture ; clk                        ; 9        ; 9        ; 0        ; 0        ;
+; adc_1:u0|c_state.s_start   ; clk                        ; 11       ; 11       ; 0        ; 0        ;
+; clk                        ; clk                        ; 3184     ; 0        ; 0        ; 0        ;
++----------------------------+----------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                      ;
++----------------------------+----------------------------+----------+----------+----------+----------+
+; From Clock                 ; To Clock                   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------+----------------------------+----------+----------+----------+----------+
+; adc_1:u0|c_state.s_start   ; adc_1:u0|c_state.s_capture ; 2        ; 2        ; 0        ; 0        ;
+; clk                        ; adc_1:u0|c_state.s_capture ; 16       ; 0        ; 0        ; 0        ;
+; adc_1:u0|c_state.s_capture ; adc_1:u0|c_state.s_start   ; 1        ; 1        ; 0        ; 0        ;
+; clk                        ; adc_1:u0|c_state.s_start   ; 8        ; 0        ; 0        ; 0        ;
+; adc_1:u0|c_state.s_capture ; clk                        ; 9        ; 9        ; 0        ; 0        ;
+; adc_1:u0|c_state.s_start   ; clk                        ; 11       ; 11       ; 0        ; 0        ;
+; clk                        ; clk                        ; 3184     ; 0        ; 0        ; 0        ;
++----------------------------+----------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 18    ; 18   ;
+; Unconstrained Input Port Paths  ; 209   ; 209  ;
+; Unconstrained Output Ports      ; 26    ; 26   ;
+; Unconstrained Output Port Paths ; 109   ; 109  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II TimeQuest Timing Analyzer
+    Info: Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Jul 05 10:35:19 2016
+Info: Command: quartus_sta ADC_Motor_PWM -c ADC_Motor_PWM
+Info: qsta_default_script.tcl version: #1
+Warning: Ignored assignments for entity "ADC_DCMOTOR" -- entity does not exist in design
+    Warning: Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity ADC_DCMOTOR -section_id Top was ignored
+    Warning: Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity ADC_DCMOTOR -section_id Top was ignored
+    Warning: Assignment for entity set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity ADC_DCMOTOR -section_id Top was ignored
+    Warning: Assignment for entity set_global_assignment -name PARTITION_PRESERVE_HIGH_SPEED_TILES ON -entity ADC_DCMOTOR -section_id Top was ignored
+    Warning: Assignment for entity set_global_assignment -name PARTITION_IGNORE_SOURCE_FILE_CHANGES OFF -entity ADC_DCMOTOR -section_id Top was ignored
+    Warning: Assignment for entity set_global_assignment -name PARTITION_ALWAYS_USE_QXP_NETLIST OFF -entity ADC_DCMOTOR -section_id Top was ignored
+    Warning: Assignment for entity set_global_assignment -name PARTITION_COLOR 16764057 -entity ADC_DCMOTOR -section_id Top was ignored
+    Warning: Assignment for entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -entity ADC_DCMOTOR -section_id Top was ignored
+    Warning: Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -entity ADC_DCMOTOR -section_id Top was ignored
+    Warning: Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS REPLACE_CONFLICTING -entity ADC_DCMOTOR -section_id Top was ignored
+    Warning: Assignment for entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -entity ADC_DCMOTOR -section_id Top was ignored
+    Warning: Assignment for entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -entity ADC_DCMOTOR -section_id Top was ignored
+    Warning: Assignment for entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -entity ADC_DCMOTOR -section_id Top was ignored
+    Warning: Assignment for entity set_global_assignment -name ALLOW_MULTIPLE_PERSONAS OFF -entity ADC_DCMOTOR -section_id Top was ignored
+Warning: Ignored assignments for entity "ADC_PWM" -- entity does not exist in design
+    Warning: Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity ADC_PWM -section_id Top was ignored
+    Warning: Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity ADC_PWM -section_id Top was ignored
+    Warning: Assignment for entity set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity ADC_PWM -section_id Top was ignored
+    Warning: Assignment for entity set_global_assignment -name PARTITION_PRESERVE_HIGH_SPEED_TILES ON -entity ADC_PWM -section_id Top was ignored
+    Warning: Assignment for entity set_global_assignment -name PARTITION_IGNORE_SOURCE_FILE_CHANGES OFF -entity ADC_PWM -section_id Top was ignored
+    Warning: Assignment for entity set_global_assignment -name PARTITION_ALWAYS_USE_QXP_NETLIST OFF -entity ADC_PWM -section_id Top was ignored
+    Warning: Assignment for entity set_global_assignment -name PARTITION_COLOR 16764057 -entity ADC_PWM -section_id Top was ignored
+    Warning: Assignment for entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -entity ADC_PWM -section_id Top was ignored
+    Warning: Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -entity ADC_PWM -section_id Top was ignored
+    Warning: Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS REPLACE_CONFLICTING -entity ADC_PWM -section_id Top was ignored
+    Warning: Assignment for entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -entity ADC_PWM -section_id Top was ignored
+    Warning: Assignment for entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -entity ADC_PWM -section_id Top was ignored
+    Warning: Assignment for entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -entity ADC_PWM -section_id Top was ignored
+    Warning: Assignment for entity set_global_assignment -name ALLOW_MULTIPLE_PERSONAS OFF -entity ADC_PWM -section_id Top was ignored
+Warning: Parallel compilation is not licensed and has been disabled
+Warning: Timing Analysis is analyzing one or more combinational loops as latches
+    Warning: Node "u0|start|combout" is a latch
+    Warning: Node "u0|ale|combout" is a latch
+    Warning: Node "u0|out_en|combout" is a latch
+Critical Warning: Synopsys Design Constraints File file not found: 'ADC_Motor_PWM.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info: No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info: Deriving Clocks
+    Info: create_clock -period 1.000 -name clk clk
+    Info: create_clock -period 1.000 -name adc_1:u0|c_state.s_capture adc_1:u0|c_state.s_capture
+    Info: create_clock -period 1.000 -name adc_1:u0|c_state.s_start adc_1:u0|c_state.s_start
+Critical Warning: Timing requirements not met
+Info: Worst-case setup slack is -6.750
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -6.750      -404.439 clk 
+    Info:    -4.766        -4.766 adc_1:u0|c_state.s_start 
+    Info:     0.304         0.000 adc_1:u0|c_state.s_capture 
+Info: Worst-case hold slack is -5.155
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -5.155        -9.233 adc_1:u0|c_state.s_capture 
+    Info:    -1.380       -10.761 clk 
+    Info:     0.279         0.000 adc_1:u0|c_state.s_start 
+Info: No Recovery paths to report
+Info: No Removal paths to report
+Info: Worst-case minimum pulse width slack is -1.583
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -1.583      -265.183 clk 
+    Info:     0.500         0.000 adc_1:u0|c_state.s_capture 
+    Info:     0.500         0.000 adc_1:u0|c_state.s_start 
+Info: The selected device family is not supported by the report_metastability command.
+Info: Design is not fully constrained for setup requirements
+Info: Design is not fully constrained for hold requirements
+Info: Quartus II TimeQuest Timing Analyzer was successful. 0 errors, 37 warnings
+    Info: Peak virtual memory: 226 megabytes
+    Info: Processing ended: Tue Jul 05 10:35:20 2016
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

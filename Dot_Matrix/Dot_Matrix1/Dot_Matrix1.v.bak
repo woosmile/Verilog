@@ -1,0 +1,47 @@
+module Dot_Matrix1(clk,reset,portA,portB,dot_row,dot_col);
+
+input clk,reset;
+output reg [1:0]portA,portB;
+output reg [6:0]dot_row;
+output reg [4:0]dot_col;
+ 
+always@(posedge clk, negedge reset) begin
+	if(!reset) begin
+		portA <= 0;
+		portB <= 0;
+	end
+	else begin
+		portA <= 2'b01;
+		portB <= 2'b01;
+	end
+end
+
+always@(posedge clk, negedge reset) begin
+	if(!reset) scan_cnt <= 0;
+	else begin
+		if(scan_cnt >= 5399999) scan_cnt <= 0;
+		else scan_cnt <= scan_cnt + 1;
+	end
+end
+
+always@(posedge clk, negedge reset) begin
+	if(!reset) digit <= 0;
+	else begin
+		if(scan_cnt >= 5399999) begin
+			if(digit >= 4) digit <= 0;
+			else digit <= digit + 1;
+		end
+	end
+end
+
+always@(digit)
+	case(digit)
+	0 : begin dot_row = 7'b1111111; col = 5'b11110; end
+	1 : begin dot_row = 7'b1111111; col = 5'b11101; end
+	2 : begin dot_row = 7'b1111111; col = 5'b11011; end
+	3 : begin dot_row = 7'b1111111; col = 5'b10111; end
+	4 : begin dot_row = 7'b1111111; col = 5'b01111; end
+	default : begin dot_row = 7'b0000000; col = 5'b00000; end
+	endcase
+	
+endmodule

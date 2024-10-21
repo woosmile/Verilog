@@ -1,0 +1,87 @@
+//수신 
+module uart_rx1(clk, reset, rxd, rx_data);
+
+input clk, reset, rxd;
+
+output [7:0]rx_data;
+
+reg [7:0]rx_data;
+
+parameter baud_rate = 5625; //=54MHz / 9600bps
+parameter cnt_half = 5625/2;//start신호감지 
+
+reg start; //데이터 수신 flag  start=0: 회선 휴지상태, start=1: 데이터수신 모드  
+reg [7:0] rdata; //수신데이터 임시로 저장하기 위한 레지스터 
+integer  st_cnt, r_cnt; // st_cnt: start_bit check cnt, r_cnt: 데이터 수신 통신속도 cnt
+integer  rdata_cnt;//수신데이터 bit cnt 
+
+always @(posedge clk, negedge reset)
+begin
+   if(!reset) 
+	   begin
+	      start <= 0;
+		   st_cnt <= 0;
+		   rdata_cnt <= 0;
+		end
+	else 
+	   begin
+			if(start==0 && rxd==0) // start bit check, 휴지상태에서 0이 수신되면 
+				begin 
+					if(st_cnt >= cnt_half) // 0이 일정시간 동안 유지되면 start bit로 인식 
+						begin
+							start<=1; // 데이터 수신 모드로 상태 변경 
+							st_cnt <= 0;
+						end
+					else 
+						begin
+							start <= 0;
+							st_cnt <= st_cnt+1;
+						end
+				end
+			else if(start==1)
+			begin
+				if(r_cnt >= baud_rate) // 9600bps속도  
+					begin
+						r_cnt <= 0;
+						if(rdata_cnt >= 8)  //수신데이터 bit 카운트   
+							begin
+								rdata_cnt <=0;
+								start <= 0;
+							end
+						else 
+							begin
+								rdata_cnt <= rdata_cnt +1;
+								start <=1;
+							end
+					end
+				else   r_cnt <= r_cnt + 1; // 표준 통신속도 카운트 
+			end
+		end
+	  end
+	
+always @(posedge clk, negedge reset)
+if(!reset)
+	begin
+		rdata<=0;
+		rx_data <= 0;
+		
+	end
+else
+  begin
+	   if(r_cnt==baud_rate)begin
+			case(rdata_cnt)
+			 0: rdata[0]<=rxd;
+			 1: rdata[1]<=rxd;
+			 2: rdata[2]<=rxd;
+			 3: rdata[3]<=rxd;
+			 4: rdata[4]<=rxd;
+			 5: rdata[5]<=rxd;
+			 6: rdata[6]<=rxd;
+			 7: rdata[7]<=rxd;
+			 default: rdata <= rdata;
+			endcase
+			end
+		 if(rdata_cnt==8)  rx_data<= rdata; //수신 데이터 출력 
+		   
+	end	
+endmodule 

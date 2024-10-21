@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at line_tracer.v(349): always construct contains both blocking and non-blocking assignments

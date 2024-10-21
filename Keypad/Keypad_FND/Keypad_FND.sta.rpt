@@ -1,0 +1,919 @@
+TimeQuest Timing Analyzer report for Keypad_FND
+Wed Nov 02 11:53:02 2016
+Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk'
+ 12. Setup: 'FND:u0|digit[0]'
+ 13. Setup: 'Keypad:u1|clk_div'
+ 14. Hold: 'clk'
+ 15. Hold: 'Keypad:u1|clk_div'
+ 16. Hold: 'FND:u0|digit[0]'
+ 17. Minimum Pulse Width: 'clk'
+ 18. Minimum Pulse Width: 'Keypad:u1|clk_div'
+ 19. Minimum Pulse Width: 'FND:u0|digit[0]'
+ 20. Setup Times
+ 21. Hold Times
+ 22. Clock to Output Times
+ 23. Minimum Clock to Output Times
+ 24. Propagation Delay
+ 25. Minimum Propagation Delay
+ 26. Setup Transfers
+ 27. Hold Transfers
+ 28. Report TCCS
+ 29. Report RSKM
+ 30. Unconstrained Paths
+ 31. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                    ;
++--------------------+-----------------------------------------------------------------+
+; Quartus II Version ; Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; Keypad_FND                                                      ;
+; Device Family      ; Cyclone                                                         ;
+; Device Name        ; EP1C6Q240C8                                                     ;
+; Timing Models      ; Final                                                           ;
+; Delay Model        ; Slow Model                                                      ;
+; Rise/Fall Delays   ; Unavailable                                                     ;
++--------------------+-----------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                               ;
++-------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------+
+; Clock Name        ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets               ;
++-------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------+
+; clk               ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }               ;
+; FND:u0|digit[0]   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { FND:u0|digit[0] }   ;
+; Keypad:u1|clk_div ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Keypad:u1|clk_div } ;
++-------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Fmax Summary                                                                                             ;
++------------+-----------------+-------------------+-------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name        ; Note                                                  ;
++------------+-----------------+-------------------+-------------------------------------------------------+
+; 160.26 MHz ; 160.26 MHz      ; clk               ;                                                       ;
+; 489.72 MHz ; 275.03 MHz      ; Keypad:u1|clk_div ; limit due to high minimum pulse width violation (tch) ;
++------------+-----------------+-------------------+-------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------------------+
+; Setup Summary                              ;
++-------------------+--------+---------------+
+; Clock             ; Slack  ; End Point TNS ;
++-------------------+--------+---------------+
+; clk               ; -5.240 ; -290.750      ;
+; FND:u0|digit[0]   ; -5.235 ; -30.623       ;
+; Keypad:u1|clk_div ; -1.042 ; -2.090        ;
++-------------------+--------+---------------+
+
+
++--------------------------------------------+
+; Hold Summary                               ;
++-------------------+--------+---------------+
+; Clock             ; Slack  ; End Point TNS ;
++-------------------+--------+---------------+
+; clk               ; -1.697 ; -4.950        ;
+; Keypad:u1|clk_div ; 1.244  ; 0.000         ;
+; FND:u0|digit[0]   ; 1.368  ; 0.000         ;
++-------------------+--------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------------------+
+; Minimum Pulse Width Summary                ;
++-------------------+--------+---------------+
+; Clock             ; Slack  ; End Point TNS ;
++-------------------+--------+---------------+
+; clk               ; -1.583 ; -162.379      ;
+; Keypad:u1|clk_div ; -1.318 ; -10.544       ;
+; FND:u0|digit[0]   ; 0.500  ; 0.000         ;
++-------------------+--------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                                 ;
++--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; -5.240 ; FND:u0|scan_cnt[1]    ; FND:u0|scan_cnt[22]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.203      ;
+; -5.240 ; FND:u0|scan_cnt[1]    ; FND:u0|scan_cnt[23]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.203      ;
+; -5.240 ; FND:u0|scan_cnt[1]    ; FND:u0|scan_cnt[24]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.203      ;
+; -5.240 ; FND:u0|scan_cnt[1]    ; FND:u0|scan_cnt[25]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.203      ;
+; -5.240 ; FND:u0|scan_cnt[1]    ; FND:u0|scan_cnt[26]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.203      ;
+; -5.240 ; FND:u0|scan_cnt[1]    ; FND:u0|scan_cnt[27]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.203      ;
+; -5.240 ; FND:u0|scan_cnt[1]    ; FND:u0|scan_cnt[19]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.203      ;
+; -5.240 ; FND:u0|scan_cnt[1]    ; FND:u0|scan_cnt[20]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.203      ;
+; -5.240 ; FND:u0|scan_cnt[1]    ; FND:u0|scan_cnt[21]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.203      ;
+; -5.236 ; FND:u0|scan_cnt[1]    ; FND:u0|scan_cnt[12]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.199      ;
+; -5.236 ; FND:u0|scan_cnt[1]    ; FND:u0|scan_cnt[13]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.199      ;
+; -5.236 ; FND:u0|scan_cnt[1]    ; FND:u0|scan_cnt[14]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.199      ;
+; -5.236 ; FND:u0|scan_cnt[1]    ; FND:u0|scan_cnt[15]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.199      ;
+; -5.236 ; FND:u0|scan_cnt[1]    ; FND:u0|scan_cnt[17]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.199      ;
+; -5.236 ; FND:u0|scan_cnt[1]    ; FND:u0|scan_cnt[18]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.199      ;
+; -5.236 ; FND:u0|scan_cnt[1]    ; FND:u0|scan_cnt[16]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.199      ;
+; -5.236 ; FND:u0|scan_cnt[1]    ; FND:u0|scan_cnt[9]    ; clk          ; clk         ; 1.000        ; 0.000      ; 6.199      ;
+; -5.236 ; FND:u0|scan_cnt[1]    ; FND:u0|scan_cnt[10]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.199      ;
+; -5.236 ; FND:u0|scan_cnt[1]    ; FND:u0|scan_cnt[11]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.199      ;
+; -5.092 ; Keypad:u1|clk_cnt[19] ; Keypad:u1|clk_cnt[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.055      ;
+; -5.092 ; Keypad:u1|clk_cnt[19] ; Keypad:u1|clk_cnt[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.055      ;
+; -5.092 ; Keypad:u1|clk_cnt[19] ; Keypad:u1|clk_cnt[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.055      ;
+; -5.092 ; Keypad:u1|clk_cnt[19] ; Keypad:u1|clk_cnt[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.055      ;
+; -5.092 ; Keypad:u1|clk_cnt[19] ; Keypad:u1|clk_cnt[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.055      ;
+; -5.092 ; Keypad:u1|clk_cnt[19] ; Keypad:u1|clk_cnt[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.055      ;
+; -5.092 ; Keypad:u1|clk_cnt[19] ; Keypad:u1|clk_cnt[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.055      ;
+; -5.092 ; Keypad:u1|clk_cnt[19] ; Keypad:u1|clk_cnt[26] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.055      ;
+; -5.092 ; Keypad:u1|clk_cnt[19] ; Keypad:u1|clk_cnt[27] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.055      ;
+; -5.087 ; Keypad:u1|clk_cnt[23] ; Keypad:u1|clk_cnt[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.050      ;
+; -5.087 ; Keypad:u1|clk_cnt[23] ; Keypad:u1|clk_cnt[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.050      ;
+; -5.087 ; Keypad:u1|clk_cnt[23] ; Keypad:u1|clk_cnt[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.050      ;
+; -5.087 ; Keypad:u1|clk_cnt[23] ; Keypad:u1|clk_cnt[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.050      ;
+; -5.087 ; Keypad:u1|clk_cnt[23] ; Keypad:u1|clk_cnt[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.050      ;
+; -5.087 ; Keypad:u1|clk_cnt[23] ; Keypad:u1|clk_cnt[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.050      ;
+; -5.087 ; Keypad:u1|clk_cnt[23] ; Keypad:u1|clk_cnt[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.050      ;
+; -5.087 ; Keypad:u1|clk_cnt[23] ; Keypad:u1|clk_cnt[26] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.050      ;
+; -5.087 ; Keypad:u1|clk_cnt[23] ; Keypad:u1|clk_cnt[27] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.050      ;
+; -5.075 ; Keypad:u1|clk_cnt[19] ; Keypad:u1|clk_cnt[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 6.037      ;
+; -5.075 ; Keypad:u1|clk_cnt[19] ; Keypad:u1|clk_cnt[4]  ; clk          ; clk         ; 1.000        ; -0.001     ; 6.037      ;
+; -5.075 ; Keypad:u1|clk_cnt[19] ; Keypad:u1|clk_cnt[5]  ; clk          ; clk         ; 1.000        ; -0.001     ; 6.037      ;
+; -5.075 ; Keypad:u1|clk_cnt[19] ; Keypad:u1|clk_cnt[0]  ; clk          ; clk         ; 1.000        ; -0.001     ; 6.037      ;
+; -5.075 ; Keypad:u1|clk_cnt[19] ; Keypad:u1|clk_cnt[1]  ; clk          ; clk         ; 1.000        ; -0.001     ; 6.037      ;
+; -5.075 ; Keypad:u1|clk_cnt[19] ; Keypad:u1|clk_cnt[2]  ; clk          ; clk         ; 1.000        ; -0.001     ; 6.037      ;
+; -5.075 ; Keypad:u1|clk_cnt[19] ; Keypad:u1|clk_cnt[3]  ; clk          ; clk         ; 1.000        ; -0.001     ; 6.037      ;
+; -5.075 ; Keypad:u1|clk_cnt[19] ; Keypad:u1|clk_cnt[6]  ; clk          ; clk         ; 1.000        ; -0.001     ; 6.037      ;
+; -5.075 ; Keypad:u1|clk_cnt[19] ; Keypad:u1|clk_cnt[7]  ; clk          ; clk         ; 1.000        ; -0.001     ; 6.037      ;
+; -5.070 ; Keypad:u1|clk_cnt[23] ; Keypad:u1|clk_cnt[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 6.032      ;
+; -5.070 ; Keypad:u1|clk_cnt[23] ; Keypad:u1|clk_cnt[4]  ; clk          ; clk         ; 1.000        ; -0.001     ; 6.032      ;
+; -5.070 ; Keypad:u1|clk_cnt[23] ; Keypad:u1|clk_cnt[5]  ; clk          ; clk         ; 1.000        ; -0.001     ; 6.032      ;
+; -5.070 ; Keypad:u1|clk_cnt[23] ; Keypad:u1|clk_cnt[0]  ; clk          ; clk         ; 1.000        ; -0.001     ; 6.032      ;
+; -5.070 ; Keypad:u1|clk_cnt[23] ; Keypad:u1|clk_cnt[1]  ; clk          ; clk         ; 1.000        ; -0.001     ; 6.032      ;
+; -5.070 ; Keypad:u1|clk_cnt[23] ; Keypad:u1|clk_cnt[2]  ; clk          ; clk         ; 1.000        ; -0.001     ; 6.032      ;
+; -5.070 ; Keypad:u1|clk_cnt[23] ; Keypad:u1|clk_cnt[3]  ; clk          ; clk         ; 1.000        ; -0.001     ; 6.032      ;
+; -5.070 ; Keypad:u1|clk_cnt[23] ; Keypad:u1|clk_cnt[6]  ; clk          ; clk         ; 1.000        ; -0.001     ; 6.032      ;
+; -5.070 ; Keypad:u1|clk_cnt[23] ; Keypad:u1|clk_cnt[7]  ; clk          ; clk         ; 1.000        ; -0.001     ; 6.032      ;
+; -5.065 ; FND:u0|scan_cnt[2]    ; FND:u0|scan_cnt[22]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.028      ;
+; -5.065 ; FND:u0|scan_cnt[2]    ; FND:u0|scan_cnt[23]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.028      ;
+; -5.065 ; FND:u0|scan_cnt[2]    ; FND:u0|scan_cnt[24]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.028      ;
+; -5.065 ; FND:u0|scan_cnt[2]    ; FND:u0|scan_cnt[25]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.028      ;
+; -5.065 ; FND:u0|scan_cnt[2]    ; FND:u0|scan_cnt[26]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.028      ;
+; -5.065 ; FND:u0|scan_cnt[2]    ; FND:u0|scan_cnt[27]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.028      ;
+; -5.065 ; FND:u0|scan_cnt[2]    ; FND:u0|scan_cnt[19]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.028      ;
+; -5.065 ; FND:u0|scan_cnt[2]    ; FND:u0|scan_cnt[20]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.028      ;
+; -5.065 ; FND:u0|scan_cnt[2]    ; FND:u0|scan_cnt[21]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.028      ;
+; -5.061 ; FND:u0|scan_cnt[2]    ; FND:u0|scan_cnt[12]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.024      ;
+; -5.061 ; FND:u0|scan_cnt[2]    ; FND:u0|scan_cnt[13]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.024      ;
+; -5.061 ; FND:u0|scan_cnt[2]    ; FND:u0|scan_cnt[14]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.024      ;
+; -5.061 ; FND:u0|scan_cnt[2]    ; FND:u0|scan_cnt[15]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.024      ;
+; -5.061 ; FND:u0|scan_cnt[2]    ; FND:u0|scan_cnt[17]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.024      ;
+; -5.061 ; FND:u0|scan_cnt[2]    ; FND:u0|scan_cnt[18]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.024      ;
+; -5.061 ; FND:u0|scan_cnt[2]    ; FND:u0|scan_cnt[16]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.024      ;
+; -5.061 ; FND:u0|scan_cnt[2]    ; FND:u0|scan_cnt[9]    ; clk          ; clk         ; 1.000        ; 0.000      ; 6.024      ;
+; -5.061 ; FND:u0|scan_cnt[2]    ; FND:u0|scan_cnt[10]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.024      ;
+; -5.061 ; FND:u0|scan_cnt[2]    ; FND:u0|scan_cnt[11]   ; clk          ; clk         ; 1.000        ; 0.000      ; 6.024      ;
+; -5.046 ; Keypad:u1|clk_cnt[25] ; Keypad:u1|clk_cnt[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.009      ;
+; -5.046 ; Keypad:u1|clk_cnt[25] ; Keypad:u1|clk_cnt[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.009      ;
+; -5.046 ; Keypad:u1|clk_cnt[25] ; Keypad:u1|clk_cnt[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.009      ;
+; -5.046 ; Keypad:u1|clk_cnt[25] ; Keypad:u1|clk_cnt[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.009      ;
+; -5.046 ; Keypad:u1|clk_cnt[25] ; Keypad:u1|clk_cnt[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.009      ;
+; -5.046 ; Keypad:u1|clk_cnt[25] ; Keypad:u1|clk_cnt[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.009      ;
+; -5.046 ; Keypad:u1|clk_cnt[25] ; Keypad:u1|clk_cnt[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.009      ;
+; -5.046 ; Keypad:u1|clk_cnt[25] ; Keypad:u1|clk_cnt[26] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.009      ;
+; -5.046 ; Keypad:u1|clk_cnt[25] ; Keypad:u1|clk_cnt[27] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.009      ;
+; -5.029 ; Keypad:u1|clk_cnt[25] ; Keypad:u1|clk_cnt[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.991      ;
+; -5.029 ; Keypad:u1|clk_cnt[25] ; Keypad:u1|clk_cnt[4]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.991      ;
+; -5.029 ; Keypad:u1|clk_cnt[25] ; Keypad:u1|clk_cnt[5]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.991      ;
+; -5.029 ; Keypad:u1|clk_cnt[25] ; Keypad:u1|clk_cnt[0]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.991      ;
+; -5.029 ; Keypad:u1|clk_cnt[25] ; Keypad:u1|clk_cnt[1]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.991      ;
+; -5.029 ; Keypad:u1|clk_cnt[25] ; Keypad:u1|clk_cnt[2]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.991      ;
+; -5.029 ; Keypad:u1|clk_cnt[25] ; Keypad:u1|clk_cnt[3]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.991      ;
+; -5.029 ; Keypad:u1|clk_cnt[25] ; Keypad:u1|clk_cnt[6]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.991      ;
+; -5.029 ; Keypad:u1|clk_cnt[25] ; Keypad:u1|clk_cnt[7]  ; clk          ; clk         ; 1.000        ; -0.001     ; 5.991      ;
+; -5.001 ; FND:u0|scan_cnt[10]   ; FND:u0|scan_cnt[22]   ; clk          ; clk         ; 1.000        ; 0.000      ; 5.964      ;
+; -5.001 ; FND:u0|scan_cnt[10]   ; FND:u0|scan_cnt[23]   ; clk          ; clk         ; 1.000        ; 0.000      ; 5.964      ;
+; -5.001 ; FND:u0|scan_cnt[10]   ; FND:u0|scan_cnt[24]   ; clk          ; clk         ; 1.000        ; 0.000      ; 5.964      ;
+; -5.001 ; FND:u0|scan_cnt[10]   ; FND:u0|scan_cnt[25]   ; clk          ; clk         ; 1.000        ; 0.000      ; 5.964      ;
+; -5.001 ; FND:u0|scan_cnt[10]   ; FND:u0|scan_cnt[26]   ; clk          ; clk         ; 1.000        ; 0.000      ; 5.964      ;
+; -5.001 ; FND:u0|scan_cnt[10]   ; FND:u0|scan_cnt[27]   ; clk          ; clk         ; 1.000        ; 0.000      ; 5.964      ;
+; -5.001 ; FND:u0|scan_cnt[10]   ; FND:u0|scan_cnt[19]   ; clk          ; clk         ; 1.000        ; 0.000      ; 5.964      ;
+; -5.001 ; FND:u0|scan_cnt[10]   ; FND:u0|scan_cnt[20]   ; clk          ; clk         ; 1.000        ; 0.000      ; 5.964      ;
++--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'FND:u0|digit[0]'                                                                                                       ;
++--------+-----------------------+----------------+-------------------+-----------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node        ; Launch Clock      ; Latch Clock     ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+----------------+-------------------+-----------------+--------------+------------+------------+
+; -5.235 ; Keypad:u1|state.col_2 ; FND:u0|data[2] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 1.000        ; 0.709      ; 5.807      ;
+; -4.993 ; Keypad:u1|state.col_3 ; FND:u0|data[2] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 1.000        ; 0.731      ; 5.587      ;
+; -4.771 ; Keypad:u1|state.col_1 ; FND:u0|data[2] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 1.000        ; 0.731      ; 5.365      ;
+; -4.769 ; Keypad:u1|state.col_2 ; FND:u0|data[3] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 1.000        ; 0.709      ; 5.332      ;
+; -4.762 ; Keypad:u1|state.col_2 ; FND:u0|data[0] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 1.000        ; 0.708      ; 5.160      ;
+; -4.527 ; Keypad:u1|state.col_3 ; FND:u0|data[3] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 1.000        ; 0.731      ; 5.112      ;
+; -4.520 ; Keypad:u1|state.col_3 ; FND:u0|data[0] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 1.000        ; 0.730      ; 4.940      ;
+; -4.492 ; Keypad:u1|state.col_1 ; FND:u0|data[0] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 1.000        ; 0.730      ; 4.912      ;
+; -4.316 ; Keypad:u1|state.col_2 ; FND:u0|data[1] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 1.000        ; 0.653      ; 4.660      ;
+; -4.305 ; Keypad:u1|state.col_1 ; FND:u0|data[3] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 1.000        ; 0.731      ; 4.890      ;
+; -4.145 ; Keypad:u1|state.col_2 ; FND:u0|data[6] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 1.000        ; 0.652      ; 4.657      ;
+; -4.074 ; Keypad:u1|state.col_3 ; FND:u0|data[1] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 1.000        ; 0.675      ; 4.440      ;
+; -3.984 ; Keypad:u1|state.col_1 ; FND:u0|data[1] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 1.000        ; 0.675      ; 4.350      ;
+; -3.903 ; Keypad:u1|state.col_3 ; FND:u0|data[6] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 1.000        ; 0.674      ; 4.437      ;
+; -3.813 ; Keypad:u1|state.col_1 ; FND:u0|data[6] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 1.000        ; 0.674      ; 4.347      ;
+; -3.708 ; Keypad:u1|state.col_3 ; FND:u0|data[4] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 1.000        ; 0.709      ; 4.257      ;
+; -3.702 ; Keypad:u1|state.col_1 ; FND:u0|data[4] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 1.000        ; 0.709      ; 4.251      ;
+; -3.699 ; Keypad:u1|state.col_2 ; FND:u0|data[4] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 1.000        ; 0.687      ; 4.226      ;
+; -3.688 ; Keypad:u1|state.col_1 ; FND:u0|data[5] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 1.000        ; 0.707      ; 4.263      ;
+; -3.673 ; Keypad:u1|state.col_3 ; FND:u0|data[5] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 1.000        ; 0.707      ; 4.248      ;
+; -3.447 ; Keypad:u1|state.col_2 ; FND:u0|data[5] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 1.000        ; 0.685      ; 4.000      ;
++--------+-----------------------+----------------+-------------------+-----------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'Keypad:u1|clk_div'                                                                                                              ;
++--------+-----------------------+-----------------------+-------------------+-------------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node               ; Launch Clock      ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+-----------------------+-------------------+-------------------+--------------+------------+------------+
+; -1.042 ; Keypad:u1|state.col_2 ; Keypad:u1|state.col_3 ; Keypad:u1|clk_div ; Keypad:u1|clk_div ; 1.000        ; -0.022     ; 1.983      ;
+; -0.719 ; Keypad:u1|state.col_1 ; Keypad:u1|state.col_2 ; Keypad:u1|clk_div ; Keypad:u1|clk_div ; 1.000        ; 0.022      ; 1.704      ;
+; -0.329 ; Keypad:u1|state.idle  ; Keypad:u1|state.col_1 ; Keypad:u1|clk_div ; Keypad:u1|clk_div ; 1.000        ; 0.000      ; 1.292      ;
+; -0.296 ; Keypad:u1|state.col_3 ; Keypad:u1|state.col_1 ; Keypad:u1|clk_div ; Keypad:u1|clk_div ; 1.000        ; 0.000      ; 1.259      ;
++--------+-----------------------+-----------------------+-------------------+-------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                       ;
++--------+-----------------------+-----------------------+-------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node               ; Launch Clock      ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+-----------------------+-------------------+-------------+--------------+------------+------------+
+; -1.697 ; Keypad:u1|clk_div     ; Keypad:u1|clk_div     ; Keypad:u1|clk_div ; clk         ; 0.000        ; 2.942      ; 1.484      ;
+; -1.627 ; FND:u0|digit[0]       ; FND:u0|digit[0]       ; FND:u0|digit[0]   ; clk         ; 0.000        ; 2.902      ; 1.514      ;
+; -1.626 ; FND:u0|digit[0]       ; FND:u0|digit[1]       ; FND:u0|digit[0]   ; clk         ; 0.000        ; 2.902      ; 1.515      ;
+; -1.197 ; Keypad:u1|clk_div     ; Keypad:u1|clk_div     ; Keypad:u1|clk_div ; clk         ; -0.500       ; 2.942      ; 1.484      ;
+; -1.127 ; FND:u0|digit[0]       ; FND:u0|digit[0]       ; FND:u0|digit[0]   ; clk         ; -0.500       ; 2.902      ; 1.514      ;
+; -1.126 ; FND:u0|digit[0]       ; FND:u0|digit[1]       ; FND:u0|digit[0]   ; clk         ; -0.500       ; 2.902      ; 1.515      ;
+; 1.255  ; Keypad:u1|clk_cnt[27] ; Keypad:u1|clk_cnt[27] ; clk               ; clk         ; 0.000        ; 0.000      ; 1.270      ;
+; 1.323  ; FND:u0|scan_cnt[13]   ; FND:u0|scan_cnt[13]   ; clk               ; clk         ; 0.000        ; 0.000      ; 1.338      ;
+; 1.323  ; FND:u0|scan_cnt[17]   ; FND:u0|scan_cnt[17]   ; clk               ; clk         ; 0.000        ; 0.000      ; 1.338      ;
+; 1.323  ; Keypad:u1|clk_cnt[13] ; Keypad:u1|clk_cnt[13] ; clk               ; clk         ; 0.000        ; 0.000      ; 1.338      ;
+; 1.323  ; Keypad:u1|clk_cnt[17] ; Keypad:u1|clk_cnt[17] ; clk               ; clk         ; 0.000        ; 0.000      ; 1.338      ;
+; 1.323  ; Keypad:u1|clk_cnt[23] ; Keypad:u1|clk_cnt[23] ; clk               ; clk         ; 0.000        ; 0.000      ; 1.338      ;
+; 1.323  ; Keypad:u1|clk_cnt[3]  ; Keypad:u1|clk_cnt[3]  ; clk               ; clk         ; 0.000        ; 0.000      ; 1.338      ;
+; 1.323  ; Keypad:u1|clk_cnt[7]  ; Keypad:u1|clk_cnt[7]  ; clk               ; clk         ; 0.000        ; 0.000      ; 1.338      ;
+; 1.326  ; FND:u0|scan_cnt[14]   ; FND:u0|scan_cnt[14]   ; clk               ; clk         ; 0.000        ; 0.000      ; 1.341      ;
+; 1.326  ; FND:u0|scan_cnt[4]    ; FND:u0|scan_cnt[4]    ; clk               ; clk         ; 0.000        ; 0.000      ; 1.341      ;
+; 1.326  ; FND:u0|scan_cnt[9]    ; FND:u0|scan_cnt[9]    ; clk               ; clk         ; 0.000        ; 0.000      ; 1.341      ;
+; 1.326  ; Keypad:u1|clk_cnt[14] ; Keypad:u1|clk_cnt[14] ; clk               ; clk         ; 0.000        ; 0.000      ; 1.341      ;
+; 1.326  ; Keypad:u1|clk_cnt[4]  ; Keypad:u1|clk_cnt[4]  ; clk               ; clk         ; 0.000        ; 0.000      ; 1.341      ;
+; 1.326  ; Keypad:u1|clk_cnt[9]  ; Keypad:u1|clk_cnt[9]  ; clk               ; clk         ; 0.000        ; 0.000      ; 1.341      ;
+; 1.328  ; FND:u0|scan_cnt[27]   ; FND:u0|scan_cnt[27]   ; clk               ; clk         ; 0.000        ; 0.000      ; 1.343      ;
+; 1.328  ; FND:u0|scan_cnt[7]    ; FND:u0|scan_cnt[7]    ; clk               ; clk         ; 0.000        ; 0.000      ; 1.343      ;
+; 1.329  ; FND:u0|scan_cnt[12]   ; FND:u0|scan_cnt[12]   ; clk               ; clk         ; 0.000        ; 0.000      ; 1.344      ;
+; 1.329  ; Keypad:u1|clk_cnt[12] ; Keypad:u1|clk_cnt[12] ; clk               ; clk         ; 0.000        ; 0.000      ; 1.344      ;
+; 1.330  ; Keypad:u1|clk_cnt[19] ; Keypad:u1|clk_cnt[19] ; clk               ; clk         ; 0.000        ; 0.000      ; 1.345      ;
+; 1.332  ; FND:u0|digit[1]       ; FND:u0|digit[1]       ; clk               ; clk         ; 0.000        ; 0.000      ; 1.347      ;
+; 1.334  ; Keypad:u1|clk_cnt[22] ; Keypad:u1|clk_cnt[22] ; clk               ; clk         ; 0.000        ; 0.000      ; 1.349      ;
+; 1.335  ; FND:u0|scan_cnt[23]   ; FND:u0|scan_cnt[23]   ; clk               ; clk         ; 0.000        ; 0.000      ; 1.350      ;
+; 1.335  ; FND:u0|scan_cnt[19]   ; FND:u0|scan_cnt[19]   ; clk               ; clk         ; 0.000        ; 0.000      ; 1.350      ;
+; 1.335  ; FND:u0|scan_cnt[2]    ; FND:u0|scan_cnt[2]    ; clk               ; clk         ; 0.000        ; 0.000      ; 1.350      ;
+; 1.335  ; FND:u0|scan_cnt[3]    ; FND:u0|scan_cnt[3]    ; clk               ; clk         ; 0.000        ; 0.000      ; 1.350      ;
+; 1.335  ; Keypad:u1|clk_cnt[2]  ; Keypad:u1|clk_cnt[2]  ; clk               ; clk         ; 0.000        ; 0.000      ; 1.350      ;
+; 1.337  ; Keypad:u1|clk_cnt[24] ; Keypad:u1|clk_cnt[24] ; clk               ; clk         ; 0.000        ; 0.000      ; 1.352      ;
+; 1.341  ; FND:u0|scan_cnt[24]   ; FND:u0|scan_cnt[24]   ; clk               ; clk         ; 0.000        ; 0.000      ; 1.356      ;
+; 1.349  ; FND:u0|scan_cnt[22]   ; FND:u0|scan_cnt[22]   ; clk               ; clk         ; 0.000        ; 0.000      ; 1.364      ;
+; 1.473  ; Keypad:u1|clk_cnt[21] ; Keypad:u1|clk_cnt[21] ; clk               ; clk         ; 0.000        ; 0.000      ; 1.488      ;
+; 1.475  ; FND:u0|scan_cnt[26]   ; FND:u0|scan_cnt[26]   ; clk               ; clk         ; 0.000        ; 0.000      ; 1.490      ;
+; 1.476  ; FND:u0|scan_cnt[15]   ; FND:u0|scan_cnt[15]   ; clk               ; clk         ; 0.000        ; 0.000      ; 1.491      ;
+; 1.476  ; FND:u0|scan_cnt[21]   ; FND:u0|scan_cnt[21]   ; clk               ; clk         ; 0.000        ; 0.000      ; 1.491      ;
+; 1.476  ; FND:u0|scan_cnt[10]   ; FND:u0|scan_cnt[10]   ; clk               ; clk         ; 0.000        ; 0.000      ; 1.491      ;
+; 1.476  ; Keypad:u1|clk_cnt[15] ; Keypad:u1|clk_cnt[15] ; clk               ; clk         ; 0.000        ; 0.000      ; 1.491      ;
+; 1.476  ; Keypad:u1|clk_cnt[10] ; Keypad:u1|clk_cnt[10] ; clk               ; clk         ; 0.000        ; 0.000      ; 1.491      ;
+; 1.480  ; FND:u0|scan_cnt[5]    ; FND:u0|scan_cnt[5]    ; clk               ; clk         ; 0.000        ; 0.000      ; 1.495      ;
+; 1.480  ; FND:u0|scan_cnt[11]   ; FND:u0|scan_cnt[11]   ; clk               ; clk         ; 0.000        ; 0.000      ; 1.495      ;
+; 1.480  ; Keypad:u1|clk_cnt[5]  ; Keypad:u1|clk_cnt[5]  ; clk               ; clk         ; 0.000        ; 0.000      ; 1.495      ;
+; 1.480  ; Keypad:u1|clk_cnt[11] ; Keypad:u1|clk_cnt[11] ; clk               ; clk         ; 0.000        ; 0.000      ; 1.495      ;
+; 1.481  ; FND:u0|scan_cnt[20]   ; FND:u0|scan_cnt[20]   ; clk               ; clk         ; 0.000        ; 0.000      ; 1.496      ;
+; 1.481  ; FND:u0|scan_cnt[16]   ; FND:u0|scan_cnt[16]   ; clk               ; clk         ; 0.000        ; 0.000      ; 1.496      ;
+; 1.481  ; Keypad:u1|clk_cnt[16] ; Keypad:u1|clk_cnt[16] ; clk               ; clk         ; 0.000        ; 0.000      ; 1.496      ;
+; 1.481  ; Keypad:u1|clk_cnt[20] ; Keypad:u1|clk_cnt[20] ; clk               ; clk         ; 0.000        ; 0.000      ; 1.496      ;
+; 1.482  ; FND:u0|scan_cnt[18]   ; FND:u0|scan_cnt[18]   ; clk               ; clk         ; 0.000        ; 0.000      ; 1.497      ;
+; 1.482  ; Keypad:u1|clk_cnt[18] ; Keypad:u1|clk_cnt[18] ; clk               ; clk         ; 0.000        ; 0.000      ; 1.497      ;
+; 1.485  ; Keypad:u1|clk_cnt[6]  ; Keypad:u1|clk_cnt[6]  ; clk               ; clk         ; 0.000        ; 0.000      ; 1.500      ;
+; 1.486  ; Keypad:u1|clk_cnt[8]  ; Keypad:u1|clk_cnt[8]  ; clk               ; clk         ; 0.000        ; 0.000      ; 1.501      ;
+; 1.487  ; FND:u0|scan_cnt[6]    ; FND:u0|scan_cnt[6]    ; clk               ; clk         ; 0.000        ; 0.000      ; 1.502      ;
+; 1.488  ; FND:u0|scan_cnt[25]   ; FND:u0|scan_cnt[25]   ; clk               ; clk         ; 0.000        ; 0.000      ; 1.503      ;
+; 1.488  ; FND:u0|scan_cnt[8]    ; FND:u0|scan_cnt[8]    ; clk               ; clk         ; 0.000        ; 0.000      ; 1.503      ;
+; 1.488  ; Keypad:u1|clk_cnt[25] ; Keypad:u1|clk_cnt[25] ; clk               ; clk         ; 0.000        ; 0.000      ; 1.503      ;
+; 1.489  ; FND:u0|scan_cnt[0]    ; FND:u0|scan_cnt[0]    ; clk               ; clk         ; 0.000        ; 0.000      ; 1.504      ;
+; 1.489  ; Keypad:u1|clk_cnt[0]  ; Keypad:u1|clk_cnt[0]  ; clk               ; clk         ; 0.000        ; 0.000      ; 1.504      ;
+; 1.493  ; FND:u0|scan_cnt[1]    ; FND:u0|scan_cnt[1]    ; clk               ; clk         ; 0.000        ; 0.000      ; 1.508      ;
+; 1.493  ; Keypad:u1|clk_cnt[1]  ; Keypad:u1|clk_cnt[1]  ; clk               ; clk         ; 0.000        ; 0.000      ; 1.508      ;
+; 1.922  ; FND:u0|scan_cnt[17]   ; FND:u0|scan_cnt[18]   ; clk               ; clk         ; 0.000        ; 0.000      ; 1.937      ;
+; 1.922  ; Keypad:u1|clk_cnt[17] ; Keypad:u1|clk_cnt[18] ; clk               ; clk         ; 0.000        ; 0.000      ; 1.937      ;
+; 1.922  ; Keypad:u1|clk_cnt[7]  ; Keypad:u1|clk_cnt[8]  ; clk               ; clk         ; 0.000        ; 0.000      ; 1.937      ;
+; 1.925  ; FND:u0|scan_cnt[14]   ; FND:u0|scan_cnt[15]   ; clk               ; clk         ; 0.000        ; 0.000      ; 1.940      ;
+; 1.925  ; FND:u0|scan_cnt[4]    ; FND:u0|scan_cnt[5]    ; clk               ; clk         ; 0.000        ; 0.000      ; 1.940      ;
+; 1.925  ; FND:u0|scan_cnt[9]    ; FND:u0|scan_cnt[10]   ; clk               ; clk         ; 0.000        ; 0.000      ; 1.940      ;
+; 1.925  ; Keypad:u1|clk_cnt[14] ; Keypad:u1|clk_cnt[15] ; clk               ; clk         ; 0.000        ; 0.000      ; 1.940      ;
+; 1.925  ; Keypad:u1|clk_cnt[9]  ; Keypad:u1|clk_cnt[10] ; clk               ; clk         ; 0.000        ; 0.000      ; 1.940      ;
+; 1.925  ; Keypad:u1|clk_cnt[4]  ; Keypad:u1|clk_cnt[5]  ; clk               ; clk         ; 0.000        ; 0.000      ; 1.940      ;
+; 1.927  ; FND:u0|scan_cnt[7]    ; FND:u0|scan_cnt[8]    ; clk               ; clk         ; 0.000        ; 0.000      ; 1.942      ;
+; 1.928  ; FND:u0|scan_cnt[12]   ; FND:u0|scan_cnt[13]   ; clk               ; clk         ; 0.000        ; 0.000      ; 1.943      ;
+; 1.928  ; Keypad:u1|clk_cnt[12] ; Keypad:u1|clk_cnt[13] ; clk               ; clk         ; 0.000        ; 0.000      ; 1.943      ;
+; 1.929  ; Keypad:u1|clk_cnt[19] ; Keypad:u1|clk_cnt[20] ; clk               ; clk         ; 0.000        ; 0.000      ; 1.944      ;
+; 1.933  ; Keypad:u1|clk_cnt[22] ; Keypad:u1|clk_cnt[23] ; clk               ; clk         ; 0.000        ; 0.000      ; 1.948      ;
+; 1.934  ; FND:u0|scan_cnt[19]   ; FND:u0|scan_cnt[20]   ; clk               ; clk         ; 0.000        ; 0.000      ; 1.949      ;
+; 1.934  ; FND:u0|scan_cnt[2]    ; FND:u0|scan_cnt[3]    ; clk               ; clk         ; 0.000        ; 0.000      ; 1.949      ;
+; 1.934  ; Keypad:u1|clk_cnt[2]  ; Keypad:u1|clk_cnt[3]  ; clk               ; clk         ; 0.000        ; 0.000      ; 1.949      ;
+; 1.936  ; Keypad:u1|clk_cnt[24] ; Keypad:u1|clk_cnt[25] ; clk               ; clk         ; 0.000        ; 0.000      ; 1.951      ;
+; 1.940  ; FND:u0|scan_cnt[24]   ; FND:u0|scan_cnt[25]   ; clk               ; clk         ; 0.000        ; 0.000      ; 1.955      ;
+; 1.947  ; Keypad:u1|clk_cnt[26] ; Keypad:u1|clk_cnt[26] ; clk               ; clk         ; 0.000        ; 0.000      ; 1.962      ;
+; 1.948  ; FND:u0|scan_cnt[22]   ; FND:u0|scan_cnt[23]   ; clk               ; clk         ; 0.000        ; 0.000      ; 1.963      ;
+; 2.003  ; FND:u0|scan_cnt[4]    ; FND:u0|scan_cnt[6]    ; clk               ; clk         ; 0.000        ; 0.000      ; 2.018      ;
+; 2.003  ; FND:u0|scan_cnt[14]   ; FND:u0|scan_cnt[16]   ; clk               ; clk         ; 0.000        ; 0.000      ; 2.018      ;
+; 2.003  ; FND:u0|scan_cnt[9]    ; FND:u0|scan_cnt[11]   ; clk               ; clk         ; 0.000        ; 0.000      ; 2.018      ;
+; 2.003  ; Keypad:u1|clk_cnt[14] ; Keypad:u1|clk_cnt[16] ; clk               ; clk         ; 0.000        ; 0.000      ; 2.018      ;
+; 2.003  ; Keypad:u1|clk_cnt[4]  ; Keypad:u1|clk_cnt[6]  ; clk               ; clk         ; 0.000        ; 0.000      ; 2.018      ;
+; 2.003  ; Keypad:u1|clk_cnt[9]  ; Keypad:u1|clk_cnt[11] ; clk               ; clk         ; 0.000        ; 0.000      ; 2.018      ;
+; 2.007  ; Keypad:u1|clk_cnt[19] ; Keypad:u1|clk_cnt[21] ; clk               ; clk         ; 0.000        ; 0.000      ; 2.022      ;
+; 2.012  ; FND:u0|scan_cnt[19]   ; FND:u0|scan_cnt[21]   ; clk               ; clk         ; 0.000        ; 0.000      ; 2.027      ;
+; 2.014  ; Keypad:u1|clk_cnt[24] ; Keypad:u1|clk_cnt[26] ; clk               ; clk         ; 0.000        ; 0.000      ; 2.029      ;
+; 2.018  ; FND:u0|scan_cnt[24]   ; FND:u0|scan_cnt[26]   ; clk               ; clk         ; 0.000        ; 0.000      ; 2.033      ;
+; 2.081  ; FND:u0|scan_cnt[9]    ; FND:u0|scan_cnt[12]   ; clk               ; clk         ; 0.000        ; 0.000      ; 2.096      ;
+; 2.081  ; FND:u0|scan_cnt[14]   ; FND:u0|scan_cnt[17]   ; clk               ; clk         ; 0.000        ; 0.000      ; 2.096      ;
+; 2.081  ; FND:u0|scan_cnt[4]    ; FND:u0|scan_cnt[7]    ; clk               ; clk         ; 0.000        ; 0.000      ; 2.096      ;
+; 2.081  ; Keypad:u1|clk_cnt[9]  ; Keypad:u1|clk_cnt[12] ; clk               ; clk         ; 0.000        ; 0.000      ; 2.096      ;
+; 2.081  ; Keypad:u1|clk_cnt[14] ; Keypad:u1|clk_cnt[17] ; clk               ; clk         ; 0.000        ; 0.000      ; 2.096      ;
+; 2.081  ; Keypad:u1|clk_cnt[4]  ; Keypad:u1|clk_cnt[7]  ; clk               ; clk         ; 0.000        ; 0.000      ; 2.096      ;
+; 2.082  ; Keypad:u1|clk_cnt[21] ; Keypad:u1|clk_cnt[22] ; clk               ; clk         ; 0.000        ; 0.000      ; 2.097      ;
++--------+-----------------------+-----------------------+-------------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'Keypad:u1|clk_div'                                                                                                              ;
++-------+-----------------------+-----------------------+-------------------+-------------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node               ; Launch Clock      ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+-----------------------+-------------------+-------------------+--------------+------------+------------+
+; 1.244 ; Keypad:u1|state.col_3 ; Keypad:u1|state.col_1 ; Keypad:u1|clk_div ; Keypad:u1|clk_div ; 0.000        ; 0.000      ; 1.259      ;
+; 1.277 ; Keypad:u1|state.idle  ; Keypad:u1|state.col_1 ; Keypad:u1|clk_div ; Keypad:u1|clk_div ; 0.000        ; 0.000      ; 1.292      ;
+; 1.667 ; Keypad:u1|state.col_1 ; Keypad:u1|state.col_2 ; Keypad:u1|clk_div ; Keypad:u1|clk_div ; 0.000        ; 0.022      ; 1.704      ;
+; 1.990 ; Keypad:u1|state.col_2 ; Keypad:u1|state.col_3 ; Keypad:u1|clk_div ; Keypad:u1|clk_div ; 0.000        ; -0.022     ; 1.983      ;
++-------+-----------------------+-----------------------+-------------------+-------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'FND:u0|digit[0]'                                                                                                       ;
++-------+-----------------------+----------------+-------------------+-----------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node        ; Launch Clock      ; Latch Clock     ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+----------------+-------------------+-----------------+--------------+------------+------------+
+; 1.368 ; Keypad:u1|state.col_2 ; FND:u0|data[4] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 0.000        ; 0.687      ; 2.055      ;
+; 1.445 ; Keypad:u1|state.col_3 ; FND:u0|data[6] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 0.000        ; 0.674      ; 2.119      ;
+; 1.796 ; Keypad:u1|state.col_3 ; FND:u0|data[4] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 0.000        ; 0.709      ; 2.505      ;
+; 2.001 ; Keypad:u1|state.col_1 ; FND:u0|data[4] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 0.000        ; 0.709      ; 2.710      ;
+; 2.090 ; Keypad:u1|state.col_2 ; FND:u0|data[1] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 0.000        ; 0.653      ; 2.743      ;
+; 2.248 ; Keypad:u1|state.col_1 ; FND:u0|data[0] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 0.000        ; 0.730      ; 2.978      ;
+; 2.505 ; Keypad:u1|state.col_1 ; FND:u0|data[1] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 0.000        ; 0.675      ; 3.180      ;
+; 2.585 ; Keypad:u1|state.col_2 ; FND:u0|data[3] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 0.000        ; 0.709      ; 3.294      ;
+; 2.614 ; Keypad:u1|state.col_1 ; FND:u0|data[5] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 0.000        ; 0.707      ; 3.321      ;
+; 2.685 ; Keypad:u1|state.col_2 ; FND:u0|data[6] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 0.000        ; 0.652      ; 3.337      ;
+; 2.745 ; Keypad:u1|state.col_3 ; FND:u0|data[1] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 0.000        ; 0.675      ; 3.420      ;
+; 2.819 ; Keypad:u1|state.col_2 ; FND:u0|data[5] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 0.000        ; 0.685      ; 3.504      ;
+; 2.836 ; Keypad:u1|state.col_3 ; FND:u0|data[5] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 0.000        ; 0.707      ; 3.543      ;
+; 2.863 ; Keypad:u1|state.col_2 ; FND:u0|data[0] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 0.000        ; 0.708      ; 3.571      ;
+; 2.998 ; Keypad:u1|state.col_2 ; FND:u0|data[2] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 0.000        ; 0.709      ; 3.707      ;
+; 3.318 ; Keypad:u1|state.col_1 ; FND:u0|data[6] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 0.000        ; 0.674      ; 3.992      ;
+; 3.356 ; Keypad:u1|state.col_3 ; FND:u0|data[0] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 0.000        ; 0.730      ; 4.086      ;
+; 3.382 ; Keypad:u1|state.col_3 ; FND:u0|data[3] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 0.000        ; 0.731      ; 4.113      ;
+; 3.426 ; Keypad:u1|state.col_3 ; FND:u0|data[2] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 0.000        ; 0.731      ; 4.157      ;
+; 3.459 ; Keypad:u1|state.col_1 ; FND:u0|data[2] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 0.000        ; 0.731      ; 4.190      ;
+; 3.587 ; Keypad:u1|state.col_1 ; FND:u0|data[3] ; Keypad:u1|clk_div ; FND:u0|digit[0] ; 0.000        ; 0.731      ; 4.318      ;
++-------+-----------------------+----------------+-------------------+-----------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'clk'                                                                             ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------+
+; -1.583 ; 1.000        ; 2.583          ; Port Rate        ; clk   ; Rise       ; clk                   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|digit[0]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|digit[0]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|digit[1]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|digit[1]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[0]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[0]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[10]   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[10]   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[11]   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[11]   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[12]   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[12]   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[13]   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[13]   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[14]   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[14]   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[15]   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[15]   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[16]   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[16]   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[17]   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[17]   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[18]   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[18]   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[19]   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[19]   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[1]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[1]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[20]   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[20]   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[21]   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[21]   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[22]   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[22]   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[23]   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[23]   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[24]   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[24]   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[25]   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[25]   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[26]   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[26]   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[27]   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[27]   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[2]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[2]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[3]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[3]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[4]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[4]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[5]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[5]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[6]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[6]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[7]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[7]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[8]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[8]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; FND:u0|scan_cnt[9]    ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; FND:u0|scan_cnt[9]    ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Keypad:u1|clk_cnt[0]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Keypad:u1|clk_cnt[0]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Keypad:u1|clk_cnt[10] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Keypad:u1|clk_cnt[10] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Keypad:u1|clk_cnt[11] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Keypad:u1|clk_cnt[11] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Keypad:u1|clk_cnt[12] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Keypad:u1|clk_cnt[12] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Keypad:u1|clk_cnt[13] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Keypad:u1|clk_cnt[13] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Keypad:u1|clk_cnt[14] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Keypad:u1|clk_cnt[14] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Keypad:u1|clk_cnt[15] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Keypad:u1|clk_cnt[15] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Keypad:u1|clk_cnt[16] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Keypad:u1|clk_cnt[16] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Keypad:u1|clk_cnt[17] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Keypad:u1|clk_cnt[17] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Keypad:u1|clk_cnt[18] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Keypad:u1|clk_cnt[18] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Keypad:u1|clk_cnt[19] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Keypad:u1|clk_cnt[19] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Keypad:u1|clk_cnt[1]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Keypad:u1|clk_cnt[1]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Keypad:u1|clk_cnt[20] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Keypad:u1|clk_cnt[20] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Keypad:u1|clk_cnt[21] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Keypad:u1|clk_cnt[21] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Keypad:u1|clk_cnt[22] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Keypad:u1|clk_cnt[22] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Keypad:u1|clk_cnt[23] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Keypad:u1|clk_cnt[23] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Keypad:u1|clk_cnt[24] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Keypad:u1|clk_cnt[24] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Keypad:u1|clk_cnt[25] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Keypad:u1|clk_cnt[25] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Keypad:u1|clk_cnt[26] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Keypad:u1|clk_cnt[26] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Keypad:u1|clk_cnt[27] ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'Keypad:u1|clk_div'                                                                           ;
++--------+--------------+----------------+------------------+-------------------+------------+-----------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock             ; Clock Edge ; Target                ;
++--------+--------------+----------------+------------------+-------------------+------------+-----------------------+
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; Keypad:u1|clk_div ; Rise       ; Keypad:u1|state.col_1 ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; Keypad:u1|clk_div ; Rise       ; Keypad:u1|state.col_1 ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; Keypad:u1|clk_div ; Rise       ; Keypad:u1|state.col_2 ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; Keypad:u1|clk_div ; Rise       ; Keypad:u1|state.col_2 ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; Keypad:u1|clk_div ; Rise       ; Keypad:u1|state.col_3 ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; Keypad:u1|clk_div ; Rise       ; Keypad:u1|state.col_3 ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; Keypad:u1|clk_div ; Rise       ; Keypad:u1|state.idle  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; Keypad:u1|clk_div ; Rise       ; Keypad:u1|state.idle  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Keypad:u1|clk_div ; Rise       ; u1|clk_div|regout     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Keypad:u1|clk_div ; Rise       ; u1|clk_div|regout     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Keypad:u1|clk_div ; Rise       ; u1|state.col_1|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Keypad:u1|clk_div ; Rise       ; u1|state.col_1|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Keypad:u1|clk_div ; Rise       ; u1|state.col_2|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Keypad:u1|clk_div ; Rise       ; u1|state.col_2|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Keypad:u1|clk_div ; Rise       ; u1|state.col_3|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Keypad:u1|clk_div ; Rise       ; u1|state.col_3|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Keypad:u1|clk_div ; Rise       ; u1|state.idle|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Keypad:u1|clk_div ; Rise       ; u1|state.idle|clk     ;
++--------+--------------+----------------+------------------+-------------------+------------+-----------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'FND:u0|digit[0]'                                                                        ;
++-------+--------------+----------------+------------------+-----------------+------------+---------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock           ; Clock Edge ; Target              ;
++-------+--------------+----------------+------------------+-----------------+------------+---------------------+
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; FND:u0|digit[0] ; Rise       ; FND:u0|data[0]      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; FND:u0|digit[0] ; Rise       ; FND:u0|data[0]      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; FND:u0|digit[0] ; Rise       ; FND:u0|data[1]      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; FND:u0|digit[0] ; Rise       ; FND:u0|data[1]      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; FND:u0|digit[0] ; Rise       ; FND:u0|data[2]      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; FND:u0|digit[0] ; Rise       ; FND:u0|data[2]      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; FND:u0|digit[0] ; Rise       ; FND:u0|data[3]      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; FND:u0|digit[0] ; Rise       ; FND:u0|data[3]      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; FND:u0|digit[0] ; Rise       ; FND:u0|data[4]      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; FND:u0|digit[0] ; Rise       ; FND:u0|data[4]      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; FND:u0|digit[0] ; Rise       ; FND:u0|data[5]      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; FND:u0|digit[0] ; Rise       ; FND:u0|data[5]      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; FND:u0|digit[0] ; Rise       ; FND:u0|data[6]      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; FND:u0|digit[0] ; Rise       ; FND:u0|data[6]      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; FND:u0|digit[0] ; Rise       ; u0|Equal0~0|combout ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; FND:u0|digit[0] ; Rise       ; u0|Equal0~0|combout ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; FND:u0|digit[0] ; Rise       ; u0|Equal0~0|datac   ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; FND:u0|digit[0] ; Rise       ; u0|Equal0~0|datac   ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; FND:u0|digit[0] ; Rise       ; u0|data[0]|datac    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; FND:u0|digit[0] ; Rise       ; u0|data[0]|datac    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; FND:u0|digit[0] ; Rise       ; u0|data[1]|datac    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; FND:u0|digit[0] ; Rise       ; u0|data[1]|datac    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; FND:u0|digit[0] ; Rise       ; u0|data[2]|datac    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; FND:u0|digit[0] ; Rise       ; u0|data[2]|datac    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; FND:u0|digit[0] ; Rise       ; u0|data[3]|datac    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; FND:u0|digit[0] ; Rise       ; u0|data[3]|datac    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; FND:u0|digit[0] ; Rise       ; u0|data[4]|datac    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; FND:u0|digit[0] ; Rise       ; u0|data[4]|datac    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; FND:u0|digit[0] ; Rise       ; u0|data[5]|datac    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; FND:u0|digit[0] ; Rise       ; u0|data[5]|datac    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; FND:u0|digit[0] ; Rise       ; u0|data[6]|datac    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; FND:u0|digit[0] ; Rise       ; u0|data[6]|datac    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; FND:u0|digit[0] ; Rise       ; u0|digit[0]|regout  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; FND:u0|digit[0] ; Rise       ; u0|digit[0]|regout  ;
++-------+--------------+----------------+------------------+-----------------+------------+---------------------+
+
+
++--------------------------------------------------------------------------------+
+; Setup Times                                                                    ;
++-----------+-------------------+-------+-------+------------+-------------------+
+; Data Port ; Clock Port        ; Rise  ; Fall  ; Clock Edge ; Clock Reference   ;
++-----------+-------------------+-------+-------+------------+-------------------+
+; row[*]    ; FND:u0|digit[0]   ; 9.625 ; 9.625 ; Rise       ; FND:u0|digit[0]   ;
+;  row[0]   ; FND:u0|digit[0]   ; 9.505 ; 9.505 ; Rise       ; FND:u0|digit[0]   ;
+;  row[1]   ; FND:u0|digit[0]   ; 9.460 ; 9.460 ; Rise       ; FND:u0|digit[0]   ;
+;  row[2]   ; FND:u0|digit[0]   ; 9.625 ; 9.625 ; Rise       ; FND:u0|digit[0]   ;
+;  row[3]   ; FND:u0|digit[0]   ; 9.067 ; 9.067 ; Rise       ; FND:u0|digit[0]   ;
+; row[*]    ; Keypad:u1|clk_div ; 5.063 ; 5.063 ; Rise       ; Keypad:u1|clk_div ;
+;  row[0]   ; Keypad:u1|clk_div ; 5.063 ; 5.063 ; Rise       ; Keypad:u1|clk_div ;
+;  row[1]   ; Keypad:u1|clk_div ; 4.722 ; 4.722 ; Rise       ; Keypad:u1|clk_div ;
+;  row[2]   ; Keypad:u1|clk_div ; 5.062 ; 5.062 ; Rise       ; Keypad:u1|clk_div ;
+;  row[3]   ; Keypad:u1|clk_div ; 4.789 ; 4.789 ; Rise       ; Keypad:u1|clk_div ;
++-----------+-------------------+-------+-------+------------+-------------------+
+
+
++----------------------------------------------------------------------------------+
+; Hold Times                                                                       ;
++-----------+-------------------+--------+--------+------------+-------------------+
+; Data Port ; Clock Port        ; Rise   ; Fall   ; Clock Edge ; Clock Reference   ;
++-----------+-------------------+--------+--------+------------+-------------------+
+; row[*]    ; FND:u0|digit[0]   ; -3.736 ; -3.736 ; Rise       ; FND:u0|digit[0]   ;
+;  row[0]   ; FND:u0|digit[0]   ; -4.063 ; -4.063 ; Rise       ; FND:u0|digit[0]   ;
+;  row[1]   ; FND:u0|digit[0]   ; -3.736 ; -3.736 ; Rise       ; FND:u0|digit[0]   ;
+;  row[2]   ; FND:u0|digit[0]   ; -4.060 ; -4.060 ; Rise       ; FND:u0|digit[0]   ;
+;  row[3]   ; FND:u0|digit[0]   ; -3.793 ; -3.793 ; Rise       ; FND:u0|digit[0]   ;
+; row[*]    ; Keypad:u1|clk_div ; -3.847 ; -3.847 ; Rise       ; Keypad:u1|clk_div ;
+;  row[0]   ; Keypad:u1|clk_div ; -4.188 ; -4.188 ; Rise       ; Keypad:u1|clk_div ;
+;  row[1]   ; Keypad:u1|clk_div ; -3.847 ; -3.847 ; Rise       ; Keypad:u1|clk_div ;
+;  row[2]   ; Keypad:u1|clk_div ; -4.187 ; -4.187 ; Rise       ; Keypad:u1|clk_div ;
+;  row[3]   ; Keypad:u1|clk_div ; -3.914 ; -3.914 ; Rise       ; Keypad:u1|clk_div ;
++-----------+-------------------+--------+--------+------------+-------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Clock to Output Times                                                               ;
++--------------+-------------------+--------+--------+------------+-------------------+
+; Data Port    ; Clock Port        ; Rise   ; Fall   ; Clock Edge ; Clock Reference   ;
++--------------+-------------------+--------+--------+------------+-------------------+
+; fnd_data[*]  ; FND:u0|digit[0]   ; 10.778 ; 10.778 ; Rise       ; FND:u0|digit[0]   ;
+;  fnd_data[0] ; FND:u0|digit[0]   ; 10.362 ; 10.362 ; Rise       ; FND:u0|digit[0]   ;
+;  fnd_data[1] ; FND:u0|digit[0]   ; 10.300 ; 10.300 ; Rise       ; FND:u0|digit[0]   ;
+;  fnd_data[2] ; FND:u0|digit[0]   ; 10.088 ; 10.088 ; Rise       ; FND:u0|digit[0]   ;
+;  fnd_data[3] ; FND:u0|digit[0]   ; 10.088 ; 10.088 ; Rise       ; FND:u0|digit[0]   ;
+;  fnd_data[4] ; FND:u0|digit[0]   ; 10.379 ; 10.379 ; Rise       ; FND:u0|digit[0]   ;
+;  fnd_data[5] ; FND:u0|digit[0]   ; 10.076 ; 10.076 ; Rise       ; FND:u0|digit[0]   ;
+;  fnd_data[6] ; FND:u0|digit[0]   ; 10.778 ; 10.778 ; Rise       ; FND:u0|digit[0]   ;
+; col[*]       ; Keypad:u1|clk_div ; 10.293 ; 10.293 ; Rise       ; Keypad:u1|clk_div ;
+;  col[0]      ; Keypad:u1|clk_div ; 10.293 ; 10.293 ; Rise       ; Keypad:u1|clk_div ;
+;  col[1]      ; Keypad:u1|clk_div ; 9.854  ; 9.854  ; Rise       ; Keypad:u1|clk_div ;
+;  col[2]      ; Keypad:u1|clk_div ; 10.289 ; 10.289 ; Rise       ; Keypad:u1|clk_div ;
+; led[*]       ; Keypad:u1|clk_div ; 16.502 ; 16.502 ; Rise       ; Keypad:u1|clk_div ;
+;  led[0]      ; Keypad:u1|clk_div ; 13.104 ; 13.104 ; Rise       ; Keypad:u1|clk_div ;
+;  led[1]      ; Keypad:u1|clk_div ; 12.618 ; 12.618 ; Rise       ; Keypad:u1|clk_div ;
+;  led[2]      ; Keypad:u1|clk_div ; 13.433 ; 13.433 ; Rise       ; Keypad:u1|clk_div ;
+;  led[3]      ; Keypad:u1|clk_div ; 14.472 ; 14.472 ; Rise       ; Keypad:u1|clk_div ;
+;  led[4]      ; Keypad:u1|clk_div ; 16.016 ; 16.016 ; Rise       ; Keypad:u1|clk_div ;
+;  led[5]      ; Keypad:u1|clk_div ; 16.502 ; 16.502 ; Rise       ; Keypad:u1|clk_div ;
+;  led[6]      ; Keypad:u1|clk_div ; 14.727 ; 14.727 ; Rise       ; Keypad:u1|clk_div ;
+;  led[7]      ; Keypad:u1|clk_div ; 15.189 ; 15.189 ; Rise       ; Keypad:u1|clk_div ;
+; portA[*]     ; clk               ; 6.451  ; 6.451  ; Rise       ; clk               ;
+;  portA[1]    ; clk               ; 6.451  ; 6.451  ; Rise       ; clk               ;
+; portB[*]     ; clk               ; 7.842  ; 7.842  ; Rise       ; clk               ;
+;  portB[1]    ; clk               ; 7.842  ; 7.842  ; Rise       ; clk               ;
++--------------+-------------------+--------+--------+------------+-------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                       ;
++--------------+-------------------+--------+--------+------------+-------------------+
+; Data Port    ; Clock Port        ; Rise   ; Fall   ; Clock Edge ; Clock Reference   ;
++--------------+-------------------+--------+--------+------------+-------------------+
+; fnd_data[*]  ; FND:u0|digit[0]   ; 10.076 ; 10.076 ; Rise       ; FND:u0|digit[0]   ;
+;  fnd_data[0] ; FND:u0|digit[0]   ; 10.362 ; 10.362 ; Rise       ; FND:u0|digit[0]   ;
+;  fnd_data[1] ; FND:u0|digit[0]   ; 10.300 ; 10.300 ; Rise       ; FND:u0|digit[0]   ;
+;  fnd_data[2] ; FND:u0|digit[0]   ; 10.088 ; 10.088 ; Rise       ; FND:u0|digit[0]   ;
+;  fnd_data[3] ; FND:u0|digit[0]   ; 10.088 ; 10.088 ; Rise       ; FND:u0|digit[0]   ;
+;  fnd_data[4] ; FND:u0|digit[0]   ; 10.379 ; 10.379 ; Rise       ; FND:u0|digit[0]   ;
+;  fnd_data[5] ; FND:u0|digit[0]   ; 10.076 ; 10.076 ; Rise       ; FND:u0|digit[0]   ;
+;  fnd_data[6] ; FND:u0|digit[0]   ; 10.778 ; 10.778 ; Rise       ; FND:u0|digit[0]   ;
+; col[*]       ; Keypad:u1|clk_div ; 9.854  ; 9.854  ; Rise       ; Keypad:u1|clk_div ;
+;  col[0]      ; Keypad:u1|clk_div ; 10.293 ; 10.293 ; Rise       ; Keypad:u1|clk_div ;
+;  col[1]      ; Keypad:u1|clk_div ; 9.854  ; 9.854  ; Rise       ; Keypad:u1|clk_div ;
+;  col[2]      ; Keypad:u1|clk_div ; 10.289 ; 10.289 ; Rise       ; Keypad:u1|clk_div ;
+; led[*]       ; Keypad:u1|clk_div ; 12.618 ; 12.618 ; Rise       ; Keypad:u1|clk_div ;
+;  led[0]      ; Keypad:u1|clk_div ; 13.104 ; 13.104 ; Rise       ; Keypad:u1|clk_div ;
+;  led[1]      ; Keypad:u1|clk_div ; 12.618 ; 12.618 ; Rise       ; Keypad:u1|clk_div ;
+;  led[2]      ; Keypad:u1|clk_div ; 13.433 ; 13.433 ; Rise       ; Keypad:u1|clk_div ;
+;  led[3]      ; Keypad:u1|clk_div ; 14.472 ; 14.472 ; Rise       ; Keypad:u1|clk_div ;
+;  led[4]      ; Keypad:u1|clk_div ; 14.892 ; 14.892 ; Rise       ; Keypad:u1|clk_div ;
+;  led[5]      ; Keypad:u1|clk_div ; 15.737 ; 15.737 ; Rise       ; Keypad:u1|clk_div ;
+;  led[6]      ; Keypad:u1|clk_div ; 14.564 ; 14.564 ; Rise       ; Keypad:u1|clk_div ;
+;  led[7]      ; Keypad:u1|clk_div ; 13.871 ; 13.871 ; Rise       ; Keypad:u1|clk_div ;
+; portA[*]     ; clk               ; 6.451  ; 6.451  ; Rise       ; clk               ;
+;  portA[1]    ; clk               ; 6.451  ; 6.451  ; Rise       ; clk               ;
+; portB[*]     ; clk               ; 7.842  ; 7.842  ; Rise       ; clk               ;
+;  portB[1]    ; clk               ; 7.842  ; 7.842  ; Rise       ; clk               ;
++--------------+-------------------+--------+--------+------------+-------------------+
+
+
++------------------------------------------------------+
+; Propagation Delay                                    ;
++------------+-------------+--------+----+----+--------+
+; Input Port ; Output Port ; RR     ; RF ; FR ; FF     ;
++------------+-------------+--------+----+----+--------+
+; reset      ; fnd_en      ; 10.757 ;    ;    ; 10.757 ;
+; row[0]     ; led[0]      ; 15.002 ;    ;    ; 15.002 ;
+; row[0]     ; led[1]      ; 15.201 ;    ;    ; 15.201 ;
+; row[0]     ; led[2]      ; 15.333 ;    ;    ; 15.333 ;
+; row[0]     ; led[3]      ; 15.896 ;    ;    ; 15.896 ;
+; row[0]     ; led[4]      ; 17.364 ;    ;    ; 17.364 ;
+; row[0]     ; led[5]      ; 17.106 ;    ;    ; 17.106 ;
+; row[0]     ; led[6]      ; 15.197 ;    ;    ; 15.197 ;
+; row[0]     ; led[7]      ; 16.397 ;    ;    ; 16.397 ;
+; row[1]     ; led[0]      ; 15.955 ;    ;    ; 15.955 ;
+; row[1]     ; led[1]      ; 15.052 ;    ;    ; 15.052 ;
+; row[1]     ; led[2]      ; 16.287 ;    ;    ; 16.287 ;
+; row[1]     ; led[3]      ; 15.851 ;    ;    ; 15.851 ;
+; row[1]     ; led[4]      ; 19.080 ;    ;    ; 19.080 ;
+; row[1]     ; led[5]      ; 18.822 ;    ;    ; 18.822 ;
+; row[1]     ; led[6]      ; 14.995 ;    ;    ; 14.995 ;
+; row[1]     ; led[7]      ; 16.056 ;    ;    ; 16.056 ;
+; row[2]     ; led[0]      ; 15.791 ;    ;    ; 15.791 ;
+; row[2]     ; led[1]      ; 14.888 ;    ;    ; 14.888 ;
+; row[2]     ; led[2]      ; 16.123 ;    ;    ; 16.123 ;
+; row[2]     ; led[3]      ; 16.016 ;    ;    ; 16.016 ;
+; row[2]     ; led[4]      ; 18.916 ;    ;    ; 18.916 ;
+; row[2]     ; led[5]      ; 18.658 ;    ;    ; 18.658 ;
+; row[2]     ; led[6]      ; 15.350 ;    ;    ; 15.350 ;
+; row[2]     ; led[7]      ; 16.396 ;    ;    ; 16.396 ;
+; row[3]     ; led[0]      ; 14.518 ;    ;    ; 14.518 ;
+; row[3]     ; led[1]      ; 15.414 ;    ;    ; 15.414 ;
+; row[3]     ; led[2]      ; 14.849 ;    ;    ; 14.849 ;
+; row[3]     ; led[3]      ; 15.458 ;    ;    ; 15.458 ;
+; row[3]     ; led[4]      ; 17.703 ;    ;    ; 17.703 ;
+; row[3]     ; led[5]      ; 17.445 ;    ;    ; 17.445 ;
+; row[3]     ; led[6]      ; 15.666 ;    ;    ; 15.666 ;
+; row[3]     ; led[7]      ; 16.124 ;    ;    ; 16.124 ;
++------------+-------------+--------+----+----+--------+
+
+
++------------------------------------------------------+
+; Minimum Propagation Delay                            ;
++------------+-------------+--------+----+----+--------+
+; Input Port ; Output Port ; RR     ; RF ; FR ; FF     ;
++------------+-------------+--------+----+----+--------+
+; reset      ; fnd_en      ; 10.757 ;    ;    ; 10.757 ;
+; row[0]     ; led[0]      ; 15.002 ;    ;    ; 15.002 ;
+; row[0]     ; led[1]      ; 15.201 ;    ;    ; 15.201 ;
+; row[0]     ; led[2]      ; 15.333 ;    ;    ; 15.333 ;
+; row[0]     ; led[3]      ; 15.896 ;    ;    ; 15.896 ;
+; row[0]     ; led[4]      ; 15.115 ;    ;    ; 15.115 ;
+; row[0]     ; led[5]      ; 14.857 ;    ;    ; 14.857 ;
+; row[0]     ; led[6]      ; 15.197 ;    ;    ; 15.197 ;
+; row[0]     ; led[7]      ; 16.285 ;    ;    ; 16.285 ;
+; row[1]     ; led[0]      ; 15.955 ;    ;    ; 15.955 ;
+; row[1]     ; led[1]      ; 15.052 ;    ;    ; 15.052 ;
+; row[1]     ; led[2]      ; 16.287 ;    ;    ; 16.287 ;
+; row[1]     ; led[3]      ; 15.851 ;    ;    ; 15.851 ;
+; row[1]     ; led[4]      ; 15.911 ;    ;    ; 15.911 ;
+; row[1]     ; led[5]      ; 17.324 ;    ;    ; 17.324 ;
+; row[1]     ; led[6]      ; 14.995 ;    ;    ; 14.995 ;
+; row[1]     ; led[7]      ; 15.958 ;    ;    ; 15.958 ;
+; row[2]     ; led[0]      ; 15.791 ;    ;    ; 15.791 ;
+; row[2]     ; led[1]      ; 14.888 ;    ;    ; 14.888 ;
+; row[2]     ; led[2]      ; 16.123 ;    ;    ; 16.123 ;
+; row[2]     ; led[3]      ; 16.016 ;    ;    ; 16.016 ;
+; row[2]     ; led[4]      ; 15.480 ;    ;    ; 15.480 ;
+; row[2]     ; led[5]      ; 14.979 ;    ;    ; 14.979 ;
+; row[2]     ; led[6]      ; 15.350 ;    ;    ; 15.350 ;
+; row[2]     ; led[7]      ; 16.282 ;    ;    ; 16.282 ;
+; row[3]     ; led[0]      ; 14.518 ;    ;    ; 14.518 ;
+; row[3]     ; led[1]      ; 15.414 ;    ;    ; 15.414 ;
+; row[3]     ; led[2]      ; 14.849 ;    ;    ; 14.849 ;
+; row[3]     ; led[3]      ; 15.458 ;    ;    ; 15.458 ;
+; row[3]     ; led[4]      ; 14.681 ;    ;    ; 14.681 ;
+; row[3]     ; led[5]      ; 17.147 ;    ;    ; 17.147 ;
+; row[3]     ; led[6]      ; 15.666 ;    ;    ; 15.666 ;
+; row[3]     ; led[7]      ; 16.015 ;    ;    ; 16.015 ;
++------------+-------------+--------+----+----+--------+
+
+
++-----------------------------------------------------------------------------------+
+; Setup Transfers                                                                   ;
++-------------------+-------------------+----------+----------+----------+----------+
+; From Clock        ; To Clock          ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------------+-------------------+----------+----------+----------+----------+
+; clk               ; clk               ; 3139     ; 0        ; 0        ; 0        ;
+; FND:u0|digit[0]   ; clk               ; 2        ; 2        ; 0        ; 0        ;
+; Keypad:u1|clk_div ; clk               ; 1        ; 1        ; 0        ; 0        ;
+; Keypad:u1|clk_div ; FND:u0|digit[0]   ; 89       ; 0        ; 0        ; 0        ;
+; Keypad:u1|clk_div ; Keypad:u1|clk_div ; 4        ; 0        ; 0        ; 0        ;
++-------------------+-------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------+
+; Hold Transfers                                                                    ;
++-------------------+-------------------+----------+----------+----------+----------+
+; From Clock        ; To Clock          ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------------+-------------------+----------+----------+----------+----------+
+; clk               ; clk               ; 3139     ; 0        ; 0        ; 0        ;
+; FND:u0|digit[0]   ; clk               ; 2        ; 2        ; 0        ; 0        ;
+; Keypad:u1|clk_div ; clk               ; 1        ; 1        ; 0        ; 0        ;
+; Keypad:u1|clk_div ; FND:u0|digit[0]   ; 89       ; 0        ; 0        ; 0        ;
+; Keypad:u1|clk_div ; Keypad:u1|clk_div ; 4        ; 0        ; 0        ; 0        ;
++-------------------+-------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 5     ; 5    ;
+; Unconstrained Input Port Paths  ; 142   ; 142  ;
+; Unconstrained Output Ports      ; 21    ; 21   ;
+; Unconstrained Output Port Paths ; 60    ; 60   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II TimeQuest Timing Analyzer
+    Info: Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Nov 02 11:53:01 2016
+Info: Command: quartus_sta Keypad_FND -c Keypad_FND
+Info: qsta_default_script.tcl version: #1
+Warning: Parallel compilation is not licensed and has been disabled
+Warning: Timing Analysis is analyzing one or more combinational loops as latches
+    Warning: Node "u0|data[0]|combout" is a latch
+    Warning: Node "u0|data[1]|combout" is a latch
+    Warning: Node "u0|data[2]|combout" is a latch
+    Warning: Node "u0|data[3]|combout" is a latch
+    Warning: Node "u0|data[4]|combout" is a latch
+    Warning: Node "u0|data[5]|combout" is a latch
+    Warning: Node "u0|data[6]|combout" is a latch
+Critical Warning: Synopsys Design Constraints File file not found: 'Keypad_FND.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info: No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info: Deriving Clocks
+    Info: create_clock -period 1.000 -name clk clk
+    Info: create_clock -period 1.000 -name Keypad:u1|clk_div Keypad:u1|clk_div
+    Info: create_clock -period 1.000 -name FND:u0|digit[0] FND:u0|digit[0]
+Critical Warning: Timing requirements not met
+Info: Worst-case setup slack is -5.240
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -5.240      -290.750 clk 
+    Info:    -5.235       -30.623 FND:u0|digit[0] 
+    Info:    -1.042        -2.090 Keypad:u1|clk_div 
+Info: Worst-case hold slack is -1.697
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -1.697        -4.950 clk 
+    Info:     1.244         0.000 Keypad:u1|clk_div 
+    Info:     1.368         0.000 FND:u0|digit[0] 
+Info: No Recovery paths to report
+Info: No Removal paths to report
+Info: Worst-case minimum pulse width slack is -1.583
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -1.583      -162.379 clk 
+    Info:    -1.318       -10.544 Keypad:u1|clk_div 
+    Info:     0.500         0.000 FND:u0|digit[0] 
+Info: The selected device family is not supported by the report_metastability command.
+Info: Design is not fully constrained for setup requirements
+Info: Design is not fully constrained for hold requirements
+Info: Quartus II TimeQuest Timing Analyzer was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 222 megabytes
+    Info: Processing ended: Wed Nov 02 11:53:01 2016
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+

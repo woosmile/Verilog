@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="ADC_DCMOTOR">
+		<CBX_INST_ENTRY INSTANCE_NAME="|ADC_DCMOTOR|DSP_4bitFND:u1|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_p6m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ADC_DCMOTOR|DSP_4bitFND:u1|lpm_divide:Mod1" CBX_FILE_NAME="lpm_divide_sul.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ADC_DCMOTOR|DSP_4bitFND:u1|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_s6m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ADC_DCMOTOR|DSP_4bitFND:u1|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_sul.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ADC_DCMOTOR|DSP_4bitFND:u1|lpm_divide:Mod2" CBX_FILE_NAME="lpm_divide_sul.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

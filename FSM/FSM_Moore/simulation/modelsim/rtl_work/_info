@@ -1,0 +1,39 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\user\Desktop\FSM_Moore\simulation\modelsim
+vFSM_Moore
+I]1lLZE`S3RgYh8V6jW>761
+VQ`HhR^=kAZlHfQ=[zODfz1
+Z1 dC:\Users\user\Desktop\FSM_Moore\simulation\modelsim
+w1461635098
+8C:/Users/user/Desktop/FSM_Moore/FSM_Moore.v
+FC:/Users/user/Desktop/FSM_Moore/FSM_Moore.v
+L0 44
+Z2 OV;L;6.6d;45
+r1
+31
+Z3 o-vlog01compat -work work -O0
+n@f@s@m_@moore
+!s100 2Um2NV7c<1ZL`>EjgT6gT2
+!s85 0
+!s101 -O0
+Z4 !s92 -vlog01compat -work work +incdir+C:/Users/user/Desktop/FSM_Moore -O0
+vtb_FSM_Moore
+!s100 83DEG:EMAT7KoE08b3;W>3
+IYnkUAXAeJT@X_7Wg?0zh]3
+VK0lBFbDTNjMScl;MSS68L3
+R1
+w1461635097
+8C:/Users/user/Desktop/FSM_Moore/tb_FSM_Moore.v
+FC:/Users/user/Desktop/FSM_Moore/tb_FSM_Moore.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s101 -O0
+R3
+R4
+ntb_@f@s@m_@moore

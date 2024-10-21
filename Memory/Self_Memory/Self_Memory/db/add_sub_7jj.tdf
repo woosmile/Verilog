@@ -1,0 +1,69 @@
+--lpm_add_sub CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48 DEVICE_FAMILY="Cyclone" LPM_PIPELINE=1 LPM_REPRESENTATION="UNSIGNED" LPM_WIDTH=8 ONE_INPUT_IS_CONSTANT="NO" aclr add_sub clock dataa datab overflow result
+--VERSION_BEGIN 11.0SP1 cbx_cycloneii 2011:07:03:21:07:09:SJ cbx_lpm_add_sub 2011:07:03:21:07:09:SJ cbx_mgl 2011:07:03:21:10:12:SJ cbx_stratix 2011:07:03:21:07:09:SJ cbx_stratixii 2011:07:03:21:07:09:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2011 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+
+FUNCTION cyclone_lcell (aclr, aload, cin, clk, dataa, datab, datac, datad, ena, inverta, regcascin, sclr, sload)
+WITH ( cin0_used, cin1_used, cin_used, lut_mask, operation_mode, output_mode, power_up, register_cascade_mode, sum_lutc_input, synch_mode, x_on_violation)
+RETURNS ( combout, cout, regout);
+
+--synthesis_resources = lut 10 
+SUBDESIGN add_sub_7jj
+( 
+	aclr	:	input;
+	add_sub	:	input;
+	clock	:	input;
+	dataa[7..0]	:	input;
+	datab[7..0]	:	input;
+	overflow	:	output;
+	result[7..0]	:	output;
+) 
+VARIABLE 
+	ovrflw_regr : dffe;
+	add_sub_cella[7..0] : cyclone_lcell
+		WITH (
+			cin_used = "true",
+			lut_mask = "96E8",
+			operation_mode = "arithmetic",
+			sum_lutc_input = "cin"
+		);
+	strx_lcell1 : cyclone_lcell
+		WITH (
+			cin_used = "false",
+			lut_mask = "00CC",
+			operation_mode = "arithmetic"
+		);
+	ovrflw_wire	: WIRE;
+
+BEGIN 
+	ovrflw_regr.clk = clock;
+	ovrflw_regr.clrn = (! aclr);
+	ovrflw_regr.d = ((! add_sub) $ add_sub_cella[7].cout);
+	add_sub_cella[].aclr = aclr;
+	add_sub_cella[].cin = ( add_sub_cella[6..0].cout, strx_lcell1.cout);
+	add_sub_cella[].clk = clock;
+	add_sub_cella[].dataa = datab[];
+	add_sub_cella[].datab = dataa[];
+	add_sub_cella[].inverta = (! add_sub);
+	strx_lcell1.dataa = B"0";
+	strx_lcell1.datab = (! add_sub);
+	strx_lcell1.inverta = (! add_sub);
+	overflow = ovrflw_wire;
+	ovrflw_wire = ovrflw_regr.q;
+	result[] = add_sub_cella[].regout;
+END;
+--VALID FILE

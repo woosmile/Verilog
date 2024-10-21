@@ -1,0 +1,8 @@
+
+State Machine - |Bell|state
+Name state.st_loop state.st_480 state.st_320 state.idle state.mute 
+state.idle 0 0 0 0 0 
+state.st_320 0 0 1 1 0 
+state.st_480 0 1 0 1 0 
+state.st_loop 1 0 0 1 0 
+state.mute 0 0 0 1 1 

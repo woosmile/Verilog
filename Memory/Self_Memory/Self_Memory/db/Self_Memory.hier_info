@@ -1,0 +1,112 @@
+|Self_Memory
+clk => clk.IN1
+reset => reset.IN1
+add_sub => add_sub.IN1
+a[0] => a[0].IN1
+a[1] => a[1].IN1
+a[2] => a[2].IN1
+a[3] => a[3].IN1
+a[4] => a[4].IN1
+a[5] => a[5].IN1
+a[6] => a[6].IN1
+a[7] => a[7].IN1
+b[0] => b[0].IN1
+b[1] => b[1].IN1
+b[2] => b[2].IN1
+b[3] => b[3].IN1
+b[4] => b[4].IN1
+b[5] => b[5].IN1
+b[6] => b[6].IN1
+b[7] => b[7].IN1
+
+
+|Self_Memory|ADD_SUB:u0
+aclr => aclr.IN1
+add_sub => add_sub.IN1
+clock => clock.IN1
+dataa[0] => dataa[0].IN1
+dataa[1] => dataa[1].IN1
+dataa[2] => dataa[2].IN1
+dataa[3] => dataa[3].IN1
+dataa[4] => dataa[4].IN1
+dataa[5] => dataa[5].IN1
+dataa[6] => dataa[6].IN1
+dataa[7] => dataa[7].IN1
+datab[0] => datab[0].IN1
+datab[1] => datab[1].IN1
+datab[2] => datab[2].IN1
+datab[3] => datab[3].IN1
+datab[4] => datab[4].IN1
+datab[5] => datab[5].IN1
+datab[6] => datab[6].IN1
+datab[7] => datab[7].IN1
+
+
+|Self_Memory|ADD_SUB:u0|lpm_add_sub:LPM_ADD_SUB_component
+dataa[0] => alt_stratix_add_sub:stratix_adder.dataa[0]
+dataa[1] => alt_stratix_add_sub:stratix_adder.dataa[1]
+dataa[2] => alt_stratix_add_sub:stratix_adder.dataa[2]
+dataa[3] => alt_stratix_add_sub:stratix_adder.dataa[3]
+dataa[4] => alt_stratix_add_sub:stratix_adder.dataa[4]
+dataa[5] => alt_stratix_add_sub:stratix_adder.dataa[5]
+dataa[6] => alt_stratix_add_sub:stratix_adder.dataa[6]
+dataa[7] => alt_stratix_add_sub:stratix_adder.dataa[7]
+datab[0] => alt_stratix_add_sub:stratix_adder.datab[0]
+datab[1] => alt_stratix_add_sub:stratix_adder.datab[1]
+datab[2] => alt_stratix_add_sub:stratix_adder.datab[2]
+datab[3] => alt_stratix_add_sub:stratix_adder.datab[3]
+datab[4] => alt_stratix_add_sub:stratix_adder.datab[4]
+datab[5] => alt_stratix_add_sub:stratix_adder.datab[5]
+datab[6] => alt_stratix_add_sub:stratix_adder.datab[6]
+datab[7] => alt_stratix_add_sub:stratix_adder.datab[7]
+cin => ~NO_FANOUT~
+add_sub => alt_stratix_add_sub:stratix_adder.add_sub
+clock => alt_stratix_add_sub:stratix_adder.clock
+aclr => alt_stratix_add_sub:stratix_adder.aclr
+clken => ~NO_FANOUT~
+
+
+|Self_Memory|ADD_SUB:u0|lpm_add_sub:LPM_ADD_SUB_component|alt_stratix_add_sub:stratix_adder
+dataa[0] => add_sub_cell[0].DATAB
+dataa[1] => add_sub_cell[1].DATAB
+dataa[2] => add_sub_cell[2].DATAB
+dataa[3] => add_sub_cell[3].DATAB
+dataa[4] => add_sub_cell[4].DATAB
+dataa[5] => add_sub_cell[5].DATAB
+dataa[6] => add_sub_cell[6].DATAB
+dataa[7] => add_sub_cell[7].DATAB
+datab[0] => add_sub_cell[0].DATAA
+datab[1] => add_sub_cell[1].DATAA
+datab[2] => add_sub_cell[2].DATAA
+datab[3] => add_sub_cell[3].DATAA
+datab[4] => add_sub_cell[4].DATAA
+datab[5] => add_sub_cell[5].DATAA
+datab[6] => add_sub_cell[6].DATAA
+datab[7] => add_sub_cell[7].DATAA
+cin => ~NO_FANOUT~
+add_sub => add_sub_cell[7].IN0
+add_sub => cout_buffer.IN0
+add_sub => addsub_regr.DATAIN
+clock => add_sub_cell[7].CLK
+clock => add_sub_cell[6].CLK
+clock => add_sub_cell[5].CLK
+clock => add_sub_cell[4].CLK
+clock => add_sub_cell[3].CLK
+clock => add_sub_cell[2].CLK
+clock => add_sub_cell[1].CLK
+clock => add_sub_cell[0].CLK
+clock => cout_buffer.CLK
+clock => addsub_regr.CLK
+aclr => addsub_regr.IN0
+aclr => add_sub_cell[7].ACLR
+aclr => add_sub_cell[6].ACLR
+aclr => add_sub_cell[5].ACLR
+aclr => add_sub_cell[4].ACLR
+aclr => add_sub_cell[3].ACLR
+aclr => add_sub_cell[2].ACLR
+aclr => add_sub_cell[1].ACLR
+aclr => add_sub_cell[0].ACLR
+aclr => cout_buffer.ACLR
+clken => ~NO_FANOUT~
+
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="LCD_TopModule">
+		<CBX_INST_ENTRY INSTANCE_NAME="|LCD_TopModule|LCD:u0|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_d5m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|LCD_TopModule|LCD:u0|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_ftl.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|LCD_TopModule|LCD:u0|lpm_divide:Mod4" CBX_FILE_NAME="lpm_divide_gtl.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|LCD_TopModule|clock_basic:u1|lpm_divide:Mod1" CBX_FILE_NAME="lpm_divide_htl.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|LCD_TopModule|LCD:u0|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_c5m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|LCD_TopModule|LCD:u0|lpm_divide:Div2" CBX_FILE_NAME="lpm_divide_d5m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|LCD_TopModule|LCD:u0|lpm_divide:Mod1" CBX_FILE_NAME="lpm_divide_ftl.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|LCD_TopModule|LCD:u0|lpm_divide:Mod3" CBX_FILE_NAME="lpm_divide_gtl.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|LCD_TopModule|LCD:u0|lpm_divide:Mod5" CBX_FILE_NAME="lpm_divide_gtl.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|LCD_TopModule|clock_basic:u1|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_dtl.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|LCD_TopModule|clock_basic:u1|lpm_divide:Mod2" CBX_FILE_NAME="lpm_divide_jtl.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|LCD_TopModule|LCD:u0|lpm_divide:Mod2" CBX_FILE_NAME="lpm_divide_gtl.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

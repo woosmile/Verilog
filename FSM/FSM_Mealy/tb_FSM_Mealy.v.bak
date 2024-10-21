@@ -1,0 +1,29 @@
+module tb_FSM_Mealy;
+
+ reg clock,rst,w;
+ wire z;
+ 
+ FSM_Mealy u0(.clk(clock),.reset(rst),.w(w),.z(z));
+ 
+ parameter step=50;
+ 
+ always #step clock=~clock;
+ 
+ initial begin
+  clock=0; rst=0; w=0; #40
+  
+  w=1; #40;
+  w=0; #40;
+  w=1; #40;
+  w=0; #40;
+  
+  rst=1; #40;
+  rst=0; #200;
+  
+  $stop;
+ end
+ 
+endmodule
+
+  
+

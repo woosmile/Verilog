@@ -1,0 +1,29 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'Serial_TX3:u0|font_cnt[0]'
+Slack : -18.877
+TNS   : -140.031
+
+Type  : Setup 'clk'
+Slack : -7.372
+TNS   : -293.600
+
+Type  : Hold 'clk'
+Slack : -1.826
+TNS   : -7.001
+
+Type  : Hold 'Serial_TX3:u0|font_cnt[0]'
+Slack : -0.351
+TNS   : -0.351
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -1.583
+TNS   : -196.647
+
+Type  : Minimum Pulse Width 'Serial_TX3:u0|font_cnt[0]'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------

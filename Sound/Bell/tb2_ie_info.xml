@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!--Created by Liquid XML 2008 (www.liquid-technologies.com) for ALTERA CORPORATION-->
+<ProgramExecution xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+	<QuartusExecution>
+		<AddressBits>32</AddressBits>
+		<ApplicationError>
+		<Bits>64</Bits>
+		<CommandLine>quartus F:\Digital_Circuit_Design\Bell\Bell.qpf</CommandLine>
+		<ErrorMessage>Access Violation at 0X65057B95</ErrorMessage>
+		<Line>0</Line>
+		<Platform>windows</Platform>
+		<SourceFile>unknown</SourceFile>
+		<StackTrace>
+	 0x65057b94: QtGui4 + 0x57b94 (?windowTitle@QWidget@@QBE?AVQString@@XZ + 0x4)
+	   0xaded42: GCL_AFCQ + 0x2ed42 (?restore_save_geometry@AFCQ_DIALOG@@IAEX_N@Z + 0xc2)
+	   0xae32f8: GCL_AFCQ + 0x332f8 (??1AFCQ_DIALOG@@UAE@XZ + 0x38)
+	  0x7852e52: sys_mdb + 0x32e52 (??1MDB_IMPORT_ASSIGNMENT_DLG@@UAE@XZ + 0x1a2)
+	  0x78539ba: sys_mdb + 0x339ba (_mdb_dyn_import_assignment_dlg + 0x5a)
+	   0xce3715: SYS_QUI + 0x3715 (?import_assignments_action@QUI_ASSIGNMENT_MENU@@UAEXXZ + 0x75)
+	   0xce7fb3: SYS_QUI + 0x7fb3 (?qt_metacall@QUI_ASSIGNMENT_MENU@@UAEHW4Call@QMetaObject@@HPAPAX@Z + 0xd3)
+	 0x670e0eae: QtCore4 + 0xe0eae (?metacall@QMetaObject@@SAHPAVQObject@@W4Call@1@HPAPAX@Z + 0x3e)
+	 0x6500c57d: QtGui4 + 0xc57d (?activate@QAction@@QAEXW4ActionEvent@1@@Z + 0xcd)
+	 0x65348a28: QtGui4 + 0x348a28 (?findIdForAction@QMenu@@ABEHPAVQAction@@@Z + 0x288)
+	 0x6534e500: QtGui4 + 0x34e500 (?internalDelayedPopup@QMenu@@AAEXXZ + 0x680)
+		</StackTrace>
+		<Subsystem>unknown</Subsystem>
+	</ApplicationError>
+	<Compilation>
+			<CompileID>0</CompileID>
+			<DeviceFamily/>
+			<IncrementalCompilation/>
+			<TopLevelEntityName/>
+		</Compilation>
+		<DateInvoked>2016/07/03 21:05:29</DateInvoked>
+		<ElapsedTime>30</ElapsedTime>
+		<IP>218.239.132.160</IP>
+		<IsInternal>false</IsInternal>
+		<IsQt>true</IsQt>
+		<License>
+			<Edition>Web Edition</Edition>
+			<LicenseHostID/>
+		</License>
+		<Machine>
+			<CPUCountLogical>4</CPUCountLogical>
+			<CPUCountPhysical>1</CPUCountPhysical>
+			<CPUSpeed>3215</CPUSpeed>
+			<Hostname>DESKTOP-62QL0MH</Hostname>
+			<NIC>
+				<Address>bc5ff4004a04</Address>
+			</NIC>
+			<OS>Windows 7</OS>
+			<OSAddressBits>64</OSAddressBits>
+			<OSVersion>6.2</OSVersion>
+			<Platform>windows</Platform>
+			<ScreenResolution>unknown</ScreenResolution>
+			<TotalPhysicalRAM>4095</TotalPhysicalRAM>
+			<TotalVirtualRAM>0</TotalVirtualRAM>
+		</Machine>
+		<Name>quartus</Name>
+		<PeakMemoryUsed>0</PeakMemoryUsed>
+		<ProjectRevision>
+			<ProjectName/>
+			<Revision/>
+		</ProjectRevision>
+		<QuartusInstallation>
+			<InstallationID>207120301574660.14638213250328</InstallationID>
+			<Version>
+				<Build>208</Build>
+				<BuildSite>SJ</BuildSite>
+				<BuildSuffix/>
+				<Edition>Web Edition</Edition>
+				<ServicePack>1</ServicePack>
+				<VersionNumber>11</VersionNumber>
+			</Version>
+		</QuartusInstallation>
+		<QuartusUser>
+			<AlteraUserName/>
+			<FAEContactName/>
+			<TalkbackStatus>
+				<DateSet/>
+				<TalkbackOn>true</TalkbackOn>
+			</TalkbackStatus>
+			<UserID>207120301574660.146382134608376</UserID>
+			<UserName>trs9881</UserName>
+		</QuartusUser>
+	</QuartusExecution>
+	<SchemaVersion>schema_2011-03-02</SchemaVersion>
+</ProgramExecution>
+

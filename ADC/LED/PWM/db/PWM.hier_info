@@ -1,0 +1,27 @@
+|PWM
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clk => cnt[4].CLK
+clk => cnt[5].CLK
+clk => cnt[6].CLK
+clk => cnt[7].CLK
+reset => cnt[0].ACLR
+reset => cnt[1].ACLR
+reset => cnt[2].ACLR
+reset => cnt[3].ACLR
+reset => cnt[4].ACLR
+reset => cnt[5].ACLR
+reset => cnt[6].ACLR
+reset => cnt[7].ACLR
+pwm_in[0] => LessThan0.IN8
+pwm_in[1] => LessThan0.IN7
+pwm_in[2] => LessThan0.IN6
+pwm_in[3] => LessThan0.IN5
+pwm_in[4] => LessThan0.IN4
+pwm_in[5] => LessThan0.IN3
+pwm_in[6] => LessThan0.IN2
+pwm_in[7] => LessThan0.IN1
+
+

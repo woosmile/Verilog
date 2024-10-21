@@ -1,0 +1,54 @@
+module Serial_Test(clk,reset,tx_out);
+
+ input clk,reset;
+ output reg tx_out;
+ 
+ reg [15:0]bps_cnt;
+ reg clk_bps;
+ 
+ reg [7:0]tx_data;
+ reg [3:0]tx_cnt;
+ reg tx_ready;
+ 
+ parameter bps=5625;  //54000000/9600=5625
+ 
+ always@(posedge clk, negedge reset)
+  if(!reset) begin
+   bps_cnt<=16'b0;
+	clk_bps<=1'b0;
+  end
+  else begin
+   if(bps_cnt>=bps) begin 
+	 bps_cnt<=16'b0;
+	 clk_bps<=1'b1;
+	end
+	else begin
+	 bps_cnt<=bps_cnt+1;
+	 clk_bps<=1'b0;
+	end
+  end
+ 
+ always@(posedge clk, negedge reset)
+  if(!reset) begin
+   tx_out<=1'b1;
+	tx_cnt<=4'b0;
+	tx_ready<=1'b1;
+  end
+  else begin
+   if(clk_bps==1) begin
+	 tx_data<="A";
+	 tx_ready<=1'b0;
+	 if(!rx_ready) begin
+	  tx_cnt<=tx_cnt+1;
+	  if(tx_cnt==0) tx_out<=1'b0;
+	  if(tx_cnt>0 && tx_cnt<9) tx_out<=tx_reg[tx_cnt-1];
+	  if(tx_cnt==9) begin
+	   tx_out<=1'b1;
+		tx_ready<=1'b1;
+		tx_cnt<=4'b0;
+	  end
+	 end
+	end
+  end
+  
+endmodule

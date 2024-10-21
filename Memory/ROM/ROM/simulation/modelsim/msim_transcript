@@ -1,0 +1,46 @@
+# Reading C:/altera/11.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do ROM_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying c:\altera\11.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied c:\altera\11.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/user/Desktop/ROM {C:/Users/user/Desktop/ROM/ROM.v}
+# Model Technology ModelSim ALTERA vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module ROM
+# 
+# Top level modules:
+# 	ROM
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/user/Desktop/ROM {C:/Users/user/Desktop/ROM/tb_ROM.v}
+# Model Technology ModelSim ALTERA vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module tb_ROM
+# 
+# Top level modules:
+# 	tb_ROM
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclone_ver -L rtl_work -L work -voptargs="+acc" tb_ROM
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclone_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps tb_ROM 
+# Loading work.tb_ROM
+# Loading work.ROM
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Break in Module tb_ROM at C:/Users/user/Desktop/ROM/tb_ROM.v line 33
+# Simulation Breakpoint: Break in Module tb_ROM at C:/Users/user/Desktop/ROM/tb_ROM.v line 33
+# MACRO ./ROM_run_msim_rtl_verilog.do PAUSED at line 17
+restart
+run -continue
+# Break in Module tb_ROM at C:/Users/user/Desktop/ROM/tb_ROM.v line 33
+run -all
+# Break key hit 
+# Simulation stop requested.

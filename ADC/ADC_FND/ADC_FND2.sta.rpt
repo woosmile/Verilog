@@ -1,0 +1,650 @@
+TimeQuest Timing Analyzer report for ADC_FND2
+Tue Jun 28 11:56:02 2016
+Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk'
+ 12. Hold: 'clk'
+ 13. Minimum Pulse Width: 'clk'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Setup Transfers
+ 19. Hold Transfers
+ 20. Report TCCS
+ 21. Report RSKM
+ 22. Unconstrained Paths
+ 23. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                    ;
++--------------------+-----------------------------------------------------------------+
+; Quartus II Version ; Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; ADC_FND2                                                        ;
+; Device Family      ; Cyclone                                                         ;
+; Device Name        ; EP1C6Q240C8                                                     ;
+; Timing Models      ; Final                                                           ;
+; Delay Model        ; Slow Model                                                      ;
+; Rise/Fall Delays   ; Unavailable                                                     ;
++--------------------+-----------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++-------------------------------------------------+
+; Fmax Summary                                    ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 31.26 MHz ; 31.26 MHz       ; clk        ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Setup Summary                   ;
++-------+---------+---------------+
+; Clock ; Slack   ; End Point TNS ;
++-------+---------+---------------+
+; clk   ; -30.986 ; -356.403      ;
++-------+---------+---------------+
+
+
++-------------------------------+
+; Hold Summary                  ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.872 ; 0.000         ;
++-------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -1.583 ; -230.915      ;
++-------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                                              ;
++---------+-----------------------------+-----------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                   ; To Node                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+-----------------------------+-----------------------------+--------------+-------------+--------------+------------+------------+
+; -30.986 ; resistor[8]                 ; DSP_4bitFND:u1|temp[3]      ; clk          ; clk         ; 1.000        ; 0.060      ; 32.009     ;
+; -30.865 ; resistor[8]                 ; DSP_4bitFND:u1|temp[1]      ; clk          ; clk         ; 1.000        ; 0.060      ; 31.888     ;
+; -30.726 ; resistor[8]                 ; DSP_4bitFND:u1|temp[2]      ; clk          ; clk         ; 1.000        ; 0.007      ; 31.696     ;
+; -29.458 ; resistor[9]                 ; DSP_4bitFND:u1|temp[3]      ; clk          ; clk         ; 1.000        ; 0.060      ; 30.481     ;
+; -29.423 ; resistor[9]                 ; DSP_4bitFND:u1|temp[1]      ; clk          ; clk         ; 1.000        ; 0.060      ; 30.446     ;
+; -29.419 ; resistor[8]                 ; DSP_4bitFND:u1|temp[0]      ; clk          ; clk         ; 1.000        ; 0.060      ; 30.442     ;
+; -29.383 ; resistor[10]                ; DSP_4bitFND:u1|temp[3]      ; clk          ; clk         ; 1.000        ; 0.060      ; 30.406     ;
+; -29.262 ; resistor[10]                ; DSP_4bitFND:u1|temp[1]      ; clk          ; clk         ; 1.000        ; 0.060      ; 30.285     ;
+; -29.198 ; resistor[9]                 ; DSP_4bitFND:u1|temp[2]      ; clk          ; clk         ; 1.000        ; 0.007      ; 30.168     ;
+; -29.123 ; resistor[10]                ; DSP_4bitFND:u1|temp[2]      ; clk          ; clk         ; 1.000        ; 0.007      ; 30.093     ;
+; -28.707 ; resistor[7]                 ; DSP_4bitFND:u1|temp[1]      ; clk          ; clk         ; 1.000        ; 0.037      ; 29.707     ;
+; -28.691 ; resistor[7]                 ; DSP_4bitFND:u1|temp[3]      ; clk          ; clk         ; 1.000        ; 0.037      ; 29.691     ;
+; -28.431 ; resistor[7]                 ; DSP_4bitFND:u1|temp[2]      ; clk          ; clk         ; 1.000        ; -0.016     ; 29.378     ;
+; -27.891 ; resistor[9]                 ; DSP_4bitFND:u1|temp[0]      ; clk          ; clk         ; 1.000        ; 0.060      ; 28.914     ;
+; -27.816 ; resistor[10]                ; DSP_4bitFND:u1|temp[0]      ; clk          ; clk         ; 1.000        ; 0.060      ; 28.839     ;
+; -27.124 ; resistor[7]                 ; DSP_4bitFND:u1|temp[0]      ; clk          ; clk         ; 1.000        ; 0.037      ; 28.124     ;
+; -26.401 ; resistor[6]                 ; DSP_4bitFND:u1|temp[2]      ; clk          ; clk         ; 1.000        ; -0.045     ; 27.319     ;
+; -26.052 ; resistor[6]                 ; DSP_4bitFND:u1|temp[1]      ; clk          ; clk         ; 1.000        ; 0.008      ; 27.023     ;
+; -25.972 ; resistor[6]                 ; DSP_4bitFND:u1|temp[3]      ; clk          ; clk         ; 1.000        ; 0.008      ; 26.943     ;
+; -24.208 ; resistor[6]                 ; DSP_4bitFND:u1|temp[0]      ; clk          ; clk         ; 1.000        ; 0.008      ; 25.179     ;
+; -22.682 ; resistor[5]                 ; DSP_4bitFND:u1|temp[2]      ; clk          ; clk         ; 1.000        ; -0.033     ; 23.612     ;
+; -22.585 ; resistor[5]                 ; DSP_4bitFND:u1|temp[1]      ; clk          ; clk         ; 1.000        ; 0.020      ; 23.568     ;
+; -22.505 ; resistor[5]                 ; DSP_4bitFND:u1|temp[3]      ; clk          ; clk         ; 1.000        ; 0.020      ; 23.488     ;
+; -20.489 ; resistor[5]                 ; DSP_4bitFND:u1|temp[0]      ; clk          ; clk         ; 1.000        ; 0.020      ; 21.472     ;
+; -18.892 ; resistor[4]                 ; DSP_4bitFND:u1|temp[1]      ; clk          ; clk         ; 1.000        ; 0.000      ; 19.855     ;
+; -18.868 ; resistor[4]                 ; DSP_4bitFND:u1|temp[2]      ; clk          ; clk         ; 1.000        ; -0.053     ; 19.778     ;
+; -18.812 ; resistor[4]                 ; DSP_4bitFND:u1|temp[3]      ; clk          ; clk         ; 1.000        ; 0.000      ; 19.775     ;
+; -16.675 ; resistor[4]                 ; DSP_4bitFND:u1|temp[0]      ; clk          ; clk         ; 1.000        ; 0.000      ; 17.638     ;
+; -14.803 ; resistor[3]                 ; DSP_4bitFND:u1|temp[3]      ; clk          ; clk         ; 1.000        ; 0.020      ; 15.786     ;
+; -14.682 ; resistor[3]                 ; DSP_4bitFND:u1|temp[1]      ; clk          ; clk         ; 1.000        ; 0.020      ; 15.665     ;
+; -14.543 ; resistor[3]                 ; DSP_4bitFND:u1|temp[2]      ; clk          ; clk         ; 1.000        ; -0.033     ; 15.473     ;
+; -13.375 ; resistor[3]                 ; DSP_4bitFND:u1|temp[0]      ; clk          ; clk         ; 1.000        ; 0.020      ; 14.358     ;
+; -10.321 ; resistor[2]                 ; DSP_4bitFND:u1|temp[1]      ; clk          ; clk         ; 1.000        ; 0.020      ; 11.304     ;
+; -10.241 ; resistor[2]                 ; DSP_4bitFND:u1|temp[3]      ; clk          ; clk         ; 1.000        ; 0.020      ; 11.224     ;
+; -9.760  ; resistor[2]                 ; DSP_4bitFND:u1|temp[2]      ; clk          ; clk         ; 1.000        ; -0.033     ; 10.690     ;
+; -8.592  ; resistor[2]                 ; DSP_4bitFND:u1|temp[0]      ; clk          ; clk         ; 1.000        ; 0.020      ; 9.575      ;
+; -6.867  ; resistor[1]                 ; DSP_4bitFND:u1|temp[3]      ; clk          ; clk         ; 1.000        ; 0.020      ; 7.850      ;
+; -6.830  ; resistor[1]                 ; DSP_4bitFND:u1|temp[1]      ; clk          ; clk         ; 1.000        ; 0.020      ; 7.813      ;
+; -6.207  ; DSP_4bitFND:u1|scan_cnt[14] ; DSP_4bitFND:u1|scan_cnt[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.170      ;
+; -6.205  ; DSP_4bitFND:u1|scan_cnt[14] ; DSP_4bitFND:u1|scan_cnt[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.168      ;
+; -6.136  ; DSP_4bitFND:u1|scan_cnt[13] ; DSP_4bitFND:u1|scan_cnt[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.099      ;
+; -6.134  ; DSP_4bitFND:u1|scan_cnt[13] ; DSP_4bitFND:u1|scan_cnt[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.097      ;
+; -5.961  ; DSP_4bitFND:u1|scan_cnt[14] ; DSP_4bitFND:u1|digit[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 6.924      ;
+; -5.961  ; DSP_4bitFND:u1|scan_cnt[14] ; DSP_4bitFND:u1|scan_cnt[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.924      ;
+; -5.960  ; DSP_4bitFND:u1|scan_cnt[14] ; DSP_4bitFND:u1|digit[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 6.923      ;
+; -5.958  ; DSP_4bitFND:u1|scan_cnt[14] ; DSP_4bitFND:u1|scan_cnt[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.921      ;
+; -5.958  ; DSP_4bitFND:u1|scan_cnt[14] ; DSP_4bitFND:u1|scan_cnt[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.921      ;
+; -5.954  ; DSP_4bitFND:u1|scan_cnt[14] ; DSP_4bitFND:u1|scan_cnt[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.917      ;
+; -5.890  ; DSP_4bitFND:u1|scan_cnt[13] ; DSP_4bitFND:u1|digit[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 6.853      ;
+; -5.890  ; DSP_4bitFND:u1|scan_cnt[13] ; DSP_4bitFND:u1|scan_cnt[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.853      ;
+; -5.889  ; DSP_4bitFND:u1|scan_cnt[13] ; DSP_4bitFND:u1|digit[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 6.852      ;
+; -5.887  ; DSP_4bitFND:u1|scan_cnt[13] ; DSP_4bitFND:u1|scan_cnt[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.850      ;
+; -5.887  ; DSP_4bitFND:u1|scan_cnt[13] ; DSP_4bitFND:u1|scan_cnt[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.850      ;
+; -5.883  ; DSP_4bitFND:u1|scan_cnt[13] ; DSP_4bitFND:u1|scan_cnt[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.846      ;
+; -5.738  ; DSP_4bitFND:u1|scan_cnt[25] ; DSP_4bitFND:u1|scan_cnt[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.701      ;
+; -5.736  ; DSP_4bitFND:u1|scan_cnt[25] ; DSP_4bitFND:u1|scan_cnt[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.699      ;
+; -5.708  ; resistor[1]                 ; DSP_4bitFND:u1|temp[2]      ; clk          ; clk         ; 1.000        ; -0.033     ; 6.638      ;
+; -5.621  ; DSP_4bitFND:u1|scan_cnt[12] ; DSP_4bitFND:u1|scan_cnt[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.584      ;
+; -5.619  ; DSP_4bitFND:u1|scan_cnt[12] ; DSP_4bitFND:u1|scan_cnt[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.582      ;
+; -5.492  ; DSP_4bitFND:u1|scan_cnt[25] ; DSP_4bitFND:u1|digit[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 6.455      ;
+; -5.492  ; DSP_4bitFND:u1|scan_cnt[25] ; DSP_4bitFND:u1|scan_cnt[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.455      ;
+; -5.491  ; DSP_4bitFND:u1|scan_cnt[25] ; DSP_4bitFND:u1|digit[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 6.454      ;
+; -5.489  ; DSP_4bitFND:u1|scan_cnt[25] ; DSP_4bitFND:u1|scan_cnt[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.452      ;
+; -5.489  ; DSP_4bitFND:u1|scan_cnt[25] ; DSP_4bitFND:u1|scan_cnt[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.452      ;
+; -5.485  ; DSP_4bitFND:u1|scan_cnt[25] ; DSP_4bitFND:u1|scan_cnt[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.448      ;
+; -5.396  ; DSP_4bitFND:u1|scan_cnt[24] ; DSP_4bitFND:u1|scan_cnt[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.359      ;
+; -5.394  ; DSP_4bitFND:u1|scan_cnt[24] ; DSP_4bitFND:u1|scan_cnt[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.357      ;
+; -5.375  ; DSP_4bitFND:u1|scan_cnt[12] ; DSP_4bitFND:u1|digit[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 6.338      ;
+; -5.375  ; DSP_4bitFND:u1|scan_cnt[12] ; DSP_4bitFND:u1|scan_cnt[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.338      ;
+; -5.374  ; DSP_4bitFND:u1|scan_cnt[12] ; DSP_4bitFND:u1|digit[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 6.337      ;
+; -5.372  ; DSP_4bitFND:u1|scan_cnt[12] ; DSP_4bitFND:u1|scan_cnt[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.335      ;
+; -5.372  ; DSP_4bitFND:u1|scan_cnt[12] ; DSP_4bitFND:u1|scan_cnt[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.335      ;
+; -5.368  ; DSP_4bitFND:u1|scan_cnt[12] ; DSP_4bitFND:u1|scan_cnt[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.331      ;
+; -5.220  ; DSP_4bitFND:u1|scan_cnt[26] ; DSP_4bitFND:u1|scan_cnt[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.183      ;
+; -5.218  ; DSP_4bitFND:u1|scan_cnt[26] ; DSP_4bitFND:u1|scan_cnt[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.181      ;
+; -5.150  ; DSP_4bitFND:u1|scan_cnt[24] ; DSP_4bitFND:u1|digit[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 6.113      ;
+; -5.150  ; DSP_4bitFND:u1|scan_cnt[24] ; DSP_4bitFND:u1|scan_cnt[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.113      ;
+; -5.149  ; DSP_4bitFND:u1|scan_cnt[24] ; DSP_4bitFND:u1|digit[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 6.112      ;
+; -5.147  ; DSP_4bitFND:u1|scan_cnt[24] ; DSP_4bitFND:u1|scan_cnt[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.110      ;
+; -5.147  ; DSP_4bitFND:u1|scan_cnt[24] ; DSP_4bitFND:u1|scan_cnt[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.110      ;
+; -5.143  ; DSP_4bitFND:u1|scan_cnt[24] ; DSP_4bitFND:u1|scan_cnt[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.106      ;
+; -5.026  ; DSP_4bitFND:u1|scan_cnt[14] ; DSP_4bitFND:u1|scan_cnt[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.989      ;
+; -5.025  ; DSP_4bitFND:u1|scan_cnt[14] ; DSP_4bitFND:u1|scan_cnt[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.988      ;
+; -4.994  ; DSP_4bitFND:u1|scan_cnt[20] ; DSP_4bitFND:u1|scan_cnt[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 5.957      ;
+; -4.992  ; DSP_4bitFND:u1|scan_cnt[20] ; DSP_4bitFND:u1|scan_cnt[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 5.955      ;
+; -4.974  ; DSP_4bitFND:u1|scan_cnt[26] ; DSP_4bitFND:u1|digit[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 5.937      ;
+; -4.974  ; DSP_4bitFND:u1|scan_cnt[26] ; DSP_4bitFND:u1|scan_cnt[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 5.937      ;
+; -4.973  ; DSP_4bitFND:u1|scan_cnt[26] ; DSP_4bitFND:u1|digit[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 5.936      ;
+; -4.971  ; DSP_4bitFND:u1|scan_cnt[26] ; DSP_4bitFND:u1|scan_cnt[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.934      ;
+; -4.971  ; DSP_4bitFND:u1|scan_cnt[26] ; DSP_4bitFND:u1|scan_cnt[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 5.934      ;
+; -4.967  ; DSP_4bitFND:u1|scan_cnt[26] ; DSP_4bitFND:u1|scan_cnt[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 5.930      ;
+; -4.955  ; DSP_4bitFND:u1|scan_cnt[13] ; DSP_4bitFND:u1|scan_cnt[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.918      ;
+; -4.954  ; DSP_4bitFND:u1|scan_cnt[13] ; DSP_4bitFND:u1|scan_cnt[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.917      ;
+; -4.796  ; DSP_4bitFND:u1|scan_cnt[22] ; DSP_4bitFND:u1|scan_cnt[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 5.759      ;
+; -4.794  ; DSP_4bitFND:u1|scan_cnt[22] ; DSP_4bitFND:u1|scan_cnt[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 5.757      ;
+; -4.748  ; DSP_4bitFND:u1|scan_cnt[20] ; DSP_4bitFND:u1|digit[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 5.711      ;
+; -4.748  ; DSP_4bitFND:u1|scan_cnt[20] ; DSP_4bitFND:u1|scan_cnt[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 5.711      ;
+; -4.747  ; DSP_4bitFND:u1|scan_cnt[20] ; DSP_4bitFND:u1|digit[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 5.710      ;
+; -4.745  ; DSP_4bitFND:u1|scan_cnt[20] ; DSP_4bitFND:u1|scan_cnt[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.708      ;
+; -4.745  ; DSP_4bitFND:u1|scan_cnt[20] ; DSP_4bitFND:u1|scan_cnt[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 5.708      ;
++---------+-----------------------------+-----------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                             ;
++-------+-----------------------------+-----------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                   ; To Node                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------+-----------------------------+--------------+-------------+--------------+------------+------------+
+; 0.872 ; adc_1:u0|n_state.s_start    ; adc_1:u0|c_state.s_start    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.887      ;
+; 0.873 ; adc_1:u0|n_state.s_idle     ; adc_1:u0|c_state.s_idle     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.888      ;
+; 1.040 ; adc_1:u0|n_state.s_wait     ; adc_1:u0|c_state.s_wait     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.055      ;
+; 1.042 ; adc_1:u0|n_state.s_capture  ; adc_1:u0|c_state.s_capture  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.057      ;
+; 1.078 ; adc_1:u0|n_state.s_oe_sig   ; adc_1:u0|c_state.s_oe_sig   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.093      ;
+; 1.088 ; adc_1:u0|c_state.s_start    ; adc_1:u0|n_state.s_wait     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.103      ;
+; 1.232 ; adc_1:u0|out_en             ; adc_1:u0|out_en             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.247      ;
+; 1.238 ; adc_1:u0|c_state.s_wait     ; adc_1:u0|n_state.s_oe_sig   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.253      ;
+; 1.314 ; adc_1:u0|adc_delay[4]       ; adc_1:u0|adc_delay[4]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.329      ;
+; 1.326 ; adc_1:u0|clk_cnt[0]         ; adc_1:u0|clk_cnt[0]         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.341      ;
+; 1.329 ; DSP_4bitFND:u1|digit[0]     ; DSP_4bitFND:u1|digit[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.344      ;
+; 1.329 ; adc_1:u0|c_state.s_wait     ; adc_1:u0|n_state.s_wait     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.344      ;
+; 1.330 ; DSP_4bitFND:u1|digit[0]     ; DSP_4bitFND:u1|digit[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.345      ;
+; 1.334 ; adc_1:u0|clk_cnt[4]         ; adc_1:u0|clk_cnt[4]         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.349      ;
+; 1.336 ; adc_1:u0|clk_cnt[3]         ; adc_1:u0|clk_cnt[3]         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.351      ;
+; 1.337 ; adc_1:u0|adc_delay[5]       ; adc_1:u0|adc_delay[5]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.352      ;
+; 1.342 ; adc_1:u0|adc_delay[3]       ; adc_1:u0|adc_delay[3]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.357      ;
+; 1.342 ; adc_1:u0|start              ; adc_1:u0|start              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.357      ;
+; 1.346 ; adc_1:u0|ale                ; adc_1:u0|ale                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.361      ;
+; 1.347 ; adc_1:u0|adc_delay[0]       ; adc_1:u0|adc_delay[0]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.362      ;
+; 1.366 ; adc_1:u0|c_state.s_start    ; adc_1:u0|n_state.s_start    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.381      ;
+; 1.368 ; adc_1:u0|c_state.s_start    ; adc_1:u0|n_state.s_idle     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.383      ;
+; 1.374 ; adc_1:u0|c_state.s_oe_sig   ; adc_1:u0|n_state.s_capture  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.389      ;
+; 1.375 ; adc_1:u0|c_state.s_oe_sig   ; adc_1:u0|n_state.s_oe_sig   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.390      ;
+; 1.469 ; adc_1:u0|adc_clk            ; adc_1:u0|adc_clk            ; clk          ; clk         ; 0.000        ; 0.000      ; 1.484      ;
+; 1.469 ; DSP_4bitFND:u1|digit[1]     ; DSP_4bitFND:u1|digit[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.484      ;
+; 1.480 ; adc_1:u0|adc_delay[7]       ; adc_1:u0|adc_delay[7]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.495      ;
+; 1.480 ; adc_1:u0|c_state.s_idle     ; adc_1:u0|n_state.s_start    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.495      ;
+; 1.484 ; adc_1:u0|adc_delay[6]       ; adc_1:u0|adc_delay[6]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.499      ;
+; 1.485 ; adc_1:u0|clk_cnt[7]         ; adc_1:u0|clk_cnt[7]         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.500      ;
+; 1.488 ; adc_1:u0|adc_delay[2]       ; adc_1:u0|adc_delay[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.503      ;
+; 1.491 ; adc_1:u0|clk_cnt[2]         ; adc_1:u0|clk_cnt[2]         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.506      ;
+; 1.493 ; adc_1:u0|clk_cnt[6]         ; adc_1:u0|clk_cnt[6]         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.508      ;
+; 1.494 ; adc_1:u0|clk_cnt[1]         ; adc_1:u0|clk_cnt[1]         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.509      ;
+; 1.500 ; adc_1:u0|adc_delay[1]       ; adc_1:u0|adc_delay[1]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.515      ;
+; 1.713 ; adc_1:u0|c_state.s_capture  ; adc_1:u0|n_state.s_idle     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.728      ;
+; 1.874 ; DSP_4bitFND:u1|scan_cnt[27] ; DSP_4bitFND:u1|scan_cnt[27] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.889      ;
+; 1.925 ; adc_1:u0|clk_cnt[0]         ; adc_1:u0|clk_cnt[1]         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.940      ;
+; 1.935 ; adc_1:u0|clk_cnt[3]         ; adc_1:u0|clk_cnt[4]         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.950      ;
+; 1.936 ; adc_1:u0|adc_delay[5]       ; adc_1:u0|adc_delay[6]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.951      ;
+; 1.941 ; adc_1:u0|adc_delay[3]       ; adc_1:u0|adc_delay[4]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.956      ;
+; 1.943 ; adc_1:u0|clk_cnt[5]         ; adc_1:u0|clk_cnt[5]         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.958      ;
+; 1.946 ; adc_1:u0|adc_delay[0]       ; adc_1:u0|adc_delay[1]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.961      ;
+; 1.995 ; DSP_4bitFND:u1|scan_cnt[2]  ; DSP_4bitFND:u1|scan_cnt[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.010      ;
+; 2.003 ; adc_1:u0|clk_cnt[0]         ; adc_1:u0|clk_cnt[2]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.018      ;
+; 2.014 ; adc_1:u0|adc_delay[5]       ; adc_1:u0|adc_delay[7]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.029      ;
+; 2.024 ; adc_1:u0|adc_delay[0]       ; adc_1:u0|adc_delay[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.039      ;
+; 2.081 ; adc_1:u0|clk_cnt[0]         ; adc_1:u0|clk_cnt[3]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.096      ;
+; 2.093 ; adc_1:u0|adc_delay[6]       ; adc_1:u0|adc_delay[7]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.108      ;
+; 2.097 ; adc_1:u0|adc_delay[2]       ; adc_1:u0|adc_delay[3]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.112      ;
+; 2.100 ; adc_1:u0|clk_cnt[2]         ; adc_1:u0|clk_cnt[3]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.115      ;
+; 2.102 ; adc_1:u0|clk_cnt[6]         ; adc_1:u0|clk_cnt[7]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.117      ;
+; 2.102 ; adc_1:u0|adc_delay[0]       ; adc_1:u0|adc_delay[3]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.117      ;
+; 2.103 ; adc_1:u0|clk_cnt[1]         ; adc_1:u0|clk_cnt[2]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.118      ;
+; 2.109 ; adc_1:u0|adc_delay[1]       ; adc_1:u0|adc_delay[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.124      ;
+; 2.129 ; adc_1:u0|adc_delay[4]       ; adc_1:u0|adc_delay[7]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.144      ;
+; 2.129 ; adc_1:u0|adc_delay[4]       ; adc_1:u0|adc_delay[5]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.144      ;
+; 2.129 ; adc_1:u0|adc_delay[4]       ; adc_1:u0|adc_delay[6]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.144      ;
+; 2.130 ; adc_1:u0|c_state.s_start    ; adc_1:u0|out_en             ; clk          ; clk         ; 0.000        ; 0.033      ; 2.178      ;
+; 2.149 ; adc_1:u0|clk_cnt[4]         ; adc_1:u0|clk_cnt[5]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.164      ;
+; 2.149 ; adc_1:u0|clk_cnt[4]         ; adc_1:u0|clk_cnt[6]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.164      ;
+; 2.149 ; adc_1:u0|clk_cnt[4]         ; adc_1:u0|clk_cnt[7]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.164      ;
+; 2.157 ; adc_1:u0|clk_cnt[3]         ; adc_1:u0|clk_cnt[5]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.172      ;
+; 2.157 ; adc_1:u0|clk_cnt[3]         ; adc_1:u0|clk_cnt[6]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.172      ;
+; 2.157 ; adc_1:u0|clk_cnt[3]         ; adc_1:u0|clk_cnt[7]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.172      ;
+; 2.159 ; adc_1:u0|clk_cnt[0]         ; adc_1:u0|clk_cnt[4]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.174      ;
+; 2.163 ; adc_1:u0|adc_delay[3]       ; adc_1:u0|adc_delay[7]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.178      ;
+; 2.163 ; adc_1:u0|adc_delay[3]       ; adc_1:u0|adc_delay[5]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.178      ;
+; 2.163 ; adc_1:u0|adc_delay[3]       ; adc_1:u0|adc_delay[6]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.178      ;
+; 2.175 ; adc_1:u0|adc_delay[2]       ; adc_1:u0|adc_delay[4]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.190      ;
+; 2.178 ; adc_1:u0|clk_cnt[2]         ; adc_1:u0|clk_cnt[4]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.193      ;
+; 2.180 ; adc_1:u0|adc_delay[0]       ; adc_1:u0|adc_delay[4]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.195      ;
+; 2.181 ; adc_1:u0|clk_cnt[1]         ; adc_1:u0|clk_cnt[3]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.196      ;
+; 2.187 ; adc_1:u0|adc_delay[1]       ; adc_1:u0|adc_delay[3]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.202      ;
+; 2.230 ; DSP_4bitFND:u1|scan_cnt[26] ; DSP_4bitFND:u1|scan_cnt[26] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.245      ;
+; 2.259 ; adc_1:u0|clk_cnt[1]         ; adc_1:u0|clk_cnt[4]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.274      ;
+; 2.265 ; adc_1:u0|adc_delay[1]       ; adc_1:u0|adc_delay[4]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.280      ;
+; 2.268 ; adc_1:u0|c_state.s_capture  ; adc_1:u0|out_en             ; clk          ; clk         ; 0.000        ; 0.033      ; 2.316      ;
+; 2.269 ; adc_1:u0|c_state.s_capture  ; adc_1:u0|start              ; clk          ; clk         ; 0.000        ; 0.033      ; 2.317      ;
+; 2.270 ; adc_1:u0|c_state.s_capture  ; adc_1:u0|ale                ; clk          ; clk         ; 0.000        ; 0.033      ; 2.318      ;
+; 2.387 ; resistor[0]                 ; DSP_4bitFND:u1|temp[0]      ; clk          ; clk         ; 0.000        ; 0.020      ; 2.422      ;
+; 2.387 ; DSP_4bitFND:u1|scan_cnt[16] ; DSP_4bitFND:u1|scan_cnt[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.402      ;
+; 2.387 ; adc_1:u0|clk_cnt[0]         ; adc_1:u0|clk_cnt[5]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.402      ;
+; 2.387 ; adc_1:u0|clk_cnt[0]         ; adc_1:u0|clk_cnt[6]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.402      ;
+; 2.387 ; adc_1:u0|clk_cnt[0]         ; adc_1:u0|clk_cnt[7]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.402      ;
+; 2.401 ; DSP_4bitFND:u1|scan_cnt[24] ; DSP_4bitFND:u1|scan_cnt[24] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.416      ;
+; 2.401 ; adc_1:u0|adc_delay[2]       ; adc_1:u0|adc_delay[7]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.416      ;
+; 2.401 ; adc_1:u0|adc_delay[2]       ; adc_1:u0|adc_delay[5]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.416      ;
+; 2.401 ; adc_1:u0|adc_delay[2]       ; adc_1:u0|adc_delay[6]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.416      ;
+; 2.404 ; adc_1:u0|clk_cnt[2]         ; adc_1:u0|clk_cnt[5]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.419      ;
+; 2.404 ; adc_1:u0|clk_cnt[2]         ; adc_1:u0|clk_cnt[6]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.419      ;
+; 2.404 ; adc_1:u0|clk_cnt[2]         ; adc_1:u0|clk_cnt[7]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.419      ;
+; 2.408 ; DSP_4bitFND:u1|scan_cnt[3]  ; DSP_4bitFND:u1|scan_cnt[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.423      ;
+; 2.408 ; adc_1:u0|adc_delay[0]       ; adc_1:u0|adc_delay[7]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.423      ;
+; 2.408 ; adc_1:u0|adc_delay[0]       ; adc_1:u0|adc_delay[5]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.423      ;
+; 2.408 ; adc_1:u0|adc_delay[0]       ; adc_1:u0|adc_delay[6]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.423      ;
+; 2.470 ; adc_1:u0|adc_delay[6]       ; adc_1:u0|out_en             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.485      ;
+; 2.487 ; adc_1:u0|clk_cnt[1]         ; adc_1:u0|clk_cnt[5]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.502      ;
+; 2.487 ; adc_1:u0|clk_cnt[1]         ; adc_1:u0|clk_cnt[6]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.502      ;
+; 2.487 ; adc_1:u0|clk_cnt[1]         ; adc_1:u0|clk_cnt[7]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.502      ;
++-------+-----------------------------+-----------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'clk'                                                                                   ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                      ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+; -1.583 ; 1.000        ; 2.583          ; Port Rate        ; clk   ; Rise       ; clk                         ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|digit[0]     ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|digit[0]     ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|digit[1]     ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|digit[1]     ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|fnd_sel[0]   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|fnd_sel[0]   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|fnd_sel[1]   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|fnd_sel[1]   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|fnd_sel[2]   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|fnd_sel[2]   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|fnd_sel[3]   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|fnd_sel[3]   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[0]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[0]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[10] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[10] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[11] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[11] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[12] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[12] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[13] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[13] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[14] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[14] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[15] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[15] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[16] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[16] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[17] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[17] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[18] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[18] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[19] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[19] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[1]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[1]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[20] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[20] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[21] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[21] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[22] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[22] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[23] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[23] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[24] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[24] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[25] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[25] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[26] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[26] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[27] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[27] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[2]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[2]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[3]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[3]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[4]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[4]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[5]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[5]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[6]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[6]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[7]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[7]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[8]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[8]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[9]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|scan_cnt[9]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|temp[0]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|temp[0]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|temp[1]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|temp[1]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|temp[2]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|temp[2]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; DSP_4bitFND:u1|temp[3]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; DSP_4bitFND:u1|temp[3]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; adc_1:u0|adc_clk            ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; adc_1:u0|adc_clk            ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; adc_1:u0|adc_delay[0]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; adc_1:u0|adc_delay[0]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; adc_1:u0|adc_delay[1]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; adc_1:u0|adc_delay[1]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; adc_1:u0|adc_delay[2]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; adc_1:u0|adc_delay[2]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; adc_1:u0|adc_delay[3]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; adc_1:u0|adc_delay[3]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; adc_1:u0|adc_delay[4]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; adc_1:u0|adc_delay[4]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; adc_1:u0|adc_delay[5]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; adc_1:u0|adc_delay[5]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; adc_1:u0|adc_delay[6]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; adc_1:u0|adc_delay[6]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; adc_1:u0|adc_delay[7]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; adc_1:u0|adc_delay[7]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; adc_1:u0|ale                ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; adc_1:u0|ale                ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; adc_1:u0|c_state.s_capture  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; adc_1:u0|c_state.s_capture  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; adc_1:u0|c_state.s_idle     ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+
+
++--------------------------------------------------------------------------+
+; Setup Times                                                              ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; eoc        ; clk        ; 6.152  ; 6.152  ; Rise       ; clk             ;
+; result[*]  ; clk        ; 57.635 ; 57.635 ; Rise       ; clk             ;
+;  result[0] ; clk        ; 57.428 ; 57.428 ; Rise       ; clk             ;
+;  result[1] ; clk        ; 57.296 ; 57.296 ; Rise       ; clk             ;
+;  result[2] ; clk        ; 57.196 ; 57.196 ; Rise       ; clk             ;
+;  result[3] ; clk        ; 57.635 ; 57.635 ; Rise       ; clk             ;
+;  result[4] ; clk        ; 55.196 ; 55.196 ; Rise       ; clk             ;
+;  result[5] ; clk        ; 54.129 ; 54.129 ; Rise       ; clk             ;
+;  result[6] ; clk        ; 55.572 ; 55.572 ; Rise       ; clk             ;
+;  result[7] ; clk        ; 54.185 ; 54.185 ; Rise       ; clk             ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; eoc        ; clk        ; -5.856 ; -5.856 ; Rise       ; clk             ;
+; result[*]  ; clk        ; -4.425 ; -4.425 ; Rise       ; clk             ;
+;  result[0] ; clk        ; -4.793 ; -4.793 ; Rise       ; clk             ;
+;  result[1] ; clk        ; -4.605 ; -4.605 ; Rise       ; clk             ;
+;  result[2] ; clk        ; -4.651 ; -4.651 ; Rise       ; clk             ;
+;  result[3] ; clk        ; -4.425 ; -4.425 ; Rise       ; clk             ;
+;  result[4] ; clk        ; -4.516 ; -4.516 ; Rise       ; clk             ;
+;  result[5] ; clk        ; -4.505 ; -4.505 ; Rise       ; clk             ;
+;  result[6] ; clk        ; -4.533 ; -4.533 ; Rise       ; clk             ;
+;  result[7] ; clk        ; -4.616 ; -4.616 ; Rise       ; clk             ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Clock to Output Times                                                      ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; adc_clk      ; clk        ; 7.358  ; 7.358  ; Rise       ; clk             ;
+; ale          ; clk        ; 9.496  ; 9.496  ; Rise       ; clk             ;
+; fnd_data[*]  ; clk        ; 10.822 ; 10.822 ; Rise       ; clk             ;
+;  fnd_data[0] ; clk        ; 9.780  ; 9.780  ; Rise       ; clk             ;
+;  fnd_data[1] ; clk        ; 9.783  ; 9.783  ; Rise       ; clk             ;
+;  fnd_data[2] ; clk        ; 9.779  ; 9.779  ; Rise       ; clk             ;
+;  fnd_data[3] ; clk        ; 9.766  ; 9.766  ; Rise       ; clk             ;
+;  fnd_data[4] ; clk        ; 10.073 ; 10.073 ; Rise       ; clk             ;
+;  fnd_data[5] ; clk        ; 10.096 ; 10.096 ; Rise       ; clk             ;
+;  fnd_data[6] ; clk        ; 10.087 ; 10.087 ; Rise       ; clk             ;
+;  fnd_data[7] ; clk        ; 10.822 ; 10.822 ; Rise       ; clk             ;
+; fnd_sel[*]   ; clk        ; 6.909  ; 6.909  ; Rise       ; clk             ;
+;  fnd_sel[0]  ; clk        ; 6.591  ; 6.591  ; Rise       ; clk             ;
+;  fnd_sel[1]  ; clk        ; 6.591  ; 6.591  ; Rise       ; clk             ;
+;  fnd_sel[2]  ; clk        ; 6.591  ; 6.591  ; Rise       ; clk             ;
+;  fnd_sel[3]  ; clk        ; 6.909  ; 6.909  ; Rise       ; clk             ;
+; led[*]       ; clk        ; 7.459  ; 7.459  ; Rise       ; clk             ;
+;  led[0]      ; clk        ; 6.955  ; 6.955  ; Rise       ; clk             ;
+;  led[1]      ; clk        ; 6.956  ; 6.956  ; Rise       ; clk             ;
+;  led[2]      ; clk        ; 7.281  ; 7.281  ; Rise       ; clk             ;
+;  led[3]      ; clk        ; 7.398  ; 7.398  ; Rise       ; clk             ;
+;  led[4]      ; clk        ; 7.459  ; 7.459  ; Rise       ; clk             ;
+;  led[5]      ; clk        ; 7.333  ; 7.333  ; Rise       ; clk             ;
+;  led[6]      ; clk        ; 7.441  ; 7.441  ; Rise       ; clk             ;
+;  led[7]      ; clk        ; 7.336  ; 7.336  ; Rise       ; clk             ;
+; out_en       ; clk        ; 9.019  ; 9.019  ; Rise       ; clk             ;
+; start        ; clk        ; 8.592  ; 8.592  ; Rise       ; clk             ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                              ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; adc_clk      ; clk        ; 7.358  ; 7.358  ; Rise       ; clk             ;
+; ale          ; clk        ; 9.496  ; 9.496  ; Rise       ; clk             ;
+; fnd_data[*]  ; clk        ; 8.903  ; 8.903  ; Rise       ; clk             ;
+;  fnd_data[0] ; clk        ; 8.918  ; 8.918  ; Rise       ; clk             ;
+;  fnd_data[1] ; clk        ; 8.920  ; 8.920  ; Rise       ; clk             ;
+;  fnd_data[2] ; clk        ; 8.916  ; 8.916  ; Rise       ; clk             ;
+;  fnd_data[3] ; clk        ; 8.903  ; 8.903  ; Rise       ; clk             ;
+;  fnd_data[4] ; clk        ; 9.212  ; 9.212  ; Rise       ; clk             ;
+;  fnd_data[5] ; clk        ; 9.233  ; 9.233  ; Rise       ; clk             ;
+;  fnd_data[6] ; clk        ; 9.224  ; 9.224  ; Rise       ; clk             ;
+;  fnd_data[7] ; clk        ; 10.792 ; 10.792 ; Rise       ; clk             ;
+; fnd_sel[*]   ; clk        ; 6.591  ; 6.591  ; Rise       ; clk             ;
+;  fnd_sel[0]  ; clk        ; 6.591  ; 6.591  ; Rise       ; clk             ;
+;  fnd_sel[1]  ; clk        ; 6.591  ; 6.591  ; Rise       ; clk             ;
+;  fnd_sel[2]  ; clk        ; 6.591  ; 6.591  ; Rise       ; clk             ;
+;  fnd_sel[3]  ; clk        ; 6.909  ; 6.909  ; Rise       ; clk             ;
+; led[*]       ; clk        ; 6.955  ; 6.955  ; Rise       ; clk             ;
+;  led[0]      ; clk        ; 6.955  ; 6.955  ; Rise       ; clk             ;
+;  led[1]      ; clk        ; 6.956  ; 6.956  ; Rise       ; clk             ;
+;  led[2]      ; clk        ; 7.281  ; 7.281  ; Rise       ; clk             ;
+;  led[3]      ; clk        ; 7.398  ; 7.398  ; Rise       ; clk             ;
+;  led[4]      ; clk        ; 7.459  ; 7.459  ; Rise       ; clk             ;
+;  led[5]      ; clk        ; 7.333  ; 7.333  ; Rise       ; clk             ;
+;  led[6]      ; clk        ; 7.441  ; 7.441  ; Rise       ; clk             ;
+;  led[7]      ; clk        ; 7.336  ; 7.336  ; Rise       ; clk             ;
+; out_en       ; clk        ; 9.019  ; 9.019  ; Rise       ; clk             ;
+; start        ; clk        ; 8.592  ; 8.592  ; Rise       ; clk             ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Transfers                                                       ;
++------------+----------+--------------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+--------------+----------+----------+----------+
+; clk        ; clk      ; > 2147483647 ; 0        ; 0        ; 0        ;
++------------+----------+--------------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------+
+; Hold Transfers                                                        ;
++------------+----------+--------------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+--------------+----------+----------+----------+
+; clk        ; clk      ; > 2147483647 ; 0        ; 0        ; 0        ;
++------------+----------+--------------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 10    ; 10   ;
+; Unconstrained Input Port Paths  ; 182   ; 182  ;
+; Unconstrained Output Ports      ; 24    ; 24   ;
+; Unconstrained Output Port Paths ; 46    ; 46   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II TimeQuest Timing Analyzer
+    Info: Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Jun 28 11:55:58 2016
+Info: Command: quartus_sta ADC_FND2 -c ADC_FND2
+Info: qsta_default_script.tcl version: #1
+Warning: Parallel compilation is not licensed and has been disabled
+Critical Warning: Synopsys Design Constraints File file not found: 'ADC_FND2.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info: No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info: Deriving Clocks
+    Info: create_clock -period 1.000 -name clk clk
+Critical Warning: Timing requirements not met
+Info: Worst-case setup slack is -30.986
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:   -30.986      -356.403 clk 
+Info: Worst-case hold slack is 0.872
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:     0.872         0.000 clk 
+Info: No Recovery paths to report
+Info: No Removal paths to report
+Info: Worst-case minimum pulse width slack is -1.583
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -1.583      -230.915 clk 
+Info: The selected device family is not supported by the report_metastability command.
+Info: Design is not fully constrained for setup requirements
+Info: Design is not fully constrained for hold requirements
+Info: Quartus II TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 226 megabytes
+    Info: Processing ended: Tue Jun 28 11:56:02 2016
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:01
+
+

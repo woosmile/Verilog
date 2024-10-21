@@ -1,0 +1,2951 @@
+// Copyright (C) 1991-2011 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+
+// 
+// Device: Altera EP1C6Q240C8 Package PQFP240
+// 
+
+// 
+// This SDF file should be used for ModelSim-Altera (Verilog) only
+// 
+
+(DELAYFILE
+  (SDFVERSION "2.1")
+  (DESIGN "RAM1")
+  (DATE "04/12/2016 12:07:56")
+  (VENDOR "Altera")
+  (PROGRAM "Quartus II")
+  (VERSION "Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition")
+  (DIVIDER .)
+  (TIMESCALE 1 ns)
+
+  (CELL
+    (CELLTYPE "cyclone_asynch_io")
+    (INSTANCE clk\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1.469:1.469:1.469) (1.469:1.469:1.469))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_io")
+    (INSTANCE data_in\[0\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1.469:1.469:1.469) (1.469:1.469:1.469))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_io")
+    (INSTANCE wr\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1.469:1.469:1.469) (1.469:1.469:1.469))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_io")
+    (INSTANCE addr\[2\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1.469:1.469:1.469) (1.469:1.469:1.469))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_io")
+    (INSTANCE addr\[0\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1.469:1.469:1.469) (1.469:1.469:1.469))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_io")
+    (INSTANCE addr\[1\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1.469:1.469:1.469) (1.469:1.469:1.469))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_io")
+    (INSTANCE addr\[3\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1.475:1.475:1.475) (1.475:1.475:1.475))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~110.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.23:6.23:6.23) (6.23:6.23:6.23))
+        (PORT datab (7.314:7.314:7.314) (7.314:7.314:7.314))
+        (PORT datac (5.881:5.881:5.881) (5.881:5.881:5.881))
+        (PORT datad (5.628:5.628:5.628) (5.628:5.628:5.628))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~111.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.242:6.242:6.242) (6.242:6.242:6.242))
+        (PORT datad (0.426:0.426:0.426) (0.426:0.426:0.426))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~44.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5.719:5.719:5.719) (5.719:5.719:5.719))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~44.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5.834:5.834:5.834) (5.834:5.834:5.834))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (2.391:2.391:2.391) (2.391:2.391:2.391))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~108.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.227:6.227:6.227) (6.227:6.227:6.227))
+        (PORT datab (7.305:7.305:7.305) (7.305:7.305:7.305))
+        (PORT datac (5.87:5.87:5.87) (5.87:5.87:5.87))
+        (PORT datad (5.633:5.633:5.633) (5.633:5.633:5.633))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~109.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.568:6.568:6.568) (6.568:6.568:6.568))
+        (PORT datad (1.416:1.416:1.416) (1.416:1.416:1.416))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~32.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.518:6.518:6.518) (6.518:6.518:6.518))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~32.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.633:6.633:6.633) (6.633:6.633:6.633))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (2.178:2.178:2.178) (2.178:2.178:2.178))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~106.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5.793:5.793:5.793) (5.793:5.793:5.793))
+        (PORT datab (6.123:6.123:6.123) (6.123:6.123:6.123))
+        (PORT datac (6.121:6.121:6.121) (6.121:6.121:6.121))
+        (PORT datad (6.006:6.006:6.006) (6.006:6.006:6.006))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~107.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.645:6.645:6.645) (6.645:6.645:6.645))
+        (PORT datad (0.428:0.428:0.428) (0.428:0.428:0.428))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~36.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5.794:5.794:5.794) (5.794:5.794:5.794))
+        (PORT datab (6.121:6.121:6.121) (6.121:6.121:6.121))
+        (PORT datac (6.523:6.523:6.523) (6.523:6.523:6.523))
+        (PORT datad (0.528:0.528:0.528) (0.528:0.528:0.528))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~36.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.638:6.638:6.638) (6.638:6.638:6.638))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.33:1.33:1.33) (1.33:1.33:1.33))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~104.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.543:6.543:6.543) (6.543:6.543:6.543))
+        (PORT datab (6.175:6.175:6.175) (6.175:6.175:6.175))
+        (PORT datac (6.391:6.391:6.391) (6.391:6.391:6.391))
+        (PORT datad (6.543:6.543:6.543) (6.543:6.543:6.543))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~105.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (7.345:7.345:7.345) (7.345:7.345:7.345))
+        (PORT datad (0.423:0.423:0.423) (0.423:0.423:0.423))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~40.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.538:0.538:0.538) (0.538:0.538:0.538))
+        (PORT datab (6.183:6.183:6.183) (6.183:6.183:6.183))
+        (PORT datac (5.719:5.719:5.719) (5.719:5.719:5.719))
+        (PORT datad (1.526:1.526:1.526) (1.526:1.526:1.526))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~40.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5.834:5.834:5.834) (5.834:5.834:5.834))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.327:1.327:1.327) (1.327:1.327:1.327))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~126.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4.964:4.964:4.964) (4.964:4.964:4.964))
+        (PORT datab (5.319:5.319:5.319) (5.319:5.319:5.319))
+        (PORT datac (5.359:5.359:5.359) (5.359:5.359:5.359))
+        (PORT datad (6.267:6.267:6.267) (6.267:6.267:6.267))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~127.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (0.398:0.398:0.398) (0.398:0.398:0.398))
+        (PORT datac (5.564:5.564:5.564) (5.564:5.564:5.564))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~12.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.503:6.503:6.503) (6.503:6.503:6.503))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~12.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.618:6.618:6.618) (6.618:6.618:6.618))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (2.676:2.676:2.676) (2.676:2.676:2.676))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~124.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.104:6.104:6.104) (6.104:6.104:6.104))
+        (PORT datab (6.426:6.426:6.426) (6.426:6.426:6.426))
+        (PORT datac (6.726:6.726:6.726) (6.726:6.726:6.726))
+        (PORT datad (7.341:7.341:7.341) (7.341:7.341:7.341))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~125.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (6.925:6.925:6.925) (6.925:6.925:6.925))
+        (PORT datac (0.438:0.438:0.438) (0.438:0.438:0.438))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~0.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.828:6.828:6.828) (6.828:6.828:6.828))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~0.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.943:6.943:6.943) (6.943:6.943:6.943))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.332:1.332:1.332) (1.332:1.332:1.332))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~122.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (7.37:7.37:7.37) (7.37:7.37:7.37))
+        (PORT datab (6.476:6.476:6.476) (6.476:6.476:6.476))
+        (PORT datac (5.795:5.795:5.795) (5.795:5.795:5.795))
+        (PORT datad (6.743:6.743:6.743) (6.743:6.743:6.743))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~123.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.422:0.422:0.422) (0.422:0.422:0.422))
+        (PORT datac (6.686:6.686:6.686) (6.686:6.686:6.686))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~4.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5.763:5.763:5.763) (5.763:5.763:5.763))
+        (PORT datab (6.473:6.473:6.473) (6.473:6.473:6.473))
+        (PORT datac (6.506:6.506:6.506) (6.506:6.506:6.506))
+        (PORT datad (0.736:0.736:0.736) (0.736:0.736:0.736))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~4.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.621:6.621:6.621) (6.621:6.621:6.621))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.329:1.329:1.329) (1.329:1.329:1.329))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~120.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (7.373:7.373:7.373) (7.373:7.373:7.373))
+        (PORT datab (6.479:6.479:6.479) (6.479:6.479:6.479))
+        (PORT datac (5.794:5.794:5.794) (5.794:5.794:5.794))
+        (PORT datad (6.748:6.748:6.748) (6.748:6.748:6.748))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~121.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (0.4:0.4:0.4) (0.4:0.4:0.4))
+        (PORT datac (6.687:6.687:6.687) (6.687:6.687:6.687))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~8.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.756:0.756:0.756) (0.756:0.756:0.756))
+        (PORT datab (6.022:6.022:6.022) (6.022:6.022:6.022))
+        (PORT datac (6.828:6.828:6.828) (6.828:6.828:6.828))
+        (PORT datad (0.722:0.722:0.722) (0.722:0.722:0.722))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~8.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.943:6.943:6.943) (6.943:6.943:6.943))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (2.019:2.019:2.019) (2.019:2.019:2.019))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~118.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.21:6.21:6.21) (6.21:6.21:6.21))
+        (PORT datab (6.259:6.259:6.259) (6.259:6.259:6.259))
+        (PORT datac (6.9:6.9:6.9) (6.9:6.9:6.9))
+        (PORT datad (6.092:6.092:6.092) (6.092:6.092:6.092))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~119.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.203:6.203:6.203) (6.203:6.203:6.203))
+        (PORT datad (0.182:0.182:0.182) (0.182:0.182:0.182))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~28.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5.357:5.357:5.357) (5.357:5.357:5.357))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~28.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5.472:5.472:5.472) (5.472:5.472:5.472))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.328:1.328:1.328) (1.328:1.328:1.328))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~116.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.509:6.509:6.509) (6.509:6.509:6.509))
+        (PORT datab (6.493:6.493:6.493) (6.493:6.493:6.493))
+        (PORT datac (6.934:6.934:6.934) (6.934:6.934:6.934))
+        (PORT datad (6.323:6.323:6.323) (6.323:6.323:6.323))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~117.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.566:6.566:6.566) (6.566:6.566:6.566))
+        (PORT datad (0.426:0.426:0.426) (0.426:0.426:0.426))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~16.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.439:6.439:6.439) (6.439:6.439:6.439))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~16.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.554:6.554:6.554) (6.554:6.554:6.554))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.33:1.33:1.33) (1.33:1.33:1.33))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~114.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.228:6.228:6.228) (6.228:6.228:6.228))
+        (PORT datab (7.306:7.306:7.306) (7.306:7.306:7.306))
+        (PORT datac (5.867:5.867:5.867) (5.867:5.867:5.867))
+        (PORT datad (5.634:5.634:5.634) (5.634:5.634:5.634))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~115.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.243:6.243:6.243) (6.243:6.243:6.243))
+        (PORT datad (0.426:0.426:0.426) (0.426:0.426:0.426))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~24.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5.796:5.796:5.796) (5.796:5.796:5.796))
+        (PORT datab (6.114:6.114:6.114) (6.114:6.114:6.114))
+        (PORT datac (6.516:6.516:6.516) (6.516:6.516:6.516))
+        (PORT datad (1.585:1.585:1.585) (1.585:1.585:1.585))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~24.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.631:6.631:6.631) (6.631:6.631:6.631))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (2.398:2.398:2.398) (2.398:2.398:2.398))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~112.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5.802:5.802:5.802) (5.802:5.802:5.802))
+        (PORT datab (5.928:5.928:5.928) (5.928:5.928:5.928))
+        (PORT datac (6.18:6.18:6.18) (6.18:6.18:6.18))
+        (PORT datad (6.135:6.135:6.135) (6.135:6.135:6.135))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~113.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.663:6.663:6.663) (6.663:6.663:6.663))
+        (PORT datad (0.422:0.422:0.422) (0.422:0.422:0.422))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~20.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1.486:1.486:1.486) (1.486:1.486:1.486))
+        (PORT datab (6.119:6.119:6.119) (6.119:6.119:6.119))
+        (PORT datac (6.512:6.512:6.512) (6.512:6.512:6.512))
+        (PORT datad (0.424:0.424:0.424) (0.424:0.424:0.424))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~20.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.627:6.627:6.627) (6.627:6.627:6.627))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.326:1.326:1.326) (1.326:1.326:1.326))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~70.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.56:6.56:6.56) (6.56:6.56:6.56))
+        (PORT datab (6.367:6.367:6.367) (6.367:6.367:6.367))
+        (PORT datac (1.564:1.564:1.564) (1.564:1.564:1.564))
+        (PORT datad (1.207:1.207:1.207) (1.207:1.207:1.207))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~134.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.459:6.459:6.459) (6.459:6.459:6.459))
+        (PORT datab (6.441:6.441:6.441) (6.441:6.441:6.441))
+        (PORT datac (6.278:6.278:6.278) (6.278:6.278:6.278))
+        (PORT datad (6.872:6.872:6.872) (6.872:6.872:6.872))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~135.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (7.044:7.044:7.044) (7.044:7.044:7.044))
+        (PORT datad (0.182:0.182:0.182) (0.182:0.182:0.182))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~60.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5.724:5.724:5.724) (5.724:5.724:5.724))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~60.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5.839:5.839:5.839) (5.839:5.839:5.839))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.323:1.323:1.323) (1.323:1.323:1.323))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~132.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (7.287:7.287:7.287) (7.287:7.287:7.287))
+        (PORT datab (6.436:6.436:6.436) (6.436:6.436:6.436))
+        (PORT datac (6.568:6.568:6.568) (6.568:6.568:6.568))
+        (PORT datad (6.716:6.716:6.716) (6.716:6.716:6.716))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~133.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (7.058:7.058:7.058) (7.058:7.058:7.058))
+        (PORT datad (0.425:0.425:0.425) (0.425:0.425:0.425))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~48.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5.733:5.733:5.733) (5.733:5.733:5.733))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~48.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5.848:5.848:5.848) (5.848:5.848:5.848))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.323:1.323:1.323) (1.323:1.323:1.323))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~130.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (7.375:7.375:7.375) (7.375:7.375:7.375))
+        (PORT datab (6.476:6.476:6.476) (6.476:6.476:6.476))
+        (PORT datac (5.79:5.79:5.79) (5.79:5.79:5.79))
+        (PORT datad (6.747:6.747:6.747) (6.747:6.747:6.747))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~131.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.686:6.686:6.686) (6.686:6.686:6.686))
+        (PORT datad (0.415:0.415:0.415) (0.415:0.415:0.415))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~56.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.551:6.551:6.551) (6.551:6.551:6.551))
+        (PORT datab (0.503:0.503:0.503) (0.503:0.503:0.503))
+        (PORT datac (5.735:5.735:5.735) (5.735:5.735:5.735))
+        (PORT datad (6.536:6.536:6.536) (6.536:6.536:6.536))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~56.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5.85:5.85:5.85) (5.85:5.85:5.85))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (2.102:2.102:2.102) (2.102:2.102:2.102))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~128.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.106:6.106:6.106) (6.106:6.106:6.106))
+        (PORT datab (6.428:6.428:6.428) (6.428:6.428:6.428))
+        (PORT datac (6.723:6.723:6.723) (6.723:6.723:6.723))
+        (PORT datad (7.339:7.339:7.339) (7.339:7.339:7.339))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~129.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (6.926:6.926:6.926) (6.926:6.926:6.926))
+        (PORT datad (0.423:0.423:0.423) (0.423:0.423:0.423))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~52.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.523:0.523:0.523) (0.523:0.523:0.523))
+        (PORT datab (6.859:6.859:6.859) (6.859:6.859:6.859))
+        (PORT datac (5.726:5.726:5.726) (5.726:5.726:5.726))
+        (PORT datad (1.079:1.079:1.079) (1.079:1.079:1.079))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~52.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5.841:5.841:5.841) (5.841:5.841:5.841))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (2.45:2.45:2.45) (2.45:2.45:2.45))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~73.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.434:0.434:0.434) (0.434:0.434:0.434))
+        (PORT datab (0.404:0.404:0.404) (0.404:0.404:0.404))
+        (PORT datac (6.405:6.405:6.405) (6.405:6.405:6.405))
+        (PORT datad (0.728:0.728:0.728) (0.728:0.728:0.728))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_io")
+    (INSTANCE rd\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1.469:1.469:1.469) (1.469:1.469:1.469))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_io")
+    (INSTANCE data_in\[1\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1.475:1.475:1.475) (1.475:1.475:1.475))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~9.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (8.247:8.247:8.247) (8.247:8.247:8.247))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~9.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (8.362:8.362:8.362) (8.362:8.362:8.362))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (2.502:2.502:2.502) (2.502:2.502:2.502))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~41.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.559:6.559:6.559) (6.559:6.559:6.559))
+        (PORT datab (6.361:6.361:6.361) (6.361:6.361:6.361))
+        (PORT datac (7.164:7.164:7.164) (7.164:7.164:7.164))
+        (PORT datad (1.514:1.514:1.514) (1.514:1.514:1.514))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~41.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (7.279:7.279:7.279) (7.279:7.279:7.279))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.327:1.327:1.327) (1.327:1.327:1.327))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~57.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.75:6.75:6.75) (6.75:6.75:6.75))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~57.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.865:6.865:6.865) (6.865:6.865:6.865))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (2.102:2.102:2.102) (2.102:2.102:2.102))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~25.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.164:6.164:6.164) (6.164:6.164:6.164))
+        (PORT datab (1.21:1.21:1.21) (1.21:1.21:1.21))
+        (PORT datac (6.434:6.434:6.434) (6.434:6.434:6.434))
+        (PORT datad (1.611:1.611:1.611) (1.611:1.611:1.611))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~25.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.549:6.549:6.549) (6.549:6.549:6.549))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (2.398:2.398:2.398) (2.398:2.398:2.398))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~49.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.752:6.752:6.752) (6.752:6.752:6.752))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~49.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.867:6.867:6.867) (6.867:6.867:6.867))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.323:1.323:1.323) (1.323:1.323:1.323))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~1.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.741:6.741:6.741) (6.741:6.741:6.741))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~1.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.856:6.856:6.856) (6.856:6.856:6.856))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.332:1.332:1.332) (1.332:1.332:1.332))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~33.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.918:6.918:6.918) (6.918:6.918:6.918))
+        (PORT datab (6.321:6.321:6.321) (6.321:6.321:6.321))
+        (PORT datac (6.747:6.747:6.747) (6.747:6.747:6.747))
+        (PORT datad (1.261:1.261:1.261) (1.261:1.261:1.261))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~33.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.862:6.862:6.862) (6.862:6.862:6.862))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.328:1.328:1.328) (1.328:1.328:1.328))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~17.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.918:6.918:6.918) (6.918:6.918:6.918))
+        (PORT datab (1.239:1.239:1.239) (1.239:1.239:1.239))
+        (PORT datac (6.746:6.746:6.746) (6.746:6.746:6.746))
+        (PORT datad (0.426:0.426:0.426) (0.426:0.426:0.426))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~17.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.861:6.861:6.861) (6.861:6.861:6.861))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.33:1.33:1.33) (1.33:1.33:1.33))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~5.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.711:6.711:6.711) (6.711:6.711:6.711))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~5.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.826:6.826:6.826) (6.826:6.826:6.826))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.456:1.456:1.456) (1.456:1.456:1.456))
+        (PORT ena (2.12:2.12:2.12) (2.12:2.12:2.12))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~21.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.163:6.163:6.163) (6.163:6.163:6.163))
+        (PORT datab (5.928:5.928:5.928) (5.928:5.928:5.928))
+        (PORT datac (6.435:6.435:6.435) (6.435:6.435:6.435))
+        (PORT datad (1.266:1.266:1.266) (1.266:1.266:1.266))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~21.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.55:6.55:6.55) (6.55:6.55:6.55))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.326:1.326:1.326) (1.326:1.326:1.326))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~53.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.737:6.737:6.737) (6.737:6.737:6.737))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~53.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.852:6.852:6.852) (6.852:6.852:6.852))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (2.45:2.45:2.45) (2.45:2.45:2.45))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~37.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.732:0.732:0.732) (0.732:0.732:0.732))
+        (PORT datab (5.979:5.979:5.979) (5.979:5.979:5.979))
+        (PORT datac (6.742:6.742:6.742) (6.742:6.742:6.742))
+        (PORT datad (1.268:1.268:1.268) (1.268:1.268:1.268))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~37.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.857:6.857:6.857) (6.857:6.857:6.857))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.33:1.33:1.33) (1.33:1.33:1.33))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~80.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5.798:5.798:5.798) (5.798:5.798:5.798))
+        (PORT datab (6.122:6.122:6.122) (6.122:6.122:6.122))
+        (PORT datac (1.234:1.234:1.234) (1.234:1.234:1.234))
+        (PORT datad (0.182:0.182:0.182) (0.182:0.182:0.182))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~13.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (7.528:7.528:7.528) (7.528:7.528:7.528))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~13.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (7.643:7.643:7.643) (7.643:7.643:7.643))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (2.748:2.748:2.748) (2.748:2.748:2.748))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~29.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.208:6.208:6.208) (6.208:6.208:6.208))
+        (PORT datab (6.261:6.261:6.261) (6.261:6.261:6.261))
+        (PORT datac (7.527:7.527:7.527) (7.527:7.527:7.527))
+        (PORT datad (0.523:0.523:0.523) (0.523:0.523:0.523))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~29.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (7.642:7.642:7.642) (7.642:7.642:7.642))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.328:1.328:1.328) (1.328:1.328:1.328))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~61.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.741:6.741:6.741) (6.741:6.741:6.741))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~61.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.856:6.856:6.856) (6.856:6.856:6.856))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.323:1.323:1.323) (1.323:1.323:1.323))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~45.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5.638:5.638:5.638) (5.638:5.638:5.638))
+        (PORT datab (1.198:1.198:1.198) (1.198:1.198:1.198))
+        (PORT datac (8.248:8.248:8.248) (8.248:8.248:8.248))
+        (PORT datad (1.562:1.562:1.562) (1.562:1.562:1.562))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~45.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (8.363:8.363:8.363) (8.363:8.363:8.363))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.331:1.331:1.331) (1.331:1.331:1.331))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~83.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1.577:1.577:1.577) (1.577:1.577:1.577))
+        (PORT datab (5.839:5.839:5.839) (5.839:5.839:5.839))
+        (PORT datac (1.563:1.563:1.563) (1.563:1.563:1.563))
+        (PORT datad (0.182:0.182:0.182) (0.182:0.182:0.182))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_io")
+    (INSTANCE data_in\[2\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1.469:1.469:1.469) (1.469:1.469:1.469))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~30.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5.331:5.331:5.331) (5.331:5.331:5.331))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~30.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5.446:5.446:5.446) (5.446:5.446:5.446))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.328:1.328:1.328) (1.328:1.328:1.328))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~18.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (6.517:6.517:6.517) (6.517:6.517:6.517))
+        (IOPATH datad regin (0.309:0.309:0.309) (0.309:0.309:0.309))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~18.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.33:1.33:1.33) (1.33:1.33:1.33))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~22.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5.801:5.801:5.801) (5.801:5.801:5.801))
+        (PORT datab (6.119:6.119:6.119) (6.119:6.119:6.119))
+        (PORT datac (6.187:6.187:6.187) (6.187:6.187:6.187))
+        (PORT datad (1.621:1.621:1.621) (1.621:1.621:1.621))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~22.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.302:6.302:6.302) (6.302:6.302:6.302))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.326:1.326:1.326) (1.326:1.326:1.326))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~26.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5.796:5.796:5.796) (5.796:5.796:5.796))
+        (PORT datab (1.45:1.45:1.45) (1.45:1.45:1.45))
+        (PORT datac (6.187:6.187:6.187) (6.187:6.187:6.187))
+        (PORT datad (0.34:0.34:0.34) (0.34:0.34:0.34))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~26.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.302:6.302:6.302) (6.302:6.302:6.302))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (2.398:2.398:2.398) (2.398:2.398:2.398))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~14.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.243:6.243:6.243) (6.243:6.243:6.243))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~14.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.358:6.358:6.358) (6.358:6.358:6.358))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (2.676:2.676:2.676) (2.676:2.676:2.676))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~2.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (6.195:6.195:6.195) (6.195:6.195:6.195))
+        (IOPATH datad regin (0.309:0.309:0.309) (0.309:0.309:0.309))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~2.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.332:1.332:1.332) (1.332:1.332:1.332))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~10.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.105:6.105:6.105) (6.105:6.105:6.105))
+        (PORT datab (6.43:6.43:6.43) (6.43:6.43:6.43))
+        (PORT datac (6.51:6.51:6.51) (6.51:6.51:6.51))
+        (PORT datad (0.522:0.522:0.522) (0.522:0.522:0.522))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~10.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.625:6.625:6.625) (6.625:6.625:6.625))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (2.019:2.019:2.019) (2.019:2.019:2.019))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~6.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.53:0.53:0.53) (0.53:0.53:0.53))
+        (PORT datab (6.476:6.476:6.476) (6.476:6.476:6.476))
+        (PORT datac (6.242:6.242:6.242) (6.242:6.242:6.242))
+        (PORT datad (0.749:0.749:0.749) (0.749:0.749:0.749))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~6.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.357:6.357:6.357) (6.357:6.357:6.357))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.329:1.329:1.329) (1.329:1.329:1.329))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~34.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (6.516:6.516:6.516) (6.516:6.516:6.516))
+        (IOPATH datad regin (0.309:0.309:0.309) (0.309:0.309:0.309))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~34.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.328:1.328:1.328) (1.328:1.328:1.328))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~42.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.541:6.541:6.541) (6.541:6.541:6.541))
+        (PORT datab (6.177:6.177:6.177) (6.177:6.177:6.177))
+        (PORT datac (5.822:5.822:5.822) (5.822:5.822:5.822))
+        (PORT datad (1.607:1.607:1.607) (1.607:1.607:1.607))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~42.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5.937:5.937:5.937) (5.937:5.937:5.937))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.327:1.327:1.327) (1.327:1.327:1.327))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~46.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5.824:5.824:5.824) (5.824:5.824:5.824))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~46.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5.939:5.939:5.939) (5.939:5.939:5.939))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (2.391:2.391:2.391) (2.391:2.391:2.391))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~38.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1.506:1.506:1.506) (1.506:1.506:1.506))
+        (PORT datab (6.123:6.123:6.123) (6.123:6.123:6.123))
+        (PORT datac (6.184:6.184:6.184) (6.184:6.184:6.184))
+        (PORT datad (1.621:1.621:1.621) (1.621:1.621:1.621))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~38.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.299:6.299:6.299) (6.299:6.299:6.299))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.33:1.33:1.33) (1.33:1.33:1.33))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~90.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.714:0.714:0.714) (0.714:0.714:0.714))
+        (PORT datab (5.989:5.989:5.989) (5.989:5.989:5.989))
+        (PORT datac (0.447:0.447:0.447) (0.447:0.447:0.447))
+        (PORT datad (6.134:6.134:6.134) (6.134:6.134:6.134))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~50.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5.789:5.789:5.789) (5.789:5.789:5.789))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~50.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5.904:5.904:5.904) (5.904:5.904:5.904))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.323:1.323:1.323) (1.323:1.323:1.323))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~54.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.456:6.456:6.456) (6.456:6.456:6.456))
+        (PORT datab (6.861:6.861:6.861) (6.861:6.861:6.861))
+        (PORT datac (5.76:5.76:5.76) (5.76:5.76:5.76))
+        (PORT datad (1.132:1.132:1.132) (1.132:1.132:1.132))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~54.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5.875:5.875:5.875) (5.875:5.875:5.875))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (2.45:2.45:2.45) (2.45:2.45:2.45))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~62.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5.761:5.761:5.761) (5.761:5.761:5.761))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~62.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5.876:5.876:5.876) (5.876:5.876:5.876))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.323:1.323:1.323) (1.323:1.323:1.323))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~58.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.544:6.544:6.544) (6.544:6.544:6.544))
+        (PORT datab (1.104:1.104:1.104) (1.104:1.104:1.104))
+        (PORT datac (5.79:5.79:5.79) (5.79:5.79:5.79))
+        (PORT datad (1.13:1.13:1.13) (1.13:1.13:1.13))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~58.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5.905:5.905:5.905) (5.905:5.905:5.905))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (2.102:2.102:2.102) (2.102:2.102:2.102))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~93.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.104:6.104:6.104) (6.104:6.104:6.104))
+        (PORT datab (0.664:0.664:0.664) (0.664:0.664:0.664))
+        (PORT datac (0.448:0.448:0.448) (0.448:0.448:0.448))
+        (PORT datad (1.242:1.242:1.242) (1.242:1.242:1.242))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_io")
+    (INSTANCE data_in\[3\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1.469:1.469:1.469) (1.469:1.469:1.469))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~51.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (6.896:6.896:6.896) (6.896:6.896:6.896))
+        (IOPATH datad regin (0.309:0.309:0.309) (0.309:0.309:0.309))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~51.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.323:1.323:1.323) (1.323:1.323:1.323))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~3.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.917:6.917:6.917) (6.917:6.917:6.917))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~3.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (7.032:7.032:7.032) (7.032:7.032:7.032))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.332:1.332:1.332) (1.332:1.332:1.332))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~19.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.917:6.917:6.917) (6.917:6.917:6.917))
+        (PORT datab (6.316:6.316:6.316) (6.316:6.316:6.316))
+        (PORT datac (6.162:6.162:6.162) (6.162:6.162:6.162))
+        (PORT datad (1.311:1.311:1.311) (1.311:1.311:1.311))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~19.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.277:6.277:6.277) (6.277:6.277:6.277))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.33:1.33:1.33) (1.33:1.33:1.33))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~35.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1.284:1.284:1.284) (1.284:1.284:1.284))
+        (PORT datab (6.312:6.312:6.312) (6.312:6.312:6.312))
+        (PORT datac (6.161:6.161:6.161) (6.161:6.161:6.161))
+        (PORT datad (0.424:0.424:0.424) (0.424:0.424:0.424))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~35.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.276:6.276:6.276) (6.276:6.276:6.276))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.328:1.328:1.328) (1.328:1.328:1.328))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~11.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5.779:5.779:5.779) (5.779:5.779:5.779))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~11.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5.894:5.894:5.894) (5.894:5.894:5.894))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (2.502:2.502:2.502) (2.502:2.502:2.502))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~27.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.165:6.165:6.165) (6.165:6.165:6.165))
+        (PORT datab (5.931:5.931:5.931) (5.931:5.931:5.931))
+        (PORT datac (6.629:6.629:6.629) (6.629:6.629:6.629))
+        (PORT datad (1.523:1.523:1.523) (1.523:1.523:1.523))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~27.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.744:6.744:6.744) (6.744:6.744:6.744))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (2.398:2.398:2.398) (2.398:2.398:2.398))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~59.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (6.897:6.897:6.897) (6.897:6.897:6.897))
+        (IOPATH datad regin (0.309:0.309:0.309) (0.309:0.309:0.309))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~59.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (2.102:2.102:2.102) (2.102:2.102:2.102))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~43.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1.211:1.211:1.211) (1.211:1.211:1.211))
+        (PORT datab (1.115:1.115:1.115) (1.115:1.115:1.115))
+        (PORT datac (6.613:6.613:6.613) (6.613:6.613:6.613))
+        (PORT datad (5.856:5.856:5.856) (5.856:5.856:5.856))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~43.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.728:6.728:6.728) (6.728:6.728:6.728))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.327:1.327:1.327) (1.327:1.327:1.327))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~100.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.881:6.881:6.881) (6.881:6.881:6.881))
+        (PORT datab (6.08:6.08:6.08) (6.08:6.08:6.08))
+        (PORT datac (1.541:1.541:1.541) (1.541:1.541:1.541))
+        (PORT datad (1.115:1.115:1.115) (1.115:1.115:1.115))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~63.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (6.62:6.62:6.62) (6.62:6.62:6.62))
+        (IOPATH datad regin (0.309:0.309:0.309) (0.309:0.309:0.309))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~63.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.323:1.323:1.323) (1.323:1.323:1.323))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~15.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.957:6.957:6.957) (6.957:6.957:6.957))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~15.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (7.072:7.072:7.072) (7.072:7.072:7.072))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (2.748:2.748:2.748) (2.748:2.748:2.748))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~47.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.228:6.228:6.228) (6.228:6.228:6.228))
+        (PORT datab (1.242:1.242:1.242) (1.242:1.242:1.242))
+        (PORT datac (5.779:5.779:5.779) (5.779:5.779:5.779))
+        (PORT datad (5.631:5.631:5.631) (5.631:5.631:5.631))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~47.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5.894:5.894:5.894) (5.894:5.894:5.894))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.331:1.331:1.331) (1.331:1.331:1.331))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~31.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.212:6.212:6.212) (6.212:6.212:6.212))
+        (PORT datab (1.142:1.142:1.142) (1.142:1.142:1.142))
+        (PORT datac (6.961:6.961:6.961) (6.961:6.961:6.961))
+        (PORT datad (1.139:1.139:1.139) (1.139:1.139:1.139))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~31.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (7.076:7.076:7.076) (7.076:7.076:7.076))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.328:1.328:1.328) (1.328:1.328:1.328))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~55.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (6.621:6.621:6.621) (6.621:6.621:6.621))
+        (IOPATH datad regin (0.309:0.309:0.309) (0.309:0.309:0.309))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~55.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (2.45:2.45:2.45) (2.45:2.45:2.45))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~7.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.55:6.55:6.55) (6.55:6.55:6.55))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~7.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.665:6.665:6.665) (6.665:6.665:6.665))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.456:1.456:1.456) (1.456:1.456:1.456))
+        (PORT ena (2.12:2.12:2.12) (2.12:2.12:2.12))
+        (IOPATH (posedge clk) regout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) regout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~39.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1.27:1.27:1.27) (1.27:1.27:1.27))
+        (PORT datab (6.121:6.121:6.121) (6.121:6.121:6.121))
+        (PORT datac (6.563:6.563:6.563) (6.563:6.563:6.563))
+        (PORT datad (6.001:6.001:6.001) (6.001:6.001:6.001))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~39.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.678:6.678:6.678) (6.678:6.678:6.678))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.33:1.33:1.33) (1.33:1.33:1.33))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~23.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6.166:6.166:6.166) (6.166:6.166:6.166))
+        (PORT datab (1.249:1.249:1.249) (1.249:1.249:1.249))
+        (PORT datac (6.63:6.63:6.63) (6.63:6.63:6.63))
+        (PORT datad (0.748:0.748:0.748) (0.748:0.748:0.748))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+        (IOPATH qfbkin combout (0.378:0.378:0.378) (0.378:0.378:0.378))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_lcell_register")
+    (INSTANCE SRAM\~23.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6.745:6.745:6.745) (6.745:6.745:6.745))
+        (PORT aclr (0.898:0.898:0.898) (0.898:0.898:0.898))
+        (PORT clk (1.485:1.485:1.485) (1.485:1.485:1.485))
+        (PORT ena (1.326:1.326:1.326) (1.326:1.326:1.326))
+        (IOPATH (posedge clk) qfbkout (0.224:0.224:0.224) (0.224:0.224:0.224))
+        (IOPATH (posedge aclr) qfbkout (0.283:0.283:0.283) (0.283:0.283:0.283))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datac (posedge clk) (0.037:0.037:0.037))
+      (SETUP datain (posedge clk) (0.037:0.037:0.037))
+      (SETUP ena (posedge clk) (0.037:0.037:0.037))
+      (HOLD datac (posedge clk) (0.015:0.015:0.015))
+      (HOLD datain (posedge clk) (0.015:0.015:0.015))
+      (HOLD ena (posedge clk) (0.015:0.015:0.015))
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_lcell")
+    (INSTANCE SRAM\~103.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.424:0.424:0.424) (0.424:0.424:0.424))
+        (PORT datab (0.401:0.401:0.401) (0.401:0.401:0.401))
+        (PORT datac (6.901:6.901:6.901) (6.901:6.901:6.901))
+        (PORT datad (1.512:1.512:1.512) (1.512:1.512:1.512))
+        (IOPATH dataa combout (0.59:0.59:0.59) (0.59:0.59:0.59))
+        (IOPATH datab combout (0.442:0.442:0.442) (0.442:0.442:0.442))
+        (IOPATH datac combout (0.292:0.292:0.292) (0.292:0.292:0.292))
+        (IOPATH datad combout (0.114:0.114:0.114) (0.114:0.114:0.114))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_io")
+    (INSTANCE q\[0\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (2.188:2.188:2.188) (2.188:2.188:2.188))
+        (PORT oe (7.942:7.942:7.942) (7.942:7.942:7.942))
+        (IOPATH datain padio (2.124:2.124:2.124) (2.124:2.124:2.124))
+        (IOPATH (posedge oe) padio (0.325:0.325:0.325) (0.325:0.325:0.325))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_io")
+    (INSTANCE q\[1\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (2.141:2.141:2.141) (2.141:2.141:2.141))
+        (PORT oe (7.938:7.938:7.938) (7.938:7.938:7.938))
+        (IOPATH datain padio (2.124:2.124:2.124) (2.124:2.124:2.124))
+        (IOPATH (posedge oe) padio (0.325:0.325:0.325) (0.325:0.325:0.325))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_io")
+    (INSTANCE q\[2\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (2.467:2.467:2.467) (2.467:2.467:2.467))
+        (PORT oe (7.471:7.471:7.471) (7.471:7.471:7.471))
+        (IOPATH datain padio (2.124:2.124:2.124) (2.124:2.124:2.124))
+        (IOPATH (posedge oe) padio (0.325:0.325:0.325) (0.325:0.325:0.325))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cyclone_asynch_io")
+    (INSTANCE q\[3\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (1.719:1.719:1.719) (1.719:1.719:1.719))
+        (PORT oe (7.473:7.473:7.473) (7.473:7.473:7.473))
+        (IOPATH datain padio (2.124:2.124:2.124) (2.124:2.124:2.124))
+        (IOPATH (posedge oe) padio (0.325:0.325:0.325) (0.325:0.325:0.325))
+      )
+    )
+  )
+)

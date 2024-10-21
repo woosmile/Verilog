@@ -1,0 +1,6 @@
+
+State Machine - |FSM_dice|state
+Name state.idle state.stop state.run 
+state.idle 0 0 0 
+state.run 1 0 1 
+state.stop 1 1 0 

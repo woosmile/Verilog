@@ -1,0 +1,16 @@
+
+State Machine - |line_tracer|stop_flag
+Name stop_flag.00 stop_flag.10 stop_flag.01 
+stop_flag.00 0 0 0 
+stop_flag.01 1 0 1 
+stop_flag.10 1 1 0 
+
+State Machine - |line_tracer|state
+Name state.delay_50ms state.display_data state.entry_mode state.display_on state.clear_display state.function_set state.delay_100ms 
+state.delay_100ms 0 0 0 0 0 0 0 
+state.function_set 0 0 0 0 0 1 1 
+state.clear_display 0 0 0 0 1 0 1 
+state.display_on 0 0 0 1 0 0 1 
+state.entry_mode 0 0 1 0 0 0 1 
+state.display_data 0 1 0 0 0 0 1 
+state.delay_50ms 1 0 0 0 0 0 1 

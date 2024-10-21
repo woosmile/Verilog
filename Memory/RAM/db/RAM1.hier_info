@@ -1,0 +1,39 @@
+|RAM1
+clk => SRAM.we_a.CLK
+clk => SRAM.waddr_a[3].CLK
+clk => SRAM.waddr_a[2].CLK
+clk => SRAM.waddr_a[1].CLK
+clk => SRAM.waddr_a[0].CLK
+clk => SRAM.data_a[3].CLK
+clk => SRAM.data_a[2].CLK
+clk => SRAM.data_a[1].CLK
+clk => SRAM.data_a[0].CLK
+clk => SRAM.CLK0
+wr => SRAM.we_a.DATAIN
+wr => SRAM.WE
+rd => q[0].OE
+rd => q[1].OE
+rd => q[2].OE
+rd => q[3].OE
+addr[0] => SRAM.waddr_a[0].DATAIN
+addr[0] => SRAM.WADDR
+addr[0] => SRAM.RADDR
+addr[1] => SRAM.waddr_a[1].DATAIN
+addr[1] => SRAM.WADDR1
+addr[1] => SRAM.RADDR1
+addr[2] => SRAM.waddr_a[2].DATAIN
+addr[2] => SRAM.WADDR2
+addr[2] => SRAM.RADDR2
+addr[3] => SRAM.waddr_a[3].DATAIN
+addr[3] => SRAM.WADDR3
+addr[3] => SRAM.RADDR3
+data_in[0] => SRAM.data_a[0].DATAIN
+data_in[0] => SRAM.DATAIN
+data_in[1] => SRAM.data_a[1].DATAIN
+data_in[1] => SRAM.DATAIN1
+data_in[2] => SRAM.data_a[2].DATAIN
+data_in[2] => SRAM.DATAIN2
+data_in[3] => SRAM.data_a[3].DATAIN
+data_in[3] => SRAM.DATAIN3
+
+

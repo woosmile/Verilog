@@ -1,0 +1,261 @@
+TimeQuest Timing Analyzer report for ROM2
+Tue Apr 19 11:01:16 2016
+Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Minimum Pulse Width: 'inclk'
+ 12. Setup Times
+ 13. Hold Times
+ 14. Clock to Output Times
+ 15. Minimum Clock to Output Times
+ 16. Clock Transfers
+ 17. Report TCCS
+ 18. Report RSKM
+ 19. Unconstrained Paths
+ 20. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                    ;
++--------------------+-----------------------------------------------------------------+
+; Quartus II Version ; Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; ROM2                                                            ;
+; Device Family      ; Cyclone                                                         ;
+; Device Name        ; EP1C6Q240C8                                                     ;
+; Timing Models      ; Final                                                           ;
+; Delay Model        ; Slow Model                                                      ;
+; Rise/Fall Delays   ; Unavailable                                                     ;
++--------------------+-----------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; inclk      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { inclk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+
+
+----------------
+; Fmax Summary ;
+----------------
+No paths to report.
+
+
+-----------------
+; Setup Summary ;
+-----------------
+No paths to report.
+
+
+----------------
+; Hold Summary ;
+----------------
+No paths to report.
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; inclk ; -1.583 ; -12.127       ;
++-------+--------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'inclk'                                                                                                                                                               ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                                                                    ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------------------------+
+; -1.583 ; 1.000        ; 2.583          ; Port Rate        ; inclk ; Rise       ; inclk                                                                                                     ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; inclk ; Rise       ; lpm_rom:u0|altrom:srom|altsyncram:rom_block|altsyncram_otv:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; inclk ; Rise       ; lpm_rom:u0|altrom:srom|altsyncram:rom_block|altsyncram_otv:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; inclk ; Rise       ; lpm_rom:u0|altrom:srom|altsyncram:rom_block|altsyncram_otv:auto_generated|ram_block1a0~porta_address_reg1 ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; inclk ; Rise       ; lpm_rom:u0|altrom:srom|altsyncram:rom_block|altsyncram_otv:auto_generated|ram_block1a0~porta_address_reg1 ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; inclk ; Rise       ; lpm_rom:u0|altrom:srom|altsyncram:rom_block|altsyncram_otv:auto_generated|ram_block1a0~porta_address_reg2 ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; inclk ; Rise       ; lpm_rom:u0|altrom:srom|altsyncram:rom_block|altsyncram_otv:auto_generated|ram_block1a0~porta_address_reg2 ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; inclk ; Rise       ; lpm_rom:u0|altrom:srom|altsyncram:rom_block|altsyncram_otv:auto_generated|ram_block1a0~porta_address_reg3 ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; inclk ; Rise       ; lpm_rom:u0|altrom:srom|altsyncram:rom_block|altsyncram_otv:auto_generated|ram_block1a0~porta_address_reg3 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; inclk ; Rise       ; inclk|combout                                                                                             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; inclk ; Rise       ; inclk|combout                                                                                             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; inclk ; Rise       ; u0|srom|rom_block|auto_generated|ram_block1a0|clk0                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; inclk ; Rise       ; u0|srom|rom_block|auto_generated|ram_block1a0|clk0                                                        ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; addr[*]   ; inclk      ; 6.583 ; 6.583 ; Rise       ; inclk           ;
+;  addr[0]  ; inclk      ; 6.583 ; 6.583 ; Rise       ; inclk           ;
+;  addr[1]  ; inclk      ; 5.914 ; 5.914 ; Rise       ; inclk           ;
+;  addr[2]  ; inclk      ; 5.383 ; 5.383 ; Rise       ; inclk           ;
+;  addr[3]  ; inclk      ; 6.083 ; 6.083 ; Rise       ; inclk           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; addr[*]   ; inclk      ; -5.235 ; -5.235 ; Rise       ; inclk           ;
+;  addr[0]  ; inclk      ; -6.435 ; -6.435 ; Rise       ; inclk           ;
+;  addr[1]  ; inclk      ; -5.766 ; -5.766 ; Rise       ; inclk           ;
+;  addr[2]  ; inclk      ; -5.235 ; -5.235 ; Rise       ; inclk           ;
+;  addr[3]  ; inclk      ; -5.935 ; -5.935 ; Rise       ; inclk           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; q[*]      ; inclk      ; 12.968 ; 12.968 ; Rise       ; inclk           ;
+;  q[0]     ; inclk      ; 12.968 ; 12.968 ; Rise       ; inclk           ;
+;  q[1]     ; inclk      ; 12.743 ; 12.743 ; Rise       ; inclk           ;
+;  q[2]     ; inclk      ; 12.733 ; 12.733 ; Rise       ; inclk           ;
+;  q[3]     ; inclk      ; 12.720 ; 12.720 ; Rise       ; inclk           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; q[*]      ; inclk      ; 12.720 ; 12.720 ; Rise       ; inclk           ;
+;  q[0]     ; inclk      ; 12.968 ; 12.968 ; Rise       ; inclk           ;
+;  q[1]     ; inclk      ; 12.743 ; 12.743 ; Rise       ; inclk           ;
+;  q[2]     ; inclk      ; 12.733 ; 12.733 ; Rise       ; inclk           ;
+;  q[3]     ; inclk      ; 12.720 ; 12.720 ; Rise       ; inclk           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
+-------------------
+; Clock Transfers ;
+-------------------
+Nothing to report.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 4     ; 4    ;
+; Unconstrained Input Port Paths  ; 4     ; 4    ;
+; Unconstrained Output Ports      ; 4     ; 4    ;
+; Unconstrained Output Port Paths ; 16    ; 16   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II TimeQuest Timing Analyzer
+    Info: Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Apr 19 11:01:14 2016
+Info: Command: quartus_sta ROM2 -c ROM2
+Info: qsta_default_script.tcl version: #1
+Warning: Parallel compilation is not licensed and has been disabled
+Critical Warning: Synopsys Design Constraints File file not found: 'ROM2.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info: No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info: Deriving Clocks
+    Info: create_clock -period 1.000 -name inclk inclk
+Info: No fmax paths to report
+Info: No Setup paths to report
+Info: No Hold paths to report
+Info: No Recovery paths to report
+Info: No Removal paths to report
+Critical Warning: Timing requirements not met
+Info: Worst-case minimum pulse width slack is -1.583
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -1.583       -12.127 inclk 
+Info: The selected device family is not supported by the report_metastability command.
+Info: Design is not fully constrained for setup requirements
+Info: Design is not fully constrained for hold requirements
+Info: Quartus II TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 215 megabytes
+    Info: Processing ended: Tue Apr 19 11:01:16 2016
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+

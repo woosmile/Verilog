@@ -1,0 +1,8 @@
+
+State Machine - |Serial_TX_ADC|ADC1:u1|state
+Name state.S_OE state.S_WAIT state.S_START state.S_IDLE state.S_CAPTURE 
+state.S_IDLE 0 0 0 0 0 
+state.S_START 0 0 1 1 0 
+state.S_WAIT 0 1 0 1 0 
+state.S_OE 1 0 0 1 0 
+state.S_CAPTURE 0 0 0 1 1 

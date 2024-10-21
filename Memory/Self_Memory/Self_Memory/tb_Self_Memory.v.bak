@@ -1,0 +1,22 @@
+module tb_Self_Memory;
+
+ reg clk,reset,add_sub;
+ reg [31:0]a,b;
+ 
+ wire [31:0]result;
+ 
+ Self_Memory u0(.clk(clk),.reset(reset),.add_sub(add_sub),.a(a),.b(b),.result(result));
+ 
+ always #50 clk=~clk;
+ 
+ initial begin
+  clk=1; reset=0; add_sub=0; a=0; b=0;
+  
+  #60 a=100; b=20;
+  #60 a=20;  b=130;
+  #60 add_sub=1; a=50; b=30;
+  #60 a=100; b=53;
+  #60 $stop;
+ end
+ 
+endmodule

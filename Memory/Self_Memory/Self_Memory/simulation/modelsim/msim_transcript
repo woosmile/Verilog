@@ -1,0 +1,48 @@
+# Reading C:/altera/11.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do Self_Memory_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying c:\altera\11.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied c:\altera\11.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/user/Desktop/Self_Memory {C:/Users/user/Desktop/Self_Memory/Self_Memory.v}
+# Model Technology ModelSim ALTERA vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module Self_Memory
+# 
+# Top level modules:
+# 	Self_Memory
+# vlog -vlog01compat -work work +incdir+C:/Users/user/Desktop/Self_Memory {C:/Users/user/Desktop/Self_Memory/ADD_SUB.v}
+# Model Technology ModelSim ALTERA vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module ADD_SUB
+# 
+# Top level modules:
+# 	ADD_SUB
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/user/Desktop/Self_Memory {C:/Users/user/Desktop/Self_Memory/tb_Self_Memory.v}
+# Model Technology ModelSim ALTERA vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module tb_Self_Memory
+# 
+# Top level modules:
+# 	tb_Self_Memory
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclone_ver -L rtl_work -L work -voptargs="+acc" tb_Self_Memory
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclone_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps tb_Self_Memory 
+# Loading work.tb_Self_Memory
+# Loading work.Self_Memory
+# Loading work.ADD_SUB
+# Loading lpm_ver.lpm_add_sub
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Break in Module tb_Self_Memory at C:/Users/user/Desktop/Self_Memory/tb_Self_Memory.v line 32
+# Simulation Breakpoint: Break in Module tb_Self_Memory at C:/Users/user/Desktop/Self_Memory/tb_Self_Memory.v line 32
+# MACRO ./Self_Memory_run_msim_rtl_verilog.do PAUSED at line 18

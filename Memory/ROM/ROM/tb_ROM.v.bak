@@ -1,0 +1,11 @@
+module tb_ROM;
+
+ reg clk,cs,rd;
+ reg [3:0]addr;
+ wire [7:0]rom_data;
+ 
+ ROM u0(clk,cs,rd,addr,rom_data);
+ 
+ always #50 clk=~clk;
+ 
+ 

@@ -1,0 +1,7 @@
+
+State Machine - |Keypad_4FND|Keypad:u1|state
+Name state.col_3 state.col_2 state.col_1 state.idle 
+state.idle 0 0 0 0 
+state.col_1 0 0 1 1 
+state.col_2 0 1 0 1 
+state.col_3 1 0 0 1 

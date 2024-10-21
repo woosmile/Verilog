@@ -1,0 +1,207 @@
+Quartus II
+Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+48
+4302
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+Data_Storage
+# storage
+db|RS232_project.(3).cnf
+db|RS232_project.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+data_storage.v
+77b285a94761bb1f2522e9c8cc44fd6
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+Data_Storage:u2
+}
+# macro_sequence
+
+# end
+# entity
+RXD
+# storage
+db|RS232_project.(2).cnf
+db|RS232_project.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+rxd.v
+20b69e86289d839428458f605bcd1e31
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+baud_rate
+5624
+PARAMETER_SIGNED_DEC
+DEF
+cnt_half
+2812
+PARAMETER_SIGNED_DEC
+DEF
+}
+# hierarchies {
+RXD:u1
+}
+# macro_sequence
+
+# end
+# entity
+RS232_project
+# storage
+db|RS232_project.(0).cnf
+db|RS232_project.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+rs232_project.v
+adb0b9657d12fe4e28a4d3c6ab7ad3d0
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+LCD
+# storage
+db|RS232_project.(1).cnf
+db|RS232_project.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+lcd.v
+c96e6f932ce81e45cf8ccfcfe17f462
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+delay_100ms
+0
+PARAMETER_SIGNED_DEC
+DEF
+function_set
+1
+PARAMETER_SIGNED_DEC
+DEF
+disp_clear
+2
+PARAMETER_SIGNED_DEC
+DEF
+disp_on
+3
+PARAMETER_SIGNED_DEC
+DEF
+entry_mode
+4
+PARAMETER_SIGNED_DEC
+DEF
+disp_data
+5
+PARAMETER_SIGNED_DEC
+DEF
+delay_5ms
+6
+PARAMETER_SIGNED_DEC
+DEF
+}
+# hierarchies {
+LCD:u0
+}
+# macro_sequence
+
+# end
+# complete
+

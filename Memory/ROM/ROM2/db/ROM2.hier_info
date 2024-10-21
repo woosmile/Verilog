@@ -1,0 +1,82 @@
+|ROM2
+addr[0] => addr[0].IN1
+addr[1] => addr[1].IN1
+addr[2] => addr[2].IN1
+addr[3] => addr[3].IN1
+inclk => inclk.IN1
+
+
+|ROM2|lpm_rom:u0
+address[0] => altrom:srom.address[0]
+address[1] => altrom:srom.address[1]
+address[2] => altrom:srom.address[2]
+address[3] => altrom:srom.address[3]
+inclock => altrom:srom.clocki
+outclock => ~NO_FANOUT~
+memenab => otri[3].OE
+memenab => otri[2].OE
+memenab => otri[1].OE
+memenab => otri[0].OE
+
+
+|ROM2|lpm_rom:u0|altrom:srom
+address[0] => altsyncram:rom_block.address_a[0]
+address[1] => altsyncram:rom_block.address_a[1]
+address[2] => altsyncram:rom_block.address_a[2]
+address[3] => altsyncram:rom_block.address_a[3]
+clocki => altsyncram:rom_block.clock0
+clocko => ~NO_FANOUT~
+
+
+|ROM2|lpm_rom:u0|altrom:srom|altsyncram:rom_block
+wren_a => ~NO_FANOUT~
+rden_a => ~NO_FANOUT~
+wren_b => ~NO_FANOUT~
+rden_b => ~NO_FANOUT~
+data_a[0] => ~NO_FANOUT~
+data_a[1] => ~NO_FANOUT~
+data_a[2] => ~NO_FANOUT~
+data_a[3] => ~NO_FANOUT~
+data_b[0] => ~NO_FANOUT~
+address_a[0] => altsyncram_otv:auto_generated.address_a[0]
+address_a[1] => altsyncram_otv:auto_generated.address_a[1]
+address_a[2] => altsyncram_otv:auto_generated.address_a[2]
+address_a[3] => altsyncram_otv:auto_generated.address_a[3]
+address_b[0] => ~NO_FANOUT~
+addressstall_a => ~NO_FANOUT~
+addressstall_b => ~NO_FANOUT~
+clock0 => altsyncram_otv:auto_generated.clock0
+clock1 => ~NO_FANOUT~
+clocken0 => ~NO_FANOUT~
+clocken1 => ~NO_FANOUT~
+clocken2 => ~NO_FANOUT~
+clocken3 => ~NO_FANOUT~
+aclr0 => ~NO_FANOUT~
+aclr1 => ~NO_FANOUT~
+byteena_a[0] => ~NO_FANOUT~
+byteena_b[0] => ~NO_FANOUT~
+
+
+|ROM2|lpm_rom:u0|altrom:srom|altsyncram:rom_block|altsyncram_otv:auto_generated
+address_a[0] => ram_block1a0.PORTAADDR
+address_a[0] => ram_block1a1.PORTAADDR
+address_a[0] => ram_block1a2.PORTAADDR
+address_a[0] => ram_block1a3.PORTAADDR
+address_a[1] => ram_block1a0.PORTAADDR1
+address_a[1] => ram_block1a1.PORTAADDR1
+address_a[1] => ram_block1a2.PORTAADDR1
+address_a[1] => ram_block1a3.PORTAADDR1
+address_a[2] => ram_block1a0.PORTAADDR2
+address_a[2] => ram_block1a1.PORTAADDR2
+address_a[2] => ram_block1a2.PORTAADDR2
+address_a[2] => ram_block1a3.PORTAADDR2
+address_a[3] => ram_block1a0.PORTAADDR3
+address_a[3] => ram_block1a1.PORTAADDR3
+address_a[3] => ram_block1a2.PORTAADDR3
+address_a[3] => ram_block1a3.PORTAADDR3
+clock0 => ram_block1a0.CLK0
+clock0 => ram_block1a1.CLK0
+clock0 => ram_block1a2.CLK0
+clock0 => ram_block1a3.CLK0
+
+

@@ -1,0 +1,19 @@
+`define do   103201
+`define re   91942
+`define mi   81911
+`define fa   77313
+`define sol  68878
+`define ra   61364
+`define si   54669
+`define do_4 51600
+
+`define n32  4050000
+`define n16  `n32*2
+`define nd16 `n32*3
+`define n8   `n32*4
+`define nd8  `n32*6
+`define n4   `n32*8
+`define nd4  `n32*12
+`define n2   `n32*16
+`define nd2  `n32*24
+`define n1   `n32*32

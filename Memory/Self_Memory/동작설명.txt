@@ -1,0 +1,7 @@
+1. 8비트 연산을 한다.
+2. ADD_SUB가 0이면 뺄셈, 1이면 덧셈을 한다.
+3. 출력값은 CLOCK과 동기된다.
+4. RESET은 CLOCK에 영향을 받지 않는다.(비동기식 RESET)
+5. overflow값을 확인할 수 있다.
+
+6. 연산 결과값은 CLOCK이 들어올 때 까지 대기한다.(REGISTERED)

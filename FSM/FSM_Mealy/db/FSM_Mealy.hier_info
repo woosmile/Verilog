@@ -1,0 +1,7 @@
+|FSM_Mealy
+clk => current_state.CLK
+reset => current_state.ACLR
+w => z.DATAB
+w => current_state.DATAIN
+
+

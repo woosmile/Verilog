@@ -1,0 +1,318 @@
+Analysis & Synthesis report for Self_Memory
+Fri May 20 09:46:14 2016
+Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis IP Cores Summary
+  9. General Register Statistics
+ 10. Parameter Settings for User Entity Instance: ADD_SUB:u0|lpm_add_sub:LPM_ADD_SUB_component
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                ;
++-----------------------------+-----------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Fri May 20 09:46:14 2016         ;
+; Quartus II Version          ; 11.0 Build 208 07/03/2011 SP 1 SJ Web Edition ;
+; Revision Name               ; Self_Memory                                   ;
+; Top-level Entity Name       ; Self_Memory                                   ;
+; Family                      ; Cyclone                                       ;
+; Total logic elements        ; 11                                            ;
+; Total pins                  ; 28                                            ;
+; Total virtual pins          ; 0                                             ;
+; Total memory bits           ; 0                                             ;
+; Total PLLs                  ; 0                                             ;
++-----------------------------+-----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP1C6Q240C8        ;                    ;
+; Top-level entity name                                                      ; Self_Memory        ; Self_Memory        ;
+; Family name                                                                ; Cyclone            ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                       ;
++----------------------------------+-----------------+-----------------------------+---------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                   ; File Name with Absolute Path                                              ;
++----------------------------------+-----------------+-----------------------------+---------------------------------------------------------------------------+
+; Self_Memory.v                    ; yes             ; User Verilog HDL File       ; C:/Users/user/Desktop/Self_Memory/Self_Memory.v                           ;
+; ADD_SUB.v                        ; yes             ; User Wizard-Generated File  ; C:/Users/user/Desktop/Self_Memory/ADD_SUB.v                               ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                ; c:/altera/11.0sp1/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;
+; addcore.inc                      ; yes             ; Megafunction                ; c:/altera/11.0sp1/quartus/libraries/megafunctions/addcore.inc             ;
+; look_add.inc                     ; yes             ; Megafunction                ; c:/altera/11.0sp1/quartus/libraries/megafunctions/look_add.inc            ;
+; bypassff.inc                     ; yes             ; Megafunction                ; c:/altera/11.0sp1/quartus/libraries/megafunctions/bypassff.inc            ;
+; altshift.inc                     ; yes             ; Megafunction                ; c:/altera/11.0sp1/quartus/libraries/megafunctions/altshift.inc            ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                ; c:/altera/11.0sp1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;
+; aglobal110.inc                   ; yes             ; Megafunction                ; c:/altera/11.0sp1/quartus/libraries/megafunctions/aglobal110.inc          ;
+; alt_stratix_add_sub.tdf          ; yes             ; Megafunction                ; c:/altera/11.0sp1/quartus/libraries/megafunctions/alt_stratix_add_sub.tdf ;
+; stratix_lcell.inc                ; yes             ; Megafunction                ; c:/altera/11.0sp1/quartus/libraries/megafunctions/stratix_lcell.inc       ;
++----------------------------------+-----------------+-----------------------------+---------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 11    ;
+;     -- Combinational with no register       ; 1     ;
+;     -- Register only                        ; 1     ;
+;     -- Combinational with a register        ; 9     ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 7     ;
+;     -- 2 input functions                    ; 2     ;
+;     -- 1 input functions                    ; 1     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 3     ;
+;     -- arithmetic mode                      ; 8     ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 0     ;
+;     -- asynchronous clear/load mode         ; 10    ;
+;                                             ;       ;
+; Total registers                             ; 10    ;
+; Total logic cells in carry chains           ; 9     ;
+; I/O pins                                    ; 28    ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 10    ;
+; Total fan-out                               ; 65    ;
+; Average fan-out                             ; 1.67  ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                             ;
++----------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                         ; Library Name ;
++----------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------+--------------+
+; |Self_Memory                                 ; 11 (0)      ; 10           ; 0           ; 28   ; 0            ; 1 (0)        ; 1 (0)             ; 9 (0)            ; 9 (0)           ; 0 (0)      ; |Self_Memory                                                                                ;              ;
+;    |ADD_SUB:u0|                              ; 11 (0)      ; 10           ; 0           ; 0    ; 0            ; 1 (0)        ; 1 (0)             ; 9 (0)            ; 9 (0)           ; 0 (0)      ; |Self_Memory|ADD_SUB:u0                                                                     ;              ;
+;       |lpm_add_sub:LPM_ADD_SUB_component|    ; 11 (0)      ; 10           ; 0           ; 0    ; 0            ; 1 (0)        ; 1 (0)             ; 9 (0)            ; 9 (0)           ; 0 (0)      ; |Self_Memory|ADD_SUB:u0|lpm_add_sub:LPM_ADD_SUB_component                                   ;              ;
+;          |alt_stratix_add_sub:stratix_adder| ; 11 (11)     ; 10           ; 0           ; 0    ; 0            ; 1 (1)        ; 1 (1)             ; 9 (9)            ; 9 (9)           ; 0 (0)      ; |Self_Memory|ADD_SUB:u0|lpm_add_sub:LPM_ADD_SUB_component|alt_stratix_add_sub:stratix_adder ;              ;
++----------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                 ;
++--------+--------------+---------+--------------+--------------+-------------------------+---------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance         ; IP Include File                             ;
++--------+--------------+---------+--------------+--------------+-------------------------+---------------------------------------------+
+; Altera ; LPM_ADD_SUB  ; 11.0    ; N/A          ; N/A          ; |Self_Memory|ADD_SUB:u0 ; C:/Users/user/Desktop/Self_Memory/ADD_SUB.v ;
++--------+--------------+---------+--------------+--------------+-------------------------+---------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 10    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 10    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ADD_SUB:u0|lpm_add_sub:LPM_ADD_SUB_component ;
++------------------------+-------------+----------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                               ;
++------------------------+-------------+----------------------------------------------------+
+; LPM_WIDTH              ; 8           ; Signed Integer                                     ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                                            ;
+; LPM_DIRECTION          ; DEFAULT     ; Untyped                                            ;
+; ONE_INPUT_IS_CONSTANT  ; NO          ; Untyped                                            ;
+; LPM_PIPELINE           ; 1           ; Signed Integer                                     ;
+; MAXIMIZE_SPEED         ; 5           ; Untyped                                            ;
+; REGISTERED_AT_END      ; 0           ; Untyped                                            ;
+; OPTIMIZE_FOR_SPEED     ; 5           ; Untyped                                            ;
+; USE_CS_BUFFERS         ; 1           ; Untyped                                            ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                            ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                 ;
+; DEVICE_FAMILY          ; Cyclone     ; Untyped                                            ;
+; USE_WYS                ; OFF         ; Untyped                                            ;
+; STYLE                  ; FAST        ; Untyped                                            ;
+; CBXI_PARAMETER         ; add_sub_7jj ; Untyped                                            ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                         ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                       ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                       ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                     ;
++------------------------+-------------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri May 20 09:46:12 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Self_Memory -c Self_Memory
+Warning: Parallel compilation is not licensed and has been disabled
+Info: Found 1 design units, including 1 entities, in source file self_memory.v
+    Info: Found entity 1: Self_Memory
+Info: Found 1 design units, including 1 entities, in source file tb_self_memory.v
+    Info: Found entity 1: tb_Self_Memory
+Info: Found 1 design units, including 1 entities, in source file add_sub.v
+    Info: Found entity 1: ADD_SUB
+Info: Elaborating entity "Self_Memory" for the top level hierarchy
+Info: Elaborating entity "ADD_SUB" for hierarchy "ADD_SUB:u0"
+Info: Elaborating entity "lpm_add_sub" for hierarchy "ADD_SUB:u0|lpm_add_sub:LPM_ADD_SUB_component"
+Info: Elaborated megafunction instantiation "ADD_SUB:u0|lpm_add_sub:LPM_ADD_SUB_component"
+Info: Instantiated megafunction "ADD_SUB:u0|lpm_add_sub:LPM_ADD_SUB_component" with the following parameter:
+    Info: Parameter "lpm_direction" = "UNUSED"
+    Info: Parameter "lpm_hint" = "ONE_INPUT_IS_CONSTANT=NO,CIN_USED=NO"
+    Info: Parameter "lpm_pipeline" = "1"
+    Info: Parameter "lpm_representation" = "UNSIGNED"
+    Info: Parameter "lpm_type" = "LPM_ADD_SUB"
+    Info: Parameter "lpm_width" = "8"
+Info: Elaborating entity "alt_stratix_add_sub" for hierarchy "ADD_SUB:u0|lpm_add_sub:LPM_ADD_SUB_component|alt_stratix_add_sub:stratix_adder"
+Info: Elaborated megafunction instantiation "ADD_SUB:u0|lpm_add_sub:LPM_ADD_SUB_component|alt_stratix_add_sub:stratix_adder", which is child of megafunction instantiation "ADD_SUB:u0|lpm_add_sub:LPM_ADD_SUB_component"
+Info: Ignored 2 buffer(s)
+    Info: Ignored 2 SOFT buffer(s)
+Info: Generating hard_block partition "hard_block:auto_generated_inst"
+Info: Implemented 39 device resources after synthesis - the final resource count might be different
+    Info: Implemented 19 input pins
+    Info: Implemented 9 output pins
+    Info: Implemented 11 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 275 megabytes
+    Info: Processing ended: Fri May 20 09:46:14 2016
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

@@ -1,0 +1,34 @@
+module clock_basic(clk,reset,sec,min,hour,sw0,sw1);
+
+ input clk,reset;
+ input sw0,sw1;
+ output reg [5:0]sec,min;
+ output reg [4:0]hour;
+
+ reg [27:0]cnt;
+ 
+ always@(posedge clk, negedge reset)
+  if(!reset) begin
+   cnt<=28'b0;
+	{sec,min}<=6'b0;
+	hour<=5'b0;
+  end
+  else begin
+	if(cnt>=53999999) begin
+	 cnt<=28'b0;
+	 if(sec>=59) begin
+	  sec<=6'b0;
+	  if(min>=59) begin
+		min<=6'b0;
+		if(hour>=23) hour<=5'b0;
+		else hour<=hour+1;
+	  end
+	  else min<=min+1;
+	 end
+	 else sec<=sec+1;
+	end
+	else cnt<=cnt+1;
+   if(sw0==1) hour<=(hour+1)%24;
+   if(sw1==1) min<=(min+1)%60;
+  end
+endmodule

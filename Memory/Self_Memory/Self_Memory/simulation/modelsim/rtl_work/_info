@@ -1,0 +1,56 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\user\Desktop\Self_Memory\simulation\modelsim
+vADD_SUB
+IFnB4@;6QL;4=K=@>jWzZT1
+VGb_^7BRPCBVBnm<NgEALO2
+Z1 dC:\Users\user\Desktop\Self_Memory\simulation\modelsim
+w1463703131
+8C:/Users/user/Desktop/Self_Memory/ADD_SUB.v
+FC:/Users/user/Desktop/Self_Memory/ADD_SUB.v
+L0 39
+Z2 OV;L;6.6d;45
+r1
+31
+Z3 o-vlog01compat -work work -O0
+Z4 !s92 -vlog01compat -work work +incdir+C:/Users/user/Desktop/Self_Memory -O0
+n@a@d@d_@s@u@b
+!s100 [HTmbil0:Do9`Ajd4z2OZ0
+!s85 0
+!s101 -O0
+vSelf_Memory
+IId<5=4]gV:>3OPb^MIcBX1
+Vi4:`BYVo=SoJS0ZW[;M?m2
+R1
+w1463703775
+8C:/Users/user/Desktop/Self_Memory/Self_Memory.v
+FC:/Users/user/Desktop/Self_Memory/Self_Memory.v
+L0 1
+R2
+r1
+31
+R3
+n@self_@memory
+R4
+!s100 KNL`f`UHO>KB5:a1bWdQQ0
+!s85 0
+!s101 -O0
+vtb_Self_Memory
+!s100 ZUAmZj89N_d9gfD]E6R;N3
+I>`km>a2LhPX^[n1c7:?DY1
+VPi2:VA5G5T[e9?=;cL^ez3
+R1
+w1463705122
+8C:/Users/user/Desktop/Self_Memory/tb_Self_Memory.v
+FC:/Users/user/Desktop/Self_Memory/tb_Self_Memory.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s101 -O0
+R3
+R4
+ntb_@self_@memory

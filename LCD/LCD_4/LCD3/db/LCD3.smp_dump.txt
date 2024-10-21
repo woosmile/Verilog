@@ -1,0 +1,10 @@
+
+State Machine - |LCD3|state
+Name state.delay_5ms state.disp_data state.entry_mode state.disp_on state.disp_clear state.function_set state.delay_100ms 
+state.delay_100ms 0 0 0 0 0 0 0 
+state.function_set 0 0 0 0 0 1 1 
+state.disp_clear 0 0 0 0 1 0 1 
+state.disp_on 0 0 0 1 0 0 1 
+state.entry_mode 0 0 1 0 0 0 1 
+state.disp_data 0 1 0 0 0 0 1 
+state.delay_5ms 1 0 0 0 0 0 1 

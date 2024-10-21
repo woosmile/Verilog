@@ -1,0 +1,153 @@
+Quartus II
+Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+48
+4302
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+ADC_PWM
+# storage
+db|ADC_PWM.(0).cnf
+db|ADC_PWM.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+adc_pwm.v
+f35ca4deb91d367e7b542ef0b821d0
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+adc_1
+# storage
+db|ADC_PWM.(1).cnf
+db|ADC_PWM.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+f:|digital_circuit_design|adc|adc_1|adc_1.v
+1cdbae1296f1d03936917af5e7d0bd
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+s_idle
+000
+PARAMETER_UNSIGNED_BIN
+DEF
+s_start
+001
+PARAMETER_UNSIGNED_BIN
+DEF
+s_wait
+010
+PARAMETER_UNSIGNED_BIN
+DEF
+s_oe_sig
+011
+PARAMETER_UNSIGNED_BIN
+DEF
+s_capture
+100
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# hierarchies {
+adc_1:u0
+}
+# macro_sequence
+
+# end
+# entity
+PWM
+# storage
+db|ADC_PWM.(2).cnf
+db|ADC_PWM.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|users|user|desktop|pwm|pwm.v
+32855fb3de923b9e432ad5b92fd2aa
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+PWM:u1
+}
+# macro_sequence
+
+# end
+# complete
+

@@ -1,0 +1,4445 @@
+// Copyright (C) 1991-2011 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus II"
+// VERSION "Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition"
+
+// DATE "04/12/2016 12:07:56"
+
+// 
+// Device: Altera EP1C6Q240C8 Package PQFP240
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ns/ 1 ps
+
+module RAM1 (
+	q,
+	clk,
+	wr,
+	rd,
+	addr,
+	data_in);
+output 	[3:0] q;
+input 	clk;
+input 	wr;
+input 	rd;
+input 	[3:0] addr;
+input 	[3:0] data_in;
+
+// Design Ports Information
+// q[0]	=>  Location: PIN_8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+// q[1]	=>  Location: PIN_13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+// q[2]	=>  Location: PIN_16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+// q[3]	=>  Location: PIN_21,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+// addr[1]	=>  Location: PIN_23,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+// addr[0]	=>  Location: PIN_18,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+// addr[3]	=>  Location: PIN_228,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+// addr[2]	=>  Location: PIN_17,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+// rd	=>  Location: PIN_38,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+// data_in[0]	=>  Location: PIN_19,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+// clk	=>  Location: PIN_29,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+// wr	=>  Location: PIN_39,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+// data_in[1]	=>  Location: PIN_79,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+// data_in[2]	=>  Location: PIN_20,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+// data_in[3]	=>  Location: PIN_14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+// synopsys translate_off
+initial $sdf_annotate("RAM1_v.sdo");
+// synopsys translate_on
+
+wire \SRAM~36_regout ;
+wire \SRAM~40_regout ;
+wire \SRAM~24_regout ;
+wire \SRAM~20_regout ;
+wire \SRAM~4_regout ;
+wire \SRAM~8_regout ;
+wire \SRAM~56_regout ;
+wire \SRAM~52_regout ;
+wire \SRAM~41_regout ;
+wire \SRAM~25_regout ;
+wire \SRAM~21_regout ;
+wire \SRAM~37_regout ;
+wire \SRAM~33_regout ;
+wire \SRAM~17_regout ;
+wire \SRAM~29_regout ;
+wire \SRAM~45_regout ;
+wire \SRAM~22_regout ;
+wire \SRAM~26_regout ;
+wire \SRAM~42_regout ;
+wire \SRAM~38_regout ;
+wire \SRAM~10_regout ;
+wire \SRAM~6_regout ;
+wire \SRAM~54_regout ;
+wire \SRAM~58_regout ;
+wire \SRAM~39_regout ;
+wire \SRAM~23_regout ;
+wire \SRAM~27_regout ;
+wire \SRAM~43_regout ;
+wire \SRAM~19_regout ;
+wire \SRAM~35_regout ;
+wire \SRAM~47_regout ;
+wire \SRAM~31_regout ;
+wire \clk~combout ;
+wire \wr~combout ;
+wire \SRAM~110_combout ;
+wire \SRAM~111_combout ;
+wire \SRAM~44_regout ;
+wire \SRAM~108_combout ;
+wire \SRAM~109_combout ;
+wire \SRAM~32_regout ;
+wire \SRAM~106_combout ;
+wire \SRAM~107_combout ;
+wire \SRAM~64 ;
+wire \SRAM~104_combout ;
+wire \SRAM~105_combout ;
+wire \SRAM~65 ;
+wire \SRAM~126_combout ;
+wire \SRAM~127_combout ;
+wire \SRAM~12_regout ;
+wire \SRAM~124_combout ;
+wire \SRAM~125_combout ;
+wire \SRAM~0_regout ;
+wire \SRAM~122_combout ;
+wire \SRAM~123_combout ;
+wire \SRAM~68 ;
+wire \SRAM~120_combout ;
+wire \SRAM~121_combout ;
+wire \SRAM~69 ;
+wire \SRAM~118_combout ;
+wire \SRAM~119_combout ;
+wire \SRAM~28_regout ;
+wire \SRAM~116_combout ;
+wire \SRAM~117_combout ;
+wire \SRAM~16_regout ;
+wire \SRAM~114_combout ;
+wire \SRAM~115_combout ;
+wire \SRAM~66 ;
+wire \SRAM~112_combout ;
+wire \SRAM~113_combout ;
+wire \SRAM~67 ;
+wire \SRAM~70_combout ;
+wire \SRAM~134_combout ;
+wire \SRAM~135_combout ;
+wire \SRAM~60_regout ;
+wire \SRAM~132_combout ;
+wire \SRAM~133_combout ;
+wire \SRAM~48_regout ;
+wire \SRAM~130_combout ;
+wire \SRAM~131_combout ;
+wire \SRAM~71 ;
+wire \SRAM~128_combout ;
+wire \SRAM~129_combout ;
+wire \SRAM~72 ;
+wire \SRAM~73_combout ;
+wire \rd~combout ;
+wire \SRAM~9_regout ;
+wire \SRAM~74 ;
+wire \SRAM~57_regout ;
+wire \SRAM~75 ;
+wire \SRAM~49_regout ;
+wire \SRAM~1_regout ;
+wire \SRAM~78 ;
+wire \SRAM~79 ;
+wire \SRAM~5_regout ;
+wire \SRAM~76 ;
+wire \SRAM~53_regout ;
+wire \SRAM~77 ;
+wire \SRAM~80_combout ;
+wire \SRAM~13_regout ;
+wire \SRAM~81 ;
+wire \SRAM~61_regout ;
+wire \SRAM~82 ;
+wire \SRAM~83_combout ;
+wire \SRAM~30_regout ;
+wire \SRAM~18_regout ;
+wire \SRAM~84 ;
+wire \SRAM~85 ;
+wire \SRAM~14_regout ;
+wire \SRAM~2_regout ;
+wire \SRAM~88 ;
+wire \SRAM~89 ;
+wire \SRAM~34_regout ;
+wire \SRAM~86 ;
+wire \SRAM~46_regout ;
+wire \SRAM~87 ;
+wire \SRAM~90_combout ;
+wire \SRAM~50_regout ;
+wire \SRAM~91 ;
+wire \SRAM~62_regout ;
+wire \SRAM~92 ;
+wire \SRAM~93_combout ;
+wire \SRAM~51_regout ;
+wire \SRAM~3_regout ;
+wire \SRAM~98 ;
+wire \SRAM~99 ;
+wire \SRAM~11_regout ;
+wire \SRAM~96 ;
+wire \SRAM~59_regout ;
+wire \SRAM~97 ;
+wire \SRAM~100_combout ;
+wire \SRAM~63_regout ;
+wire \SRAM~15_regout ;
+wire \SRAM~101 ;
+wire \SRAM~102 ;
+wire \SRAM~55_regout ;
+wire \SRAM~7_regout ;
+wire \SRAM~94 ;
+wire \SRAM~95 ;
+wire \SRAM~103_combout ;
+wire [3:0] \addr~combout ;
+wire [3:0] \data_in~combout ;
+
+
+// Location: PIN_29,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+cyclone_io \clk~I (
+	.datain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\clk~combout ),
+	.regout(),
+	.padio(clk));
+// synopsys translate_off
+defparam \clk~I .input_async_reset = "none";
+defparam \clk~I .input_power_up = "low";
+defparam \clk~I .input_register_mode = "none";
+defparam \clk~I .input_sync_reset = "none";
+defparam \clk~I .oe_async_reset = "none";
+defparam \clk~I .oe_power_up = "low";
+defparam \clk~I .oe_register_mode = "none";
+defparam \clk~I .oe_sync_reset = "none";
+defparam \clk~I .operation_mode = "input";
+defparam \clk~I .output_async_reset = "none";
+defparam \clk~I .output_power_up = "low";
+defparam \clk~I .output_register_mode = "none";
+defparam \clk~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// Location: PIN_19,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+cyclone_io \data_in[0]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\data_in~combout [0]),
+	.regout(),
+	.padio(data_in[0]));
+// synopsys translate_off
+defparam \data_in[0]~I .input_async_reset = "none";
+defparam \data_in[0]~I .input_power_up = "low";
+defparam \data_in[0]~I .input_register_mode = "none";
+defparam \data_in[0]~I .input_sync_reset = "none";
+defparam \data_in[0]~I .oe_async_reset = "none";
+defparam \data_in[0]~I .oe_power_up = "low";
+defparam \data_in[0]~I .oe_register_mode = "none";
+defparam \data_in[0]~I .oe_sync_reset = "none";
+defparam \data_in[0]~I .operation_mode = "input";
+defparam \data_in[0]~I .output_async_reset = "none";
+defparam \data_in[0]~I .output_power_up = "low";
+defparam \data_in[0]~I .output_register_mode = "none";
+defparam \data_in[0]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// Location: PIN_39,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+cyclone_io \wr~I (
+	.datain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\wr~combout ),
+	.regout(),
+	.padio(wr));
+// synopsys translate_off
+defparam \wr~I .input_async_reset = "none";
+defparam \wr~I .input_power_up = "low";
+defparam \wr~I .input_register_mode = "none";
+defparam \wr~I .input_sync_reset = "none";
+defparam \wr~I .oe_async_reset = "none";
+defparam \wr~I .oe_power_up = "low";
+defparam \wr~I .oe_register_mode = "none";
+defparam \wr~I .oe_sync_reset = "none";
+defparam \wr~I .operation_mode = "input";
+defparam \wr~I .output_async_reset = "none";
+defparam \wr~I .output_power_up = "low";
+defparam \wr~I .output_register_mode = "none";
+defparam \wr~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// Location: PIN_17,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+cyclone_io \addr[2]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\addr~combout [2]),
+	.regout(),
+	.padio(addr[2]));
+// synopsys translate_off
+defparam \addr[2]~I .input_async_reset = "none";
+defparam \addr[2]~I .input_power_up = "low";
+defparam \addr[2]~I .input_register_mode = "none";
+defparam \addr[2]~I .input_sync_reset = "none";
+defparam \addr[2]~I .oe_async_reset = "none";
+defparam \addr[2]~I .oe_power_up = "low";
+defparam \addr[2]~I .oe_register_mode = "none";
+defparam \addr[2]~I .oe_sync_reset = "none";
+defparam \addr[2]~I .operation_mode = "input";
+defparam \addr[2]~I .output_async_reset = "none";
+defparam \addr[2]~I .output_power_up = "low";
+defparam \addr[2]~I .output_register_mode = "none";
+defparam \addr[2]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// Location: PIN_18,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+cyclone_io \addr[0]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\addr~combout [0]),
+	.regout(),
+	.padio(addr[0]));
+// synopsys translate_off
+defparam \addr[0]~I .input_async_reset = "none";
+defparam \addr[0]~I .input_power_up = "low";
+defparam \addr[0]~I .input_register_mode = "none";
+defparam \addr[0]~I .input_sync_reset = "none";
+defparam \addr[0]~I .oe_async_reset = "none";
+defparam \addr[0]~I .oe_power_up = "low";
+defparam \addr[0]~I .oe_register_mode = "none";
+defparam \addr[0]~I .oe_sync_reset = "none";
+defparam \addr[0]~I .operation_mode = "input";
+defparam \addr[0]~I .output_async_reset = "none";
+defparam \addr[0]~I .output_power_up = "low";
+defparam \addr[0]~I .output_register_mode = "none";
+defparam \addr[0]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// Location: PIN_23,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+cyclone_io \addr[1]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\addr~combout [1]),
+	.regout(),
+	.padio(addr[1]));
+// synopsys translate_off
+defparam \addr[1]~I .input_async_reset = "none";
+defparam \addr[1]~I .input_power_up = "low";
+defparam \addr[1]~I .input_register_mode = "none";
+defparam \addr[1]~I .input_sync_reset = "none";
+defparam \addr[1]~I .oe_async_reset = "none";
+defparam \addr[1]~I .oe_power_up = "low";
+defparam \addr[1]~I .oe_register_mode = "none";
+defparam \addr[1]~I .oe_sync_reset = "none";
+defparam \addr[1]~I .operation_mode = "input";
+defparam \addr[1]~I .output_async_reset = "none";
+defparam \addr[1]~I .output_power_up = "low";
+defparam \addr[1]~I .output_register_mode = "none";
+defparam \addr[1]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// Location: PIN_228,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+cyclone_io \addr[3]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\addr~combout [3]),
+	.regout(),
+	.padio(addr[3]));
+// synopsys translate_off
+defparam \addr[3]~I .input_async_reset = "none";
+defparam \addr[3]~I .input_power_up = "low";
+defparam \addr[3]~I .input_register_mode = "none";
+defparam \addr[3]~I .input_sync_reset = "none";
+defparam \addr[3]~I .oe_async_reset = "none";
+defparam \addr[3]~I .oe_power_up = "low";
+defparam \addr[3]~I .oe_register_mode = "none";
+defparam \addr[3]~I .oe_sync_reset = "none";
+defparam \addr[3]~I .operation_mode = "input";
+defparam \addr[3]~I .output_async_reset = "none";
+defparam \addr[3]~I .output_power_up = "low";
+defparam \addr[3]~I .output_register_mode = "none";
+defparam \addr[3]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// Location: LC_X7_Y15_N0
+cyclone_lcell \SRAM~110 (
+// Equation(s):
+// \SRAM~110_combout  = (!\addr~combout [2] & (\addr~combout [0] & (\addr~combout [1] & \addr~combout [3])))
+
+	.clk(gnd),
+	.dataa(\addr~combout [2]),
+	.datab(\addr~combout [0]),
+	.datac(\addr~combout [1]),
+	.datad(\addr~combout [3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~110_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~110 .lut_mask = "4000";
+defparam \SRAM~110 .operation_mode = "normal";
+defparam \SRAM~110 .output_mode = "comb_only";
+defparam \SRAM~110 .register_cascade_mode = "off";
+defparam \SRAM~110 .sum_lutc_input = "datac";
+defparam \SRAM~110 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X7_Y15_N3
+cyclone_lcell \SRAM~111 (
+// Equation(s):
+// \SRAM~111_combout  = (((!\wr~combout  & \SRAM~110_combout )))
+
+	.clk(gnd),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\wr~combout ),
+	.datad(\SRAM~110_combout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~111_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~111 .lut_mask = "0f00";
+defparam \SRAM~111 .operation_mode = "normal";
+defparam \SRAM~111 .output_mode = "comb_only";
+defparam \SRAM~111 .register_cascade_mode = "off";
+defparam \SRAM~111 .sum_lutc_input = "datac";
+defparam \SRAM~111 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X9_Y14_N6
+cyclone_lcell \SRAM~44 (
+// Equation(s):
+// \SRAM~44_regout  = DFFEAS(GND, GLOBAL(\clk~combout ), VCC, , \SRAM~111_combout , \data_in~combout [0], , , VCC)
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\data_in~combout [0]),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~111_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~44_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~44 .lut_mask = "0000";
+defparam \SRAM~44 .operation_mode = "normal";
+defparam \SRAM~44 .output_mode = "reg_only";
+defparam \SRAM~44 .register_cascade_mode = "off";
+defparam \SRAM~44 .sum_lutc_input = "datac";
+defparam \SRAM~44 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X7_Y15_N6
+cyclone_lcell \SRAM~108 (
+// Equation(s):
+// \SRAM~108_combout  = (!\addr~combout [2] & (!\addr~combout [0] & (!\addr~combout [1] & \addr~combout [3])))
+
+	.clk(gnd),
+	.dataa(\addr~combout [2]),
+	.datab(\addr~combout [0]),
+	.datac(\addr~combout [1]),
+	.datad(\addr~combout [3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~108_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~108 .lut_mask = "0100";
+defparam \SRAM~108 .operation_mode = "normal";
+defparam \SRAM~108 .output_mode = "comb_only";
+defparam \SRAM~108 .register_cascade_mode = "off";
+defparam \SRAM~108 .sum_lutc_input = "datac";
+defparam \SRAM~108 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X12_Y15_N6
+cyclone_lcell \SRAM~109 (
+// Equation(s):
+// \SRAM~109_combout  = (!\wr~combout  & (((\SRAM~108_combout ))))
+
+	.clk(gnd),
+	.dataa(\wr~combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\SRAM~108_combout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~109_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~109 .lut_mask = "5500";
+defparam \SRAM~109 .operation_mode = "normal";
+defparam \SRAM~109 .output_mode = "comb_only";
+defparam \SRAM~109 .register_cascade_mode = "off";
+defparam \SRAM~109 .sum_lutc_input = "datac";
+defparam \SRAM~109 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X11_Y13_N0
+cyclone_lcell \SRAM~32 (
+// Equation(s):
+// \SRAM~32_regout  = DFFEAS(GND, GLOBAL(\clk~combout ), VCC, , \SRAM~109_combout , \data_in~combout [0], , , VCC)
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\data_in~combout [0]),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~109_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~32_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~32 .lut_mask = "0000";
+defparam \SRAM~32 .operation_mode = "normal";
+defparam \SRAM~32 .output_mode = "reg_only";
+defparam \SRAM~32 .register_cascade_mode = "off";
+defparam \SRAM~32 .sum_lutc_input = "datac";
+defparam \SRAM~32 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X11_Y13_N5
+cyclone_lcell \SRAM~106 (
+// Equation(s):
+// \SRAM~106_combout  = (!\addr~combout [1] & (\addr~combout [0] & (!\addr~combout [2] & \addr~combout [3])))
+
+	.clk(gnd),
+	.dataa(\addr~combout [1]),
+	.datab(\addr~combout [0]),
+	.datac(\addr~combout [2]),
+	.datad(\addr~combout [3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~106_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~106 .lut_mask = "0400";
+defparam \SRAM~106 .operation_mode = "normal";
+defparam \SRAM~106 .output_mode = "comb_only";
+defparam \SRAM~106 .register_cascade_mode = "off";
+defparam \SRAM~106 .sum_lutc_input = "datac";
+defparam \SRAM~106 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X11_Y13_N3
+cyclone_lcell \SRAM~107 (
+// Equation(s):
+// \SRAM~107_combout  = (((!\wr~combout  & \SRAM~106_combout )))
+
+	.clk(gnd),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\wr~combout ),
+	.datad(\SRAM~106_combout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~107_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~107 .lut_mask = "0f00";
+defparam \SRAM~107 .operation_mode = "normal";
+defparam \SRAM~107 .output_mode = "comb_only";
+defparam \SRAM~107 .register_cascade_mode = "off";
+defparam \SRAM~107 .sum_lutc_input = "datac";
+defparam \SRAM~107 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X11_Y13_N6
+cyclone_lcell \SRAM~36 (
+// Equation(s):
+// \SRAM~64  = (\addr~combout [1] & (\addr~combout [0])) # (!\addr~combout [1] & ((\addr~combout [0] & (A1L37Q)) # (!\addr~combout [0] & ((\SRAM~32_regout )))))
+
+	.clk(\clk~combout ),
+	.dataa(\addr~combout [1]),
+	.datab(\addr~combout [0]),
+	.datac(\data_in~combout [0]),
+	.datad(\SRAM~32_regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~107_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~64 ),
+	.regout(\SRAM~36_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~36 .lut_mask = "d9c8";
+defparam \SRAM~36 .operation_mode = "normal";
+defparam \SRAM~36 .output_mode = "comb_only";
+defparam \SRAM~36 .register_cascade_mode = "off";
+defparam \SRAM~36 .sum_lutc_input = "qfbk";
+defparam \SRAM~36 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X9_Y14_N5
+cyclone_lcell \SRAM~104 (
+// Equation(s):
+// \SRAM~104_combout  = (!\addr~combout [0] & (\addr~combout [1] & (\addr~combout [3] & !\addr~combout [2])))
+
+	.clk(gnd),
+	.dataa(\addr~combout [0]),
+	.datab(\addr~combout [1]),
+	.datac(\addr~combout [3]),
+	.datad(\addr~combout [2]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~104_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~104 .lut_mask = "0040";
+defparam \SRAM~104 .operation_mode = "normal";
+defparam \SRAM~104 .output_mode = "comb_only";
+defparam \SRAM~104 .register_cascade_mode = "off";
+defparam \SRAM~104 .sum_lutc_input = "datac";
+defparam \SRAM~104 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X9_Y14_N8
+cyclone_lcell \SRAM~105 (
+// Equation(s):
+// \SRAM~105_combout  = ((!\wr~combout  & ((\SRAM~104_combout ))))
+
+	.clk(gnd),
+	.dataa(vcc),
+	.datab(\wr~combout ),
+	.datac(vcc),
+	.datad(\SRAM~104_combout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~105_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~105 .lut_mask = "3300";
+defparam \SRAM~105 .operation_mode = "normal";
+defparam \SRAM~105 .output_mode = "comb_only";
+defparam \SRAM~105 .register_cascade_mode = "off";
+defparam \SRAM~105 .sum_lutc_input = "datac";
+defparam \SRAM~105 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X9_Y14_N1
+cyclone_lcell \SRAM~40 (
+// Equation(s):
+// \SRAM~65  = (\addr~combout [1] & ((\SRAM~64  & (\SRAM~44_regout )) # (!\SRAM~64  & ((A1L41Q))))) # (!\addr~combout [1] & (((\SRAM~64 ))))
+
+	.clk(\clk~combout ),
+	.dataa(\SRAM~44_regout ),
+	.datab(\addr~combout [1]),
+	.datac(\data_in~combout [0]),
+	.datad(\SRAM~64 ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~105_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~65 ),
+	.regout(\SRAM~40_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~40 .lut_mask = "bbc0";
+defparam \SRAM~40 .operation_mode = "normal";
+defparam \SRAM~40 .output_mode = "comb_only";
+defparam \SRAM~40 .register_cascade_mode = "off";
+defparam \SRAM~40 .sum_lutc_input = "qfbk";
+defparam \SRAM~40 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X2_Y13_N4
+cyclone_lcell \SRAM~126 (
+// Equation(s):
+// \SRAM~126_combout  = (\addr~combout [1] & (\addr~combout [0] & (!\addr~combout [2] & !\addr~combout [3])))
+
+	.clk(gnd),
+	.dataa(\addr~combout [1]),
+	.datab(\addr~combout [0]),
+	.datac(\addr~combout [2]),
+	.datad(\addr~combout [3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~126_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~126 .lut_mask = "0008";
+defparam \SRAM~126 .operation_mode = "normal";
+defparam \SRAM~126 .output_mode = "comb_only";
+defparam \SRAM~126 .register_cascade_mode = "off";
+defparam \SRAM~126 .sum_lutc_input = "datac";
+defparam \SRAM~126 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X2_Y13_N2
+cyclone_lcell \SRAM~127 (
+// Equation(s):
+// \SRAM~127_combout  = ((\SRAM~126_combout  & (!\wr~combout )))
+
+	.clk(gnd),
+	.dataa(vcc),
+	.datab(\SRAM~126_combout ),
+	.datac(\wr~combout ),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~127_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~127 .lut_mask = "0c0c";
+defparam \SRAM~127 .operation_mode = "normal";
+defparam \SRAM~127 .output_mode = "comb_only";
+defparam \SRAM~127 .register_cascade_mode = "off";
+defparam \SRAM~127 .sum_lutc_input = "datac";
+defparam \SRAM~127 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X12_Y13_N3
+cyclone_lcell \SRAM~12 (
+// Equation(s):
+// \SRAM~12_regout  = DFFEAS(GND, GLOBAL(\clk~combout ), VCC, , \SRAM~127_combout , \data_in~combout [0], , , VCC)
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\data_in~combout [0]),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~127_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~12_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~12 .lut_mask = "0000";
+defparam \SRAM~12 .operation_mode = "normal";
+defparam \SRAM~12 .output_mode = "reg_only";
+defparam \SRAM~12 .register_cascade_mode = "off";
+defparam \SRAM~12 .sum_lutc_input = "datac";
+defparam \SRAM~12 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X13_Y13_N7
+cyclone_lcell \SRAM~124 (
+// Equation(s):
+// \SRAM~124_combout  = (!\addr~combout [1] & (!\addr~combout [0] & (!\addr~combout [3] & !\addr~combout [2])))
+
+	.clk(gnd),
+	.dataa(\addr~combout [1]),
+	.datab(\addr~combout [0]),
+	.datac(\addr~combout [3]),
+	.datad(\addr~combout [2]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~124_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~124 .lut_mask = "0001";
+defparam \SRAM~124 .operation_mode = "normal";
+defparam \SRAM~124 .output_mode = "comb_only";
+defparam \SRAM~124 .register_cascade_mode = "off";
+defparam \SRAM~124 .sum_lutc_input = "datac";
+defparam \SRAM~124 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X13_Y13_N4
+cyclone_lcell \SRAM~125 (
+// Equation(s):
+// \SRAM~125_combout  = ((!\wr~combout  & (\SRAM~124_combout )))
+
+	.clk(gnd),
+	.dataa(vcc),
+	.datab(\wr~combout ),
+	.datac(\SRAM~124_combout ),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~125_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~125 .lut_mask = "3030";
+defparam \SRAM~125 .operation_mode = "normal";
+defparam \SRAM~125 .output_mode = "comb_only";
+defparam \SRAM~125 .register_cascade_mode = "off";
+defparam \SRAM~125 .sum_lutc_input = "datac";
+defparam \SRAM~125 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X13_Y13_N8
+cyclone_lcell \SRAM~0 (
+// Equation(s):
+// \SRAM~0_regout  = DFFEAS(GND, GLOBAL(\clk~combout ), VCC, , \SRAM~125_combout , \data_in~combout [0], , , VCC)
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\data_in~combout [0]),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~125_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~0_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~0 .lut_mask = "0000";
+defparam \SRAM~0 .operation_mode = "normal";
+defparam \SRAM~0 .output_mode = "reg_only";
+defparam \SRAM~0 .register_cascade_mode = "off";
+defparam \SRAM~0 .sum_lutc_input = "datac";
+defparam \SRAM~0 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X12_Y13_N2
+cyclone_lcell \SRAM~122 (
+// Equation(s):
+// \SRAM~122_combout  = (!\addr~combout [2] & (\addr~combout [0] & (!\addr~combout [1] & !\addr~combout [3])))
+
+	.clk(gnd),
+	.dataa(\addr~combout [2]),
+	.datab(\addr~combout [0]),
+	.datac(\addr~combout [1]),
+	.datad(\addr~combout [3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~122_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~122 .lut_mask = "0004";
+defparam \SRAM~122 .operation_mode = "normal";
+defparam \SRAM~122 .output_mode = "comb_only";
+defparam \SRAM~122 .register_cascade_mode = "off";
+defparam \SRAM~122 .sum_lutc_input = "datac";
+defparam \SRAM~122 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X12_Y13_N1
+cyclone_lcell \SRAM~123 (
+// Equation(s):
+// \SRAM~123_combout  = (\SRAM~122_combout  & (((!\wr~combout ))))
+
+	.clk(gnd),
+	.dataa(\SRAM~122_combout ),
+	.datab(vcc),
+	.datac(\wr~combout ),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~123_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~123 .lut_mask = "0a0a";
+defparam \SRAM~123 .operation_mode = "normal";
+defparam \SRAM~123 .output_mode = "comb_only";
+defparam \SRAM~123 .register_cascade_mode = "off";
+defparam \SRAM~123 .sum_lutc_input = "datac";
+defparam \SRAM~123 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X12_Y13_N7
+cyclone_lcell \SRAM~4 (
+// Equation(s):
+// \SRAM~68  = (\addr~combout [1] & (\addr~combout [0])) # (!\addr~combout [1] & ((\addr~combout [0] & (A1L5Q)) # (!\addr~combout [0] & ((\SRAM~0_regout )))))
+
+	.clk(\clk~combout ),
+	.dataa(\addr~combout [1]),
+	.datab(\addr~combout [0]),
+	.datac(\data_in~combout [0]),
+	.datad(\SRAM~0_regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~123_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~68 ),
+	.regout(\SRAM~4_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~4 .lut_mask = "d9c8";
+defparam \SRAM~4 .operation_mode = "normal";
+defparam \SRAM~4 .output_mode = "comb_only";
+defparam \SRAM~4 .register_cascade_mode = "off";
+defparam \SRAM~4 .sum_lutc_input = "qfbk";
+defparam \SRAM~4 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X12_Y13_N4
+cyclone_lcell \SRAM~120 (
+// Equation(s):
+// \SRAM~120_combout  = (!\addr~combout [2] & (!\addr~combout [0] & (\addr~combout [1] & !\addr~combout [3])))
+
+	.clk(gnd),
+	.dataa(\addr~combout [2]),
+	.datab(\addr~combout [0]),
+	.datac(\addr~combout [1]),
+	.datad(\addr~combout [3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~120_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~120 .lut_mask = "0010";
+defparam \SRAM~120 .operation_mode = "normal";
+defparam \SRAM~120 .output_mode = "comb_only";
+defparam \SRAM~120 .register_cascade_mode = "off";
+defparam \SRAM~120 .sum_lutc_input = "datac";
+defparam \SRAM~120 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X12_Y13_N0
+cyclone_lcell \SRAM~121 (
+// Equation(s):
+// \SRAM~121_combout  = ((\SRAM~120_combout  & (!\wr~combout )))
+
+	.clk(gnd),
+	.dataa(vcc),
+	.datab(\SRAM~120_combout ),
+	.datac(\wr~combout ),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~121_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~121 .lut_mask = "0c0c";
+defparam \SRAM~121 .operation_mode = "normal";
+defparam \SRAM~121 .output_mode = "comb_only";
+defparam \SRAM~121 .register_cascade_mode = "off";
+defparam \SRAM~121 .sum_lutc_input = "datac";
+defparam \SRAM~121 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X13_Y13_N6
+cyclone_lcell \SRAM~8 (
+// Equation(s):
+// \SRAM~69  = (\addr~combout [1] & ((\SRAM~68  & (\SRAM~12_regout )) # (!\SRAM~68  & ((A1L9Q))))) # (!\addr~combout [1] & (((\SRAM~68 ))))
+
+	.clk(\clk~combout ),
+	.dataa(\SRAM~12_regout ),
+	.datab(\addr~combout [1]),
+	.datac(\data_in~combout [0]),
+	.datad(\SRAM~68 ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~121_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~69 ),
+	.regout(\SRAM~8_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~8 .lut_mask = "bbc0";
+defparam \SRAM~8 .operation_mode = "normal";
+defparam \SRAM~8 .output_mode = "comb_only";
+defparam \SRAM~8 .register_cascade_mode = "off";
+defparam \SRAM~8 .sum_lutc_input = "qfbk";
+defparam \SRAM~8 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X7_Y14_N7
+cyclone_lcell \SRAM~118 (
+// Equation(s):
+// \SRAM~118_combout  = (\addr~combout [2] & (!\addr~combout [3] & (\addr~combout [0] & \addr~combout [1])))
+
+	.clk(gnd),
+	.dataa(\addr~combout [2]),
+	.datab(\addr~combout [3]),
+	.datac(\addr~combout [0]),
+	.datad(\addr~combout [1]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~118_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~118 .lut_mask = "2000";
+defparam \SRAM~118 .operation_mode = "normal";
+defparam \SRAM~118 .output_mode = "comb_only";
+defparam \SRAM~118 .register_cascade_mode = "off";
+defparam \SRAM~118 .sum_lutc_input = "datac";
+defparam \SRAM~118 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X7_Y14_N8
+cyclone_lcell \SRAM~119 (
+// Equation(s):
+// \SRAM~119_combout  = (!\wr~combout  & (((\SRAM~118_combout ))))
+
+	.clk(gnd),
+	.dataa(\wr~combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\SRAM~118_combout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~119_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~119 .lut_mask = "5500";
+defparam \SRAM~119 .operation_mode = "normal";
+defparam \SRAM~119 .output_mode = "comb_only";
+defparam \SRAM~119 .register_cascade_mode = "off";
+defparam \SRAM~119 .sum_lutc_input = "datac";
+defparam \SRAM~119 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X7_Y14_N1
+cyclone_lcell \SRAM~28 (
+// Equation(s):
+// \SRAM~28_regout  = DFFEAS(GND, GLOBAL(\clk~combout ), VCC, , \SRAM~119_combout , \data_in~combout [0], , , VCC)
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\data_in~combout [0]),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~119_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~28_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~28 .lut_mask = "0000";
+defparam \SRAM~28 .operation_mode = "normal";
+defparam \SRAM~28 .output_mode = "reg_only";
+defparam \SRAM~28 .register_cascade_mode = "off";
+defparam \SRAM~28 .sum_lutc_input = "datac";
+defparam \SRAM~28 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X12_Y15_N0
+cyclone_lcell \SRAM~116 (
+// Equation(s):
+// \SRAM~116_combout  = (!\addr~combout [1] & (!\addr~combout [0] & (\addr~combout [2] & !\addr~combout [3])))
+
+	.clk(gnd),
+	.dataa(\addr~combout [1]),
+	.datab(\addr~combout [0]),
+	.datac(\addr~combout [2]),
+	.datad(\addr~combout [3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~116_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~116 .lut_mask = "0010";
+defparam \SRAM~116 .operation_mode = "normal";
+defparam \SRAM~116 .output_mode = "comb_only";
+defparam \SRAM~116 .register_cascade_mode = "off";
+defparam \SRAM~116 .sum_lutc_input = "datac";
+defparam \SRAM~116 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X12_Y15_N4
+cyclone_lcell \SRAM~117 (
+// Equation(s):
+// \SRAM~117_combout  = (!\wr~combout  & (((\SRAM~116_combout ))))
+
+	.clk(gnd),
+	.dataa(\wr~combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\SRAM~116_combout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~117_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~117 .lut_mask = "5500";
+defparam \SRAM~117 .operation_mode = "normal";
+defparam \SRAM~117 .output_mode = "comb_only";
+defparam \SRAM~117 .register_cascade_mode = "off";
+defparam \SRAM~117 .sum_lutc_input = "datac";
+defparam \SRAM~117 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X12_Y15_N2
+cyclone_lcell \SRAM~16 (
+// Equation(s):
+// \SRAM~16_regout  = DFFEAS(GND, GLOBAL(\clk~combout ), VCC, , \SRAM~117_combout , \data_in~combout [0], , , VCC)
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\data_in~combout [0]),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~117_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~16_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~16 .lut_mask = "0000";
+defparam \SRAM~16 .operation_mode = "normal";
+defparam \SRAM~16 .output_mode = "reg_only";
+defparam \SRAM~16 .register_cascade_mode = "off";
+defparam \SRAM~16 .sum_lutc_input = "datac";
+defparam \SRAM~16 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X7_Y15_N5
+cyclone_lcell \SRAM~114 (
+// Equation(s):
+// \SRAM~114_combout  = (\addr~combout [2] & (!\addr~combout [0] & (\addr~combout [1] & !\addr~combout [3])))
+
+	.clk(gnd),
+	.dataa(\addr~combout [2]),
+	.datab(\addr~combout [0]),
+	.datac(\addr~combout [1]),
+	.datad(\addr~combout [3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~114_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~114 .lut_mask = "0020";
+defparam \SRAM~114 .operation_mode = "normal";
+defparam \SRAM~114 .output_mode = "comb_only";
+defparam \SRAM~114 .register_cascade_mode = "off";
+defparam \SRAM~114 .sum_lutc_input = "datac";
+defparam \SRAM~114 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X7_Y15_N8
+cyclone_lcell \SRAM~115 (
+// Equation(s):
+// \SRAM~115_combout  = (((!\wr~combout  & \SRAM~114_combout )))
+
+	.clk(gnd),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\wr~combout ),
+	.datad(\SRAM~114_combout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~115_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~115 .lut_mask = "0f00";
+defparam \SRAM~115 .operation_mode = "normal";
+defparam \SRAM~115 .output_mode = "comb_only";
+defparam \SRAM~115 .register_cascade_mode = "off";
+defparam \SRAM~115 .sum_lutc_input = "datac";
+defparam \SRAM~115 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X10_Y13_N6
+cyclone_lcell \SRAM~24 (
+// Equation(s):
+// \SRAM~66  = (\addr~combout [1] & ((\addr~combout [0]) # ((A1L25Q)))) # (!\addr~combout [1] & (!\addr~combout [0] & ((\SRAM~16_regout ))))
+
+	.clk(\clk~combout ),
+	.dataa(\addr~combout [1]),
+	.datab(\addr~combout [0]),
+	.datac(\data_in~combout [0]),
+	.datad(\SRAM~16_regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~115_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~66 ),
+	.regout(\SRAM~24_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~24 .lut_mask = "b9a8";
+defparam \SRAM~24 .operation_mode = "normal";
+defparam \SRAM~24 .output_mode = "comb_only";
+defparam \SRAM~24 .register_cascade_mode = "off";
+defparam \SRAM~24 .sum_lutc_input = "qfbk";
+defparam \SRAM~24 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X10_Y13_N0
+cyclone_lcell \SRAM~112 (
+// Equation(s):
+// \SRAM~112_combout  = (!\addr~combout [1] & (!\addr~combout [3] & (\addr~combout [2] & \addr~combout [0])))
+
+	.clk(gnd),
+	.dataa(\addr~combout [1]),
+	.datab(\addr~combout [3]),
+	.datac(\addr~combout [2]),
+	.datad(\addr~combout [0]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~112_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~112 .lut_mask = "1000";
+defparam \SRAM~112 .operation_mode = "normal";
+defparam \SRAM~112 .output_mode = "comb_only";
+defparam \SRAM~112 .register_cascade_mode = "off";
+defparam \SRAM~112 .sum_lutc_input = "datac";
+defparam \SRAM~112 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X10_Y13_N3
+cyclone_lcell \SRAM~113 (
+// Equation(s):
+// \SRAM~113_combout  = (((!\wr~combout  & \SRAM~112_combout )))
+
+	.clk(gnd),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\wr~combout ),
+	.datad(\SRAM~112_combout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~113_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~113 .lut_mask = "0f00";
+defparam \SRAM~113 .operation_mode = "normal";
+defparam \SRAM~113 .output_mode = "comb_only";
+defparam \SRAM~113 .register_cascade_mode = "off";
+defparam \SRAM~113 .sum_lutc_input = "datac";
+defparam \SRAM~113 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X10_Y13_N2
+cyclone_lcell \SRAM~20 (
+// Equation(s):
+// \SRAM~67  = (\addr~combout [0] & ((\SRAM~66  & (\SRAM~28_regout )) # (!\SRAM~66  & ((A1L21Q))))) # (!\addr~combout [0] & (((\SRAM~66 ))))
+
+	.clk(\clk~combout ),
+	.dataa(\SRAM~28_regout ),
+	.datab(\addr~combout [0]),
+	.datac(\data_in~combout [0]),
+	.datad(\SRAM~66 ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~113_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~67 ),
+	.regout(\SRAM~20_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~20 .lut_mask = "bbc0";
+defparam \SRAM~20 .operation_mode = "normal";
+defparam \SRAM~20 .output_mode = "comb_only";
+defparam \SRAM~20 .register_cascade_mode = "off";
+defparam \SRAM~20 .sum_lutc_input = "qfbk";
+defparam \SRAM~20 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X9_Y14_N0
+cyclone_lcell \SRAM~70 (
+// Equation(s):
+// \SRAM~70_combout  = (\addr~combout [2] & ((\addr~combout [3]) # ((\SRAM~67 )))) # (!\addr~combout [2] & (!\addr~combout [3] & (\SRAM~69 )))
+
+	.clk(gnd),
+	.dataa(\addr~combout [2]),
+	.datab(\addr~combout [3]),
+	.datac(\SRAM~69 ),
+	.datad(\SRAM~67 ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~70_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~70 .lut_mask = "ba98";
+defparam \SRAM~70 .operation_mode = "normal";
+defparam \SRAM~70 .output_mode = "comb_only";
+defparam \SRAM~70 .register_cascade_mode = "off";
+defparam \SRAM~70 .sum_lutc_input = "datac";
+defparam \SRAM~70 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X10_Y14_N3
+cyclone_lcell \SRAM~134 (
+// Equation(s):
+// \SRAM~134_combout  = (\addr~combout [1] & (\addr~combout [2] & (\addr~combout [3] & \addr~combout [0])))
+
+	.clk(gnd),
+	.dataa(\addr~combout [1]),
+	.datab(\addr~combout [2]),
+	.datac(\addr~combout [3]),
+	.datad(\addr~combout [0]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~134_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~134 .lut_mask = "8000";
+defparam \SRAM~134 .operation_mode = "normal";
+defparam \SRAM~134 .output_mode = "comb_only";
+defparam \SRAM~134 .register_cascade_mode = "off";
+defparam \SRAM~134 .sum_lutc_input = "datac";
+defparam \SRAM~134 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X10_Y14_N4
+cyclone_lcell \SRAM~135 (
+// Equation(s):
+// \SRAM~135_combout  = (!\wr~combout  & (((\SRAM~134_combout ))))
+
+	.clk(gnd),
+	.dataa(\wr~combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\SRAM~134_combout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~135_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~135 .lut_mask = "5500";
+defparam \SRAM~135 .operation_mode = "normal";
+defparam \SRAM~135 .output_mode = "comb_only";
+defparam \SRAM~135 .register_cascade_mode = "off";
+defparam \SRAM~135 .sum_lutc_input = "datac";
+defparam \SRAM~135 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X10_Y14_N7
+cyclone_lcell \SRAM~60 (
+// Equation(s):
+// \SRAM~60_regout  = DFFEAS(GND, GLOBAL(\clk~combout ), VCC, , \SRAM~135_combout , \data_in~combout [0], , , VCC)
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\data_in~combout [0]),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~135_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~60_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~60 .lut_mask = "0000";
+defparam \SRAM~60 .operation_mode = "normal";
+defparam \SRAM~60 .output_mode = "reg_only";
+defparam \SRAM~60 .register_cascade_mode = "off";
+defparam \SRAM~60 .sum_lutc_input = "datac";
+defparam \SRAM~60 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X12_Y14_N0
+cyclone_lcell \SRAM~132 (
+// Equation(s):
+// \SRAM~132_combout  = (\addr~combout [2] & (!\addr~combout [1] & (!\addr~combout [0] & \addr~combout [3])))
+
+	.clk(gnd),
+	.dataa(\addr~combout [2]),
+	.datab(\addr~combout [1]),
+	.datac(\addr~combout [0]),
+	.datad(\addr~combout [3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~132_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~132 .lut_mask = "0200";
+defparam \SRAM~132 .operation_mode = "normal";
+defparam \SRAM~132 .output_mode = "comb_only";
+defparam \SRAM~132 .register_cascade_mode = "off";
+defparam \SRAM~132 .sum_lutc_input = "datac";
+defparam \SRAM~132 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X12_Y14_N8
+cyclone_lcell \SRAM~133 (
+// Equation(s):
+// \SRAM~133_combout  = (!\wr~combout  & (((\SRAM~132_combout ))))
+
+	.clk(gnd),
+	.dataa(\wr~combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\SRAM~132_combout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~133_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~133 .lut_mask = "5500";
+defparam \SRAM~133 .operation_mode = "normal";
+defparam \SRAM~133 .output_mode = "comb_only";
+defparam \SRAM~133 .register_cascade_mode = "off";
+defparam \SRAM~133 .sum_lutc_input = "datac";
+defparam \SRAM~133 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X12_Y14_N3
+cyclone_lcell \SRAM~48 (
+// Equation(s):
+// \SRAM~48_regout  = DFFEAS(GND, GLOBAL(\clk~combout ), VCC, , \SRAM~133_combout , \data_in~combout [0], , , VCC)
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\data_in~combout [0]),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~133_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~48_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~48 .lut_mask = "0000";
+defparam \SRAM~48 .operation_mode = "normal";
+defparam \SRAM~48 .output_mode = "reg_only";
+defparam \SRAM~48 .register_cascade_mode = "off";
+defparam \SRAM~48 .sum_lutc_input = "datac";
+defparam \SRAM~48 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X12_Y13_N5
+cyclone_lcell \SRAM~130 (
+// Equation(s):
+// \SRAM~130_combout  = (\addr~combout [2] & (!\addr~combout [0] & (\addr~combout [1] & \addr~combout [3])))
+
+	.clk(gnd),
+	.dataa(\addr~combout [2]),
+	.datab(\addr~combout [0]),
+	.datac(\addr~combout [1]),
+	.datad(\addr~combout [3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~130_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~130 .lut_mask = "2000";
+defparam \SRAM~130 .operation_mode = "normal";
+defparam \SRAM~130 .output_mode = "comb_only";
+defparam \SRAM~130 .register_cascade_mode = "off";
+defparam \SRAM~130 .sum_lutc_input = "datac";
+defparam \SRAM~130 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X12_Y13_N9
+cyclone_lcell \SRAM~131 (
+// Equation(s):
+// \SRAM~131_combout  = (((!\wr~combout  & \SRAM~130_combout )))
+
+	.clk(gnd),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\wr~combout ),
+	.datad(\SRAM~130_combout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~131_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~131 .lut_mask = "0f00";
+defparam \SRAM~131 .operation_mode = "normal";
+defparam \SRAM~131 .output_mode = "comb_only";
+defparam \SRAM~131 .register_cascade_mode = "off";
+defparam \SRAM~131 .sum_lutc_input = "datac";
+defparam \SRAM~131 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X12_Y14_N6
+cyclone_lcell \SRAM~56 (
+// Equation(s):
+// \SRAM~71  = (\addr~combout [0] & (((\addr~combout [1])))) # (!\addr~combout [0] & ((\addr~combout [1] & ((A1L57Q))) # (!\addr~combout [1] & (\SRAM~48_regout ))))
+
+	.clk(\clk~combout ),
+	.dataa(\addr~combout [0]),
+	.datab(\SRAM~48_regout ),
+	.datac(\data_in~combout [0]),
+	.datad(\addr~combout [1]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~131_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~71 ),
+	.regout(\SRAM~56_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~56 .lut_mask = "fa44";
+defparam \SRAM~56 .operation_mode = "normal";
+defparam \SRAM~56 .output_mode = "comb_only";
+defparam \SRAM~56 .register_cascade_mode = "off";
+defparam \SRAM~56 .sum_lutc_input = "qfbk";
+defparam \SRAM~56 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X13_Y13_N3
+cyclone_lcell \SRAM~128 (
+// Equation(s):
+// \SRAM~128_combout  = (!\addr~combout [1] & (\addr~combout [0] & (\addr~combout [3] & \addr~combout [2])))
+
+	.clk(gnd),
+	.dataa(\addr~combout [1]),
+	.datab(\addr~combout [0]),
+	.datac(\addr~combout [3]),
+	.datad(\addr~combout [2]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~128_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~128 .lut_mask = "4000";
+defparam \SRAM~128 .operation_mode = "normal";
+defparam \SRAM~128 .output_mode = "comb_only";
+defparam \SRAM~128 .register_cascade_mode = "off";
+defparam \SRAM~128 .sum_lutc_input = "datac";
+defparam \SRAM~128 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X13_Y13_N5
+cyclone_lcell \SRAM~129 (
+// Equation(s):
+// \SRAM~129_combout  = ((!\wr~combout  & ((\SRAM~128_combout ))))
+
+	.clk(gnd),
+	.dataa(vcc),
+	.datab(\wr~combout ),
+	.datac(vcc),
+	.datad(\SRAM~128_combout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~129_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~129 .lut_mask = "3300";
+defparam \SRAM~129 .operation_mode = "normal";
+defparam \SRAM~129 .output_mode = "comb_only";
+defparam \SRAM~129 .register_cascade_mode = "off";
+defparam \SRAM~129 .sum_lutc_input = "datac";
+defparam \SRAM~129 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X10_Y14_N8
+cyclone_lcell \SRAM~52 (
+// Equation(s):
+// \SRAM~72  = (\addr~combout [0] & ((\SRAM~71  & (\SRAM~60_regout )) # (!\SRAM~71  & ((A1L53Q))))) # (!\addr~combout [0] & (((\SRAM~71 ))))
+
+	.clk(\clk~combout ),
+	.dataa(\SRAM~60_regout ),
+	.datab(\addr~combout [0]),
+	.datac(\data_in~combout [0]),
+	.datad(\SRAM~71 ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~129_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~72 ),
+	.regout(\SRAM~52_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~52 .lut_mask = "bbc0";
+defparam \SRAM~52 .operation_mode = "normal";
+defparam \SRAM~52 .output_mode = "comb_only";
+defparam \SRAM~52 .register_cascade_mode = "off";
+defparam \SRAM~52 .sum_lutc_input = "qfbk";
+defparam \SRAM~52 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X9_Y14_N2
+cyclone_lcell \SRAM~73 (
+// Equation(s):
+// \SRAM~73_combout  = (\SRAM~70_combout  & (((\SRAM~72 ) # (!\addr~combout [3])))) # (!\SRAM~70_combout  & (\SRAM~65  & (\addr~combout [3])))
+
+	.clk(gnd),
+	.dataa(\SRAM~65 ),
+	.datab(\SRAM~70_combout ),
+	.datac(\addr~combout [3]),
+	.datad(\SRAM~72 ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~73_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~73 .lut_mask = "ec2c";
+defparam \SRAM~73 .operation_mode = "normal";
+defparam \SRAM~73 .output_mode = "comb_only";
+defparam \SRAM~73 .register_cascade_mode = "off";
+defparam \SRAM~73 .sum_lutc_input = "datac";
+defparam \SRAM~73 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: PIN_38,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+cyclone_io \rd~I (
+	.datain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\rd~combout ),
+	.regout(),
+	.padio(rd));
+// synopsys translate_off
+defparam \rd~I .input_async_reset = "none";
+defparam \rd~I .input_power_up = "low";
+defparam \rd~I .input_register_mode = "none";
+defparam \rd~I .input_sync_reset = "none";
+defparam \rd~I .oe_async_reset = "none";
+defparam \rd~I .oe_power_up = "low";
+defparam \rd~I .oe_register_mode = "none";
+defparam \rd~I .oe_sync_reset = "none";
+defparam \rd~I .operation_mode = "input";
+defparam \rd~I .output_async_reset = "none";
+defparam \rd~I .output_power_up = "low";
+defparam \rd~I .output_register_mode = "none";
+defparam \rd~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// Location: PIN_79,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+cyclone_io \data_in[1]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\data_in~combout [1]),
+	.regout(),
+	.padio(data_in[1]));
+// synopsys translate_off
+defparam \data_in[1]~I .input_async_reset = "none";
+defparam \data_in[1]~I .input_power_up = "low";
+defparam \data_in[1]~I .input_register_mode = "none";
+defparam \data_in[1]~I .input_sync_reset = "none";
+defparam \data_in[1]~I .oe_async_reset = "none";
+defparam \data_in[1]~I .oe_power_up = "low";
+defparam \data_in[1]~I .oe_register_mode = "none";
+defparam \data_in[1]~I .oe_sync_reset = "none";
+defparam \data_in[1]~I .operation_mode = "input";
+defparam \data_in[1]~I .output_async_reset = "none";
+defparam \data_in[1]~I .output_power_up = "low";
+defparam \data_in[1]~I .output_register_mode = "none";
+defparam \data_in[1]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// Location: LC_X7_Y15_N9
+cyclone_lcell \SRAM~9 (
+// Equation(s):
+// \SRAM~9_regout  = DFFEAS(GND, GLOBAL(\clk~combout ), VCC, , \SRAM~121_combout , \data_in~combout [1], , , VCC)
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\data_in~combout [1]),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~121_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~9_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~9 .lut_mask = "0000";
+defparam \SRAM~9 .operation_mode = "normal";
+defparam \SRAM~9 .output_mode = "reg_only";
+defparam \SRAM~9 .register_cascade_mode = "off";
+defparam \SRAM~9 .sum_lutc_input = "datac";
+defparam \SRAM~9 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X9_Y14_N4
+cyclone_lcell \SRAM~41 (
+// Equation(s):
+// \SRAM~74  = (\addr~combout [2] & (\addr~combout [3])) # (!\addr~combout [2] & ((\addr~combout [3] & (A1L42Q)) # (!\addr~combout [3] & ((\SRAM~9_regout )))))
+
+	.clk(\clk~combout ),
+	.dataa(\addr~combout [2]),
+	.datab(\addr~combout [3]),
+	.datac(\data_in~combout [1]),
+	.datad(\SRAM~9_regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~105_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~74 ),
+	.regout(\SRAM~41_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~41 .lut_mask = "d9c8";
+defparam \SRAM~41 .operation_mode = "normal";
+defparam \SRAM~41 .output_mode = "comb_only";
+defparam \SRAM~41 .register_cascade_mode = "off";
+defparam \SRAM~41 .sum_lutc_input = "qfbk";
+defparam \SRAM~41 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X12_Y14_N9
+cyclone_lcell \SRAM~57 (
+// Equation(s):
+// \SRAM~57_regout  = DFFEAS(GND, GLOBAL(\clk~combout ), VCC, , \SRAM~131_combout , \data_in~combout [1], , , VCC)
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\data_in~combout [1]),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~131_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~57_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~57 .lut_mask = "0000";
+defparam \SRAM~57 .operation_mode = "normal";
+defparam \SRAM~57 .output_mode = "reg_only";
+defparam \SRAM~57 .register_cascade_mode = "off";
+defparam \SRAM~57 .sum_lutc_input = "datac";
+defparam \SRAM~57 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X10_Y13_N8
+cyclone_lcell \SRAM~25 (
+// Equation(s):
+// \SRAM~75  = (\addr~combout [2] & ((\SRAM~74  & ((\SRAM~57_regout ))) # (!\SRAM~74  & (A1L26Q)))) # (!\addr~combout [2] & (\SRAM~74 ))
+
+	.clk(\clk~combout ),
+	.dataa(\addr~combout [2]),
+	.datab(\SRAM~74 ),
+	.datac(\data_in~combout [1]),
+	.datad(\SRAM~57_regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~115_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~75 ),
+	.regout(\SRAM~25_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~25 .lut_mask = "ec64";
+defparam \SRAM~25 .operation_mode = "normal";
+defparam \SRAM~25 .output_mode = "comb_only";
+defparam \SRAM~25 .register_cascade_mode = "off";
+defparam \SRAM~25 .sum_lutc_input = "qfbk";
+defparam \SRAM~25 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X12_Y14_N5
+cyclone_lcell \SRAM~49 (
+// Equation(s):
+// \SRAM~49_regout  = DFFEAS(GND, GLOBAL(\clk~combout ), VCC, , \SRAM~133_combout , \data_in~combout [1], , , VCC)
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\data_in~combout [1]),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~133_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~49_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~49 .lut_mask = "0000";
+defparam \SRAM~49 .operation_mode = "normal";
+defparam \SRAM~49 .output_mode = "reg_only";
+defparam \SRAM~49 .register_cascade_mode = "off";
+defparam \SRAM~49 .sum_lutc_input = "datac";
+defparam \SRAM~49 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X13_Y13_N1
+cyclone_lcell \SRAM~1 (
+// Equation(s):
+// \SRAM~1_regout  = DFFEAS(GND, GLOBAL(\clk~combout ), VCC, , \SRAM~125_combout , \data_in~combout [1], , , VCC)
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\data_in~combout [1]),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~125_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~1_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~1 .lut_mask = "0000";
+defparam \SRAM~1 .operation_mode = "normal";
+defparam \SRAM~1 .output_mode = "reg_only";
+defparam \SRAM~1 .register_cascade_mode = "off";
+defparam \SRAM~1 .sum_lutc_input = "datac";
+defparam \SRAM~1 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X12_Y15_N5
+cyclone_lcell \SRAM~33 (
+// Equation(s):
+// \SRAM~78  = (\addr~combout [2] & (\addr~combout [3])) # (!\addr~combout [2] & ((\addr~combout [3] & (A1L34Q)) # (!\addr~combout [3] & ((\SRAM~1_regout )))))
+
+	.clk(\clk~combout ),
+	.dataa(\addr~combout [2]),
+	.datab(\addr~combout [3]),
+	.datac(\data_in~combout [1]),
+	.datad(\SRAM~1_regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~109_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~78 ),
+	.regout(\SRAM~33_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~33 .lut_mask = "d9c8";
+defparam \SRAM~33 .operation_mode = "normal";
+defparam \SRAM~33 .output_mode = "comb_only";
+defparam \SRAM~33 .register_cascade_mode = "off";
+defparam \SRAM~33 .sum_lutc_input = "qfbk";
+defparam \SRAM~33 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X12_Y15_N8
+cyclone_lcell \SRAM~17 (
+// Equation(s):
+// \SRAM~79  = (\addr~combout [2] & ((\SRAM~78  & (\SRAM~49_regout )) # (!\SRAM~78  & ((A1L18Q))))) # (!\addr~combout [2] & (((\SRAM~78 ))))
+
+	.clk(\clk~combout ),
+	.dataa(\addr~combout [2]),
+	.datab(\SRAM~49_regout ),
+	.datac(\data_in~combout [1]),
+	.datad(\SRAM~78 ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~117_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~79 ),
+	.regout(\SRAM~17_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~17 .lut_mask = "dda0";
+defparam \SRAM~17 .operation_mode = "normal";
+defparam \SRAM~17 .output_mode = "comb_only";
+defparam \SRAM~17 .register_cascade_mode = "off";
+defparam \SRAM~17 .sum_lutc_input = "qfbk";
+defparam \SRAM~17 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X11_Y12_N2
+cyclone_lcell \SRAM~5 (
+// Equation(s):
+// \SRAM~5_regout  = DFFEAS(GND, GLOBAL(\clk~combout ), VCC, , \SRAM~123_combout , \data_in~combout [1], , , VCC)
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\data_in~combout [1]),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~123_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~5_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~5 .lut_mask = "0000";
+defparam \SRAM~5 .operation_mode = "normal";
+defparam \SRAM~5 .output_mode = "reg_only";
+defparam \SRAM~5 .register_cascade_mode = "off";
+defparam \SRAM~5 .sum_lutc_input = "datac";
+defparam \SRAM~5 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X10_Y13_N1
+cyclone_lcell \SRAM~21 (
+// Equation(s):
+// \SRAM~76  = (\addr~combout [2] & ((\addr~combout [3]) # ((A1L22Q)))) # (!\addr~combout [2] & (!\addr~combout [3] & ((\SRAM~5_regout ))))
+
+	.clk(\clk~combout ),
+	.dataa(\addr~combout [2]),
+	.datab(\addr~combout [3]),
+	.datac(\data_in~combout [1]),
+	.datad(\SRAM~5_regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~113_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~76 ),
+	.regout(\SRAM~21_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~21 .lut_mask = "b9a8";
+defparam \SRAM~21 .operation_mode = "normal";
+defparam \SRAM~21 .output_mode = "comb_only";
+defparam \SRAM~21 .register_cascade_mode = "off";
+defparam \SRAM~21 .sum_lutc_input = "qfbk";
+defparam \SRAM~21 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X10_Y14_N2
+cyclone_lcell \SRAM~53 (
+// Equation(s):
+// \SRAM~53_regout  = DFFEAS(GND, GLOBAL(\clk~combout ), VCC, , \SRAM~129_combout , \data_in~combout [1], , , VCC)
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\data_in~combout [1]),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~129_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~53_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~53 .lut_mask = "0000";
+defparam \SRAM~53 .operation_mode = "normal";
+defparam \SRAM~53 .output_mode = "reg_only";
+defparam \SRAM~53 .register_cascade_mode = "off";
+defparam \SRAM~53 .sum_lutc_input = "datac";
+defparam \SRAM~53 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X11_Y13_N1
+cyclone_lcell \SRAM~37 (
+// Equation(s):
+// \SRAM~77  = (\SRAM~76  & (((\SRAM~53_regout )) # (!\addr~combout [3]))) # (!\SRAM~76  & (\addr~combout [3] & (A1L38Q)))
+
+	.clk(\clk~combout ),
+	.dataa(\SRAM~76 ),
+	.datab(\addr~combout [3]),
+	.datac(\data_in~combout [1]),
+	.datad(\SRAM~53_regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~107_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~77 ),
+	.regout(\SRAM~37_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~37 .lut_mask = "ea62";
+defparam \SRAM~37 .operation_mode = "normal";
+defparam \SRAM~37 .output_mode = "comb_only";
+defparam \SRAM~37 .register_cascade_mode = "off";
+defparam \SRAM~37 .sum_lutc_input = "qfbk";
+defparam \SRAM~37 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X11_Y13_N2
+cyclone_lcell \SRAM~80 (
+// Equation(s):
+// \SRAM~80_combout  = (\addr~combout [1] & (\addr~combout [0])) # (!\addr~combout [1] & ((\addr~combout [0] & ((\SRAM~77 ))) # (!\addr~combout [0] & (\SRAM~79 ))))
+
+	.clk(gnd),
+	.dataa(\addr~combout [1]),
+	.datab(\addr~combout [0]),
+	.datac(\SRAM~79 ),
+	.datad(\SRAM~77 ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~80_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~80 .lut_mask = "dc98";
+defparam \SRAM~80 .operation_mode = "normal";
+defparam \SRAM~80 .output_mode = "comb_only";
+defparam \SRAM~80 .register_cascade_mode = "off";
+defparam \SRAM~80 .sum_lutc_input = "datac";
+defparam \SRAM~80 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X7_Y14_N0
+cyclone_lcell \SRAM~13 (
+// Equation(s):
+// \SRAM~13_regout  = DFFEAS(GND, GLOBAL(\clk~combout ), VCC, , \SRAM~127_combout , \data_in~combout [1], , , VCC)
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\data_in~combout [1]),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~127_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~13_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~13 .lut_mask = "0000";
+defparam \SRAM~13 .operation_mode = "normal";
+defparam \SRAM~13 .output_mode = "reg_only";
+defparam \SRAM~13 .register_cascade_mode = "off";
+defparam \SRAM~13 .sum_lutc_input = "datac";
+defparam \SRAM~13 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X7_Y14_N3
+cyclone_lcell \SRAM~29 (
+// Equation(s):
+// \SRAM~81  = (\addr~combout [2] & ((\addr~combout [3]) # ((A1L30Q)))) # (!\addr~combout [2] & (!\addr~combout [3] & ((\SRAM~13_regout ))))
+
+	.clk(\clk~combout ),
+	.dataa(\addr~combout [2]),
+	.datab(\addr~combout [3]),
+	.datac(\data_in~combout [1]),
+	.datad(\SRAM~13_regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~119_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~81 ),
+	.regout(\SRAM~29_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~29 .lut_mask = "b9a8";
+defparam \SRAM~29 .operation_mode = "normal";
+defparam \SRAM~29 .output_mode = "comb_only";
+defparam \SRAM~29 .register_cascade_mode = "off";
+defparam \SRAM~29 .sum_lutc_input = "qfbk";
+defparam \SRAM~29 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X10_Y14_N6
+cyclone_lcell \SRAM~61 (
+// Equation(s):
+// \SRAM~61_regout  = DFFEAS(GND, GLOBAL(\clk~combout ), VCC, , \SRAM~135_combout , \data_in~combout [1], , , VCC)
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\data_in~combout [1]),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~135_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~61_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~61 .lut_mask = "0000";
+defparam \SRAM~61 .operation_mode = "normal";
+defparam \SRAM~61 .output_mode = "reg_only";
+defparam \SRAM~61 .register_cascade_mode = "off";
+defparam \SRAM~61 .sum_lutc_input = "datac";
+defparam \SRAM~61 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X7_Y15_N1
+cyclone_lcell \SRAM~45 (
+// Equation(s):
+// \SRAM~82  = (\addr~combout [3] & ((\SRAM~81  & ((\SRAM~61_regout ))) # (!\SRAM~81  & (A1L46Q)))) # (!\addr~combout [3] & (\SRAM~81 ))
+
+	.clk(\clk~combout ),
+	.dataa(\addr~combout [3]),
+	.datab(\SRAM~81 ),
+	.datac(\data_in~combout [1]),
+	.datad(\SRAM~61_regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~111_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~82 ),
+	.regout(\SRAM~45_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~45 .lut_mask = "ec64";
+defparam \SRAM~45 .operation_mode = "normal";
+defparam \SRAM~45 .output_mode = "comb_only";
+defparam \SRAM~45 .register_cascade_mode = "off";
+defparam \SRAM~45 .sum_lutc_input = "qfbk";
+defparam \SRAM~45 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X7_Y15_N2
+cyclone_lcell \SRAM~83 (
+// Equation(s):
+// \SRAM~83_combout  = (\addr~combout [1] & ((\SRAM~80_combout  & ((\SRAM~82 ))) # (!\SRAM~80_combout  & (\SRAM~75 )))) # (!\addr~combout [1] & (((\SRAM~80_combout ))))
+
+	.clk(gnd),
+	.dataa(\SRAM~75 ),
+	.datab(\addr~combout [1]),
+	.datac(\SRAM~80_combout ),
+	.datad(\SRAM~82 ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~83_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~83 .lut_mask = "f838";
+defparam \SRAM~83 .operation_mode = "normal";
+defparam \SRAM~83 .output_mode = "comb_only";
+defparam \SRAM~83 .register_cascade_mode = "off";
+defparam \SRAM~83 .sum_lutc_input = "datac";
+defparam \SRAM~83 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: PIN_20,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+cyclone_io \data_in[2]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\data_in~combout [2]),
+	.regout(),
+	.padio(data_in[2]));
+// synopsys translate_off
+defparam \data_in[2]~I .input_async_reset = "none";
+defparam \data_in[2]~I .input_power_up = "low";
+defparam \data_in[2]~I .input_register_mode = "none";
+defparam \data_in[2]~I .input_sync_reset = "none";
+defparam \data_in[2]~I .oe_async_reset = "none";
+defparam \data_in[2]~I .oe_power_up = "low";
+defparam \data_in[2]~I .oe_register_mode = "none";
+defparam \data_in[2]~I .oe_sync_reset = "none";
+defparam \data_in[2]~I .operation_mode = "input";
+defparam \data_in[2]~I .output_async_reset = "none";
+defparam \data_in[2]~I .output_power_up = "low";
+defparam \data_in[2]~I .output_register_mode = "none";
+defparam \data_in[2]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// Location: LC_X7_Y14_N4
+cyclone_lcell \SRAM~30 (
+// Equation(s):
+// \SRAM~30_regout  = DFFEAS(GND, GLOBAL(\clk~combout ), VCC, , \SRAM~119_combout , \data_in~combout [2], , , VCC)
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\data_in~combout [2]),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~119_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~30_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~30 .lut_mask = "0000";
+defparam \SRAM~30 .operation_mode = "normal";
+defparam \SRAM~30 .output_mode = "reg_only";
+defparam \SRAM~30 .register_cascade_mode = "off";
+defparam \SRAM~30 .sum_lutc_input = "datac";
+defparam \SRAM~30 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X12_Y15_N7
+cyclone_lcell \SRAM~18 (
+// Equation(s):
+// \SRAM~18_regout  = DFFEAS((((\data_in~combout [2]))), GLOBAL(\clk~combout ), VCC, , \SRAM~117_combout , , , , )
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\data_in~combout [2]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\SRAM~117_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~18_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~18 .lut_mask = "ff00";
+defparam \SRAM~18 .operation_mode = "normal";
+defparam \SRAM~18 .output_mode = "reg_only";
+defparam \SRAM~18 .register_cascade_mode = "off";
+defparam \SRAM~18 .sum_lutc_input = "datac";
+defparam \SRAM~18 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X10_Y13_N4
+cyclone_lcell \SRAM~22 (
+// Equation(s):
+// \SRAM~84  = (\addr~combout [1] & (\addr~combout [0])) # (!\addr~combout [1] & ((\addr~combout [0] & (A1L23Q)) # (!\addr~combout [0] & ((\SRAM~18_regout )))))
+
+	.clk(\clk~combout ),
+	.dataa(\addr~combout [1]),
+	.datab(\addr~combout [0]),
+	.datac(\data_in~combout [2]),
+	.datad(\SRAM~18_regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~113_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~84 ),
+	.regout(\SRAM~22_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~22 .lut_mask = "d9c8";
+defparam \SRAM~22 .operation_mode = "normal";
+defparam \SRAM~22 .output_mode = "comb_only";
+defparam \SRAM~22 .register_cascade_mode = "off";
+defparam \SRAM~22 .sum_lutc_input = "qfbk";
+defparam \SRAM~22 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X10_Y13_N5
+cyclone_lcell \SRAM~26 (
+// Equation(s):
+// \SRAM~85  = (\addr~combout [1] & ((\SRAM~84  & (\SRAM~30_regout )) # (!\SRAM~84  & ((A1L27Q))))) # (!\addr~combout [1] & (((\SRAM~84 ))))
+
+	.clk(\clk~combout ),
+	.dataa(\addr~combout [1]),
+	.datab(\SRAM~30_regout ),
+	.datac(\data_in~combout [2]),
+	.datad(\SRAM~84 ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~115_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~85 ),
+	.regout(\SRAM~26_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~26 .lut_mask = "dda0";
+defparam \SRAM~26 .operation_mode = "normal";
+defparam \SRAM~26 .output_mode = "comb_only";
+defparam \SRAM~26 .register_cascade_mode = "off";
+defparam \SRAM~26 .sum_lutc_input = "qfbk";
+defparam \SRAM~26 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X12_Y13_N6
+cyclone_lcell \SRAM~14 (
+// Equation(s):
+// \SRAM~14_regout  = DFFEAS(GND, GLOBAL(\clk~combout ), VCC, , \SRAM~127_combout , \data_in~combout [2], , , VCC)
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\data_in~combout [2]),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~127_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~14_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~14 .lut_mask = "0000";
+defparam \SRAM~14 .operation_mode = "normal";
+defparam \SRAM~14 .output_mode = "reg_only";
+defparam \SRAM~14 .register_cascade_mode = "off";
+defparam \SRAM~14 .sum_lutc_input = "datac";
+defparam \SRAM~14 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X13_Y13_N0
+cyclone_lcell \SRAM~2 (
+// Equation(s):
+// \SRAM~2_regout  = DFFEAS((((\data_in~combout [2]))), GLOBAL(\clk~combout ), VCC, , \SRAM~125_combout , , , , )
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\data_in~combout [2]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\SRAM~125_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~2_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~2 .lut_mask = "ff00";
+defparam \SRAM~2 .operation_mode = "normal";
+defparam \SRAM~2 .output_mode = "reg_only";
+defparam \SRAM~2 .register_cascade_mode = "off";
+defparam \SRAM~2 .sum_lutc_input = "datac";
+defparam \SRAM~2 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X13_Y13_N9
+cyclone_lcell \SRAM~10 (
+// Equation(s):
+// \SRAM~88  = (\addr~combout [1] & ((\addr~combout [0]) # ((A1L11Q)))) # (!\addr~combout [1] & (!\addr~combout [0] & ((\SRAM~2_regout ))))
+
+	.clk(\clk~combout ),
+	.dataa(\addr~combout [1]),
+	.datab(\addr~combout [0]),
+	.datac(\data_in~combout [2]),
+	.datad(\SRAM~2_regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~121_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~88 ),
+	.regout(\SRAM~10_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~10 .lut_mask = "b9a8";
+defparam \SRAM~10 .operation_mode = "normal";
+defparam \SRAM~10 .output_mode = "comb_only";
+defparam \SRAM~10 .register_cascade_mode = "off";
+defparam \SRAM~10 .sum_lutc_input = "qfbk";
+defparam \SRAM~10 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X12_Y13_N8
+cyclone_lcell \SRAM~6 (
+// Equation(s):
+// \SRAM~89  = (\addr~combout [0] & ((\SRAM~88  & (\SRAM~14_regout )) # (!\SRAM~88  & ((A1L7Q))))) # (!\addr~combout [0] & (((\SRAM~88 ))))
+
+	.clk(\clk~combout ),
+	.dataa(\SRAM~14_regout ),
+	.datab(\addr~combout [0]),
+	.datac(\data_in~combout [2]),
+	.datad(\SRAM~88 ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~123_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~89 ),
+	.regout(\SRAM~6_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~6 .lut_mask = "bbc0";
+defparam \SRAM~6 .operation_mode = "normal";
+defparam \SRAM~6 .output_mode = "comb_only";
+defparam \SRAM~6 .register_cascade_mode = "off";
+defparam \SRAM~6 .sum_lutc_input = "qfbk";
+defparam \SRAM~6 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X12_Y15_N9
+cyclone_lcell \SRAM~34 (
+// Equation(s):
+// \SRAM~34_regout  = DFFEAS((((\data_in~combout [2]))), GLOBAL(\clk~combout ), VCC, , \SRAM~109_combout , , , , )
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\data_in~combout [2]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\SRAM~109_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~34_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~34 .lut_mask = "ff00";
+defparam \SRAM~34 .operation_mode = "normal";
+defparam \SRAM~34 .output_mode = "reg_only";
+defparam \SRAM~34 .register_cascade_mode = "off";
+defparam \SRAM~34 .sum_lutc_input = "datac";
+defparam \SRAM~34 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X9_Y14_N7
+cyclone_lcell \SRAM~42 (
+// Equation(s):
+// \SRAM~86  = (\addr~combout [0] & (\addr~combout [1])) # (!\addr~combout [0] & ((\addr~combout [1] & (A1L43Q)) # (!\addr~combout [1] & ((\SRAM~34_regout )))))
+
+	.clk(\clk~combout ),
+	.dataa(\addr~combout [0]),
+	.datab(\addr~combout [1]),
+	.datac(\data_in~combout [2]),
+	.datad(\SRAM~34_regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~105_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~86 ),
+	.regout(\SRAM~42_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~42 .lut_mask = "d9c8";
+defparam \SRAM~42 .operation_mode = "normal";
+defparam \SRAM~42 .output_mode = "comb_only";
+defparam \SRAM~42 .register_cascade_mode = "off";
+defparam \SRAM~42 .sum_lutc_input = "qfbk";
+defparam \SRAM~42 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X9_Y14_N3
+cyclone_lcell \SRAM~46 (
+// Equation(s):
+// \SRAM~46_regout  = DFFEAS(GND, GLOBAL(\clk~combout ), VCC, , \SRAM~111_combout , \data_in~combout [2], , , VCC)
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\data_in~combout [2]),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~111_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~46_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~46 .lut_mask = "0000";
+defparam \SRAM~46 .operation_mode = "normal";
+defparam \SRAM~46 .output_mode = "reg_only";
+defparam \SRAM~46 .register_cascade_mode = "off";
+defparam \SRAM~46 .sum_lutc_input = "datac";
+defparam \SRAM~46 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X11_Y13_N8
+cyclone_lcell \SRAM~38 (
+// Equation(s):
+// \SRAM~87  = (\SRAM~86  & (((\SRAM~46_regout )) # (!\addr~combout [0]))) # (!\SRAM~86  & (\addr~combout [0] & (A1L39Q)))
+
+	.clk(\clk~combout ),
+	.dataa(\SRAM~86 ),
+	.datab(\addr~combout [0]),
+	.datac(\data_in~combout [2]),
+	.datad(\SRAM~46_regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~107_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~87 ),
+	.regout(\SRAM~38_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~38 .lut_mask = "ea62";
+defparam \SRAM~38 .operation_mode = "normal";
+defparam \SRAM~38 .output_mode = "comb_only";
+defparam \SRAM~38 .register_cascade_mode = "off";
+defparam \SRAM~38 .sum_lutc_input = "qfbk";
+defparam \SRAM~38 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X11_Y13_N4
+cyclone_lcell \SRAM~90 (
+// Equation(s):
+// \SRAM~90_combout  = (\addr~combout [3] & (((\SRAM~87 ) # (\addr~combout [2])))) # (!\addr~combout [3] & (\SRAM~89  & ((!\addr~combout [2]))))
+
+	.clk(gnd),
+	.dataa(\SRAM~89 ),
+	.datab(\addr~combout [3]),
+	.datac(\SRAM~87 ),
+	.datad(\addr~combout [2]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~90_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~90 .lut_mask = "cce2";
+defparam \SRAM~90 .operation_mode = "normal";
+defparam \SRAM~90 .output_mode = "comb_only";
+defparam \SRAM~90 .register_cascade_mode = "off";
+defparam \SRAM~90 .sum_lutc_input = "datac";
+defparam \SRAM~90 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X12_Y14_N7
+cyclone_lcell \SRAM~50 (
+// Equation(s):
+// \SRAM~50_regout  = DFFEAS(GND, GLOBAL(\clk~combout ), VCC, , \SRAM~133_combout , \data_in~combout [2], , , VCC)
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\data_in~combout [2]),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~133_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~50_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~50 .lut_mask = "0000";
+defparam \SRAM~50 .operation_mode = "normal";
+defparam \SRAM~50 .output_mode = "reg_only";
+defparam \SRAM~50 .register_cascade_mode = "off";
+defparam \SRAM~50 .sum_lutc_input = "datac";
+defparam \SRAM~50 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X10_Y14_N5
+cyclone_lcell \SRAM~54 (
+// Equation(s):
+// \SRAM~91  = (\addr~combout [1] & (\addr~combout [0])) # (!\addr~combout [1] & ((\addr~combout [0] & (A1L55Q)) # (!\addr~combout [0] & ((\SRAM~50_regout )))))
+
+	.clk(\clk~combout ),
+	.dataa(\addr~combout [1]),
+	.datab(\addr~combout [0]),
+	.datac(\data_in~combout [2]),
+	.datad(\SRAM~50_regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~129_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~91 ),
+	.regout(\SRAM~54_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~54 .lut_mask = "d9c8";
+defparam \SRAM~54 .operation_mode = "normal";
+defparam \SRAM~54 .output_mode = "comb_only";
+defparam \SRAM~54 .register_cascade_mode = "off";
+defparam \SRAM~54 .sum_lutc_input = "qfbk";
+defparam \SRAM~54 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X10_Y14_N1
+cyclone_lcell \SRAM~62 (
+// Equation(s):
+// \SRAM~62_regout  = DFFEAS(GND, GLOBAL(\clk~combout ), VCC, , \SRAM~135_combout , \data_in~combout [2], , , VCC)
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\data_in~combout [2]),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~135_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~62_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~62 .lut_mask = "0000";
+defparam \SRAM~62 .operation_mode = "normal";
+defparam \SRAM~62 .output_mode = "reg_only";
+defparam \SRAM~62 .register_cascade_mode = "off";
+defparam \SRAM~62 .sum_lutc_input = "datac";
+defparam \SRAM~62 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X12_Y14_N4
+cyclone_lcell \SRAM~58 (
+// Equation(s):
+// \SRAM~92  = (\addr~combout [1] & ((\SRAM~91  & ((\SRAM~62_regout ))) # (!\SRAM~91  & (A1L59Q)))) # (!\addr~combout [1] & (\SRAM~91 ))
+
+	.clk(\clk~combout ),
+	.dataa(\addr~combout [1]),
+	.datab(\SRAM~91 ),
+	.datac(\data_in~combout [2]),
+	.datad(\SRAM~62_regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~131_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~92 ),
+	.regout(\SRAM~58_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~58 .lut_mask = "ec64";
+defparam \SRAM~58 .operation_mode = "normal";
+defparam \SRAM~58 .output_mode = "comb_only";
+defparam \SRAM~58 .register_cascade_mode = "off";
+defparam \SRAM~58 .sum_lutc_input = "qfbk";
+defparam \SRAM~58 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X11_Y13_N7
+cyclone_lcell \SRAM~93 (
+// Equation(s):
+// \SRAM~93_combout  = (\addr~combout [2] & ((\SRAM~90_combout  & ((\SRAM~92 ))) # (!\SRAM~90_combout  & (\SRAM~85 )))) # (!\addr~combout [2] & (((\SRAM~90_combout ))))
+
+	.clk(gnd),
+	.dataa(\addr~combout [2]),
+	.datab(\SRAM~85 ),
+	.datac(\SRAM~90_combout ),
+	.datad(\SRAM~92 ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~93_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~93 .lut_mask = "f858";
+defparam \SRAM~93 .operation_mode = "normal";
+defparam \SRAM~93 .output_mode = "comb_only";
+defparam \SRAM~93 .register_cascade_mode = "off";
+defparam \SRAM~93 .sum_lutc_input = "datac";
+defparam \SRAM~93 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: PIN_14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+cyclone_io \data_in[3]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\data_in~combout [3]),
+	.regout(),
+	.padio(data_in[3]));
+// synopsys translate_off
+defparam \data_in[3]~I .input_async_reset = "none";
+defparam \data_in[3]~I .input_power_up = "low";
+defparam \data_in[3]~I .input_register_mode = "none";
+defparam \data_in[3]~I .input_sync_reset = "none";
+defparam \data_in[3]~I .oe_async_reset = "none";
+defparam \data_in[3]~I .oe_power_up = "low";
+defparam \data_in[3]~I .oe_register_mode = "none";
+defparam \data_in[3]~I .oe_sync_reset = "none";
+defparam \data_in[3]~I .operation_mode = "input";
+defparam \data_in[3]~I .output_async_reset = "none";
+defparam \data_in[3]~I .output_power_up = "low";
+defparam \data_in[3]~I .output_register_mode = "none";
+defparam \data_in[3]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// Location: LC_X12_Y14_N2
+cyclone_lcell \SRAM~51 (
+// Equation(s):
+// \SRAM~51_regout  = DFFEAS((((\data_in~combout [3]))), GLOBAL(\clk~combout ), VCC, , \SRAM~133_combout , , , , )
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\data_in~combout [3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\SRAM~133_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~51_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~51 .lut_mask = "ff00";
+defparam \SRAM~51 .operation_mode = "normal";
+defparam \SRAM~51 .output_mode = "reg_only";
+defparam \SRAM~51 .register_cascade_mode = "off";
+defparam \SRAM~51 .sum_lutc_input = "datac";
+defparam \SRAM~51 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X13_Y13_N2
+cyclone_lcell \SRAM~3 (
+// Equation(s):
+// \SRAM~3_regout  = DFFEAS(GND, GLOBAL(\clk~combout ), VCC, , \SRAM~125_combout , \data_in~combout [3], , , VCC)
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\data_in~combout [3]),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~125_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~3_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~3 .lut_mask = "0000";
+defparam \SRAM~3 .operation_mode = "normal";
+defparam \SRAM~3 .output_mode = "reg_only";
+defparam \SRAM~3 .register_cascade_mode = "off";
+defparam \SRAM~3 .sum_lutc_input = "datac";
+defparam \SRAM~3 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X12_Y15_N3
+cyclone_lcell \SRAM~19 (
+// Equation(s):
+// \SRAM~98  = (\addr~combout [2] & ((\addr~combout [3]) # ((A1L20Q)))) # (!\addr~combout [2] & (!\addr~combout [3] & ((\SRAM~3_regout ))))
+
+	.clk(\clk~combout ),
+	.dataa(\addr~combout [2]),
+	.datab(\addr~combout [3]),
+	.datac(\data_in~combout [3]),
+	.datad(\SRAM~3_regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~117_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~98 ),
+	.regout(\SRAM~19_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~19 .lut_mask = "b9a8";
+defparam \SRAM~19 .operation_mode = "normal";
+defparam \SRAM~19 .output_mode = "comb_only";
+defparam \SRAM~19 .register_cascade_mode = "off";
+defparam \SRAM~19 .sum_lutc_input = "qfbk";
+defparam \SRAM~19 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X12_Y15_N1
+cyclone_lcell \SRAM~35 (
+// Equation(s):
+// \SRAM~99  = (\addr~combout [3] & ((\SRAM~98  & (\SRAM~51_regout )) # (!\SRAM~98  & ((A1L36Q))))) # (!\addr~combout [3] & (((\SRAM~98 ))))
+
+	.clk(\clk~combout ),
+	.dataa(\SRAM~51_regout ),
+	.datab(\addr~combout [3]),
+	.datac(\data_in~combout [3]),
+	.datad(\SRAM~98 ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~109_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~99 ),
+	.regout(\SRAM~35_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~35 .lut_mask = "bbc0";
+defparam \SRAM~35 .operation_mode = "normal";
+defparam \SRAM~35 .output_mode = "comb_only";
+defparam \SRAM~35 .register_cascade_mode = "off";
+defparam \SRAM~35 .sum_lutc_input = "qfbk";
+defparam \SRAM~35 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X7_Y15_N7
+cyclone_lcell \SRAM~11 (
+// Equation(s):
+// \SRAM~11_regout  = DFFEAS(GND, GLOBAL(\clk~combout ), VCC, , \SRAM~121_combout , \data_in~combout [3], , , VCC)
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\data_in~combout [3]),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~121_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~11_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~11 .lut_mask = "0000";
+defparam \SRAM~11 .operation_mode = "normal";
+defparam \SRAM~11 .output_mode = "reg_only";
+defparam \SRAM~11 .register_cascade_mode = "off";
+defparam \SRAM~11 .sum_lutc_input = "datac";
+defparam \SRAM~11 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X10_Y13_N7
+cyclone_lcell \SRAM~27 (
+// Equation(s):
+// \SRAM~96  = (\addr~combout [2] & ((\addr~combout [3]) # ((A1L28Q)))) # (!\addr~combout [2] & (!\addr~combout [3] & ((\SRAM~11_regout ))))
+
+	.clk(\clk~combout ),
+	.dataa(\addr~combout [2]),
+	.datab(\addr~combout [3]),
+	.datac(\data_in~combout [3]),
+	.datad(\SRAM~11_regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~115_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~96 ),
+	.regout(\SRAM~27_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~27 .lut_mask = "b9a8";
+defparam \SRAM~27 .operation_mode = "normal";
+defparam \SRAM~27 .output_mode = "comb_only";
+defparam \SRAM~27 .register_cascade_mode = "off";
+defparam \SRAM~27 .sum_lutc_input = "qfbk";
+defparam \SRAM~27 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X12_Y14_N1
+cyclone_lcell \SRAM~59 (
+// Equation(s):
+// \SRAM~59_regout  = DFFEAS((((\data_in~combout [3]))), GLOBAL(\clk~combout ), VCC, , \SRAM~131_combout , , , , )
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\data_in~combout [3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\SRAM~131_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~59_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~59 .lut_mask = "ff00";
+defparam \SRAM~59 .operation_mode = "normal";
+defparam \SRAM~59 .output_mode = "reg_only";
+defparam \SRAM~59 .register_cascade_mode = "off";
+defparam \SRAM~59 .sum_lutc_input = "datac";
+defparam \SRAM~59 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X9_Y14_N9
+cyclone_lcell \SRAM~43 (
+// Equation(s):
+// \SRAM~97  = (\SRAM~96  & ((\SRAM~59_regout ) # ((!\addr~combout [3])))) # (!\SRAM~96  & (((A1L44Q & \addr~combout [3]))))
+
+	.clk(\clk~combout ),
+	.dataa(\SRAM~96 ),
+	.datab(\SRAM~59_regout ),
+	.datac(\data_in~combout [3]),
+	.datad(\addr~combout [3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~105_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~97 ),
+	.regout(\SRAM~43_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~43 .lut_mask = "d8aa";
+defparam \SRAM~43 .operation_mode = "normal";
+defparam \SRAM~43 .output_mode = "comb_only";
+defparam \SRAM~43 .register_cascade_mode = "off";
+defparam \SRAM~43 .sum_lutc_input = "qfbk";
+defparam \SRAM~43 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X7_Y14_N2
+cyclone_lcell \SRAM~100 (
+// Equation(s):
+// \SRAM~100_combout  = (\addr~combout [0] & (\addr~combout [1])) # (!\addr~combout [0] & ((\addr~combout [1] & ((\SRAM~97 ))) # (!\addr~combout [1] & (\SRAM~99 ))))
+
+	.clk(gnd),
+	.dataa(\addr~combout [0]),
+	.datab(\addr~combout [1]),
+	.datac(\SRAM~99 ),
+	.datad(\SRAM~97 ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~100_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~100 .lut_mask = "dc98";
+defparam \SRAM~100 .operation_mode = "normal";
+defparam \SRAM~100 .output_mode = "comb_only";
+defparam \SRAM~100 .register_cascade_mode = "off";
+defparam \SRAM~100 .sum_lutc_input = "datac";
+defparam \SRAM~100 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X10_Y14_N0
+cyclone_lcell \SRAM~63 (
+// Equation(s):
+// \SRAM~63_regout  = DFFEAS((((\data_in~combout [3]))), GLOBAL(\clk~combout ), VCC, , \SRAM~135_combout , , , , )
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\data_in~combout [3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\SRAM~135_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~63_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~63 .lut_mask = "ff00";
+defparam \SRAM~63 .operation_mode = "normal";
+defparam \SRAM~63 .output_mode = "reg_only";
+defparam \SRAM~63 .register_cascade_mode = "off";
+defparam \SRAM~63 .sum_lutc_input = "datac";
+defparam \SRAM~63 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X7_Y14_N9
+cyclone_lcell \SRAM~15 (
+// Equation(s):
+// \SRAM~15_regout  = DFFEAS(GND, GLOBAL(\clk~combout ), VCC, , \SRAM~127_combout , \data_in~combout [3], , , VCC)
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\data_in~combout [3]),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~127_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~15_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~15 .lut_mask = "0000";
+defparam \SRAM~15 .operation_mode = "normal";
+defparam \SRAM~15 .output_mode = "reg_only";
+defparam \SRAM~15 .register_cascade_mode = "off";
+defparam \SRAM~15 .sum_lutc_input = "datac";
+defparam \SRAM~15 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X7_Y15_N4
+cyclone_lcell \SRAM~47 (
+// Equation(s):
+// \SRAM~101  = (\addr~combout [2] & (((\addr~combout [3])))) # (!\addr~combout [2] & ((\addr~combout [3] & ((A1L48Q))) # (!\addr~combout [3] & (\SRAM~15_regout ))))
+
+	.clk(\clk~combout ),
+	.dataa(\addr~combout [2]),
+	.datab(\SRAM~15_regout ),
+	.datac(\data_in~combout [3]),
+	.datad(\addr~combout [3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~111_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~101 ),
+	.regout(\SRAM~47_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~47 .lut_mask = "fa44";
+defparam \SRAM~47 .operation_mode = "normal";
+defparam \SRAM~47 .output_mode = "comb_only";
+defparam \SRAM~47 .register_cascade_mode = "off";
+defparam \SRAM~47 .sum_lutc_input = "qfbk";
+defparam \SRAM~47 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X7_Y14_N5
+cyclone_lcell \SRAM~31 (
+// Equation(s):
+// \SRAM~102  = (\addr~combout [2] & ((\SRAM~101  & (\SRAM~63_regout )) # (!\SRAM~101  & ((A1L32Q))))) # (!\addr~combout [2] & (((\SRAM~101 ))))
+
+	.clk(\clk~combout ),
+	.dataa(\addr~combout [2]),
+	.datab(\SRAM~63_regout ),
+	.datac(\data_in~combout [3]),
+	.datad(\SRAM~101 ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~119_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~102 ),
+	.regout(\SRAM~31_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~31 .lut_mask = "dda0";
+defparam \SRAM~31 .operation_mode = "normal";
+defparam \SRAM~31 .output_mode = "comb_only";
+defparam \SRAM~31 .register_cascade_mode = "off";
+defparam \SRAM~31 .sum_lutc_input = "qfbk";
+defparam \SRAM~31 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X10_Y14_N9
+cyclone_lcell \SRAM~55 (
+// Equation(s):
+// \SRAM~55_regout  = DFFEAS((((\data_in~combout [3]))), GLOBAL(\clk~combout ), VCC, , \SRAM~129_combout , , , , )
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\data_in~combout [3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\SRAM~129_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~55_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~55 .lut_mask = "ff00";
+defparam \SRAM~55 .operation_mode = "normal";
+defparam \SRAM~55 .output_mode = "reg_only";
+defparam \SRAM~55 .register_cascade_mode = "off";
+defparam \SRAM~55 .sum_lutc_input = "datac";
+defparam \SRAM~55 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X11_Y12_N4
+cyclone_lcell \SRAM~7 (
+// Equation(s):
+// \SRAM~7_regout  = DFFEAS(GND, GLOBAL(\clk~combout ), VCC, , \SRAM~123_combout , \data_in~combout [3], , , VCC)
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\data_in~combout [3]),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~123_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\SRAM~7_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~7 .lut_mask = "0000";
+defparam \SRAM~7 .operation_mode = "normal";
+defparam \SRAM~7 .output_mode = "reg_only";
+defparam \SRAM~7 .register_cascade_mode = "off";
+defparam \SRAM~7 .sum_lutc_input = "datac";
+defparam \SRAM~7 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X11_Y13_N9
+cyclone_lcell \SRAM~39 (
+// Equation(s):
+// \SRAM~94  = (\addr~combout [2] & (((\addr~combout [3])))) # (!\addr~combout [2] & ((\addr~combout [3] & ((A1L40Q))) # (!\addr~combout [3] & (\SRAM~7_regout ))))
+
+	.clk(\clk~combout ),
+	.dataa(\SRAM~7_regout ),
+	.datab(\addr~combout [2]),
+	.datac(\data_in~combout [3]),
+	.datad(\addr~combout [3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~107_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~94 ),
+	.regout(\SRAM~39_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~39 .lut_mask = "fc22";
+defparam \SRAM~39 .operation_mode = "normal";
+defparam \SRAM~39 .output_mode = "comb_only";
+defparam \SRAM~39 .register_cascade_mode = "off";
+defparam \SRAM~39 .sum_lutc_input = "qfbk";
+defparam \SRAM~39 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X10_Y13_N9
+cyclone_lcell \SRAM~23 (
+// Equation(s):
+// \SRAM~95  = (\addr~combout [2] & ((\SRAM~94  & (\SRAM~55_regout )) # (!\SRAM~94  & ((A1L24Q))))) # (!\addr~combout [2] & (((\SRAM~94 ))))
+
+	.clk(\clk~combout ),
+	.dataa(\addr~combout [2]),
+	.datab(\SRAM~55_regout ),
+	.datac(\data_in~combout [3]),
+	.datad(\SRAM~94 ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\SRAM~113_combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~95 ),
+	.regout(\SRAM~23_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~23 .lut_mask = "dda0";
+defparam \SRAM~23 .operation_mode = "normal";
+defparam \SRAM~23 .output_mode = "comb_only";
+defparam \SRAM~23 .register_cascade_mode = "off";
+defparam \SRAM~23 .sum_lutc_input = "qfbk";
+defparam \SRAM~23 .synch_mode = "on";
+// synopsys translate_on
+
+// Location: LC_X7_Y14_N6
+cyclone_lcell \SRAM~103 (
+// Equation(s):
+// \SRAM~103_combout  = (\SRAM~100_combout  & ((\SRAM~102 ) # ((!\addr~combout [0])))) # (!\SRAM~100_combout  & (((\addr~combout [0] & \SRAM~95 ))))
+
+	.clk(gnd),
+	.dataa(\SRAM~100_combout ),
+	.datab(\SRAM~102 ),
+	.datac(\addr~combout [0]),
+	.datad(\SRAM~95 ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\SRAM~103_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \SRAM~103 .lut_mask = "da8a";
+defparam \SRAM~103 .operation_mode = "normal";
+defparam \SRAM~103 .output_mode = "comb_only";
+defparam \SRAM~103 .register_cascade_mode = "off";
+defparam \SRAM~103 .sum_lutc_input = "datac";
+defparam \SRAM~103 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: PIN_8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+cyclone_io \q[0]~I (
+	.datain(\SRAM~73_combout ),
+	.oe(!\rd~combout ),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(q[0]));
+// synopsys translate_off
+defparam \q[0]~I .input_async_reset = "none";
+defparam \q[0]~I .input_power_up = "low";
+defparam \q[0]~I .input_register_mode = "none";
+defparam \q[0]~I .input_sync_reset = "none";
+defparam \q[0]~I .oe_async_reset = "none";
+defparam \q[0]~I .oe_power_up = "low";
+defparam \q[0]~I .oe_register_mode = "none";
+defparam \q[0]~I .oe_sync_reset = "none";
+defparam \q[0]~I .operation_mode = "output";
+defparam \q[0]~I .output_async_reset = "none";
+defparam \q[0]~I .output_power_up = "low";
+defparam \q[0]~I .output_register_mode = "none";
+defparam \q[0]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// Location: PIN_13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+cyclone_io \q[1]~I (
+	.datain(\SRAM~83_combout ),
+	.oe(!\rd~combout ),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(q[1]));
+// synopsys translate_off
+defparam \q[1]~I .input_async_reset = "none";
+defparam \q[1]~I .input_power_up = "low";
+defparam \q[1]~I .input_register_mode = "none";
+defparam \q[1]~I .input_sync_reset = "none";
+defparam \q[1]~I .oe_async_reset = "none";
+defparam \q[1]~I .oe_power_up = "low";
+defparam \q[1]~I .oe_register_mode = "none";
+defparam \q[1]~I .oe_sync_reset = "none";
+defparam \q[1]~I .operation_mode = "output";
+defparam \q[1]~I .output_async_reset = "none";
+defparam \q[1]~I .output_power_up = "low";
+defparam \q[1]~I .output_register_mode = "none";
+defparam \q[1]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// Location: PIN_16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+cyclone_io \q[2]~I (
+	.datain(\SRAM~93_combout ),
+	.oe(!\rd~combout ),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(q[2]));
+// synopsys translate_off
+defparam \q[2]~I .input_async_reset = "none";
+defparam \q[2]~I .input_power_up = "low";
+defparam \q[2]~I .input_register_mode = "none";
+defparam \q[2]~I .input_sync_reset = "none";
+defparam \q[2]~I .oe_async_reset = "none";
+defparam \q[2]~I .oe_power_up = "low";
+defparam \q[2]~I .oe_register_mode = "none";
+defparam \q[2]~I .oe_sync_reset = "none";
+defparam \q[2]~I .operation_mode = "output";
+defparam \q[2]~I .output_async_reset = "none";
+defparam \q[2]~I .output_power_up = "low";
+defparam \q[2]~I .output_register_mode = "none";
+defparam \q[2]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// Location: PIN_21,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+cyclone_io \q[3]~I (
+	.datain(\SRAM~103_combout ),
+	.oe(!\rd~combout ),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(q[3]));
+// synopsys translate_off
+defparam \q[3]~I .input_async_reset = "none";
+defparam \q[3]~I .input_power_up = "low";
+defparam \q[3]~I .input_register_mode = "none";
+defparam \q[3]~I .input_sync_reset = "none";
+defparam \q[3]~I .oe_async_reset = "none";
+defparam \q[3]~I .oe_power_up = "low";
+defparam \q[3]~I .oe_register_mode = "none";
+defparam \q[3]~I .oe_sync_reset = "none";
+defparam \q[3]~I .operation_mode = "output";
+defparam \q[3]~I .output_async_reset = "none";
+defparam \q[3]~I .output_power_up = "low";
+defparam \q[3]~I .output_register_mode = "none";
+defparam \q[3]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+endmodule

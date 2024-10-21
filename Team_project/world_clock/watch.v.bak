@@ -1,0 +1,138 @@
+module watch(clk,reset,sec,min,hour,
+am_pm,sw,flag,day_cnt,a_min,a_hour,set,on);
+
+input clk,reset,set,on;
+input [2:0]sw;		
+
+output flag;
+
+output reg [5:0] a_min,a_hour=1;
+
+output reg am_pm;
+
+reg [31:0]time_cnt;
+reg [7:0] hour_buff,min_buff,day_buff;
+reg [3:0] sec1,sec10,min1,min10,hour1,hour10;
+output reg [5:0] sec,min,hour;
+output reg [3:0]day_cnt;
+assign flag = (time_cnt>=2700000) ? 1'b1 : 1'b0;
+
+
+always@(posedge clk,negedge reset)
+begin
+	if(!reset)	{hour_buff,min_buff,day_buff}<=0;
+	else
+		begin
+			day_buff<={day_buff,sw[2]};
+			hour_buff<={hour_buff,sw[1]};
+			min_buff<={min_buff,sw[0]};
+		end
+end
+
+always @(posedge clk,negedge reset)
+begin
+	if(!reset)	begin
+						{time_cnt,min,sec,day_cnt,a_min,am_pm}<=0;
+						a_hour <= 1;
+						hour   <= 1;
+					end
+	else
+	begin
+		time_cnt<=time_cnt+1;
+		
+		if(day_buff==1 && set==0)
+			begin
+				day_cnt<=day_cnt+1;
+				if(day_cnt>=6)	day_cnt<=0;
+			end
+			
+		
+		else if(hour_buff==1)
+			begin
+				if(!set)
+				begin
+					hour<=hour+1;
+					if(hour>=12)	
+					begin
+						hour<=1;
+						am_pm <= ~am_pm;
+					end
+				end
+				else
+				begin
+					a_hour<=a_hour+1;
+					if(a_hour>=12)	
+					begin
+						a_hour<=1;
+						am_pm <= ~am_pm;
+					end
+				end
+			end
+		
+		else if(min_buff==1)
+			begin
+				if(!set)
+				begin
+					min<=min+1;
+					if(min>=59)	min<=0;
+				end
+				else
+				begin
+					a_min<=a_min+1;
+					if(a_min>=59)	a_min<=0;
+				end
+					
+			end
+		else if(time_cnt>=5400000)
+		begin
+			time_cnt<=0;
+			sec<=sec+1;
+			if(sec>=59)
+			begin
+				sec<=0;
+				min<=min+1;
+			
+				if(min>=59)
+				begin
+					min<=0;
+					hour<=hour+1;
+					
+					if(hour>=12)	
+					begin
+						am_pm <= ~am_pm;
+						hour<=1;
+						if(am_pm==1)
+						begin
+							day_cnt<=day_cnt+1;
+							if(day_cnt>=6)	day_cnt<=0;
+						end
+						else	day_cnt<=day_cnt;
+					end
+				end
+			end
+		end
+	end
+end
+
+
+
+always@(posedge clk,negedge reset)
+begin
+	if(!reset)	{sec1,sec10,min1,min10,hour1,hour10}<=0;
+	else
+		begin
+			sec1<=sec%10;
+			sec10<=(sec/10)%10;
+			min1<=min%10;
+			min10<=(min/10)%10;
+			hour1<=hour%10;
+			hour10<=(hour/10)%10;
+			
+		end
+end
+
+
+
+	
+
+endmodule

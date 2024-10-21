@@ -1,0 +1,848 @@
+TimeQuest Timing Analyzer report for Serial_TX_ADC
+Tue Sep 27 11:33:30 2016
+Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'Serial_TX3:u0|font_cnt[0]'
+ 12. Setup: 'clk'
+ 13. Hold: 'clk'
+ 14. Hold: 'Serial_TX3:u0|font_cnt[0]'
+ 15. Minimum Pulse Width: 'clk'
+ 16. Minimum Pulse Width: 'Serial_TX3:u0|font_cnt[0]'
+ 17. Setup Times
+ 18. Hold Times
+ 19. Clock to Output Times
+ 20. Minimum Clock to Output Times
+ 21. Setup Transfers
+ 22. Hold Transfers
+ 23. Report TCCS
+ 24. Report RSKM
+ 25. Unconstrained Paths
+ 26. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                    ;
++--------------------+-----------------------------------------------------------------+
+; Quartus II Version ; Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; Serial_TX_ADC                                                   ;
+; Device Family      ; Cyclone                                                         ;
+; Device Name        ; EP1C6Q240C8                                                     ;
+; Timing Models      ; Final                                                           ;
+; Delay Model        ; Slow Model                                                      ;
+; Rise/Fall Delays   ; Unavailable                                                     ;
++--------------------+-----------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                               ;
++---------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------+
+; Clock Name                ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                       ;
++---------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------+
+; clk                       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                       ;
+; Serial_TX3:u0|font_cnt[0] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Serial_TX3:u0|font_cnt[0] } ;
++---------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------+
+
+
++--------------------------------------------------+
+; Fmax Summary                                     ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 119.45 MHz ; 119.45 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------------------------+
+; Setup Summary                                       ;
++---------------------------+---------+---------------+
+; Clock                     ; Slack   ; End Point TNS ;
++---------------------------+---------+---------------+
+; Serial_TX3:u0|font_cnt[0] ; -18.877 ; -140.031      ;
+; clk                       ; -7.372  ; -293.600      ;
++---------------------------+---------+---------------+
+
+
++----------------------------------------------------+
+; Hold Summary                                       ;
++---------------------------+--------+---------------+
+; Clock                     ; Slack  ; End Point TNS ;
++---------------------------+--------+---------------+
+; clk                       ; -1.826 ; -7.001        ;
+; Serial_TX3:u0|font_cnt[0] ; -0.351 ; -0.351        ;
++---------------------------+--------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++----------------------------------------------------+
+; Minimum Pulse Width Summary                        ;
++---------------------------+--------+---------------+
+; Clock                     ; Slack  ; End Point TNS ;
++---------------------------+--------+---------------+
+; clk                       ; -1.583 ; -196.647      ;
+; Serial_TX3:u0|font_cnt[0] ; 0.500  ; 0.000         ;
++---------------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'Serial_TX3:u0|font_cnt[0]'                                                                                                              ;
++---------+---------------------+-----------------------------+--------------+---------------------------+--------------+------------+------------+
+; Slack   ; From Node           ; To Node                     ; Launch Clock ; Latch Clock               ; Relationship ; Clock Skew ; Data Delay ;
++---------+---------------------+-----------------------------+--------------+---------------------------+--------------+------------+------------+
+; -18.877 ; ADC1:u1|adc_data[5] ; Serial_TX3:u0|tx_temp[3][3] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.531      ; 21.591     ;
+; -18.743 ; ADC1:u1|adc_data[5] ; Serial_TX3:u0|tx_temp[3][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.818      ; 21.603     ;
+; -18.280 ; ADC1:u1|adc_data[5] ; Serial_TX3:u0|tx_temp[3][2] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.336      ; 20.986     ;
+; -18.165 ; ADC1:u1|adc_data[5] ; Serial_TX3:u0|tx_temp[2][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.553      ; 21.061     ;
+; -18.156 ; ADC1:u1|adc_data[5] ; Serial_TX3:u0|tx_temp[2][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.553      ; 20.896     ;
+; -17.249 ; ADC1:u1|adc_data[4] ; Serial_TX3:u0|tx_temp[3][3] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.531      ; 19.963     ;
+; -17.204 ; ADC1:u1|adc_data[5] ; Serial_TX3:u0|tx_temp[2][2] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.528      ; 20.084     ;
+; -17.115 ; ADC1:u1|adc_data[4] ; Serial_TX3:u0|tx_temp[3][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.818      ; 19.975     ;
+; -17.100 ; ADC1:u1|adc_data[6] ; Serial_TX3:u0|tx_temp[3][3] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.531      ; 19.814     ;
+; -17.050 ; ADC1:u1|adc_data[5] ; Serial_TX3:u0|tx_temp[2][3] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.514      ; 19.934     ;
+; -17.023 ; ADC1:u1|adc_data[7] ; Serial_TX3:u0|tx_temp[2][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.553      ; 19.919     ;
+; -17.014 ; ADC1:u1|adc_data[7] ; Serial_TX3:u0|tx_temp[2][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.553      ; 19.754     ;
+; -16.994 ; ADC1:u1|adc_data[7] ; Serial_TX3:u0|tx_temp[3][3] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.531      ; 19.708     ;
+; -16.966 ; ADC1:u1|adc_data[6] ; Serial_TX3:u0|tx_temp[3][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.818      ; 19.826     ;
+; -16.928 ; ADC1:u1|adc_data[4] ; Serial_TX3:u0|tx_temp[2][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.553      ; 19.824     ;
+; -16.919 ; ADC1:u1|adc_data[4] ; Serial_TX3:u0|tx_temp[2][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.553      ; 19.659     ;
+; -16.860 ; ADC1:u1|adc_data[7] ; Serial_TX3:u0|tx_temp[3][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.818      ; 19.720     ;
+; -16.700 ; ADC1:u1|adc_data[6] ; Serial_TX3:u0|tx_temp[2][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.553      ; 19.596     ;
+; -16.691 ; ADC1:u1|adc_data[6] ; Serial_TX3:u0|tx_temp[2][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.553      ; 19.431     ;
+; -16.652 ; ADC1:u1|adc_data[4] ; Serial_TX3:u0|tx_temp[3][2] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.336      ; 19.358     ;
+; -16.503 ; ADC1:u1|adc_data[6] ; Serial_TX3:u0|tx_temp[3][2] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.336      ; 19.209     ;
+; -16.397 ; ADC1:u1|adc_data[7] ; Serial_TX3:u0|tx_temp[3][2] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.336      ; 19.103     ;
+; -16.062 ; ADC1:u1|adc_data[7] ; Serial_TX3:u0|tx_temp[2][2] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.528      ; 18.942     ;
+; -15.967 ; ADC1:u1|adc_data[4] ; Serial_TX3:u0|tx_temp[2][2] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.528      ; 18.847     ;
+; -15.908 ; ADC1:u1|adc_data[7] ; Serial_TX3:u0|tx_temp[2][3] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.514      ; 18.792     ;
+; -15.813 ; ADC1:u1|adc_data[4] ; Serial_TX3:u0|tx_temp[2][3] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.514      ; 18.697     ;
+; -15.739 ; ADC1:u1|adc_data[6] ; Serial_TX3:u0|tx_temp[2][2] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.528      ; 18.619     ;
+; -15.585 ; ADC1:u1|adc_data[6] ; Serial_TX3:u0|tx_temp[2][3] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.514      ; 18.469     ;
+; -14.613 ; ADC1:u1|adc_data[3] ; Serial_TX3:u0|tx_temp[2][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.582      ; 17.538     ;
+; -14.604 ; ADC1:u1|adc_data[3] ; Serial_TX3:u0|tx_temp[2][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.582      ; 17.373     ;
+; -13.652 ; ADC1:u1|adc_data[3] ; Serial_TX3:u0|tx_temp[2][2] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.557      ; 16.561     ;
+; -13.498 ; ADC1:u1|adc_data[3] ; Serial_TX3:u0|tx_temp[2][3] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.543      ; 16.411     ;
+; -12.517 ; ADC1:u1|adc_data[3] ; Serial_TX3:u0|tx_temp[3][3] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.560      ; 15.260     ;
+; -12.383 ; ADC1:u1|adc_data[3] ; Serial_TX3:u0|tx_temp[3][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.847      ; 15.272     ;
+; -11.920 ; ADC1:u1|adc_data[3] ; Serial_TX3:u0|tx_temp[3][2] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.365      ; 14.655     ;
+; -10.018 ; ADC1:u1|adc_data[2] ; Serial_TX3:u0|tx_temp[2][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.582      ; 12.943     ;
+; -10.009 ; ADC1:u1|adc_data[2] ; Serial_TX3:u0|tx_temp[2][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.582      ; 12.778     ;
+; -9.057  ; ADC1:u1|adc_data[2] ; Serial_TX3:u0|tx_temp[2][2] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.557      ; 11.966     ;
+; -8.903  ; ADC1:u1|adc_data[2] ; Serial_TX3:u0|tx_temp[2][3] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.543      ; 11.816     ;
+; -8.801  ; ADC1:u1|adc_data[4] ; Serial_TX3:u0|tx_temp[1][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.322      ; 11.781     ;
+; -8.310  ; ADC1:u1|adc_data[3] ; Serial_TX3:u0|tx_temp[1][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.351      ; 11.319     ;
+; -7.883  ; ADC1:u1|adc_data[2] ; Serial_TX3:u0|tx_temp[3][3] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.560      ; 10.626     ;
+; -7.749  ; ADC1:u1|adc_data[2] ; Serial_TX3:u0|tx_temp[3][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.847      ; 10.638     ;
+; -7.493  ; ADC1:u1|adc_data[6] ; Serial_TX3:u0|tx_temp[1][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.322      ; 10.473     ;
+; -7.437  ; ADC1:u1|adc_data[5] ; Serial_TX3:u0|tx_temp[1][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.322      ; 10.417     ;
+; -7.286  ; ADC1:u1|adc_data[2] ; Serial_TX3:u0|tx_temp[3][2] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.365      ; 10.021     ;
+; -7.235  ; ADC1:u1|adc_data[7] ; Serial_TX3:u0|tx_temp[1][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.322      ; 10.215     ;
+; -4.515  ; ADC1:u1|adc_data[4] ; Serial_TX3:u0|tx_temp[1][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.544      ; 7.720      ;
+; -4.031  ; ADC1:u1|adc_data[1] ; Serial_TX3:u0|tx_temp[2][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.582      ; 6.956      ;
+; -4.024  ; ADC1:u1|adc_data[3] ; Serial_TX3:u0|tx_temp[1][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.573      ; 7.258      ;
+; -3.902  ; ADC1:u1|adc_data[1] ; Serial_TX3:u0|tx_temp[3][3] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.560      ; 6.645      ;
+; -3.823  ; ADC1:u1|adc_data[2] ; Serial_TX3:u0|tx_temp[1][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.351      ; 6.832      ;
+; -3.768  ; ADC1:u1|adc_data[1] ; Serial_TX3:u0|tx_temp[3][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.847      ; 6.657      ;
+; -3.305  ; ADC1:u1|adc_data[1] ; Serial_TX3:u0|tx_temp[3][2] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.365      ; 6.040      ;
+; -3.207  ; ADC1:u1|adc_data[6] ; Serial_TX3:u0|tx_temp[1][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.544      ; 6.412      ;
+; -3.151  ; ADC1:u1|adc_data[5] ; Serial_TX3:u0|tx_temp[1][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.544      ; 6.356      ;
+; -2.949  ; ADC1:u1|adc_data[7] ; Serial_TX3:u0|tx_temp[1][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.544      ; 6.154      ;
+; -0.240  ; ADC1:u1|adc_data[0] ; Serial_TX3:u0|tx_temp[3][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; 0.500        ; 3.376      ; 2.990      ;
++---------+---------------------+-----------------------------+--------------+---------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                                        ;
++--------+--------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; -7.372 ; Serial_TX3:u0|bps_cnt[2] ; Serial_TX3:u0|tx_data[1]  ; clk          ; clk         ; 1.000        ; 0.019      ; 8.354      ;
+; -7.372 ; Serial_TX3:u0|bps_cnt[2] ; Serial_TX3:u0|tx_data[0]  ; clk          ; clk         ; 1.000        ; 0.019      ; 8.354      ;
+; -7.349 ; Serial_TX3:u0|bps_cnt[7] ; Serial_TX3:u0|tx_data[1]  ; clk          ; clk         ; 1.000        ; 0.019      ; 8.331      ;
+; -7.349 ; Serial_TX3:u0|bps_cnt[7] ; Serial_TX3:u0|tx_data[0]  ; clk          ; clk         ; 1.000        ; 0.019      ; 8.331      ;
+; -7.281 ; Serial_TX3:u0|bps_cnt[8] ; Serial_TX3:u0|tx_data[1]  ; clk          ; clk         ; 1.000        ; 0.019      ; 8.263      ;
+; -7.281 ; Serial_TX3:u0|bps_cnt[8] ; Serial_TX3:u0|tx_data[0]  ; clk          ; clk         ; 1.000        ; 0.019      ; 8.263      ;
+; -7.261 ; Serial_TX3:u0|bps_cnt[0] ; Serial_TX3:u0|tx_data[1]  ; clk          ; clk         ; 1.000        ; 0.019      ; 8.243      ;
+; -7.261 ; Serial_TX3:u0|bps_cnt[0] ; Serial_TX3:u0|tx_data[0]  ; clk          ; clk         ; 1.000        ; 0.019      ; 8.243      ;
+; -7.176 ; Serial_TX3:u0|bps_cnt[6] ; Serial_TX3:u0|tx_data[1]  ; clk          ; clk         ; 1.000        ; 0.019      ; 8.158      ;
+; -7.176 ; Serial_TX3:u0|bps_cnt[6] ; Serial_TX3:u0|tx_data[0]  ; clk          ; clk         ; 1.000        ; 0.019      ; 8.158      ;
+; -7.068 ; Serial_TX3:u0|bps_cnt[5] ; Serial_TX3:u0|tx_data[1]  ; clk          ; clk         ; 1.000        ; 0.019      ; 8.050      ;
+; -7.068 ; Serial_TX3:u0|bps_cnt[5] ; Serial_TX3:u0|tx_data[0]  ; clk          ; clk         ; 1.000        ; 0.019      ; 8.050      ;
+; -7.058 ; Serial_TX3:u0|bps_cnt[1] ; Serial_TX3:u0|tx_data[1]  ; clk          ; clk         ; 1.000        ; 0.019      ; 8.040      ;
+; -7.058 ; Serial_TX3:u0|bps_cnt[1] ; Serial_TX3:u0|tx_data[0]  ; clk          ; clk         ; 1.000        ; 0.019      ; 8.040      ;
+; -6.903 ; Serial_TX3:u0|bps_cnt[2] ; Serial_TX3:u0|tx_data[2]  ; clk          ; clk         ; 1.000        ; 0.029      ; 7.895      ;
+; -6.899 ; Serial_TX3:u0|bps_cnt[2] ; Serial_TX3:u0|tx_cnt[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.862      ;
+; -6.899 ; Serial_TX3:u0|bps_cnt[2] ; Serial_TX3:u0|tx_cnt[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.862      ;
+; -6.899 ; Serial_TX3:u0|bps_cnt[2] ; Serial_TX3:u0|tx_out      ; clk          ; clk         ; 1.000        ; 0.000      ; 7.862      ;
+; -6.899 ; Serial_TX3:u0|bps_cnt[2] ; Serial_TX3:u0|tx_cnt[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.862      ;
+; -6.880 ; Serial_TX3:u0|bps_cnt[7] ; Serial_TX3:u0|tx_data[2]  ; clk          ; clk         ; 1.000        ; 0.029      ; 7.872      ;
+; -6.876 ; Serial_TX3:u0|bps_cnt[7] ; Serial_TX3:u0|tx_cnt[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.839      ;
+; -6.876 ; Serial_TX3:u0|bps_cnt[7] ; Serial_TX3:u0|tx_cnt[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.839      ;
+; -6.876 ; Serial_TX3:u0|bps_cnt[7] ; Serial_TX3:u0|tx_out      ; clk          ; clk         ; 1.000        ; 0.000      ; 7.839      ;
+; -6.876 ; Serial_TX3:u0|bps_cnt[7] ; Serial_TX3:u0|tx_cnt[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.839      ;
+; -6.857 ; Serial_TX3:u0|bps_cnt[4] ; Serial_TX3:u0|tx_data[1]  ; clk          ; clk         ; 1.000        ; 0.019      ; 7.839      ;
+; -6.857 ; Serial_TX3:u0|bps_cnt[4] ; Serial_TX3:u0|tx_data[0]  ; clk          ; clk         ; 1.000        ; 0.019      ; 7.839      ;
+; -6.856 ; Serial_TX3:u0|bps_cnt[2] ; Serial_TX3:u0|font_cnt[0] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.856      ;
+; -6.856 ; Serial_TX3:u0|bps_cnt[2] ; Serial_TX3:u0|font_cnt[1] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.856      ;
+; -6.856 ; Serial_TX3:u0|bps_cnt[2] ; Serial_TX3:u0|font_cnt[2] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.856      ;
+; -6.856 ; Serial_TX3:u0|bps_cnt[2] ; Serial_TX3:u0|font_cnt[3] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.856      ;
+; -6.856 ; Serial_TX3:u0|bps_cnt[2] ; Serial_TX3:u0|font_cnt[4] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.856      ;
+; -6.833 ; Serial_TX3:u0|bps_cnt[7] ; Serial_TX3:u0|font_cnt[0] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.833      ;
+; -6.833 ; Serial_TX3:u0|bps_cnt[7] ; Serial_TX3:u0|font_cnt[1] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.833      ;
+; -6.833 ; Serial_TX3:u0|bps_cnt[7] ; Serial_TX3:u0|font_cnt[2] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.833      ;
+; -6.833 ; Serial_TX3:u0|bps_cnt[7] ; Serial_TX3:u0|font_cnt[3] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.833      ;
+; -6.833 ; Serial_TX3:u0|bps_cnt[7] ; Serial_TX3:u0|font_cnt[4] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.833      ;
+; -6.812 ; Serial_TX3:u0|bps_cnt[8] ; Serial_TX3:u0|tx_data[2]  ; clk          ; clk         ; 1.000        ; 0.029      ; 7.804      ;
+; -6.808 ; Serial_TX3:u0|bps_cnt[8] ; Serial_TX3:u0|tx_cnt[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.771      ;
+; -6.808 ; Serial_TX3:u0|bps_cnt[8] ; Serial_TX3:u0|tx_cnt[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.771      ;
+; -6.808 ; Serial_TX3:u0|bps_cnt[8] ; Serial_TX3:u0|tx_out      ; clk          ; clk         ; 1.000        ; 0.000      ; 7.771      ;
+; -6.808 ; Serial_TX3:u0|bps_cnt[8] ; Serial_TX3:u0|tx_cnt[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.771      ;
+; -6.792 ; Serial_TX3:u0|bps_cnt[0] ; Serial_TX3:u0|tx_data[2]  ; clk          ; clk         ; 1.000        ; 0.029      ; 7.784      ;
+; -6.788 ; Serial_TX3:u0|bps_cnt[0] ; Serial_TX3:u0|tx_cnt[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.751      ;
+; -6.788 ; Serial_TX3:u0|bps_cnt[0] ; Serial_TX3:u0|tx_cnt[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.751      ;
+; -6.788 ; Serial_TX3:u0|bps_cnt[0] ; Serial_TX3:u0|tx_out      ; clk          ; clk         ; 1.000        ; 0.000      ; 7.751      ;
+; -6.788 ; Serial_TX3:u0|bps_cnt[0] ; Serial_TX3:u0|tx_cnt[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.751      ;
+; -6.765 ; Serial_TX3:u0|bps_cnt[8] ; Serial_TX3:u0|font_cnt[0] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.765      ;
+; -6.765 ; Serial_TX3:u0|bps_cnt[8] ; Serial_TX3:u0|font_cnt[1] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.765      ;
+; -6.765 ; Serial_TX3:u0|bps_cnt[8] ; Serial_TX3:u0|font_cnt[2] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.765      ;
+; -6.765 ; Serial_TX3:u0|bps_cnt[8] ; Serial_TX3:u0|font_cnt[3] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.765      ;
+; -6.765 ; Serial_TX3:u0|bps_cnt[8] ; Serial_TX3:u0|font_cnt[4] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.765      ;
+; -6.745 ; Serial_TX3:u0|bps_cnt[0] ; Serial_TX3:u0|font_cnt[0] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.745      ;
+; -6.745 ; Serial_TX3:u0|bps_cnt[0] ; Serial_TX3:u0|font_cnt[1] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.745      ;
+; -6.745 ; Serial_TX3:u0|bps_cnt[0] ; Serial_TX3:u0|font_cnt[2] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.745      ;
+; -6.745 ; Serial_TX3:u0|bps_cnt[0] ; Serial_TX3:u0|font_cnt[3] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.745      ;
+; -6.745 ; Serial_TX3:u0|bps_cnt[0] ; Serial_TX3:u0|font_cnt[4] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.745      ;
+; -6.707 ; Serial_TX3:u0|bps_cnt[6] ; Serial_TX3:u0|tx_data[2]  ; clk          ; clk         ; 1.000        ; 0.029      ; 7.699      ;
+; -6.703 ; Serial_TX3:u0|bps_cnt[6] ; Serial_TX3:u0|tx_cnt[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.666      ;
+; -6.703 ; Serial_TX3:u0|bps_cnt[6] ; Serial_TX3:u0|tx_cnt[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.666      ;
+; -6.703 ; Serial_TX3:u0|bps_cnt[6] ; Serial_TX3:u0|tx_out      ; clk          ; clk         ; 1.000        ; 0.000      ; 7.666      ;
+; -6.703 ; Serial_TX3:u0|bps_cnt[6] ; Serial_TX3:u0|tx_cnt[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.666      ;
+; -6.660 ; Serial_TX3:u0|bps_cnt[6] ; Serial_TX3:u0|font_cnt[0] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.660      ;
+; -6.660 ; Serial_TX3:u0|bps_cnt[6] ; Serial_TX3:u0|font_cnt[1] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.660      ;
+; -6.660 ; Serial_TX3:u0|bps_cnt[6] ; Serial_TX3:u0|font_cnt[2] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.660      ;
+; -6.660 ; Serial_TX3:u0|bps_cnt[6] ; Serial_TX3:u0|font_cnt[3] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.660      ;
+; -6.660 ; Serial_TX3:u0|bps_cnt[6] ; Serial_TX3:u0|font_cnt[4] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.660      ;
+; -6.599 ; Serial_TX3:u0|bps_cnt[5] ; Serial_TX3:u0|tx_data[2]  ; clk          ; clk         ; 1.000        ; 0.029      ; 7.591      ;
+; -6.595 ; Serial_TX3:u0|bps_cnt[3] ; Serial_TX3:u0|tx_data[1]  ; clk          ; clk         ; 1.000        ; 0.019      ; 7.577      ;
+; -6.595 ; Serial_TX3:u0|bps_cnt[3] ; Serial_TX3:u0|tx_data[0]  ; clk          ; clk         ; 1.000        ; 0.019      ; 7.577      ;
+; -6.595 ; Serial_TX3:u0|bps_cnt[5] ; Serial_TX3:u0|tx_cnt[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.558      ;
+; -6.595 ; Serial_TX3:u0|bps_cnt[5] ; Serial_TX3:u0|tx_cnt[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.558      ;
+; -6.595 ; Serial_TX3:u0|bps_cnt[5] ; Serial_TX3:u0|tx_out      ; clk          ; clk         ; 1.000        ; 0.000      ; 7.558      ;
+; -6.595 ; Serial_TX3:u0|bps_cnt[5] ; Serial_TX3:u0|tx_cnt[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.558      ;
+; -6.589 ; Serial_TX3:u0|bps_cnt[1] ; Serial_TX3:u0|tx_data[2]  ; clk          ; clk         ; 1.000        ; 0.029      ; 7.581      ;
+; -6.585 ; Serial_TX3:u0|bps_cnt[1] ; Serial_TX3:u0|tx_cnt[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.548      ;
+; -6.585 ; Serial_TX3:u0|bps_cnt[1] ; Serial_TX3:u0|tx_cnt[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.548      ;
+; -6.585 ; Serial_TX3:u0|bps_cnt[1] ; Serial_TX3:u0|tx_out      ; clk          ; clk         ; 1.000        ; 0.000      ; 7.548      ;
+; -6.585 ; Serial_TX3:u0|bps_cnt[1] ; Serial_TX3:u0|tx_cnt[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.548      ;
+; -6.552 ; Serial_TX3:u0|bps_cnt[5] ; Serial_TX3:u0|font_cnt[0] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.552      ;
+; -6.552 ; Serial_TX3:u0|bps_cnt[5] ; Serial_TX3:u0|font_cnt[1] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.552      ;
+; -6.552 ; Serial_TX3:u0|bps_cnt[5] ; Serial_TX3:u0|font_cnt[2] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.552      ;
+; -6.552 ; Serial_TX3:u0|bps_cnt[5] ; Serial_TX3:u0|font_cnt[3] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.552      ;
+; -6.552 ; Serial_TX3:u0|bps_cnt[5] ; Serial_TX3:u0|font_cnt[4] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.552      ;
+; -6.542 ; Serial_TX3:u0|bps_cnt[1] ; Serial_TX3:u0|font_cnt[0] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.542      ;
+; -6.542 ; Serial_TX3:u0|bps_cnt[1] ; Serial_TX3:u0|font_cnt[1] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.542      ;
+; -6.542 ; Serial_TX3:u0|bps_cnt[1] ; Serial_TX3:u0|font_cnt[2] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.542      ;
+; -6.542 ; Serial_TX3:u0|bps_cnt[1] ; Serial_TX3:u0|font_cnt[3] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.542      ;
+; -6.542 ; Serial_TX3:u0|bps_cnt[1] ; Serial_TX3:u0|font_cnt[4] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.542      ;
+; -6.479 ; Serial_TX3:u0|bps_cnt[2] ; Serial_TX3:u0|tx_cnt[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.442      ;
+; -6.456 ; Serial_TX3:u0|bps_cnt[7] ; Serial_TX3:u0|tx_cnt[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.419      ;
+; -6.388 ; Serial_TX3:u0|bps_cnt[4] ; Serial_TX3:u0|tx_data[2]  ; clk          ; clk         ; 1.000        ; 0.029      ; 7.380      ;
+; -6.388 ; Serial_TX3:u0|bps_cnt[8] ; Serial_TX3:u0|tx_cnt[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.351      ;
+; -6.384 ; Serial_TX3:u0|bps_cnt[4] ; Serial_TX3:u0|tx_cnt[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.347      ;
+; -6.384 ; Serial_TX3:u0|bps_cnt[4] ; Serial_TX3:u0|tx_cnt[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.347      ;
+; -6.384 ; Serial_TX3:u0|bps_cnt[4] ; Serial_TX3:u0|tx_out      ; clk          ; clk         ; 1.000        ; 0.000      ; 7.347      ;
+; -6.384 ; Serial_TX3:u0|bps_cnt[4] ; Serial_TX3:u0|tx_cnt[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.347      ;
+; -6.377 ; Serial_TX3:u0|bps_cnt[2] ; Serial_TX3:u0|tx_data[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.340      ;
+; -6.368 ; Serial_TX3:u0|bps_cnt[0] ; Serial_TX3:u0|tx_cnt[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 7.331      ;
+; -6.354 ; Serial_TX3:u0|bps_cnt[7] ; Serial_TX3:u0|tx_data[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.317      ;
+; -6.341 ; Serial_TX3:u0|bps_cnt[4] ; Serial_TX3:u0|font_cnt[0] ; clk          ; clk         ; 1.000        ; 0.037      ; 7.341      ;
++--------+--------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                                       ;
++--------+---------------------------+---------------------------+---------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                 ; To Node                   ; Launch Clock              ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------+---------------------------+---------------------------+-------------+--------------+------------+------------+
+; -1.826 ; Serial_TX3:u0|font_cnt[0] ; Serial_TX3:u0|font_cnt[0] ; Serial_TX3:u0|font_cnt[0] ; clk         ; 0.000        ; 2.962      ; 1.375      ;
+; -1.326 ; Serial_TX3:u0|font_cnt[0] ; Serial_TX3:u0|font_cnt[0] ; Serial_TX3:u0|font_cnt[0] ; clk         ; -0.500       ; 2.962      ; 1.375      ;
+; -1.227 ; Serial_TX3:u0|font_cnt[0] ; Serial_TX3:u0|font_cnt[1] ; Serial_TX3:u0|font_cnt[0] ; clk         ; 0.000        ; 2.962      ; 1.974      ;
+; -1.149 ; Serial_TX3:u0|font_cnt[0] ; Serial_TX3:u0|font_cnt[2] ; Serial_TX3:u0|font_cnt[0] ; clk         ; 0.000        ; 2.962      ; 2.052      ;
+; -1.071 ; Serial_TX3:u0|font_cnt[0] ; Serial_TX3:u0|font_cnt[3] ; Serial_TX3:u0|font_cnt[0] ; clk         ; 0.000        ; 2.962      ; 2.130      ;
+; -0.993 ; Serial_TX3:u0|font_cnt[0] ; Serial_TX3:u0|font_cnt[4] ; Serial_TX3:u0|font_cnt[0] ; clk         ; 0.000        ; 2.962      ; 2.208      ;
+; -0.727 ; Serial_TX3:u0|font_cnt[0] ; Serial_TX3:u0|font_cnt[1] ; Serial_TX3:u0|font_cnt[0] ; clk         ; -0.500       ; 2.962      ; 1.974      ;
+; -0.649 ; Serial_TX3:u0|font_cnt[0] ; Serial_TX3:u0|font_cnt[2] ; Serial_TX3:u0|font_cnt[0] ; clk         ; -0.500       ; 2.962      ; 2.052      ;
+; -0.571 ; Serial_TX3:u0|font_cnt[0] ; Serial_TX3:u0|font_cnt[3] ; Serial_TX3:u0|font_cnt[0] ; clk         ; -0.500       ; 2.962      ; 2.130      ;
+; -0.493 ; Serial_TX3:u0|font_cnt[0] ; Serial_TX3:u0|font_cnt[4] ; Serial_TX3:u0|font_cnt[0] ; clk         ; -0.500       ; 2.962      ; 2.208      ;
+; -0.374 ; Serial_TX3:u0|font_cnt[0] ; Serial_TX3:u0|tx_data[5]  ; Serial_TX3:u0|font_cnt[0] ; clk         ; 0.000        ; 2.925      ; 2.790      ;
+; -0.252 ; Serial_TX3:u0|font_cnt[0] ; Serial_TX3:u0|tx_data[0]  ; Serial_TX3:u0|font_cnt[0] ; clk         ; 0.000        ; 2.944      ; 2.931      ;
+; -0.109 ; Serial_TX3:u0|font_cnt[0] ; Serial_TX3:u0|tx_data[1]  ; Serial_TX3:u0|font_cnt[0] ; clk         ; 0.000        ; 2.944      ; 3.074      ;
+; 0.096  ; Serial_TX3:u0|font_cnt[0] ; Serial_TX3:u0|tx_data[3]  ; Serial_TX3:u0|font_cnt[0] ; clk         ; 0.000        ; 2.925      ; 3.260      ;
+; 0.123  ; Serial_TX3:u0|font_cnt[0] ; Serial_TX3:u0|tx_data[2]  ; Serial_TX3:u0|font_cnt[0] ; clk         ; 0.000        ; 2.954      ; 3.316      ;
+; 0.126  ; Serial_TX3:u0|font_cnt[0] ; Serial_TX3:u0|tx_data[5]  ; Serial_TX3:u0|font_cnt[0] ; clk         ; -0.500       ; 2.925      ; 2.790      ;
+; 0.248  ; Serial_TX3:u0|font_cnt[0] ; Serial_TX3:u0|tx_data[0]  ; Serial_TX3:u0|font_cnt[0] ; clk         ; -0.500       ; 2.944      ; 2.931      ;
+; 0.391  ; Serial_TX3:u0|font_cnt[0] ; Serial_TX3:u0|tx_data[1]  ; Serial_TX3:u0|font_cnt[0] ; clk         ; -0.500       ; 2.944      ; 3.074      ;
+; 0.596  ; Serial_TX3:u0|font_cnt[0] ; Serial_TX3:u0|tx_data[3]  ; Serial_TX3:u0|font_cnt[0] ; clk         ; -0.500       ; 2.925      ; 3.260      ;
+; 0.623  ; Serial_TX3:u0|font_cnt[0] ; Serial_TX3:u0|tx_data[2]  ; Serial_TX3:u0|font_cnt[0] ; clk         ; -0.500       ; 2.954      ; 3.316      ;
+; 0.875  ; Serial_TX3:u0|sw_buff[5]  ; Serial_TX3:u0|sw_buff[6]  ; clk                       ; clk         ; 0.000        ; 0.000      ; 0.890      ;
+; 0.877  ; Serial_TX3:u0|sw_buff[1]  ; Serial_TX3:u0|sw_buff[2]  ; clk                       ; clk         ; 0.000        ; 0.000      ; 0.892      ;
+; 0.878  ; Serial_TX3:u0|sw_buff[0]  ; Serial_TX3:u0|sw_buff[1]  ; clk                       ; clk         ; 0.000        ; 0.000      ; 0.893      ;
+; 1.032  ; ADC1:u1|adc_clk           ; ADC1:u1|adc_clk           ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.047      ;
+; 1.045  ; ADC1:u1|start             ; ADC1:u1|start             ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.060      ;
+; 1.085  ; Serial_TX3:u0|sw_buff[6]  ; Serial_TX3:u0|sw_buff[7]  ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.100      ;
+; 1.085  ; Serial_TX3:u0|sw_buff[2]  ; Serial_TX3:u0|sw_buff[3]  ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.100      ;
+; 1.093  ; Serial_TX3:u0|sw_buff[3]  ; Serial_TX3:u0|sw_buff[4]  ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.108      ;
+; 1.093  ; Serial_TX3:u0|sw_buff[4]  ; Serial_TX3:u0|sw_buff[5]  ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.108      ;
+; 1.130  ; Serial_TX3:u0|tx_cnt[0]   ; Serial_TX3:u0|tx_cnt[0]   ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.145      ;
+; 1.144  ; Serial_TX3:u0|tx_cnt[0]   ; Serial_TX3:u0|tx_cnt[3]   ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.159      ;
+; 1.145  ; Serial_TX3:u0|tx_cnt[0]   ; Serial_TX3:u0|tx_cnt[2]   ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.160      ;
+; 1.146  ; Serial_TX3:u0|tx_cnt[0]   ; Serial_TX3:u0|tx_cnt[1]   ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.161      ;
+; 1.239  ; Serial_TX3:u0|tx_flag     ; Serial_TX3:u0|tx_flag     ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.254      ;
+; 1.259  ; ADC1:u1|state.S_OE        ; ADC1:u1|state.S_CAPTURE   ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.274      ;
+; 1.282  ; Serial_TX3:u0|tx_cnt[3]   ; Serial_TX3:u0|tx_cnt[3]   ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.297      ;
+; 1.285  ; Serial_TX3:u0|tx_cnt[3]   ; Serial_TX3:u0|tx_out      ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.300      ;
+; 1.285  ; Serial_TX3:u0|tx_cnt[3]   ; Serial_TX3:u0|tx_cnt[1]   ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.300      ;
+; 1.314  ; Serial_TX3:u0|bps_cnt[12] ; Serial_TX3:u0|bps_cnt[12] ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.329      ;
+; 1.318  ; Serial_TX3:u0|bps_cnt[3]  ; Serial_TX3:u0|bps_cnt[3]  ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.333      ;
+; 1.328  ; ADC1:u1|state.S_WAIT      ; ADC1:u1|state.S_OE        ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.343      ;
+; 1.328  ; ADC1:u1|clk_count[4]      ; ADC1:u1|clk_count[4]      ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.343      ;
+; 1.330  ; Serial_TX3:u0|bps_cnt[8]  ; Serial_TX3:u0|bps_cnt[8]  ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.345      ;
+; 1.332  ; ADC1:u1|clk_count[5]      ; ADC1:u1|clk_count[5]      ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.347      ;
+; 1.333  ; Serial_TX3:u0|font_cnt[4] ; Serial_TX3:u0|font_cnt[4] ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.348      ;
+; 1.333  ; ADC1:u1|state.S_CAPTURE   ; ADC1:u1|oe                ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.348      ;
+; 1.334  ; Serial_TX3:u0|bps_cnt[11] ; Serial_TX3:u0|bps_cnt[11] ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.349      ;
+; 1.336  ; ADC1:u1|adc_time[0]       ; ADC1:u1|adc_time[0]       ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.351      ;
+; 1.337  ; Serial_TX3:u0|bps_cnt[13] ; Serial_TX3:u0|bps_cnt[13] ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.352      ;
+; 1.338  ; Serial_TX3:u0|tx_ready    ; Serial_TX3:u0|tx_ready    ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.353      ;
+; 1.341  ; ADC1:u1|adc_time[4]       ; ADC1:u1|adc_time[4]       ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.356      ;
+; 1.342  ; ADC1:u1|clk_count[3]      ; ADC1:u1|clk_count[3]      ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.357      ;
+; 1.344  ; ADC1:u1|adc_time[5]       ; ADC1:u1|adc_time[5]       ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.359      ;
+; 1.346  ; ADC1:u1|adc_time[3]       ; ADC1:u1|adc_time[3]       ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.361      ;
+; 1.354  ; Serial_TX3:u0|font_cnt[3] ; Serial_TX3:u0|font_cnt[3] ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.369      ;
+; 1.374  ; ADC1:u1|state.S_START     ; ADC1:u1|state.S_START     ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.389      ;
+; 1.375  ; ADC1:u1|state.S_START     ; ADC1:u1|state.S_IDLE      ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.390      ;
+; 1.397  ; Serial_TX3:u0|tx_cnt[1]   ; Serial_TX3:u0|tx_out      ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.412      ;
+; 1.470  ; ADC1:u1|state.S_WAIT      ; ADC1:u1|state.S_WAIT      ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.485      ;
+; 1.474  ; ADC1:u1|clk_count[6]      ; ADC1:u1|clk_count[6]      ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.489      ;
+; 1.474  ; ADC1:u1|ale               ; ADC1:u1|ale               ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.489      ;
+; 1.480  ; ADC1:u1|clk_count[7]      ; ADC1:u1|clk_count[7]      ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.495      ;
+; 1.481  ; ADC1:u1|adc_time[1]       ; ADC1:u1|adc_time[1]       ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.496      ;
+; 1.487  ; ADC1:u1|state.S_IDLE      ; ADC1:u1|state.S_START     ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.502      ;
+; 1.488  ; ADC1:u1|adc_time[6]       ; ADC1:u1|adc_time[6]       ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.503      ;
+; 1.488  ; ADC1:u1|clk_count[2]      ; ADC1:u1|clk_count[2]      ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.503      ;
+; 1.491  ; Serial_TX3:u0|bps_cnt[10] ; Serial_TX3:u0|bps_cnt[10] ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.506      ;
+; 1.491  ; ADC1:u1|adc_time[2]       ; ADC1:u1|adc_time[2]       ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.506      ;
+; 1.492  ; Serial_TX3:u0|bps_cnt[15] ; Serial_TX3:u0|bps_cnt[15] ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.507      ;
+; 1.493  ; ADC1:u1|adc_time[7]       ; ADC1:u1|adc_time[7]       ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.508      ;
+; 1.497  ; Serial_TX3:u0|bps_cnt[9]  ; Serial_TX3:u0|bps_cnt[9]  ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.512      ;
+; 1.498  ; Serial_TX3:u0|bps_cnt[14] ; Serial_TX3:u0|bps_cnt[14] ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.513      ;
+; 1.499  ; Serial_TX3:u0|font_cnt[2] ; Serial_TX3:u0|font_cnt[2] ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.514      ;
+; 1.504  ; ADC1:u1|state.S_OE        ; ADC1:u1|state.S_OE        ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.519      ;
+; 1.520  ; Serial_TX3:u0|tx_cnt[2]   ; Serial_TX3:u0|tx_cnt[3]   ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.535      ;
+; 1.520  ; Serial_TX3:u0|tx_cnt[2]   ; Serial_TX3:u0|tx_cnt[2]   ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.535      ;
+; 1.520  ; Serial_TX3:u0|tx_cnt[2]   ; Serial_TX3:u0|tx_cnt[1]   ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.535      ;
+; 1.522  ; Serial_TX3:u0|font_cnt[1] ; Serial_TX3:u0|font_cnt[1] ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.537      ;
+; 1.537  ; Serial_TX3:u0|bps_cnt[1]  ; Serial_TX3:u0|bps_cnt[1]  ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.552      ;
+; 1.537  ; ADC1:u1|clk_count[1]      ; ADC1:u1|clk_count[1]      ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.552      ;
+; 1.538  ; Serial_TX3:u0|bps_cnt[4]  ; Serial_TX3:u0|bps_cnt[4]  ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.553      ;
+; 1.571  ; ADC1:u1|clk_count[7]      ; ADC1:u1|adc_clk           ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.586      ;
+; 1.581  ; Serial_TX3:u0|tx_cnt[2]   ; Serial_TX3:u0|tx_out      ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.596      ;
+; 1.609  ; Serial_TX3:u0|tx_cnt[1]   ; Serial_TX3:u0|tx_cnt[2]   ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.624      ;
+; 1.609  ; Serial_TX3:u0|tx_cnt[1]   ; Serial_TX3:u0|tx_cnt[1]   ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.624      ;
+; 1.610  ; Serial_TX3:u0|tx_cnt[1]   ; Serial_TX3:u0|tx_cnt[3]   ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.625      ;
+; 1.702  ; Serial_TX3:u0|bps_cnt[6]  ; Serial_TX3:u0|bps_cnt[6]  ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.717      ;
+; 1.704  ; ADC1:u1|clk_count[0]      ; ADC1:u1|clk_count[0]      ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.719      ;
+; 1.719  ; ADC1:u1|clk_count[6]      ; ADC1:u1|adc_clk           ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.734      ;
+; 1.736  ; ADC1:u1|state.S_START     ; ADC1:u1|state.S_WAIT      ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.751      ;
+; 1.777  ; ADC1:u1|adc_time[5]       ; ADC1:u1|state.S_IDLE      ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.792      ;
+; 1.848  ; ADC1:u1|state.S_CAPTURE   ; ADC1:u1|state.S_IDLE      ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.863      ;
+; 1.871  ; Serial_TX3:u0|tx_out      ; Serial_TX3:u0|tx_out      ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.886      ;
+; 1.917  ; Serial_TX3:u0|bps_cnt[3]  ; Serial_TX3:u0|bps_cnt[4]  ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.932      ;
+; 1.929  ; Serial_TX3:u0|bps_cnt[8]  ; Serial_TX3:u0|bps_cnt[9]  ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.944      ;
+; 1.931  ; ADC1:u1|clk_count[5]      ; ADC1:u1|clk_count[6]      ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.946      ;
+; 1.932  ; Serial_TX3:u0|bps_cnt[2]  ; Serial_TX3:u0|bps_cnt[2]  ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.947      ;
+; 1.933  ; Serial_TX3:u0|bps_cnt[11] ; Serial_TX3:u0|bps_cnt[12] ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.948      ;
+; 1.935  ; ADC1:u1|adc_time[0]       ; ADC1:u1|adc_time[1]       ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.950      ;
+; 1.936  ; Serial_TX3:u0|bps_cnt[13] ; Serial_TX3:u0|bps_cnt[14] ; clk                       ; clk         ; 0.000        ; 0.000      ; 1.951      ;
++--------+---------------------------+---------------------------+---------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'Serial_TX3:u0|font_cnt[0]'                                                                                                              ;
++--------+---------------------+-----------------------------+--------------+---------------------------+--------------+------------+------------+
+; Slack  ; From Node           ; To Node                     ; Launch Clock ; Latch Clock               ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------+-----------------------------+--------------+---------------------------+--------------+------------+------------+
+; -0.351 ; ADC1:u1|adc_data[1] ; Serial_TX3:u0|tx_temp[3][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.847      ; 2.996      ;
+; 0.114  ; ADC1:u1|adc_data[0] ; Serial_TX3:u0|tx_temp[3][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.376      ; 2.990      ;
+; 0.548  ; ADC1:u1|adc_data[2] ; Serial_TX3:u0|tx_temp[3][2] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.365      ; 3.413      ;
+; 1.537  ; ADC1:u1|adc_data[3] ; Serial_TX3:u0|tx_temp[3][3] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.560      ; 4.597      ;
+; 2.703  ; ADC1:u1|adc_data[1] ; Serial_TX3:u0|tx_temp[3][2] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.365      ; 5.568      ;
+; 2.732  ; ADC1:u1|adc_data[2] ; Serial_TX3:u0|tx_temp[3][3] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.560      ; 5.792      ;
+; 3.097  ; ADC1:u1|adc_data[7] ; Serial_TX3:u0|tx_temp[1][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.544      ; 6.141      ;
+; 3.188  ; ADC1:u1|adc_data[1] ; Serial_TX3:u0|tx_temp[3][3] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.560      ; 6.248      ;
+; 3.300  ; ADC1:u1|adc_data[5] ; Serial_TX3:u0|tx_temp[1][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.544      ; 6.344      ;
+; 3.368  ; ADC1:u1|adc_data[6] ; Serial_TX3:u0|tx_temp[1][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.544      ; 6.412      ;
+; 3.491  ; ADC1:u1|adc_data[3] ; Serial_TX3:u0|tx_temp[2][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.582      ; 6.573      ;
+; 3.539  ; ADC1:u1|adc_data[5] ; Serial_TX3:u0|tx_temp[2][3] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.514      ; 6.553      ;
+; 3.550  ; ADC1:u1|adc_data[6] ; Serial_TX3:u0|tx_temp[2][3] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.514      ; 6.564      ;
+; 3.582  ; ADC1:u1|adc_data[2] ; Serial_TX3:u0|tx_temp[2][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.582      ; 6.664      ;
+; 3.602  ; ADC1:u1|adc_data[3] ; Serial_TX3:u0|tx_temp[3][2] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.365      ; 6.467      ;
+; 3.683  ; ADC1:u1|adc_data[1] ; Serial_TX3:u0|tx_temp[2][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.582      ; 6.765      ;
+; 3.737  ; ADC1:u1|adc_data[3] ; Serial_TX3:u0|tx_temp[3][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.847      ; 7.084      ;
+; 3.774  ; ADC1:u1|adc_data[7] ; Serial_TX3:u0|tx_temp[2][3] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.514      ; 6.788      ;
+; 3.802  ; ADC1:u1|adc_data[6] ; Serial_TX3:u0|tx_temp[2][2] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.528      ; 6.830      ;
+; 3.807  ; ADC1:u1|adc_data[2] ; Serial_TX3:u0|tx_temp[1][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.351      ; 6.658      ;
+; 4.055  ; ADC1:u1|adc_data[2] ; Serial_TX3:u0|tx_temp[3][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.847      ; 7.402      ;
+; 4.127  ; ADC1:u1|adc_data[7] ; Serial_TX3:u0|tx_temp[2][2] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.528      ; 7.155      ;
+; 4.162  ; ADC1:u1|adc_data[3] ; Serial_TX3:u0|tx_temp[1][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.573      ; 7.235      ;
+; 4.532  ; ADC1:u1|adc_data[5] ; Serial_TX3:u0|tx_temp[2][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.553      ; 7.585      ;
+; 4.589  ; ADC1:u1|adc_data[6] ; Serial_TX3:u0|tx_temp[2][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.553      ; 7.642      ;
+; 4.590  ; ADC1:u1|adc_data[4] ; Serial_TX3:u0|tx_temp[2][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.553      ; 7.643      ;
+; 4.666  ; ADC1:u1|adc_data[4] ; Serial_TX3:u0|tx_temp[1][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.544      ; 7.710      ;
+; 4.849  ; ADC1:u1|adc_data[3] ; Serial_TX3:u0|tx_temp[1][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.351      ; 7.700      ;
+; 4.883  ; ADC1:u1|adc_data[6] ; Serial_TX3:u0|tx_temp[3][3] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.531      ; 7.914      ;
+; 4.890  ; ADC1:u1|adc_data[3] ; Serial_TX3:u0|tx_temp[2][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.582      ; 7.972      ;
+; 4.914  ; ADC1:u1|adc_data[7] ; Serial_TX3:u0|tx_temp[2][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.553      ; 7.967      ;
+; 5.084  ; ADC1:u1|adc_data[5] ; Serial_TX3:u0|tx_temp[2][2] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.528      ; 8.112      ;
+; 5.340  ; ADC1:u1|adc_data[5] ; Serial_TX3:u0|tx_temp[1][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.322      ; 8.162      ;
+; 5.451  ; ADC1:u1|adc_data[7] ; Serial_TX3:u0|tx_temp[1][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.322      ; 8.273      ;
+; 5.518  ; ADC1:u1|adc_data[2] ; Serial_TX3:u0|tx_temp[2][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.582      ; 8.600      ;
+; 5.577  ; ADC1:u1|adc_data[6] ; Serial_TX3:u0|tx_temp[1][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.322      ; 8.399      ;
+; 5.678  ; ADC1:u1|adc_data[5] ; Serial_TX3:u0|tx_temp[3][3] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.531      ; 8.709      ;
+; 5.689  ; ADC1:u1|adc_data[4] ; Serial_TX3:u0|tx_temp[3][3] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.531      ; 8.720      ;
+; 5.989  ; ADC1:u1|adc_data[4] ; Serial_TX3:u0|tx_temp[2][3] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.514      ; 9.003      ;
+; 6.288  ; ADC1:u1|adc_data[4] ; Serial_TX3:u0|tx_temp[3][2] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.336      ; 9.124      ;
+; 6.331  ; ADC1:u1|adc_data[4] ; Serial_TX3:u0|tx_temp[2][2] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.528      ; 9.359      ;
+; 6.375  ; ADC1:u1|adc_data[3] ; Serial_TX3:u0|tx_temp[2][2] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.557      ; 9.432      ;
+; 6.423  ; ADC1:u1|adc_data[4] ; Serial_TX3:u0|tx_temp[3][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.818      ; 9.741      ;
+; 6.427  ; ADC1:u1|adc_data[5] ; Serial_TX3:u0|tx_temp[3][2] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.336      ; 9.263      ;
+; 6.462  ; ADC1:u1|adc_data[7] ; Serial_TX3:u0|tx_temp[3][3] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.531      ; 9.493      ;
+; 6.468  ; ADC1:u1|adc_data[6] ; Serial_TX3:u0|tx_temp[3][2] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.336      ; 9.304      ;
+; 6.562  ; ADC1:u1|adc_data[3] ; Serial_TX3:u0|tx_temp[2][3] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.543      ; 9.605      ;
+; 6.642  ; ADC1:u1|adc_data[4] ; Serial_TX3:u0|tx_temp[1][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.322      ; 9.464      ;
+; 7.127  ; ADC1:u1|adc_data[4] ; Serial_TX3:u0|tx_temp[2][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.553      ; 10.180     ;
+; 7.233  ; ADC1:u1|adc_data[6] ; Serial_TX3:u0|tx_temp[3][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.818      ; 10.551     ;
+; 7.235  ; ADC1:u1|adc_data[7] ; Serial_TX3:u0|tx_temp[3][2] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.336      ; 10.071     ;
+; 7.370  ; ADC1:u1|adc_data[7] ; Serial_TX3:u0|tx_temp[3][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.818      ; 10.688     ;
+; 7.458  ; ADC1:u1|adc_data[5] ; Serial_TX3:u0|tx_temp[2][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.553      ; 10.511     ;
+; 7.460  ; ADC1:u1|adc_data[5] ; Serial_TX3:u0|tx_temp[3][1] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.818      ; 10.778     ;
+; 7.688  ; ADC1:u1|adc_data[6] ; Serial_TX3:u0|tx_temp[2][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.553      ; 10.741     ;
+; 8.402  ; ADC1:u1|adc_data[2] ; Serial_TX3:u0|tx_temp[2][2] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.557      ; 11.459     ;
+; 8.589  ; ADC1:u1|adc_data[2] ; Serial_TX3:u0|tx_temp[2][3] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.543      ; 11.632     ;
+; 8.589  ; ADC1:u1|adc_data[7] ; Serial_TX3:u0|tx_temp[2][0] ; clk          ; Serial_TX3:u0|font_cnt[0] ; -0.500       ; 3.553      ; 11.642     ;
++--------+---------------------+-----------------------------+--------------+---------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'clk'                                                                                 ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                    ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; -1.583 ; 1.000        ; 2.583          ; Port Rate        ; clk   ; Rise       ; clk                       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|adc_clk           ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|adc_clk           ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|adc_data[0]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|adc_data[0]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|adc_data[1]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|adc_data[1]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|adc_data[2]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|adc_data[2]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|adc_data[3]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|adc_data[3]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|adc_data[4]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|adc_data[4]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|adc_data[5]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|adc_data[5]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|adc_data[6]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|adc_data[6]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|adc_data[7]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|adc_data[7]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|adc_time[0]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|adc_time[0]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|adc_time[1]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|adc_time[1]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|adc_time[2]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|adc_time[2]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|adc_time[3]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|adc_time[3]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|adc_time[4]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|adc_time[4]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|adc_time[5]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|adc_time[5]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|adc_time[6]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|adc_time[6]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|adc_time[7]       ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|adc_time[7]       ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|ale               ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|ale               ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|clk_count[0]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|clk_count[0]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|clk_count[1]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|clk_count[1]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|clk_count[2]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|clk_count[2]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|clk_count[3]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|clk_count[3]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|clk_count[4]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|clk_count[4]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|clk_count[5]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|clk_count[5]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|clk_count[6]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|clk_count[6]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|clk_count[7]      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|clk_count[7]      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|oe                ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|oe                ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|start             ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|start             ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|state.S_CAPTURE   ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|state.S_CAPTURE   ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|state.S_IDLE      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|state.S_IDLE      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|state.S_OE        ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|state.S_OE        ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|state.S_START     ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|state.S_START     ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; ADC1:u1|state.S_WAIT      ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; ADC1:u1|state.S_WAIT      ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[0]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[0]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[10] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[10] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[11] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[11] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[12] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[12] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[13] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[13] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[14] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[14] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[15] ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[15] ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[1]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[1]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[2]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[2]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[3]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[3]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[4]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[4]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[5]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[5]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[6]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[6]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[7]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[7]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[8]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[8]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[9]  ;
+; -1.318 ; 0.500        ; 1.818          ; Low Pulse Width  ; clk   ; Rise       ; Serial_TX3:u0|bps_cnt[9]  ;
+; -1.318 ; 0.500        ; 1.818          ; High Pulse Width ; clk   ; Rise       ; Serial_TX3:u0|font_cnt[0] ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'Serial_TX3:u0|font_cnt[0]'                                                                                ;
++-------+--------------+----------------+------------------+---------------------------+------------+-----------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock                     ; Clock Edge ; Target                      ;
++-------+--------------+----------------+------------------+---------------------------+------------+-----------------------------+
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Fall       ; Serial_TX3:u0|tx_temp[1][0] ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Fall       ; Serial_TX3:u0|tx_temp[1][0] ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Fall       ; Serial_TX3:u0|tx_temp[1][1] ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Fall       ; Serial_TX3:u0|tx_temp[1][1] ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Fall       ; Serial_TX3:u0|tx_temp[2][0] ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Fall       ; Serial_TX3:u0|tx_temp[2][0] ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Fall       ; Serial_TX3:u0|tx_temp[2][1] ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Fall       ; Serial_TX3:u0|tx_temp[2][1] ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Fall       ; Serial_TX3:u0|tx_temp[2][2] ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Fall       ; Serial_TX3:u0|tx_temp[2][2] ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Fall       ; Serial_TX3:u0|tx_temp[2][3] ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Fall       ; Serial_TX3:u0|tx_temp[2][3] ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Fall       ; Serial_TX3:u0|tx_temp[3][0] ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Fall       ; Serial_TX3:u0|tx_temp[3][0] ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Fall       ; Serial_TX3:u0|tx_temp[3][1] ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Fall       ; Serial_TX3:u0|tx_temp[3][1] ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Fall       ; Serial_TX3:u0|tx_temp[3][2] ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Fall       ; Serial_TX3:u0|tx_temp[3][2] ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Fall       ; Serial_TX3:u0|tx_temp[3][3] ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Fall       ; Serial_TX3:u0|tx_temp[3][3] ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|Decoder0~5|combout       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|Decoder0~5|combout       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|Decoder0~5|datab         ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|Decoder0~5|datab         ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|Decoder0~6|combout       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|Decoder0~6|combout       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|Decoder0~6|datab         ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|Decoder0~6|datab         ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|Decoder0~7|combout       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|Decoder0~7|combout       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|Decoder0~7|datab         ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|Decoder0~7|datab         ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|font_cnt[0]|regout       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|font_cnt[0]|regout       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|tx_temp[1][0]|datad      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|tx_temp[1][0]|datad      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|tx_temp[1][1]|datac      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|tx_temp[1][1]|datac      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|tx_temp[2][0]|datac      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|tx_temp[2][0]|datac      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|tx_temp[2][1]|datac      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|tx_temp[2][1]|datac      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|tx_temp[2][2]|datac      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|tx_temp[2][2]|datac      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|tx_temp[2][3]|datac      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|tx_temp[2][3]|datac      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|tx_temp[3][0]|datad      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|tx_temp[3][0]|datad      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|tx_temp[3][1]|dataa      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|tx_temp[3][1]|dataa      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|tx_temp[3][2]|datad      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|tx_temp[3][2]|datad      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|tx_temp[3][3]|datac      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Serial_TX3:u0|font_cnt[0] ; Rise       ; u0|tx_temp[3][3]|datac      ;
++-------+--------------+----------------+------------------+---------------------------+------------+-----------------------------+
+
+
++------------------------------------------------------------------------+
+; Setup Times                                                            ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; eoc        ; clk        ; 5.071 ; 5.071 ; Rise       ; clk             ;
+; reset      ; clk        ; 9.098 ; 9.098 ; Rise       ; clk             ;
+; result[*]  ; clk        ; 6.923 ; 6.923 ; Rise       ; clk             ;
+;  result[0] ; clk        ; 5.807 ; 5.807 ; Rise       ; clk             ;
+;  result[1] ; clk        ; 6.253 ; 6.253 ; Rise       ; clk             ;
+;  result[2] ; clk        ; 5.810 ; 5.810 ; Rise       ; clk             ;
+;  result[3] ; clk        ; 6.244 ; 6.244 ; Rise       ; clk             ;
+;  result[4] ; clk        ; 5.462 ; 5.462 ; Rise       ; clk             ;
+;  result[5] ; clk        ; 6.850 ; 6.850 ; Rise       ; clk             ;
+;  result[6] ; clk        ; 6.923 ; 6.923 ; Rise       ; clk             ;
+;  result[7] ; clk        ; 6.547 ; 6.547 ; Rise       ; clk             ;
+; sw         ; clk        ; 3.917 ; 3.917 ; Rise       ; clk             ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; eoc        ; clk        ; -4.713 ; -4.713 ; Rise       ; clk             ;
+; reset      ; clk        ; -5.157 ; -5.157 ; Rise       ; clk             ;
+; result[*]  ; clk        ; -5.410 ; -5.410 ; Rise       ; clk             ;
+;  result[0] ; clk        ; -5.755 ; -5.755 ; Rise       ; clk             ;
+;  result[1] ; clk        ; -6.201 ; -6.201 ; Rise       ; clk             ;
+;  result[2] ; clk        ; -5.758 ; -5.758 ; Rise       ; clk             ;
+;  result[3] ; clk        ; -6.192 ; -6.192 ; Rise       ; clk             ;
+;  result[4] ; clk        ; -5.410 ; -5.410 ; Rise       ; clk             ;
+;  result[5] ; clk        ; -6.798 ; -6.798 ; Rise       ; clk             ;
+;  result[6] ; clk        ; -6.871 ; -6.871 ; Rise       ; clk             ;
+;  result[7] ; clk        ; -6.495 ; -6.495 ; Rise       ; clk             ;
+; sw         ; clk        ; -3.865 ; -3.865 ; Rise       ; clk             ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; adc_clk   ; clk        ; 9.834 ; 9.834 ; Rise       ; clk             ;
+; ale       ; clk        ; 8.042 ; 8.042 ; Rise       ; clk             ;
+; led[*]    ; clk        ; 9.501 ; 9.501 ; Rise       ; clk             ;
+;  led[0]   ; clk        ; 8.231 ; 8.231 ; Rise       ; clk             ;
+;  led[1]   ; clk        ; 8.135 ; 8.135 ; Rise       ; clk             ;
+;  led[2]   ; clk        ; 8.568 ; 8.568 ; Rise       ; clk             ;
+;  led[3]   ; clk        ; 8.534 ; 8.534 ; Rise       ; clk             ;
+;  led[4]   ; clk        ; 8.777 ; 8.777 ; Rise       ; clk             ;
+;  led[5]   ; clk        ; 9.487 ; 9.487 ; Rise       ; clk             ;
+;  led[6]   ; clk        ; 9.501 ; 9.501 ; Rise       ; clk             ;
+;  led[7]   ; clk        ; 9.490 ; 9.490 ; Rise       ; clk             ;
+; out_en    ; clk        ; 7.820 ; 7.820 ; Rise       ; clk             ;
+; start     ; clk        ; 7.181 ; 7.181 ; Rise       ; clk             ;
+; tx_out    ; clk        ; 9.577 ; 9.577 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; adc_clk   ; clk        ; 9.834 ; 9.834 ; Rise       ; clk             ;
+; ale       ; clk        ; 8.042 ; 8.042 ; Rise       ; clk             ;
+; led[*]    ; clk        ; 8.135 ; 8.135 ; Rise       ; clk             ;
+;  led[0]   ; clk        ; 8.231 ; 8.231 ; Rise       ; clk             ;
+;  led[1]   ; clk        ; 8.135 ; 8.135 ; Rise       ; clk             ;
+;  led[2]   ; clk        ; 8.568 ; 8.568 ; Rise       ; clk             ;
+;  led[3]   ; clk        ; 8.534 ; 8.534 ; Rise       ; clk             ;
+;  led[4]   ; clk        ; 8.777 ; 8.777 ; Rise       ; clk             ;
+;  led[5]   ; clk        ; 9.487 ; 9.487 ; Rise       ; clk             ;
+;  led[6]   ; clk        ; 9.501 ; 9.501 ; Rise       ; clk             ;
+;  led[7]   ; clk        ; 9.490 ; 9.490 ; Rise       ; clk             ;
+; out_en    ; clk        ; 7.820 ; 7.820 ; Rise       ; clk             ;
+; start     ; clk        ; 7.181 ; 7.181 ; Rise       ; clk             ;
+; tx_out    ; clk        ; 9.577 ; 9.577 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                   ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+; From Clock                ; To Clock                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+; clk                       ; clk                       ; 1198     ; 0        ; 0        ; 0        ;
+; Serial_TX3:u0|font_cnt[0] ; clk                       ; 14       ; 24       ; 0        ; 0        ;
+; clk                       ; Serial_TX3:u0|font_cnt[0] ; 0        ; 0        ; 2744334  ; 0        ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                    ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+; From Clock                ; To Clock                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+; clk                       ; clk                       ; 1198     ; 0        ; 0        ; 0        ;
+; Serial_TX3:u0|font_cnt[0] ; clk                       ; 14       ; 24       ; 0        ; 0        ;
+; clk                       ; Serial_TX3:u0|font_cnt[0] ; 0        ; 0        ; 2744334  ; 0        ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 11    ; 11   ;
+; Unconstrained Input Port Paths  ; 83    ; 83   ;
+; Unconstrained Output Ports      ; 13    ; 13   ;
+; Unconstrained Output Port Paths ; 13    ; 13   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II TimeQuest Timing Analyzer
+    Info: Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Sep 27 11:33:29 2016
+Info: Command: quartus_sta Serial_TX_ADC -c Serial_TX_ADC
+Info: qsta_default_script.tcl version: #1
+Warning: Parallel compilation is not licensed and has been disabled
+Warning: Timing Analysis is analyzing one or more combinational loops as latches
+    Warning: Node "u0|tx_temp[1][1]|combout" is a latch
+    Warning: Node "u0|tx_temp[1][0]|combout" is a latch
+    Warning: Node "u0|tx_temp[2][2]|combout" is a latch
+    Warning: Node "u0|tx_temp[3][2]|combout" is a latch
+    Warning: Node "u0|tx_temp[3][3]|combout" is a latch
+    Warning: Node "u0|tx_temp[2][3]|combout" is a latch
+    Warning: Node "u0|tx_temp[2][0]|combout" is a latch
+    Warning: Node "u0|tx_temp[3][0]|combout" is a latch
+    Warning: Node "u0|tx_temp[3][1]|combout" is a latch
+    Warning: Node "u0|tx_temp[2][1]|combout" is a latch
+Critical Warning: Synopsys Design Constraints File file not found: 'Serial_TX_ADC.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info: No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info: Deriving Clocks
+    Info: create_clock -period 1.000 -name clk clk
+    Info: create_clock -period 1.000 -name Serial_TX3:u0|font_cnt[0] Serial_TX3:u0|font_cnt[0]
+Critical Warning: Timing requirements not met
+Info: Worst-case setup slack is -18.877
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:   -18.877      -140.031 Serial_TX3:u0|font_cnt[0] 
+    Info:    -7.372      -293.600 clk 
+Info: Worst-case hold slack is -1.826
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -1.826        -7.001 clk 
+    Info:    -0.351        -0.351 Serial_TX3:u0|font_cnt[0] 
+Info: No Recovery paths to report
+Info: No Removal paths to report
+Info: Worst-case minimum pulse width slack is -1.583
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -1.583      -196.647 clk 
+    Info:     0.500         0.000 Serial_TX3:u0|font_cnt[0] 
+Info: The selected device family is not supported by the report_metastability command.
+Info: Design is not fully constrained for setup requirements
+Info: Design is not fully constrained for hold requirements
+Info: Quartus II TimeQuest Timing Analyzer was successful. 0 errors, 14 warnings
+    Info: Peak virtual memory: 220 megabytes
+    Info: Processing ended: Tue Sep 27 11:33:30 2016
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

@@ -1,0 +1,7 @@
+|FSM_Moore
+clk => current_state~2.DATAIN
+reset => current_state~4.DATAIN
+control => Selector0.IN3
+control => current_state.DATAB
+
+

@@ -1,0 +1,84 @@
+module ambulance (clk, reset, start, speaker, porta,state);
+
+input clk, reset, start;
+output reg speaker;
+output [1:0]porta;
+
+reg [31:0] tone;
+output reg [1:0] state;
+reg [31:0] cnt,scnt;
+reg cnt_rst;
+
+
+parameter [1:0] idle=2'b00, s1=2'b01, s2=2'b10;
+
+assign porta = (!reset)? 2'b00 : 2'b01;
+
+always @ (posedge clk, negedge reset)
+begin
+	if(!reset) state<=idle;
+	else
+	case(state)
+		idle : if(start)	state<=s1;
+		       else   state <= idle;    
+		s1 : begin
+					if(cnt>=512) state<=s2;
+					else	state <= s1;    
+			  end
+		s2 : begin
+					if(cnt>=384) state<=idle;
+					else	state <= s2;    
+			  end
+		default : state<=idle;
+	endcase
+end
+
+
+
+
+always @(posedge clk,negedge reset)
+begin
+	if(!reset)	{scnt,cnt,speaker}<=0;
+	else
+	begin
+		if(!start)	speaker<=0;
+		else if(tone>0)
+		begin
+			if(cnt_rst)	cnt <= 0;
+			scnt <= scnt + 1;
+			if(scnt>=tone)
+			begin
+				scnt<=0;
+				speaker<=~speaker;
+				cnt <= cnt +1;
+			end
+			else scnt<=scnt+1;
+		end
+		else	speaker <= 0;
+	end
+end
+	
+always @(state,cnt)
+	case(state)
+		idle : tone = 79411;
+		
+		s1 : begin
+					tone = 79411;
+					if(cnt>=512)	
+					begin
+						cnt_rst=1;
+					end
+					else	cnt_rst=0;
+				end
+		s2 : begin
+					tone = 105468;
+					if(cnt>=384)	
+					begin
+						cnt_rst=1;
+					end
+					else	cnt_rst = 0;
+				end
+		default : {tone,cnt_rst} = 0;
+	endcase
+endmodule
+

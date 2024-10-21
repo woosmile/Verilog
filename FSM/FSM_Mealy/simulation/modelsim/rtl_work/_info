@@ -1,0 +1,39 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\user\Desktop\FSM_Mealy\simulation\modelsim
+vFSM_Mealy
+IdEz`?k?3a4FEG4Tec1FYL3
+VGDTZ4:Zm8e>j<m0z=YfZJ3
+Z1 dC:\Users\user\Desktop\FSM_Mealy\simulation\modelsim
+w1461649424
+8C:/Users/user/Desktop/FSM_Mealy/FSM_Mealy.v
+FC:/Users/user/Desktop/FSM_Mealy/FSM_Mealy.v
+L0 3
+Z2 OV;L;6.6d;45
+r1
+31
+Z3 o-vlog01compat -work work -O0
+n@f@s@m_@mealy
+!s100 5z^^NhY<^L>?kh0GFgkBR3
+!s85 0
+!s101 -O0
+Z4 !s92 -vlog01compat -work work +incdir+C:/Users/user/Desktop/FSM_Mealy -O0
+vtb_FSM_Mealy
+!s100 S]FgBS:Nl]C07M6z@L5;E3
+I31hoca0^m:S=@<DGT]4eW1
+VkDTaWVGSVnQfZXKbGYe[;0
+R1
+w1461648899
+8C:/Users/user/Desktop/FSM_Mealy/tb_FSM_Mealy.v
+FC:/Users/user/Desktop/FSM_Mealy/tb_FSM_Mealy.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s101 -O0
+R3
+R4
+ntb_@f@s@m_@mealy
